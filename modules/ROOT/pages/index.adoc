@@ -5,12 +5,6 @@
 :!table-caption:
 :page-layout: landing
 
-++++
-<script>
-// Simulate HTTP Redirect to marketing /developers site
-window.location.replace("https://dfinity.org/developers");
-</script>
-++++
 
 ++++
 <div class="html-container">
