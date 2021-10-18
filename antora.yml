@@ -1,5 +1,5 @@
 name: docs
-title: Developer Center
+title: 开发者文档
 version: 'master'
 start_page: ROOT:index.adoc
 nav:

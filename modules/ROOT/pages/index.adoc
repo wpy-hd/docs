@@ -1,4 +1,4 @@
-= Developer Center | DFINITY
+= 开发者文档介绍
 :idprefix:
 :idseparator: -
 :!example-caption:
