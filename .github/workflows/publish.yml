@@ -16,6 +16,7 @@ jobs:
           # site_sources_path: 'site-sources-folder'
           antora_generator: 'antora-site-generator-lunr'
           antora_docsearch_enabled: 'true'
+          antora_docsearch_index_version: "latest"
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
