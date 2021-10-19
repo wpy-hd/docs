@@ -1,0 +1,13 @@
+site:
+  title: 互联网计算机开发者文档
+  start_page: docs::index.adoc
+content:
+  sources:
+  - url: https://github.com/fifteen42/docs.git
+    branches: main
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+runtime:
+  fetch: true
