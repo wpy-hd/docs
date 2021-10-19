@@ -9,7 +9,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: "Generate site and doc search index using antora site action"
-        uses: kameshsampath/antora-site-action@6069ae47f8c6dfd2a7c842d2dea766c639ab0053
+        uses: fifteen42/antora-site-action@f48d1ba262fc45aa625329189fc2756fb49b672b
         with:
           antora_playbook: antora-playbook.yml
           # optional path within the repo, defaults to ${{github.workspace}}
