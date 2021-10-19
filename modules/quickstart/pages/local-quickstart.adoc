@@ -1,4 +1,4 @@
-= Local development
+= 本地开发
 :description: Download the DFINITY Canister SDK and deploy your first dapp locally.
 :keywords: Internet Computer,blockchain,cryptocurrency,ICP tokens,smart contracts,cycles,wallet,software canister,developer onboarding
 :experimental:

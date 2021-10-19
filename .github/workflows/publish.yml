@@ -8,10 +8,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Run Antora
-        uses: kameshsampath/antora-site-action@v0.2.4
+      - name: "Generate site and doc search index using antora site action"
+        uses: kameshsampath/antora-site-action@v0.3.0
         with:
           antora_playbook: antora-playbook.yml
+          # optional path within the repo, defaults to ${{github.workspace}}
+          site_sources_path: 'site-sources-folder'
+          antora_generator: 'antora-site-generator-lunr'
+          antora_docsearch_enabled: 'true'
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
