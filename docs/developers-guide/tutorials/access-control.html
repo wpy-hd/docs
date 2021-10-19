@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Add access control with identities :: 互联网计算机开发者文档</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/search.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quickstart/quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../cli-reference/dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../integration/ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>开发者文档</li>
+    <li>在互联网计算机上构建程序</li>
+    <li>学习如何：</li>
+    <li><a href="access-control.html">使用身份添加权限控制</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/developers-guide/pages/tutorials/access-control.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Add access control with identities</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dapps often require role-based permissions to control the operations different users can perform.</p>
+</div>
+<div class="paragraph">
+<p>To illustrate how to create and switch between user identities, this tutorial creates a simple dapp that displays a different greeting for users who are assigned to different roles.</p>
+</div>
+<div class="paragraph">
+<p>In this example, there are three named roles—<code>owner</code>, <code>admin</code>, and <code>authorized</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Users who are assigned an <code>admin</code> role see a greeting that displays <code>You have a role with administrative privileges</code>.</p>
+</li>
+<li>
+<p>Users who are assigned an <code>authorized</code> role see a greeting that displays <code>Would you like to play a game?</code>.</p>
+</li>
+<li>
+<p>Users who are not assigned one of these roles see a greeting that displays <code>Nice to meet you!</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition, only the user identity that initialized the canister smart contract is assigned the <code>owner</code> role and only the <code>owner</code> and <code>admin</code> roles can assign roles to other users.</p>
+</div>
+<div class="paragraph">
+<p>At a high-level, each user has a public/private key pair. The public key combined with the canister smart contract identifier the user accesses forms a security principal that can then be used as a message caller to authenticate function calls made to the canister smart contract running on the Internet Computer blockchain.
+The following diagram provides a simplified view of how user identities authenticate message callers.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/principal-identities.svg" alt="principal identities">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_before_you_begin"><a class="anchor" href="#_before_you_begin"></a>Before you begin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before starting the tutorial, verify the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have downloaded and installed the {sdk-short-name} package as described in <a href="../../quickstart/local-quickstart.html#download-and-install">Download and install</a>.</p>
+</li>
+<li>
+<p>You have run at least one command that resulted in your <code>default</code> user identity being created.
+Your default user identity is stored globally for all projects in the <code>$HOME/.config/dfx/identity/</code> directory.</p>
+</li>
+<li>
+<p>You have installed the Visual Studio Code plugin for Motoko as described in <a href="../../quickstart/local-quickstart.html#install-vscode">Install the language editor plug-in</a> if you are using Visual Studio Code as your IDE.</p>
+</li>
+<li>
+<p>You have stopped any local canister execution environment processes running on your computer.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_new_project"><a class="anchor" href="#_create_a_new_project"></a>Create a new project</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To create a new project directory for testing access control and switching user identities:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a terminal shell on your local computer, if you don’t already have one open.</p>
+</li>
+<li>
+<p>Change to the folder you are using for your Internet Computer blockchain projects, if you are using one.</p>
+</li>
+<li>
+<p>Create a new project by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx new access_hello</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Change to your project directory by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd access_hello</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modify_the_default_dapp"><a class="anchor" href="#_modify_the_default_dapp"></a>Modify the default dapp</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For this tutorial, you are going to replace the template source code file with a dapp that has functions for assigning and retrieving roles.</p>
+</div>
+<div class="paragraph">
+<p>To modify the default dapp:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <code>src/access_hello/main.mo</code> file in a text editor and delete the existing content.</p>
+</li>
+<li>
+<p>Copy and paste the following sample code into the file:</p>
+<div class="listingblock copy">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-motoko hljs" data-lang="motoko">// Import base modules
+import AssocList "mo:base/AssocList";
+import Error "mo:base/Error";
+import List "mo:base/List";
+
+shared({ caller = initializer }) actor class() {
+
+    // Establish role-based greetings to display
+    public shared({ caller }) func greet(name : Text) : async Text {
+        if (has_permission(caller, #assign_role)) {
+            return "Hello, " # name # ". You have a role with administrative privileges."
+        } else if (has_permission(caller, #lowest)) {
+            return "Welcome, " # name # ". You have an authorized account. Would you like to play a game?";
+        } else {
+            return "Greetings, " # name # ". Nice to meet you!";
+        }
+    };
+
+    // Define custom types
+    public type Role = {
+        #owner;
+        #admin;
+        #authorized;
+    };
+
+    public type Permission = {
+        #assign_role;
+        #lowest;
+    };
+
+    private stable var roles: AssocList.AssocList&lt;Principal, Role&gt; = List.nil();
+    private stable var role_requests: AssocList.AssocList&lt;Principal, Role&gt; = List.nil();
+
+    func principal_eq(a: Principal, b: Principal): Bool {
+        return a == b;
+    };
+
+    func get_role(pal: Principal) : ?Role {
+        if (pal == initializer) {
+            ?#owner;
+        } else {
+            AssocList.find&lt;Principal, Role&gt;(roles, pal, principal_eq);
+        }
+    };
+
+    // Determine if a principal has a role with permissions
+    func has_permission(pal: Principal, perm : Permission) : Bool {
+        let role = get_role(pal);
+        switch (role, perm) {
+            case (?#owner or ?#admin, _) true;
+            case (?#authorized, #lowest) true;
+            case (_, _) false;
+        }
+    };
+
+    // Reject unauthorized user identities
+    func require_permission(pal: Principal, perm: Permission) : async () {
+        if ( has_permission(pal, perm) == false ) {
+            throw Error.reject( "unauthorized" );
+        }
+    };
+
+    // Assign a new role to a principal
+    public shared({ caller }) func assign_role( assignee: Principal, new_role: ?Role ) : async () {
+        await require_permission( caller, #assign_role );
+
+        switch new_role {
+            case (?#owner) {
+                throw Error.reject( "Cannot assign anyone to be the owner" );
+            };
+            case (_) {};
+        };
+        if (assignee == initializer) {
+            throw Error.reject( "Cannot assign a role to the canister owner" );
+        };
+        roles := AssocList.replace&lt;Principal, Role&gt;(roles, assignee, principal_eq, new_role).0;
+        role_requests := AssocList.replace&lt;Principal, Role&gt;(role_requests, assignee, principal_eq, null).0;
+    };
+
+    public shared({ caller }) func request_role( role: Role ) : async Principal {
+        role_requests := AssocList.replace&lt;Principal, Role&gt;(role_requests, caller, principal_eq, ?role).0;
+        return caller;
+    };
+
+    // Return the principal of the message caller/user identity
+    public shared({ caller }) func callerPrincipal() : async Principal {
+        return caller;
+    };
+
+    // Return the role of the message caller/user identity
+    public shared({ caller }) func my_role() : async ?Role {
+        return get_role(caller);
+    };
+
+    public shared({ caller }) func my_role_request() : async ?Role {
+        AssocList.find&lt;Principal, Role&gt;(role_requests, caller, principal_eq);
+    };
+
+    public shared({ caller }) func get_role_requests() : async List.List&lt;(Principal,Role)&gt; {
+        await require_permission( caller, #assign_role );
+        return role_requests;
+    };
+
+    public shared({ caller }) func get_roles() : async List.List&lt;(Principal,Role)&gt; {
+        await require_permission( caller, #assign_role );
+        return roles;
+    };
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a look at a few key elements of this dapp:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You might notice that the <code>greet</code> function is a variation on the <code>greet</code> function you have seen in previous tutorials.</p>
+<div class="paragraph">
+<p>In this dapp, however, the <code>greet</code> function uses a message caller to determine the permissions that should be applied and, based on the permissions associated with the caller, which greeting to display.</p>
+</div>
+</li>
+<li>
+<p>The dapp defines two custom types—one for <code>Roles</code> and one for <code>Permissions</code>.</p>
+</li>
+<li>
+<p>The <code>assign_roles</code> function enables the message caller to assign a role to the principal associated with an identity.</p>
+</li>
+<li>
+<p>The <code>callerPrincipal</code> function enables you to return the principal associated with an identity.</p>
+</li>
+<li>
+<p>The <code>my_role</code> function enables you to return the role that is associated with an identity.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Save your changes and close the <code>main.mo</code> file to continue.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_start_the_local_canister_execution_environment"><a class="anchor" href="#_start_the_local_canister_execution_environment"></a>Start the local canister execution environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you can build the <code>access_hello</code> project, you need to connect to the local canister execution environment running in your development environment or to the Internet Computer blockchain mainnet.</p>
+</div>
+<div class="paragraph">
+<p>To start the local canister execution environment:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a new terminal window or tab on your local computer.</p>
+</li>
+<li>
+<p>Navigate to the root directory for your project, if necessary.</p>
+</li>
+<li>
+<p>Start the local canister execution environment on your computer by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx start --background</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After the local canister execution environment completes its startup operations, you can continue to the next step.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_register_build_and_deploy_the_dapp"><a class="anchor" href="#_register_build_and_deploy_the_dapp"></a>Register, build, and deploy the dapp</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you connect to the local canister execution environment running in your development environment, you can register, build, and deploy your dapp in a single step by running the <a href="../cli-reference/dfx-deploy.html"><code>dfx deploy</code></a> command.
+You can also perform each of these steps independently using separate <a href="../cli-reference/dfx-canister.html#dfx_canister_create"><code>dfx canister create</code></a>, <a href="../cli-reference/dfx-build.html"><code>dfx build</code></a>, and <a href="../cli-reference/dfx-canister.html#dfx_canister_install"><code>dfx canister install</code></a> commands.</p>
+</div>
+<div class="paragraph">
+<p>To deploy the dapp locally:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check that you are still in the root directory for your project, if needed.</p>
+</li>
+<li>
+<p>Register, build, and deploy the <code>access_hello</code> back-end dapp by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx deploy access_hello</code></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Creating a wallet canister on the local network.
+The wallet canister on the "local" network for user "default" is "rwlgt-iiaaa-aaaaa-aaaaa-cai"
+Deploying: access_hello
+Creating canisters...
+Creating canister "access_hello"...
+"access_hello" canister created with canister id: "rrkah-fqaaa-aaaaa-aaaaq-cai"
+Building canisters...
+Installing canisters...
+Installing code for canister access_hello, with canister_id rrkah-fqaaa-aaaaa-aaaaq-cai
+Deployed canisters.</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_check_the_current_identity_context"><a class="anchor" href="#_check_the_current_identity_context"></a>Check the current identity context</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before we create any additional identities, let&#8217;s review the principal identifiers associated with your <code>default</code> identity and the cycles wallet for your <code>default</code> identity.
+On the Internet Computer blockchain, a principal is the internal representative for a user, canister smart contract, node, or subnet. The textual representation for a principal is the external identifier you see displayed with working with the principal data type.</p>
+</div>
+<div class="paragraph">
+<p>To review your current identity and principle:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Verify the currently-active identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity whoami</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>default</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the principal for the <code>default</code> user identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity get-principal</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>zen7w-sjxmx-jcslx-ey4hf-rfxdq-l4soz-7ie3o-hti3o-nyoma-nrkwa-cqe</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the role associated with the <code>default</code> user identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister --wallet=$(dfx identity get-wallet) call access_hello my_role</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>(opt variant { owner })</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_new_user_identity"><a class="anchor" href="#_create_a_new_user_identity"></a>Create a new user identity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To begin testing the access controls in our dapp, let&#8217;s create some new user identities and assign those users to different roles.</p>
+</div>
+<div class="paragraph">
+<p>To create a new user identity:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check that you are still in your project directory, if needed.</p>
+</li>
+<li>
+<p>Create a new administrative user identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity new ic_admin</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Creating identity: "ic_admin".
+Created identity: "ic_admin".</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Call the <code>my_role</code> function to see that your new user identity has not been assigned to any role.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --identity ic_admin canister call access_hello my_role</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Creating a wallet canister on the local network.
+The wallet canister on the "local" network for user "ic_admin" is "ryjl3-tyaaa-aaaaa-aaaba-cai"
+(null)</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Switch your currently-active identity context to use the new <code>ic_admin</code> user identity and display the principal associated with the <code>ic_admin</code> user by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity use ic_admin &amp;&amp; dfx identity get-principal</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Using identity: "ic_admin".
+c5wa6-3irl7-tuxuo-4vtyw-xsnhw-rv2a6-vcmdz-bzkca-vejmd-327zo-wae</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the principal used to call the <code>access_hello</code> canister smart contract by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister call access_hello callerPrincipal</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>(principal "ryjl3-tyaaa-aaaaa-aaaba-cai")</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By default, the cycles wallet identifier is the principal used to call the methods in the <code>access_hello</code> canister smart contract.
+To illustrate access control, however, we want to use the principal associated with the user context, not the cycles wallet.
+Before we get to that step, though, let&#8217;s assign a role to the <code>ic_admin</code> user. To do that, we need to switch to the <code>default</code> user identity that has the <code>owner</code> role.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_assign_a_role_to_an_identity"><a class="anchor" href="#_assign_a_role_to_an_identity"></a>Assign a role to an identity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To assign the admin role to the ic_admin identity:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Switch your currently-active identity context to use the <code>default</code> user identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity use default</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Assign the <code>ic_admin</code> principal the <code>admin</code> role by running a command similar to the following using Candid syntax:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister --wallet=$(dfx identity get-wallet) call access_hello assign_role '((principal "c5wa6-3irl7-tuxuo-4vtyw-xsnhw-rv2a6-vcmdz-bzkca-vejmd-327zo-wae"),opt variant{admin})'</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Be sure to replace the <code>principal</code> hash with the one returned by the <code>dfx identity get-principal</code> command for the <code>ic_admin</code> identity.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>+
+Optionally, you can rerun the command to call the <code>my_role</code> function to verify the role assignment.</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --identity ic_admin canister call access_hello my_role</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>+
+The command displays output similar to the following:</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>(opt variant { admin })</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Call the <code>greet</code> function using the <code>ic_admin</code> user identity that you just assigned the <code>admin</code> role by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --identity ic_admin canister call access_hello greet "Internet Computer Admin"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>(
+  "Hello, Internet Computer Admin. You have a role with administrative privileges.",
+)</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_add_an_authorized_user_identity"><a class="anchor" href="#_add_an_authorized_user_identity"></a>Add an authorized user identity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At this point, you have a <code>default</code> user identity with the <code>owner</code> role and an <code>ic_admin</code> user identity with the <code>admin</code> role.
+Let&#8217;s add another user identity and assign it to the <code>authorized</code> role.
+For this example, however, we&#8217;ll use an environment variable to store the user&#8217;s principal.</p>
+</div>
+<div class="paragraph">
+<p>To add a new authorized user identity:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check that you are still in your project directory, if needed.</p>
+</li>
+<li>
+<p>Create a new authorized user identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity new alice_auth</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Creating identity: "alice_auth".
+Created identity: "alice_auth".</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Switch your currently-active identity context to use the new <code>alice_auth</code> user identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity use alice_auth</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Store the principal for the <code>alice_auth</code> user in an environment variable by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ALICE_ID=$(dfx identity get-principal)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can verify the principal stored by running the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">echo $ALICE_ID</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>b5quc-npdph-l6qp4-kur4u-oxljq-7uddl-vfdo6-x2uo5-6y4a6-4pt6v-7qe</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Use the <code>ic_admin</code> identity to assign the <code>authorized</code> role to <code>alice_auth</code> by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --identity ic_admin canister call access_hello assign_role "(principal \"$ALICE_ID\", opt variant{authorized})"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Call the <code>my_role</code> function to verify the role assignment.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --identity alice_auth canister call access_hello my_role</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>(opt variant { authorized })</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Call the <code>greet</code> function using the <code>alice_auth</code> user identity that you just assigned the <code>authorized</code> role by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister call access_hello greet "Alice"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>(
+  "Welcome, Alice. You have an authorized account. Would you like to play a game?",
+)</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_add_an_unauthorized_user_identity"><a class="anchor" href="#_add_an_unauthorized_user_identity"></a>Add an unauthorized user identity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You have now seen a simple example of creating users with specific roles and permissions.
+The next step is to create a user identity that is not assigned to a role or given any special permissions.</p>
+</div>
+<div class="paragraph">
+<p>To add an unauthorized user identity:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check that you are still in your project directory, if needed.</p>
+</li>
+<li>
+<p>Check your currently-active identity, if needed, by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity whoami</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a new user identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity new bob_standard</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Creating identity: "bob_standard".
+Created identity: "bob_standard".</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Store the principal for the <code>bob_standard</code> user in an environment variable by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">BOB_ID=$(dfx --identity bob_standard identity get-principal)</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Attempt to use the <code>bob_standard</code> identity to assign a role.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --identity bob_standard canister call access_hello assign_role "(principal \"$BOB_ID\", opt variant{authorized})"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command returns an <code>unauthorized</code> error.</p>
+</div>
+</li>
+<li>
+<p>Attempt to use the <code>default</code> user identity to assign <code>bob_standard</code> the <code>owner</code> role by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --identity default canister --wallet=$(dfx --identity default identity get-wallet) call access_hello assign_role "(principal \"$BOB_ID\", opt variant{owner})"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command fails because users cannot be assigned the <code>owner</code> role.</p>
+</div>
+</li>
+<li>
+<p>Call the <code>greet</code> function using the <code>bob_standard</code> user identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --identity bob_standard canister --no-wallet call access_hello greet "Bob"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>("Greetings, Bob. Nice to meet you!")</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_set_the_user_identity_for_multiple_commands"><a class="anchor" href="#_set_the_user_identity_for_multiple_commands"></a>Set the user identity for multiple commands</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>So far, you have seen how to create and switch between user identities for individual commands.
+You can also specify a user identity you want to use, then run multiple commands in the context of that user identity.</p>
+</div>
+<div class="paragraph">
+<p>To run multiple commands under one user identity:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check that you are still in your project directory, if needed.</p>
+</li>
+<li>
+<p>List the user identities currently available by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity list</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following with an asterisk indicating the currently-active user identity.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>alice_auth
+bob_standard
+default *
+ic_admin</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the <code>default</code> user identity is used unless you explicitly select a different identity.</p>
+</div>
+</li>
+<li>
+<p>Select a new user identity from the list and make it the active user context by running a command similar to the following:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity use ic_admin</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>+ The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Using identity: "ic_admin".</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you rerun the <code>dfx identity list</code> command, the <code>ic_admin</code> user identity displays an asterisk to indicate it is the currently active user context.</p>
+</div>
+<div class="paragraph">
+<p>You can now run commands using the selected user identity without specifying <code>--identity</code> on the command-line.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stop_the_local_canister_execution_environment"><a class="anchor" href="#_stop_the_local_canister_execution_environment"></a>Stop the local canister execution environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you finish experimenting with the dapp and using identities, you can stop the local canister execution environment so that it doesn’t continue running in the background.</p>
+</div>
+<div class="paragraph">
+<p>To stop the local canister execution environment:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the terminal that displays network operations, press Control-C to interrupt the local network process.</p>
+</li>
+<li>
+<p>Stop the local canister execution environment by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx stop</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_want_to_learn_more"><a class="anchor" href="#_want_to_learn_more"></a>Want to learn more?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are looking for more information about identity and authentication, check out the following related resources:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../cli-reference/dfx-identity.html">dfx identity (command reference)</a></p>
+</li>
+<li>
+<p><a href="../working-with-canisters.html#set-owner">Set an identity to own a canister smart contract (how-to)</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Learning the basics of Motoko :: 互联网计算机开发者文档</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../quickstart/quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="cli-reference/dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../integration/ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">开发者文档</a></li>
+    <li><a href="basic-syntax-rules.html">Learning the basics of Motoko</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/developers-guide/pages/basic-syntax-rules.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Learning the basics of Motoko</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>One key feature of the Internet Computer platform is the Motoko programming language.
+The Motoko programming language is a high-level, general purpose language that is similar to other modern programming languages, but specifically designed to handle asynchronous messaging efficiently.</p>
+</div>
+<div class="paragraph">
+<p>Although Motoko provides an interpreter that can be used interactively and a standalone compiler, you can write programs and compile your code without using either one directly.
+Instead, in most cases, you interact with the programming language indirectly through an editor of your choice and using the <code>dfx</code> command-line execution tool.</p>
+</div>
+<div class="paragraph">
+<p>To help you get started using this new language, this section provides a brief overview of the language and describes a few basic conventions for writing programs using Motoko.
+For more complete information about programming in Motoko, including specific language features and detailed examples, see the <em>Language Reference Guide</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_actors_and_asynchronous_messaging"><a class="anchor" href="#_actors_and_asynchronous_messaging"></a>Actors and asynchronous messaging</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As you start to explore the Motoko programming language, you should keep in mind that each application consists of an <strong>actor</strong> that communicates with other actors by passing messages asynchronously.</p>
+</div>
+<div class="paragraph">
+<p>An actor is a special kind of object that passes its messages in an isolated state.
+When you define an actor, its messages are processed in sequence but in isolation from on each other. As an example of using actors, consider the following program:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">let result1 = await service1.computeAnswer(params);
+let result2 = await service2.computeAnswer(params);
+finalStep(result1, result2)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the program makes two requests to two distinct
+services.
+Each service is implemented internally as an actor (object).
+The program waits using the <code>await</code> keyword to wait for each result value in sequence.
+The program then uses the result from each request them in the final step, calling the function <code>finalStep</code>.</p>
+</div>
+<div class="paragraph">
+<p>The actor-based programming model is particularly well-suited for writing programs intended to run on the Internet Computer platform.
+However, you can also write programs in Motoko to run on other platforms and inside of other frameworks.
+If you are writing programs to run on other platforms, you might not use actor objects or asynchronous messaging at all.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interface_descriptions_and_motoko"><a class="anchor" href="#_interface_descriptions_and_motoko"></a>Interface descriptions and Motoko</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To support multiple languages and cross-language communication, the Motoko compiler automates the production and consumption of interface descriptions.
+The Motoko compiler generates the interface descriptions using the type signatures in your Motoko programs and the structure of imported pre-defined interfaces.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prelude_and_standard_library_functions"><a class="anchor" href="#_prelude_and_standard_library_functions"></a>Prelude and standard library functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Like other languages, Motoko includes many common functions in predefined prelude and standard library files that you can import into your programs.
+By importing the prelude or standard library, you can use common functions like <code>println</code> without explicitly defining them in your programs.</p>
+</div>
+<div class="paragraph">
+<p>For example, you might include a line similar to the following to import list functions from the standard library:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">import List "../../motoko/base/list";</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basic_language_features"><a class="anchor" href="#_basic_language_features"></a>Basic language features</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes the basic language conventions you need to know for programming in Motoko.</p>
+</div>
+<div class="sect2">
+<h3 id="_comments"><a class="anchor" href="#_comments"></a>Comments</h3>
+<div class="paragraph">
+<p>You can use single-line, multi-line, or nested multi-line comments to include descriptive non-executable text in your code.
+For example, use comments to add context about a code block as a note to yourself or as information you want to share with anyone reviewing or maintaining your code.
+Properly-formatted comments are treated as whitespace and ignored by the compiler.</p>
+</div>
+<div class="sect3">
+<h4 id="_single_line_comments"><a class="anchor" href="#_single_line_comments"></a>Single-line comments</h4>
+<div class="paragraph">
+<p>Single-line comments begin with two forward-slashes (//) and consist of the characters following <code>//</code> to the end of the same line.
+For example, you can have single-line comments above, below, or on the same line as the code to which the comment applies.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">// This is a single-line comment on its own line above relevant code
+import List = "ListLib";</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_multi_line_and_nested_comments"><a class="anchor" href="#_multi_line_and_nested_comments"></a>Multi-line and nested comments</h4>
+<div class="paragraph">
+<p>You can also include single-line, multi-line, and nested multi-line comments by starting with a forward-slash followed by an asterisk (/*) and ending with an asterisk followed by a forward-slash (*/).
+For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">/*
+This is a comment that is split into
+multiple lines.
+*/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also write nested multi-line comments by starting a multi-line comment block, then starting a second multi-line comment within the first block.
+For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">/* This is the start of the first multi-line comment block.
+   /* This is the second, nested multi-line comment. */
+This is the end of the first multi-line comment block. */</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_programs_declarations_and_expressions"><a class="anchor" href="#_programs_declarations_and_expressions"></a>Programs, declarations, and expressions</h3>
+<div class="paragraph">
+<p>Each Motoko program consists of zero or more declarations, followed by an optional expression.
+For example, the following snippet consists of two declarations for the variables <code>x</code> and <code>y</code> followed by an expression, forming a single program:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">let x = 1;
+let y = x + 1;
+x * y + x;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As illustrated in this example, you use a semi-colon (;) to terminate declarations and expressions. For example, to evaluate a simple equation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">1 + 3; // When executed, the result would be "4 : Nat" value and type</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_numbers_text_and_operators"><a class="anchor" href="#_numbers_text_and_operators"></a>Numbers, text and operators</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Motoko supports the following number types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Natural numbers (<code>Nat</code>) are positive whole integers.</p>
+</li>
+<li>
+<p>Integer numbers (<code>Int</code>) are positive, negative, or zero whole number values.</p>
+</li>
+<li>
+<p>Floating point numbers (<code>Float</code>) are fractional numeric 32-bit or 64-bit values.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Basic arithmetic operators work as you would expect. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">1 + 1;      // = 2
+0.1 + 0.2;  // = 0.3
+8 - 1;      // = 7
+10 * 2;     // = 20
+35 / 5;     // = 7</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use double (") quotes to enclose text. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">let name = "Chris"; // let name : Text = "Chris"</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_relational_operators"><a class="anchor" href="#_relational_operators"></a>Relational operators</h3>
+<div class="paragraph">
+<p>You can use the following relational operators in Motoko programs.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Use this</th>
+<th class="tableblock halign-left valign-top">To define this relationship</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>␣&lt;␣</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Less than. The operator must be enclosed in whitespace.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>␣&gt;␣</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Greater than. The operator must be enclosed in whitespace.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>==</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Equals.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>!=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not equals.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Less than or equal to.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&gt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Greater than or equal to.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_numeric_binary_operators"><a class="anchor" href="#_numeric_binary_operators"></a>Numeric binary operators</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Use this</th>
+<th class="tableblock halign-left valign-top">For this operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>+</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Addition.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subtraction.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplication.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Division.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modulo.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exponentiation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_bitwise_binary_operators"><a class="anchor" href="#_bitwise_binary_operators"></a>Bitwise binary operators</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Use this</th>
+<th class="tableblock halign-left valign-top">For this operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&amp;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bitwise AND.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>|</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bitwise OR.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>^</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exclusive OR.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&lt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shift left.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>␣&gt;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shift right. The operator must be preceded by whitespace.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&lt;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rotate left.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&gt;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rotate right.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_string_operators"><a class="anchor" href="#_string_operators"></a>String operators</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Use this</th>
+<th class="tableblock halign-left valign-top">For this operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>#</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text concatenation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_assignment_operators"><a class="anchor" href="#_assignment_operators"></a>Assignment operators</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Use this</th>
+<th class="tableblock halign-left valign-top">For this operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assignment using an in-place update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>+=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place addition.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place subtraction.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place multiplication.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place divide.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place modulo.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place exponentiation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&amp;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place logical AND.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>|=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place logical OR.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>^=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place exclusive OR.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&lt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place shift left.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&gt;&gt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place shift right.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&lt;&gt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place rotate left.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&gt;&gt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place rotate right.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>#=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In place concatenation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_variables"><a class="anchor" href="#_variables"></a>Variables</h3>
+<div class="paragraph">
+<p>Variables enable you to relate static names and types with dynamic values that are present only when a program is executed.</p>
+</div>
+<div class="paragraph">
+<p>You can declare variable names, and if necessary the data type, using the <code>let</code> keyword. For example, you can use the following notation to set the variable <code>x</code> to the natural number 1:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">let x : Nat = 1;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the compiler can infer that the expression 1 has type <code>Nat</code>, and that <code>x</code> has the same type. Therefore, you can use the following annotation without changing the meaning of the program:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">let x = 1</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_primitive_values"><a class="anchor" href="#_primitive_values"></a>Primitive values</h3>
+<div class="paragraph">
+<p>Motoko supports the following primitive types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Booleans (true, false)</p>
+</li>
+<li>
+<p>Integers (…​,-2, -1, 0, 1, 2, …​)</p>
+</li>
+<li>
+<p>Natural numbers (0, 1, 2, …​)</p>
+</li>
+<li>
+<p>Words (fixed-width numbers)</p>
+</li>
+<li>
+<p>Characters (Unicode code points)</p>
+</li>
+<li>
+<p>Text values (strings of Unicode characters)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Integers and natural numbers do not silently over- or under-flow.
+Instead, they use representations that grow to accommodate any finite number. There are also fixed-width integers and natural numbers (in 8-, 16-, 32-, and 64-bit) types that trap on arithmetic over- and under-flow. The fixed-width integers are signed. The fixed-width natural numbers are unsigned.</p>
+</div>
+<div class="paragraph">
+<p>Word values have fixed width. Arithmetic for Word types is performed using modulo 2**N where N is the width of the word type in bits.</p>
+</div>
+<div class="paragraph">
+<p>Motoko does not allow unchecked, uncaught overflows.</p>
+</div>
+<div class="paragraph">
+<p>All primitive types are shareable so that they can be sent and received across remote function calls.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_non_primitive_values"><a class="anchor" href="#_non_primitive_values"></a>Non-primitive values</h3>
+<div class="paragraph">
+<p>Building on the primitive values and types above, the language permits user-defined types, and each of the following non-primitive value forms and associated types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tuples, including the unit value (the &#8220;empty tuple&#8221;).</p>
+</li>
+<li>
+<p>Arrays, in both immutable and mutable forms.</p>
+</li>
+<li>
+<p>Objects, with named, unordered fields and methods.</p>
+</li>
+<li>
+<p>Variants, with named constructors and optional payload values.</p>
+</li>
+<li>
+<p>Function values, including shareable functions that can be called remotely.</p>
+</li>
+<li>
+<p>Async values, otherwise known as <strong>futures</strong> or <strong>promises</strong>, that can be synchronized with using <code>await</code>.</p>
+</li>
+<li>
+<p>Optional values, that can either be <code>null</code> or of the form <code>? v</code>, for a proper value <code>v</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note that if your function is returning an optional value of type <code>T</code>, then the function&#8217;s return type should be of the form '? T':
+prefixing a type with question mark (?) adds the <code>null</code> value.
+For example, you would use the following syntax to indicate that the return value of the type identified by <code>?Phone</code> is optional (for example, the return value can be <code>null</code> as well as a proper phone number):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-motoko hljs" data-lang="motoko">public query func lookup(name: Name): async <strong>?Phone</strong> {
+        return A.find<Name, Phone>(book, name, nameEq);
+    };</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_functions"><a class="anchor" href="#_functions"></a>Functions</h3>
+<div class="paragraph">
+<p>First-class functions support multiple arguments and returns and can be polymorphic.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>T -&gt; U</code></p>
+</li>
+<li>
+<p><code>(T, U) -&gt; (V, W)</code></p>
+</li>
+<li>
+<p><code>(x : T, y : U) -&gt; V</code></p>
+</li>
+<li>
+<p><code>&lt;A, B&gt;(x : T, y : U) -&gt; (V, W)</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Functions can be defined as <code>public</code> or <code>private</code>, <code>shared</code>, or locally-scoped.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_objects_and_actors"><a class="anchor" href="#_objects_and_actors"></a>Objects and actors</h3>
+<div class="paragraph">
+<p>Objects are structural record types with fields that can be mutable or immutable.
+Objects with immutable fields are shareable.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{var x : Int; color : Color}
+{x : Int; color: Color}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Actors are restricted objects with the following characteristics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>State must be isolated.</p>
+</li>
+<li>
+<p>Public methods are implicitly <code>shared</code>.</p>
+</li>
+<li>
+<p>All interactions are asynchronous.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Actor objects are marked as <code>actor</code> with syntax similar to the
+following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>actor {
+  private var c = 0;
+  public func inc() { c += 1 };
+  public func get() : async Int { c }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The fields of an actor are functions that return either:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An empty unit return type <code>()</code> which is similar to a <code>void</code> return value.</p>
+</li>
+<li>
+<p>An <code>async</code> return type, which is essentially a <code>promise</code> to return a future value.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arrays"><a class="anchor" href="#_arrays"></a>Arrays</h3>
+<div class="paragraph">
+<p>You can define immutable or mutable arrays.
+The assignment syntax you use is the same for both immutable and mutable arrays, but you cannot change immutable arrays after allocation.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a simple, immutable array that holds three natural numbers, and has the type <code>[Nat]</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">let test_array : [Nat] = [1, 2, 3] ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In general, an immutable array uses square brackets around the type of the array’s elements, which must share a single common type.
+Because immutable arrays cannot be modified,immutable arrays are safe to send and share.</p>
+</div>
+<div class="paragraph">
+<p>Unlike immutable arrays, each mutable array in Motoko introduces a private actor state which can be used locally but cannot be used in cases where immutable arrays are expected.
+Mutable arrays cannot be shared or sent in messages.
+For more information about working with arrays, see the <em>Motoko Language Reference</em>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tuples"><a class="anchor" href="#_tuples"></a>Tuples</h3>
+<div class="paragraph">
+<p>A tuple is a data structure that contains a sequence of elements.
+The number of element in the sequence is fixed, but the elements can consist of different data types.
+Tuples are often used when you want to have a data structure for an object with specific properties, but you don&#8217;t want to create a separate type for it.</p>
+</div>
+<div class="paragraph">
+<p>The following example defines a tuple for a three-dimensional point using integers to specify locations to represent the point on the x-axis, y-axis, and z-axis and a color.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">  type Point3D = (Int, Int, Int, Color);
+  let origin = (0, 0, 0, Color.Red);
+  let (x, y, z, _) = origin;
+
+  func isOrigin(p : Point3D) : Bool {
+    switch p {
+      case (0, 0, 0, _) true; // pattern match
+      case _ false;
+    }
+  }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conditional_and_switching"><a class="anchor" href="#_conditional_and_switching"></a>Conditional and switching</h3>
+<div class="paragraph">
+<p>Motoko supports all the common constructs for expressing conditions and switching between cases.</p>
+</div>
+<div class="paragraph">
+<p>For example, you can write <code>if</code> and <code>if else</code> conditions with syntax similar to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">if &lt;exp&gt;
+  ...</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">if &lt;exp&gt;
+  ...
+else &lt;exp&gt;
+  ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also use <code>switch</code> and <code>case</code> syntax similar to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">switch &lt;exp&gt; {
+  case 1
+    ...;
+  case 2
+    ...;
+  case 3
+    ...}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_while_loops_and_iteration"><a class="anchor" href="#_while_loops_and_iteration"></a>While, Loops, and iteration</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>while (p()) ...</code></p>
+</li>
+<li>
+<p><code>loop ...</code></p>
+</li>
+<li>
+<p><code>loop ... while (p())</code></p>
+</li>
+<li>
+<p><code>for (x in f()) ...</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_label_break_and_continue"><a class="anchor" href="#_label_break_and_continue"></a>Label, break, and continue</h3>
+<div class="paragraph">
+<p>Labels help ensure control flow is structured and can be used with the <code>break</code> and <code>continue</code> keywords.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>label l exp</code></p>
+</li>
+<li>
+<p><code>break l</code> (more generally, <code>break l exp</code>)</p>
+</li>
+<li>
+<p><code>continue l</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_identifiers"><a class="anchor" href="#_identifiers"></a>Identifiers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Identifiers are alphanumeric.
+They must start with an uppercase or lowercase letter and can include a combination of uppercase or lowercase letters, numbers, and underscores.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reserved_keywords"><a class="anchor" href="#_reserved_keywords"></a>Reserved keywords</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following keywords are reserved for specific purposes and cannot be used as identifiers or for any other purpose in Motoko code:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">This keyword</th>
+<th class="tableblock halign-left valign-top">Is reserved for this purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">actor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declare actor identifiers, actor objects and actor classes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">and</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean conjunction (short-circuiting).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">async</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declare an asynchronous function or create a future.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assert a Boolean property (trapping when false).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">await</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Await the result of an asynchronous computation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">break</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exit from a labelled expression or loop (possibly with a value).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">case</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Case of a preceding <code>switch</code> expression, consisting of a pattern and expression.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">catch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Failure branch of a preceding <code>try</code> expression.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class declaration (actor, object and module classes).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">continue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continue with the next iteration of <code>loop</code> or <code>while</code> or <code>for</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">debug</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conditional debug expressions, excluded from <code>release</code> code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">debug_show</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display a debug message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">else</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False branch of a conditional expression.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean literal value <strong>false</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Iterate over the items of an iterator.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">func</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declare a name function or anonymous function value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">if</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Branch on a Boolean value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ignore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discard the value of an expression.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">import</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Import a source file or other resource as a named module.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicate the domain of <code>for</code> loop.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declare a module identifier or module expression.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Negate a Boolean value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">null</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The literal value of type <code>Null</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declare an object identifier or object expression.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">or</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean disjunction (short-circuiting).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label an expression for early exit via <code>break</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">let</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bind an identifier (or pattern) to a value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">loop</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a loop (possibly with a guarded exit).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">private</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Restrict the visibility of a declaration to the enclosing
+actor, object, module or class.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">public</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Publish a declaration as member(s) of the enclosing
+actor, object, module or class.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">query</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A modifier on shared functions that return results without modifying state.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exit from a function or async block (possibly with a value).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shared</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declare a function that can be called remotely.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">switch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conditional pattern matching, defined by cases.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throw</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exit from an expression with an error.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Boolean value returned as the result of a comparison.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">try</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declare a scoped error handler.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declare a type abbreviation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">var</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify a (mutable) variable, field or array that can be updated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">while</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a guarded loop.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

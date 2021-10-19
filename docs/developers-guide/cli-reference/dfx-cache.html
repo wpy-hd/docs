@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>dfx cache :: 互联网计算机开发者文档</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/search.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quickstart/quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../integration/ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">开发者文档</a></li>
+    <li><a href="dfx-cache.html">dfx cache</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/developers-guide/pages/cli-reference/dfx-cache.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">dfx cache</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx cache</code> command with flags and subcommands to manage the <code>dfx</code> version cache.</p>
+</div>
+<div class="paragraph">
+<p>The basic syntax for running <code>dfx cache</code> commands is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx cache [subcommand] [flag]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Depending on the <code>dfx cache</code> subcommand you specify, additional arguments, options, and flags might apply.
+For reference information and examples that illustrate using <code>dfx cache</code> commands, select an appropriate command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delete"><code>delete</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the specified version of <code>dfx</code> from the local cache.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information message for a specified subcommand.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#install"><code>install</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Installs the specified version of <code>dfx</code> from the local cache.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_cache_list"><code>list</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lists the versions of <code>dfx</code> currently installed and used in current projects.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_cache_show"><code>show</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show the path of the cache used by this version of the <code>dfx</code> executable.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>To view usage information for a specific subcommand, specify the subcommand and the <code>--help</code> flag.
+For example, to see usage information for <code>dfx cache delete</code>, you can run the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx cache delete --help</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="delete"><a class="anchor" href="#delete"></a>dfx cache delete</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx cache delete</code> command to delete a specified version of <code>dfx</code> from the version cache on the local computer.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage"><a class="anchor" href="#_basic_usage"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx cache delete [version] [flag]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags"><a class="anchor" href="#_flags"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx cache delete</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_arguments"><a class="anchor" href="#_arguments"></a>Arguments</h3>
+<div class="paragraph">
+<p>You can specify the following argument for the <code>dfx cache delete</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the version of <code>dfx</code> you to delete from the local cache.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h3>
+<div class="paragraph">
+<p>You can use the <code>dfx cache delete</code> command to permanently delete versions of <code>dfx</code>  that you no longer want to use.
+For example, you can run the following command to delete <code>dfx</code> version <code>0.6.2</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx cache delete 0.6.2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="install"><a class="anchor" href="#install"></a>dfx cache install</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx cache install</code> command to install <code>dfx</code> using the version currently found in the <code>dfx</code> cache.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_2"><a class="anchor" href="#_basic_usage_2"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx cache install [flag]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_2"><a class="anchor" href="#_flags_2"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx cache install</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_examples_2"><a class="anchor" href="#_examples_2"></a>Examples</h3>
+<div class="paragraph">
+<p>You can use the <code>dfx cache install</code> command to force the installation of <code>dfx</code> from the version in the cache.
+For example, you can run the following command to install <code>dfx</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx cache install</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_cache_list"><a class="anchor" href="#_dfx_cache_list"></a>dfx cache list</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx cache list</code> command to list the <code>dfx</code> versions you have currently installed and used in projects.</p>
+</div>
+<div class="paragraph">
+<p>If you have multiple versions of <code>dfx</code> installed, the cache list displays an asterisk (*) to indicate the currently active version.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_3"><a class="anchor" href="#_basic_usage_3"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx cache list [flag]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_3"><a class="anchor" href="#_flags_3"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx cache list</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_examples_3"><a class="anchor" href="#_examples_3"></a>Examples</h3>
+<div class="paragraph">
+<p>You can use the <code>dfx cache list</code> command to list the <code>dfx</code> versions you have currently installed and used in projects.
+For example, you can run the following command to list versions of <code>dfx</code> found in the cache:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx cache list</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command displays the list of <code>dfx</code> versions found similar to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">0.6.4 *
+0.6.3
+0.6.0</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_cache_show"><a class="anchor" href="#_dfx_cache_show"></a>dfx cache show</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx cache show</code> command to display the full path to the cache used by the <code>dfx</code> version you are currently using.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_4"><a class="anchor" href="#_basic_usage_4"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx cache show [flag]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_4"><a class="anchor" href="#_flags_4"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx cache show</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_examples_4"><a class="anchor" href="#_examples_4"></a>Examples</h3>
+<div class="paragraph">
+<p>You can use the <code>dfx cache show</code> command to display the path to the cache used by the <code>dfx</code> version you are currently using:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx cache show</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command displays the path to the cache used by the <code>dfx</code> version you are currently using:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">/Users/pubs/.cache/dfinity/versions/0.6.4</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

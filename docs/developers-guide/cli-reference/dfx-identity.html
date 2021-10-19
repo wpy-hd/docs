@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>dfx identity :: 互联网计算机开发者文档</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/search.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quickstart/quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../integration/ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">开发者文档</a></li>
+    <li><a href="dfx-identity.html">dfx identity</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/developers-guide/pages/cli-reference/dfx-identity.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">dfx identity</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx identity</code> command with subcommands and flags to manage the identities used to execute commands and communicate with the {platform} or the local canister execution environment.
+Creating multiple user identities enables you to test user-based access controls.</p>
+</div>
+<div class="paragraph">
+<p>The basic syntax for running <code>dfx identity</code> commands is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity [subcommand] [flag]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Depending on the <code>dfx identity</code> subcommand you specify, additional arguments, options, and flags might apply or be required.
+To view usage information for a specific <code>dfx identity</code> subcommand, specify the subcommand and the <code>--help</code> flag.
+For example, to see usage information for <code>dfx identity new</code>, you can run the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity new --help</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For reference information and examples that illustrate using <code>dfx identity</code> commands, select an appropriate command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_identity_get_principal"><code>get-principal</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows the textual representation of the principal associated with the current identity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_identity_get_wallet"><code>get-wallet</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows the canister identifier for the wallet associated with your current identity principal.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays this usage message or the help of the given subcommand(s).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_identity_import"><code>import</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a new identity by importing a PEM file that contains the key information or security certificate for a principal.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_identity_list"><code>list</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lists existing identities.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_identity_new"><code>new</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a new identity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_identity_remove"><code>remove</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removes an existing identity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_identity_rename"><code>rename</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renames an existing identity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_identity_set_wallet"><code>set-wallet</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the wallet canister identifier to use for your current identity principal.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_identity_use"><code>use</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the identity to use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_dfx_identity_whoami"><code>whoami</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays the name of the current identity user context.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_a_default_identity"><a class="anchor" href="#_creating_a_default_identity"></a>Creating a default identity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first time you run the <code>dfx canister create</code> command to register an identifier, your public/private key pair credentials are used to create a <code>default</code> user identity.
+The credentials for the <code>default</code> user are migrated from <code>$HOME/.dfinity/identity/creds.pem</code> to <code>$HOME/.config/dfx/identity/default/identity.pem</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can then use <code>dfx identity new</code> to create new user identities and store credentials for those identities in <code>$HOME/.config/dfx/identity/&lt;identity_name&gt;/identity.pem</code> files.
+For example, you can create an identity named <code>ic_admin</code> by running the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx identity new ic_admin</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command adds a private key for the <code>ic_admin</code> user identity in the <code>~/.config/dfx/identity/ic_admin/identity.pem</code> file.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_identity_get_principal"><a class="anchor" href="#_dfx_identity_get_principal"></a>dfx identity get-principal</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx identity get-principal</code> command to display the textual representation of a principal associated with the current user identity context.</p>
+</div>
+<div class="paragraph">
+<p>If you haven&#8217;t created any user identities, you can use this command to display the principal for the <code>default</code> user.
+The textual representation of a principal can be useful for establishing and testing role-based authorization scenarios.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage"><a class="anchor" href="#_basic_usage"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity get-principal [flag]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags"><a class="anchor" href="#_flags"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx identity get-principal</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_example"><a class="anchor" href="#_example"></a>Example</h3>
+<div class="paragraph">
+<p>If you want to display the textual representation of a principal associated with a specific user identity context, you can run commands similar to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity use ic_admin
+dfx identity get-principal</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the first command sets the user context to use the <code>ic_admin</code> identity. The second command then returns the principal associated with the <code>ic_admin</code> identity.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_identity_get_wallet"><a class="anchor" href="#_dfx_identity_get_wallet"></a>dfx identity get-wallet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx identity get-wallet</code> command to display the canister identifier for the wallet associated with your current identity principal.</p>
+</div>
+<div class="paragraph">
+<p>Note that you must be connected to the {platform} or the local canister execution environment to run this command.
+In addition, you must be in a project directory to run the command.
+For example, if your project name is <code>hello_world</code>, your current working directory must be the <code>hello_world</code> top-level project directory or one of its subdirectories to run the <code>dfx identity get-wallet</code> command.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_2"><a class="anchor" href="#_basic_usage_2"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity get-wallet [flag]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_2"><a class="anchor" href="#_flags_2"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx identity get-wallet</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_example_2"><a class="anchor" href="#_example_2"></a>Example</h3>
+<div class="paragraph">
+<p>If you want to display the canister identifier for the wallet canister associated with your identity, you can run the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity get-wallet</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To display the canister identifier for the wallet canister associated with your identity on a specific testnet, you might run a command similar to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity --network=https://192.168.74.4 get-wallet</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_identity_import"><a class="anchor" href="#_dfx_identity_import"></a>dfx identity import</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx identity import</code> command to create a user identity by importing the user&#8217;s key information or security certificate from a PEM file.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_3"><a class="anchor" href="#_basic_usage_3"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity import [flag] <em>identity-name</em> <em>pem_file-name</em></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_3"><a class="anchor" href="#_flags_3"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx identity import</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h3>
+<div class="paragraph">
+<p>You can use the <code>dfx identity import</code> command to import a PEM file that contains the security certificate to use for an identity.
+For example, you can run the following command to import the <code>generated-id.pem</code> file to create the user identity <code>alice</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity import alice generated-id.pem</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command adds the <code>generated-id.pem</code> file to the <code>~/.config/dfx/identity/alice</code> directory.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_identity_list"><a class="anchor" href="#_dfx_identity_list"></a>dfx identity list</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx identity list</code> command to display the list of user identities available.
+When you run this command, the list displays an asterisk (*) to indicate the currently active user context.
+You should note that identities are global. They are not confined to a specific project context.
+Therefore, you can use any identity listed by the <code>dfx identity list</code> command in any project.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_4"><a class="anchor" href="#_basic_usage_4"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity list [flag]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_4"><a class="anchor" href="#_flags_4"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx identity list</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_examples_2"><a class="anchor" href="#_examples_2"></a>Examples</h3>
+<div class="paragraph">
+<p>You can use the <code>dfx identity list</code> command to list all of the identities you have currently available and to determine which identity is being used as the currently-active user context for running <code>dfx</code> commands.
+For example, you can run the following command to list the identities available:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity list</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command displays the list of identities found similar to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">alice_auth
+anonymous
+bob_standard *
+default
+ic_admin</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the <code>bob_standard</code> identity is the currently-active user context.
+After you run this command to determine the active user, you know that any additional <code>dfx</code> commands you run are executed using the principal associated with the <code>bob_standard</code> identity.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_identity_new"><a class="anchor" href="#_dfx_identity_new"></a>dfx identity new</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx identity new</code> command to add new user identities.
+You should note that the identities you add are global. They are not confined to a specific project context.
+Therefore, you can use any identity you add using the <code>dfx identity new</code> command in any project.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_5"><a class="anchor" href="#_basic_usage_5"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity new [flag] _identity-name_</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_5"><a class="anchor" href="#_flags_5"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx identity new</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_arguments"><a class="anchor" href="#_arguments"></a>Arguments</h3>
+<div class="paragraph">
+<p>You must specify the following argument for the <code>dfx identity new</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;identity_name&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the name of the identity to create.
+This argument is required.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_examples_3"><a class="anchor" href="#_examples_3"></a>Examples</h3>
+<div class="paragraph">
+<p>You can then use <code>dfx identity new</code> to create new user identities and store credentials for those identities in <code>$HOME/.config/dfx/identity/&lt;identity_name&gt;/identity.pem</code> files.
+For example, you can create an identity named <code>ic_admin</code> by running the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx identity new ic_admin</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command adds a private key for the <code>ic_admin</code> user identity in the <code>~/.config/dfx/identity/ic_admin/identity.pem</code> file.</p>
+</div>
+<div class="paragraph">
+<p>After adding the private key for the new identity, the command displays confirmation that the identity has been created:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Creating identity: "ic_admin".
+Created identity: "ic_admin".</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_identity_remove"><a class="anchor" href="#_dfx_identity_remove"></a>dfx identity remove</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx identity remove</code> command to remove an existing user identity.
+You should note that the identities you add are global. They are not confined to a specific project context.
+Therefore, any identity you remove using the <code>dfx identity remove</code> command will no longer be available in any project.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_6"><a class="anchor" href="#_basic_usage_6"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity remove [flag] _identity-name_</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_6"><a class="anchor" href="#_flags_6"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx identity remove</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_arguments_2"><a class="anchor" href="#_arguments_2"></a>Arguments</h3>
+<div class="paragraph">
+<p>You must specify the following argument for the <code>dfx identity remove</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;identity_name&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the name of the identity to remove.
+This argument is required.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_examples_4"><a class="anchor" href="#_examples_4"></a>Examples</h3>
+<div class="paragraph">
+<p>You can use the <code>dfx identity remove</code> command to remove any previously-created identity, including the <code>default</code> user identity.
+For example, if you have added named user identities and want to remove the <code>default</code> user identity, you can run the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx identity remove default</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays confirmation that the identity has been removed:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Removing identity "default".
+Removed identity "default".</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Although you can delete the <code>default</code> identity if you have created other identities to replace it, you must always have at least one identity available.
+If you attempt to remove the last remaining user context, the <code>dfx identity remove</code> command displays an error similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Identity error:
+  Cannot delete the default identity</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_identity_rename"><a class="anchor" href="#_dfx_identity_rename"></a>dfx identity rename</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx identity rename</code> command to rename an existing user identity.
+You should note that the identities you add are global. They are not confined to a specific project context.
+Therefore, any identity you rename using the <code>dfx identity rename</code> command is available using the new name in any project.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_7"><a class="anchor" href="#_basic_usage_7"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity rename [flag] _from_identity-name_ _to_identity-name_</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_7"><a class="anchor" href="#_flags_7"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx identity rename</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_arguments_3"><a class="anchor" href="#_arguments_3"></a>Arguments</h3>
+<div class="paragraph">
+<p>You must specify the following arguments for the <code>dfx identity rename</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;from_identity_name&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the current name of the identity you want to rename.
+This argument is required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;to_identity_name&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the new name of the identity you want to rename.
+This argument is required.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_example_3"><a class="anchor" href="#_example_3"></a>Example</h3>
+<div class="paragraph">
+<p>You can rename the <code>default</code> user or any identity you have previously created using the <code>dfx identity rename</code> command.
+For example, if you want to rename a <code>test_admin</code> identity that you previously created, you would specify the current identity name you want to change <strong>from</strong> and the new name you want to change <strong>to</strong> by running a command similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx identity rename test_admin devops</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_identity_set_wallet"><a class="anchor" href="#_dfx_identity_set_wallet"></a>dfx identity set-wallet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx identity set-wallet</code> command to specify the wallet canister identifier to use for your identity.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_8"><a class="anchor" href="#_basic_usage_8"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity set-wallet [flag] [--canister-name canister-name]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_8"><a class="anchor" href="#_flags_8"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx identity set-wallet</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>force</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skips verification that the canister you specify is a valid wallet canister.
+This option is only useful if you are connecting to the {IC} running locally.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_example_4"><a class="anchor" href="#_example_4"></a>Example</h3>
+<div class="paragraph">
+<p>If you use more than one principal for your identity, you might have access to more than one wallet canister identifier.
+You can use the <code>dfx identity set-wallet</code> command to specify the wallet canister identifier to use for a given identity.</p>
+</div>
+<div class="paragraph">
+<p>For example, you might store the wallet canister identifier in an environment variable, then invoke the <code>dfx identity set-wallet</code> command to use that wallet canister for additional operations by running the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>export WALLET_CANISTER_ID=$(dfx identity get-wallet)
+dfx identity --network=https://192.168.74.4 set-wallet --canister-name ${WALLET_CANISTER_ID}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_identity_use"><a class="anchor" href="#_dfx_identity_use"></a>dfx identity use</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx identity use</code> command to specify the user identity you want to active.
+You should note that the identities you have available to use are global. They are not confined to a specific project context.
+Therefore, you can use any identity you have previously created in any project.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_9"><a class="anchor" href="#_basic_usage_9"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity use [flag] _identity-name_</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_9"><a class="anchor" href="#_flags_9"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx identity use</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_arguments_4"><a class="anchor" href="#_arguments_4"></a>Arguments</h3>
+<div class="paragraph">
+<p>You must specify the following argument for the <code>dfx identity use</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;identity_name&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the name of the identity you want to make active for subsequent commands.
+This argument is required.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_examples_5"><a class="anchor" href="#_examples_5"></a>Examples</h3>
+<div class="paragraph">
+<p>If you want to run multiple commands with the same user identity context, you can run a command similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx identity use ops</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After running this command, subsequent commands use the credentials and access controls associated with the <code>ops</code> user.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dfx_identity_whoami"><a class="anchor" href="#_dfx_identity_whoami"></a>dfx identity whoami</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>dfx identity whoami</code> command to display the name of the currently-active user identity context.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_usage_10"><a class="anchor" href="#_basic_usage_10"></a>Basic usage</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity whoami [flag]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flags_10"><a class="anchor" href="#_flags_10"></a>Flags</h3>
+<div class="paragraph">
+<p>You can use the following optional flags with the <code>dfx identity whoami</code> command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 32%;">
+<col style="width: 68%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-h</code>, <code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays usage information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-V</code>, <code>--version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays version information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_example_5"><a class="anchor" href="#_example_5"></a>Example</h3>
+<div class="paragraph">
+<p>If you want to display the name of the currently-active user identity, you can run the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity whoami</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays the name of the user identity.
+For example, you had previously run the command <code>dfx identity use bob_standard</code>, the command would display:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>bob_standard</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

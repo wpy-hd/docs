@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Make inter-canister calls :: 互联网计算机开发者文档</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/search.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quickstart/quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../cli-reference/dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../integration/ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>开发者文档</li>
+    <li>在互联网计算机上构建程序</li>
+    <li>学习如何：</li>
+    <li><a href="intercanister-calls.html">canister 内容调用</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/developers-guide/pages/tutorials/intercanister-calls.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Make inter-canister calls</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the most important features of the Internet Computer blockchain for developers is the ability to call functions in one canister smart contract from another canister smart contract.
+This capability to make calls between canisters—also sometimes referred to as <strong>inter-canister calls</strong>—enables you to reuse and share functionality in multiple dapps.</p>
+</div>
+<div class="paragraph">
+<p>For example, you might want to create a dapp for professional networking, organizing community events, or hosting fundraising activities.
+Each of these dapps might have a social component that enables users to identify social relationships based on some criteria or shared interest, such as friends and family or current and former colleagues.</p>
+</div>
+<div class="paragraph">
+<p>To address this social component, you might want to create a single canister smart contract for storing user relationships then write your professional networking, community organizing, or fundraising application to import and call functions that are defined in the canister for social connections.
+You could then build additional applications to use the social connections canister smart contract or extend the features provided by the social connections canister to make it useful to an even broader community of other developers.</p>
+</div>
+<div class="paragraph">
+<p>The Motoko-based LinkedUp sample dapp provides a simple implementation of an open professional network that demonstrates how to use inter-canister calls within a project.</p>
+</div>
+<div class="paragraph">
+<p>The LinkedUp sample dapp is implemented using the following canister smart contracts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>linkedup</code> canister smart contract creates and stores basic profile information for a user, including work experience and educational background.</p>
+</li>
+<li>
+<p>The <code>connectd</code> canister smart contract creates and stores a user&#8217;s connections.</p>
+</li>
+<li>
+<p>The <code>linkedup_assets</code> canister smart contract stores the front-end assets—including the JavaScript, HTML, and CSS files—that define the user interface</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_before_you_begin"><a class="anchor" href="#_before_you_begin"></a>Before you begin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before building the sample dapp, verify the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have downloaded and installed the {sdk-short-name} package as described in <a href="../../quickstart/local-quickstart.html#download-and-install">Download and install</a>.</p>
+</li>
+<li>
+<p>You have stopped the local canister execution environment provided by <code>dfx</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_the_demo"><a class="anchor" href="#_download_the_demo"></a>Download the demo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To experiment with inter-canister calls using the LinkedUp sample dapp:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a terminal shell and change to the folder you are using for your Internet Computer sample projects.</p>
+</li>
+<li>
+<p>Clone the <code>linkedup</code> repository.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/dfinity/linkedup.git</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Change to the local working directory for the <code>linkedup</code> repository.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd linkedup</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Install node modules by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If necessary, fix any vulnerabilities found by running the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm audit fix</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Open the <code>dfx.json</code> file in a text editor and verify the <code>dfx</code> setting has same the version number as the <code>dfx</code> executable you have installed.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_start_the_local_canister_execution_environment"><a class="anchor" href="#_start_the_local_canister_execution_environment"></a>Start the local canister execution environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For development purposes <code>dfx</code> provides a local canister execution environment. This requires a <code>dfx.json</code> file, so you should be sure you are in the linkedup root directory.</p>
+</div>
+<div class="paragraph">
+<p>To start the local canister execution environment:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a new terminal window or tab on your local computer.</p>
+</li>
+<li>
+<p>Navigate to the root directory for your project, if necessary.</p>
+</li>
+<li>
+<p>Start the local canister execution environment by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx start --background</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After the local canister execution environment completes its startup operations, you can continue to the next step.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_register_canister_identifiers"><a class="anchor" href="#_register_canister_identifiers"></a>Register canister identifiers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once the local canister execution environment is up and running, you can generate unique canister identifiers for your project.</p>
+</div>
+<div class="paragraph">
+<p>To register canister identifiers:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check that you are still in your project directory, if needed.</p>
+</li>
+<li>
+<p>Register unique canister identifiers for the project by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister create --all</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays the canister identifiers for the canisters defined in the <code>dfx.json</code> configuration file.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"connectd" canister created with canister id: "75hes-oqbaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q"
+"linkedup" canister created with canister id: "cxeji-wacaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q"
+"linkedup_assets" canister created with canister id: "7kncf-oidaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Keep in mind that because you are running the local canister execution environment, these identifiers are only valid on the local canister execution environment.
+To deploy canisters on the Internet Computer blockchain mainnet, you must specify the appropriate target using the <code>--network</code> command-line option.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_build_and_deploy_the_demo_project"><a class="anchor" href="#_build_and_deploy_the_demo_project"></a>Build and deploy the demo project</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To build and deploy the LinkUp sample dapp, take the following steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check that you are still in your project directory by running the <code>pwd</code> command, if necessary.</p>
+</li>
+<li>
+<p>Build the LinkedUp canister smart contracts by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx build</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Deploy the project on the local canister execution environment by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister install --all</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see canister identifiers for the <code>connectd</code>, <code>linkedup</code> and <code>linkedup_assets</code> canister smart contracts with a message similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Installing code for canister connectd, with canister_id 75hes-oqbaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q
+Installing code for canister linkedup, with canister_id cxeji-wacaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q
+Installing code for canister linkedup_assets, with canister_id 7kncf-oidaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Copy the <code>linkedup_assets</code> canister identifier returned by the <code>dfx canister install</code> command.</p>
+<div class="paragraph">
+<p>In this sample dapp, only the <code>linkedup_assets</code> canister smart contract includes the front-end assets used to access the dapp&#8217;s user interface.
+To open the dapp in a browser, therefore, you need to specify the <code>linkedup_assets</code> canister identifier.</p>
+</div>
+</li>
+<li>
+<p>Open the <code>linkedup_assets</code> canister smart contract in your web browser.</p>
+<div class="paragraph">
+<p>For example, if the local canister execution environment binds to the default localhost address and port number, the URL looks similar to this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://127.0.0.1:8000/?canisterId=7kncf-oidaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_profile_and_connections"><a class="anchor" href="#_create_a_profile_and_connections"></a>Create a profile and connections</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To run through a demonstration of the LinkedUp sample dapp, take the following steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a browser tab or window.</p>
+</li>
+<li>
+<p>Type the web server host name, port, and the <code>canisterId</code> keyword, then paste the <code>linkedup_assets</code> canister identifier as the URL to display.</p>
+<div class="literalblock">
+<div class="content">
+<pre>127.0.0.1:8000/?canisterId=&lt;ic-identifier-for-linkedup-assets&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The browser displays an introductory page.</p>
+</div>
+<div class="paragraph">
+<p>A public-private key pair will be automatically generated to establish your identity for accessing the canister smart contract, so there&#8217;s no need to provide a user name and password or register an account to store your identity before using the service.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Login</strong>.</p>
+<div class="paragraph">
+<p>The browser displays an empty profile page.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/linkedup-empty-maya.png" alt="linkedup empty maya"></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>Edit</strong>, type profile information, copy and paste the image address for an avatar photo, then click <strong>Submit</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/linkedup-edit-maya.png" alt="linkedup edit maya"></span></p>
+</div>
+<div class="paragraph">
+<p>After you click <strong>Submit</strong>, you have a profile with some work history that can be viewed.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/linkedup-profile-maya.png" alt="linkedup profile maya"></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_add_another_profile"><a class="anchor" href="#_add_another_profile"></a>Add another profile</h3>
+<div class="paragraph">
+<p>At this point, there are no other profiles to search for or to add as connections.
+To try out the Search and Connect features, you can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run a script that populates the sample dapp with some additional profiles.</p>
+</li>
+<li>
+<p>Create a profile manually by opening a private window.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For this tutorial, you will create another profile manually.</p>
+</div>
+<div class="paragraph">
+<p>To add a user profile with different identity:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>At the top right of the browser window, click the appropriate icon to display the browser&#8217;s menu options.</p>
+<div class="paragraph">
+<p>For example, if you are using Google Chrome, click the vertical ellipse to display the More menu.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>New Incognito Window</strong> if you are using Google Chrome or <strong>New Private Window</strong> if you are using Firefox to enable you to navigate to the canister without the user identity generated in your initial browser connection to the canister.</p>
+</li>
+<li>
+<p>Copy and paste the URL from your first browser session into the private browsing window, then click <strong>Login</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/linkedup-incognito.png" alt="linkedup incognito"></span></p>
+</div>
+<div class="paragraph">
+<p>Notice that there’s no profile in the private browsing window but your original profile is still visible in your initial browser tab.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Edit</strong>, type profile information, copy and paste the image address for an avatar photo, then click <strong>Submit</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/linkedup-edit-dylan.png" alt="linkedup edit dylan"></span></p>
+</div>
+<div class="paragraph">
+<p>After clicking <strong>Submit</strong>, you have a second profile with some work history that can be viewed.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/linkedup-profile-dylan.png" alt="linkedup profile dylan"></span></p>
+</div>
+</li>
+<li>
+<p>Type the first name or last name from the first profile you created—for example, if you created a profile for Maya Garcia, type Maya—then click <strong>Search</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/linkedup-search-from-dylan-for-maya.png" alt="linkedup search from dylan for maya"></span></p>
+</div>
+<div class="paragraph">
+<p>The profile matching your search criteria is displayed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/linkedup-search-result.png" alt="linkedup search result"></span></p>
+</div>
+</li>
+<li>
+<p>Select the contact from the search results, wait for the Connect button to be displayed, then click <strong>Connect</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/linkedup-connect-from-dylan-to-maya.png" alt="linkedup connect from dylan to maya"></span></p>
+</div>
+<div class="paragraph">
+<p>When the connection request completes, the second profile displays the connection to the first profile.
+For example:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/linkedup-connected-to-maya.png" alt="linkedup connected to maya"></span></p>
+</div>
+</li>
+<li>
+<p>Return to the browser tab with your original profile.</p>
+<div class="paragraph">
+<p>If you want to create a connection between the original profile and the profile you created in the private browsing window, you can do so by repeating the search, select, and connect steps.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_explore_the_configuration_file"><a class="anchor" href="#_explore_the_configuration_file"></a>Explore the configuration file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you have explored the basic features of the sample dapp, you have some context for exploring how the configuration settings and source files are used.</p>
+</div>
+<div class="paragraph">
+<p>To explore the configuration file:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Change to the <code>linkedup</code> directory, then open the project’s <code>dfx.json</code> file.</p>
+</li>
+<li>
+<p>Note that there are two main canister smart contracts defined—<code>connectd</code> and <code>linkedup</code>—each with a <code>main.mo</code> source file.</p>
+</li>
+<li>
+<p>Note that the <code>linkedup_assets</code> canister smart contract specifies a frontend entry point of <code>main.js</code> and assets in the form of CSS and HTML files.</p>
+</li>
+<li>
+<p>Note that the dapp is configured to use the default IP address and port number for deployment on the local canister execution environment.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_explore_the_connectd_source_code"><a class="anchor" href="#_explore_the_connectd_source_code"></a>Explore the connectd source code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code for the social connections canister smart contract, <code>connectd</code>, is organized into the following files:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>digraph.mo</code> file provides the functions to create a directed graph of vertices and edges to describe a user&#8217;s connections.</p>
+</li>
+<li>
+<p>The <code>main.mo</code> contains the actor and key functions for defining the connections associated with a user profile that can be called by the LinkedUp sample dapp.</p>
+</li>
+<li>
+<p>The <code>types.mo</code> file defines the custom type that maps a vertex to a user identity for use in the <code>digraph</code> and <code>main</code> program files.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_explore_the_linkedup_source_code"><a class="anchor" href="#_explore_the_linkedup_source_code"></a>Explore the linkedup source code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code for the professional profile with work history and educational background is organized into the following files:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>main.mo</code> file contains the actor and key functions for the LinkedUp sample dapp.</p>
+</li>
+<li>
+<p>The <code>types.mo</code> file defines the custom types that describe the user identity and profile fields that are imported and used in the <code>main</code> program file for the <code>linkedup</code> canister smart contract.</p>
+</li>
+<li>
+<p>The <code>utils.mo</code> file provides helper functions.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_query_and_update_operations"><a class="anchor" href="#_query_and_update_operations"></a>Query and update operations</h3>
+<div class="paragraph">
+<p>In working with the LinkedUp sample dapp, you might notice that some operations—such as viewing a profile or performing a search—returned results almost immediately.
+Other operations—such as creating a profile or adding a connection—took a little longer.</p>
+</div>
+<div class="paragraph">
+<p>These differences in performance illustrate the difference between using query and update calls in the <code>linkedup</code> canister smart contract.</p>
+</div>
+<div class="paragraph">
+<p>For example, in the <code>src/linkedup/main.mo</code> file, the <code>create</code> and <code>update</code> functions are update calls that change the state of the canister smart contract and therefore need to go through consensus, but the program uses query calls for the <code>get</code> and <code>search</code> functions to view or search for a profile:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  // Profiles
+
+  public shared(msg) func create(profile: NewProfile): async () {
+    directory.createOne(msg.caller, profile);
+  };
+
+  public shared(msg) func update(profile: Profile): async () {
+    if(Utils.hasAccess(msg.caller, profile)) {
+      directory.updateOne(profile.id, profile);
+    };
+  };
+
+  public query func get(userId: UserId): async Profile {
+    Utils.getProfile(directory, userId)
+  };
+
+  public query func search(term: Text): async [Profile] {
+    directory.findBy(term)
+  };</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interaction_between_the_canister_smart_contracts"><a class="anchor" href="#_interaction_between_the_canister_smart_contracts"></a>Interaction between the canister smart contracts</h3>
+<div class="paragraph">
+<p>In this sample dapp, the <code>linkedup</code> canister smart contract leverages functions defined in the <code>connectd</code> canister.
+This separation simplifies the code in each canister smart contract and, more importantly, illustrates how you can extend a project by calling common functions defined in one canister smart contract from one or more other canisters.</p>
+</div>
+<div class="paragraph">
+<p>To make the public functions defined in one canister smart contract available in the another canister smart contract:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add an <code>import</code> statement in the calling canister.</p>
+<div class="paragraph">
+<p>In this example, the public functions are defined in the <code>connectd</code> canister smart contract and are called by the <code>linkedup</code> canister smart contract.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, the <code>src/linkedup/main.mo</code> includes the following code:</p>
+</div>
+<div class="listingblock copy">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-motoko hljs" data-lang="motoko">// Make the Connectd app's public methods available locally
+import Connectd "canister:connectd";</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Use the <code>canister.function</code> syntax to call public methods in the imported canister smart contract.</p>
+<div class="paragraph">
+<p>In this example, the <code>linkedup</code> canister smart contract calls the <code>connect</code> and <code>getConnections</code> function in the imported <code>connectd</code> canister smart contract.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can see the code that enables interaction between the <code>linkedup</code> canister smart contract and the <code>connectd</code> canister smart contract in the <code>main.mo</code> source files.</p>
+</div>
+<div class="paragraph">
+<p>For example, the <code>src/connectd/main.mo</code> defines the following functions:</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="listingblock copy">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-motoko hljs" data-lang="motoko">actor Connectd {
+  flexible var graph: Digraph.Digraph = Digraph.Digraph();
+
+  public func healthcheck(): async Bool { true };
+
+  public func connect(userA: Vertex, userB: Vertex): async () {
+    graph.addEdge(userA, userB);
+  };
+
+  public func getConnections(user: Vertex): async [Vertex] {
+    graph.getAdjacent(user)
+  };
+
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because of the <code>Import</code> statement, the <code>connectd</code> functions are available to the <code>linkedup</code> canister smart contract and the <code>src/linkedup/main.mo</code> includes the following code:</p>
+</div>
+<div class="listingblock copy">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-motoko hljs" data-lang="motoko">  // Connections
+
+  public shared(msg) func connect(userId: UserId): async () {
+    // Call Connectd's public methods without an API
+    await Connectd.connect(msg.caller, userId);
+  };
+
+  public func getConnections(userId: UserId): async [Profile] {
+    let userIds = await Connectd.getConnections(userId);
+    directory.findMany(userIds)
+  };
+
+  public shared(msg) func isConnected(userId: UserId): async Bool {
+    let userIds = await Connectd.getConnections(msg.caller);
+    Utils.includes(userId, userIds)
+  };
+
+  // User Auth
+
+  public shared query(msg) func getOwnId(): async UserId { msg.caller }
+
+};</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stop_the_local_canister_execution_environment"><a class="anchor" href="#_stop_the_local_canister_execution_environment"></a>Stop the local canister execution environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you finish experimenting with the <code>linkedup</code> dapp, you can stop the local canister execution environment so that it doesn’t continue running in the background.</p>
+</div>
+<div class="paragraph">
+<p>To stop the local canister execution environment:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the terminal that displays the output of the local canister execution environment, press Control-C to interrupt the local process.</p>
+</li>
+<li>
+<p>Stop the local canister execution environment by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx stop</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

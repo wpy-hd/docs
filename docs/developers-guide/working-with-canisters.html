@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Manage canister smart contracts :: 互联网计算机开发者文档</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../quickstart/quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="cli-reference/dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../integration/ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>开发者文档</li>
+    <li>在互联网计算机上构建程序</li>
+    <li>学习如何：</li>
+    <li><a href="working-with-canisters.html">管理 canisters</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/developers-guide/pages/working-with-canisters.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Manage canister smart contracts</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you have experimented with using the {sdk-long-name} by following the tutorials in the <a href="tutorials-intro.html">Tutorials</a> section or by cloning examples from the <a href="https://github.com/dfinity/examples">examples</a> repository, you are already familiar with how to build and deploy programs as <strong>canister smart contracts</strong>.
+This section provides additional information about the canister lifecycle and how to manage canisters.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-canister"><a class="anchor" href="#create-canister"></a>Obtaining a canister smart contract identifier</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Depending on your preferred development workflow, you can obtain a unique identifier for your canister smart contract, before or after you have a program ready to compile.
+For example, if you want to reserve a unique identifier for your canister smart contract on a subnet before you have written any code, you can do so by running the <code>dfx canister create</code> command.
+This command essentially creates an empty canister placeholder into which you can later install your code. The resulting canister will obtain a unique identifier.</p>
+</div>
+<div class="paragraph">
+<p>To obtain a unique identifier for a canister:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a new terminal window or tab on your local computer.</p>
+</li>
+<li>
+<p>Create a new project for the canister you plan to create by running a command similar to the following:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx new YOUR-PROJECT-NAME</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the name you use for the project is also used as the canister name by default.</p>
+</div>
+</li>
+<li>
+<p>Change to your new project directory.</p>
+</li>
+<li>
+<p>Open the <code>dfx.json</code> configuration file and set the host and port for the canister execution environment you want to use (e.g. the Internet Computer blockchain).</p>
+<div class="paragraph">
+<p>If you are using a local deployment, you can skip this step.</p>
+</div>
+<div class="paragraph">
+<p>You can also optionally change the names of your canisters or add canister settings to the configuration file if you want to create identifiers for any additional canisters you think you will need before compiling code.</p>
+</div>
+</li>
+<li>
+<p>Start the local canister execution environment, if necessary, by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx start --background</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In most cases, this step is only necessary if you are running the canisters locally.</p>
+</div>
+<div class="paragraph">
+<p>If you were registering canisters to run on a remote execution environment, e.g. the Internet Computer blockchain, you would include the <code>--network</code> command-line option to perform tasks on the environment specified under this parameter.</p>
+</div>
+</li>
+<li>
+<p>Register unique identifiers for the canisters defined in the <code>dfx.json</code> by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister create --all</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command creates the <code>.dfx/local</code> directory and adds the <code>canister_ids.json</code> file to that directory for the project.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="local-id"><a class="anchor" href="#local-id"></a>Build a canister smart contract with a local identifier</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you have written source code for your project, you need to compile it into a WebAssembly module before deploying it as a canister.</p>
+</div>
+<div class="paragraph">
+<p>If you are only compiling your project for local debugging, you can generate a locally-defined identifier for your project.</p>
+</div>
+<div class="paragraph">
+<p>To generate a locally-defined identifier:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a project with the configuration settings and program logic to suit your needs.</p>
+</li>
+<li>
+<p>Start the local canister execution environment, if necessary.</p>
+<div class="paragraph">
+<p>If you were compiling canisters to run on a remote execution environment, e.g. the Internet Computer blockchain, you would include the <code>--network</code> command-line option to perform tasks on the environment specified under this parameter.</p>
+</div>
+</li>
+<li>
+<p>Generate hard-coded local identifiers for the canisters defined in the <code>dfx.json</code> by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx build --check</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that you must register unique canister identifiers to replace your locally-defined identifier before you can deploy the project on the Internet Computer blockchain.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploy-canister"><a class="anchor" href="#deploy-canister"></a>Deploy canister smart contracts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you have compiled a program, you can install the compiled code in a canister smart contract running either on a local canister execution environment or on the Internet Computer blockchain.</p>
+</div>
+<div class="paragraph">
+<p>The canister identifier that was created in advance or during the build process determines where your code is installed during deployment.</p>
+</div>
+<div class="paragraph">
+<p>To deploy the code for the first time:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a new terminal and navigate to your project directory.</p>
+</li>
+<li>
+<p>Start the local canister execution environment, if necessary.</p>
+<div class="paragraph">
+<p>In most cases, this step is only necessary if you are running the canisters locally.</p>
+</div>
+<div class="paragraph">
+<p>If you were registering canisters to run on a remote execution environment, e.g. the Internet Computer blockchain, you would include the <code>--network</code> command-line option to perform tasks on the environment specified under this parameter.</p>
+</div>
+</li>
+<li>
+<p>Verify you have canister identifiers for all of the canisters you want to deploy.</p>
+</li>
+<li>
+<p>Deploy all of the canisters by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister install --all</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="lookup-id"><a class="anchor" href="#lookup-id"></a>Look up a canister smart contract identifier</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All canisters have unique identifiers.
+You often need to use these identifiers to interact with the canister.
+For example, if you want to access the front-end canister for a dapp or interact with a service using the Candid web interface, you must specify the appropriate canister identifier.</p>
+</div>
+<div class="paragraph">
+<p>Because the identifiers are specific to the environment where the canisters are deployed, the files used to store the information are in different directories.
+For example, identifiers for a canister deployed locally are located in the project&#8217;s <code>.dfx/local/canister_ids.json</code> file.</p>
+</div>
+<div class="paragraph">
+<p>You can look up the canister identifier for any specific canister by running the <code>dfx canister id</code> command.
+For example, to look up the the canister identifier for the <code>lookup</code> canister deployed on the local canister execution environment, you could run the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx canister id lookup</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To look up the canister identifier for the same canister deployed on the environment specified by the <code>ic</code> alias, you would run the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx canister --network=ic id lookup</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="add-wallet"><a class="anchor" href="#add-wallet"></a>Add a wallet for existing canister smart contracts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you are doing local development, creating a new project automatically creates a default wallet for you to use with the canisters in that project. If you want to add a wallet for projects with canisters that you have previously created, you can force <code>dfx</code> to generate one by taking a couple of manual steps.</p>
+</div>
+<div class="paragraph">
+<p>To add a wallet for use with an existing canister:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a terminal and navigate to your project directory.</p>
+</li>
+<li>
+<p>Stop the local canister execution environment, if necessary, by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx stop</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Delete the <code>.dfx</code> directory.</p>
+</li>
+<li>
+<p>Start the local canister execution environment network by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx start --clean</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reinstall-canister"><a class="anchor" href="#reinstall-canister"></a>Reinstall a canister smart contract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>During the development cycle, you might want to install, then replace your program as you debug and improve it.</p>
+</div>
+<div class="paragraph">
+<p>In this scenario, you might want to keep the canister identifier you have registered but without preserving any of the canister code or state.
+For example, your canister might only have test data that you don&#8217;t want to keep or you might have decided to change the program altogether but want to reinstall under a canister identifier you used to install a previous program.</p>
+</div>
+<div class="paragraph">
+<p>To reinstall a canister:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a new terminal and navigate to your project directory.</p>
+</li>
+<li>
+<p>Start the local canister execution environment, if necessary.</p>
+<div class="paragraph">
+<p>In most cases, this step is only necessary if you are running the canisters locally.</p>
+</div>
+<div class="paragraph">
+<p>If you were registering canisters to run on a remote execution environment, e.g. the Internet Computer blockchain, you would include the <code>--network</code> command-line option to perform tasks on the environment specified under this parameter.</p>
+</div>
+</li>
+<li>
+<p>Verify you have canister identifiers for all of the canisters you want to re-deploy.</p>
+</li>
+<li>
+<p>Re-deploy all of the canisters by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister install --all --mode reinstall</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Note that you can use the <code>reinstall</code> mode to replace any canister, regardless of whether the canister has code or state associated with it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="set-owner"><a class="anchor" href="#set-owner"></a>Set an identity to own a canister smart contract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In most cases, a <code>default</code> user identity is created for you automatically the first time you run the <code>dfx canister create</code> command.
+This default identity consists of the public and private key pair generated for your local user account.
+Typically, this <code>default</code> identity is also the default owner of all of the projects you create and all of the canisters you deploy.
+You can, however, proactively create and use identities of your choice to circumvent the <code>default</code> user identity from being used.</p>
+</div>
+<div class="paragraph">
+<p>As an example, the following scenario illustrates creating a <code>registered_owner</code> identity that is then used to register, build, deploy, and call the <code>pubs</code> project.</p>
+</div>
+<div class="paragraph">
+<p>To set an identity for a project:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a new project by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx new pubs</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Change to the project directory by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd pubs</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start the local canister execution environment in the background by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx start --background</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a new <code>registered_owner</code> identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity new registered_owner</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set the active user context to use the <code>registered_owner</code> identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity use registered_owner</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Register, build, and deploy canisters for the project by running the following commands:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister create --all
+dfx build --all
+dfx canister install --all</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These commands run using the <code>registered_owner</code> identity, making that user the owner of the canisters deployed.</p>
+</div>
+</li>
+<li>
+<p>Call the <code>greet</code> function to verify a successful deployment by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister call pubs greet '("Sam")'</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="running-state"><a class="anchor" href="#running-state"></a>Managing the running state of a canister smart contract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you deploy a canister, it can begin receiving and processing requests from users and from other canisters.
+Canisters that are available to send requests and receive replies are considered in be in a <strong>Running</strong> state.</p>
+</div>
+<div class="paragraph">
+<p>Although canisters are normally placed in the Running state by default, there are cases where you might want to temporarily or permanently stop a canister.
+For example, you might want to stop a canister before upgrading it.
+Stopping a canister helps to ensure proper handling of any messages that are in progress and need to either run to completion or be rolled back.
+You might also want to stop a canister to clear its message queue cleanly as a prerequisite to deleting the canister.</p>
+</div>
+<div class="paragraph">
+<p>You can check the current status of all canisters or a specified canister by running the <code>dfx canister status</code> command.
+For example, to see the status for all canisters running on the local canister execution environment, you would run the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister status --all</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command returns output similar to the following if canisters are currently running:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Canister status_check's status is Running.
+Canister status_check_assets's status is Running.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can stop canisters that are currently running by running the <code>dfx canister stop</code> command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister stop --all</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Stopping code for canister status_check, with canister_id 75hes-oqbaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q
+Stopping code for canister status_check_assets, with canister_id cxeji-wacaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you were to rerun the <code>dfx canister status</code> command, you might see a status of <code>Stopped</code> indicating that there were no pending messages that needed to processed or a status of <code>Stopping</code> indicating that there were messages in-flight that needed to be addressed.</p>
+</div>
+<div class="paragraph">
+<p>To restart a canister-for example, after a successful canister upgrade—you can run the <code>dfx canister start</code> command.
+For example, to restart all of the canisters, you would run the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister start --all</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Starting code for canister status_check, with canister_id 75hes-oqbaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q
+Starting code for canister status_check_assets, with canister_id cxeji-wacaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="upgrade-canister"><a class="anchor" href="#upgrade-canister"></a>Upgrade a canister smart contract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unlike a canister reinstall that preserves the canister identifier but no state, a canister upgrade enables you to preserve the state of a deployed canister, and change the code.</p>
+</div>
+<div class="paragraph">
+<p>For example, assume you have a dapp that manages professional profiles and social connections.
+If you want to add a new feature to the dapp, you need to be able to update the canister code without losing any of the previously-stored data.
+A canister upgrade enables you to update existing canister identifiers with program changes without losing the program state.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To preserve state when you are upgrading a canister written in Motoko, be sure to use the <code>stable</code> keyword to identify the variables you want to preserve. For more information about preserving variable state in Motoko, see <a href="../language-guide/upgrades.html">Stable variables and upgrade methods</a>.
+If you are upgrading a canister written in Rust, you should use <code>pre_upgrade</code> and <code>post_upgrade</code> functions as illustrated in the <a href="https://github.com/dfinity/cdk-rs/blob/master/examples/asset_storage/src/asset_storage_rs/lib.rs">Rust CDK asset storage</a> example to ensure data is properly preserved after a canister upgrade.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To upgrade a canister:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a new terminal and navigate to your project directory.</p>
+</li>
+<li>
+<p>Start the local canister execution environment, if necessary.</p>
+<div class="paragraph">
+<p>In most cases, this step is only necessary if you are running the canisters locally.</p>
+</div>
+<div class="paragraph">
+<p>If you were registering canisters to run on a remote execution environment, e.g. the Internet Computer blockchain, you would include the <code>--network</code> command-line option to perform tasks on the environment specified under this parameter.</p>
+</div>
+</li>
+<li>
+<p>Verify you have canister identifiers for all of the canisters you want to upgrade.</p>
+<div class="paragraph">
+<p>Note that your program must identify the variables for which to maintain state by using the <code>stable</code> keyword in the variable declaration.</p>
+</div>
+<div class="paragraph">
+<p>For more information about declaring stable variables, see the <em>Motoko Programming Language Guide</em>.</p>
+</div>
+</li>
+<li>
+<p>Upgrade all of the canisters by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister install --all --mode upgrade</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="delete-canister"><a class="anchor" href="#delete-canister"></a>Delete a canister smart contract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to permanently delete a specific canister or all canisters for a specific project on a given deployment (either local, or remote), you can do so by running the <code>dfx canister delete</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Deleting a canister removes the canister identifier, code, and state.
+Before you can delete a canister, however, you must first stop the canister to clear any pending message requests or replies.</p>
+</div>
+<div class="paragraph">
+<p>To delete all canisters for a project:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a new terminal and navigate to your project directory.</p>
+</li>
+<li>
+<p>Start the local canister execution environment, if necessary.</p>
+<div class="paragraph">
+<p>In most cases, this step is only necessary if you are running the canisters locally.</p>
+</div>
+<div class="paragraph">
+<p>If you were deleting canisters to run on a remote execution environment, e.g. the Internet Computer blockchain, you would include the <code>--network</code> command-line option to perform tasks on the environment specified under this parameter.</p>
+</div>
+</li>
+<li>
+<p>Check the status of the project canisters running on the local canister execution environment by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister status --all</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Stop all of the project canisters by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister stop --all</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Delete all of the project canisters by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister delete --all</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

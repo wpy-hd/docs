@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pass text arguments :: 互联网计算机开发者文档</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/search.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quickstart/quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../cli-reference/dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../integration/ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>开发者文档</li>
+    <li>在互联网计算机上构建程序</li>
+    <li>学习如何：</li>
+    <li><a href="hello-location.html">处理文本参数</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/developers-guide/pages/tutorials/hello-location.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Pass text arguments</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This tutorial provides a simple variation on the default program that lets you pass a single text argument to a single actor, compile the code to create a canister smart contract, then retrieve the argument.
+Throughout this document, the terms canister smart contract and canister are considered synonymous.</p>
+</div>
+<div class="paragraph">
+<p>This tutorial illustrates how to pass arguments on the command-line in a terminal using the Candid interface description language (IDL) and how to modify the program to allow it to accept more than one value for the text argument.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_before_you_begin"><a class="anchor" href="#_before_you_begin"></a>Before you begin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you start this tutorial, verify the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have downloaded and installed the {sdk-short-name} package as described in <a href="../../quickstart/local-quickstart.html#download-and-install">Download and install</a>.</p>
+</li>
+<li>
+<p>You have stopped any canister execution environments running on the local
+computer.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This tutorial takes approximately 20 minutes to complete.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_new_project"><a class="anchor" href="#_create_a_new_project"></a>Create a new project</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To create a new project for this tutorial:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a terminal shell on your local computer, if you don’t already have one open.</p>
+</li>
+<li>
+<p>Change to the folder you are using for your Internet Computer projects, if you are using one.</p>
+</li>
+<li>
+<p>Create a new project by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx new location_hello</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Change to your project directory by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd location_hello</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modify_the_default_configuration"><a class="anchor" href="#_modify_the_default_configuration"></a>Modify the default configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the <a href="explore-templates.html">Explore the default project</a> tutorial, you saw that creating a new project adds a default <code>dfx.json</code> configuration file to your project directory.
+You should always review the default settings in the file to verify the information accurately reflects the project settings you want to use.
+For this tutorial, you&#8217;ll modify the default configuration to remove settings that aren&#8217;t used.</p>
+</div>
+<div class="paragraph">
+<p>To modify settings in the <code>dfx.json</code> configuration file:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <code>dfx.json</code> configuration file in a text editor.</p>
+</li>
+<li>
+<p>Check the default settings for the <code>location_hello</code> project.</p>
+</li>
+<li>
+<p>Remove all of the unnecessary configuration settings.</p>
+<div class="paragraph">
+<p>Because this tutorial does not involve creating any front-end assets, you can remove all of the <code>location_hello_assets</code> configuration settings from the file.</p>
+</div>
+</li>
+<li>
+<p>Save your changes and close the file to continue.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modify_the_default_program"><a class="anchor" href="#_modify_the_default_program"></a>Modify the default program</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the <a href="explore-templates.html">Explore the default project</a> tutorial, you saw that creating a new project creates a default <code>src</code> directory with a template <code>main.mo</code> file.</p>
+</div>
+<div class="paragraph">
+<p>To modify the default template source code:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <code>src/location_hello/main.mo</code> source code file in a text editor.</p>
+</li>
+<li>
+<p>Modify the default source code to replace the <code>greet</code> function with a <code>location</code> function and the <code>name</code> argument with a <code>city</code> argument.</p>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock copy">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-motoko hljs" data-lang="motoko">actor {
+  public func location(city : Text) : async Text {
+    return "Hello, " # city # "!";
+  };
+};</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Save your changes and close the file to continue.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_start_the_local_canister_execution_environment"><a class="anchor" href="#_start_the_local_canister_execution_environment"></a>Start the local canister execution environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you can build your project, you need to connect to a local canister execution environment or the Internet Computer blockchain mainnet.</p>
+</div>
+<div class="paragraph">
+<p>Starting a canister execution environment locally requires a <code>dfx.json</code> file, so you should be sure you are in your project&#8217;s root directory.
+For this tutorial, you should have two separate terminal shells, so that you can start and see network operations in one terminal and manage your project in another.</p>
+</div>
+<div class="paragraph">
+<p>To start the local canister execution environment:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a new terminal window or tab on your local computer.</p>
+</li>
+<li>
+<p>Navigate to the root directory for your project, if necessary.</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You should now have <strong>two terminals</strong> open.</p>
+</li>
+<li>
+<p>You should have the <strong>project directory</strong> as your <strong>current working directory</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Start the canister execution environment on your local computer by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx start</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you are prompted to allow or deny incoming network connections, click <strong>Allow</strong>.</p>
+</div>
+</li>
+<li>
+<p>Leave the terminal that displays network operations open and switch your focus to your original terminal where you created your project.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_register_build_and_deploy_the_dapp"><a class="anchor" href="#_register_build_and_deploy_the_dapp"></a>Register, build, and deploy the dapp</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you connect to the local canister execution environment, you can register, build, and deploy your dapp locally.</p>
+</div>
+<div class="paragraph">
+<p>To deploy the dapp locally:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check that you are still in the root directory for your project, if needed.</p>
+</li>
+<li>
+<p>Register, build, and deploy your application by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx deploy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>dfx deploy</code> command output displays information about the operations it performs.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pass_a_text_argument"><a class="anchor" href="#_pass_a_text_argument"></a>Pass a text argument</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You now have a program deployed as a <strong>canister smart contract</strong> in your local canister execution environment and can test your program by using <code>dfx canister call</code> commands.</p>
+</div>
+<div class="paragraph">
+<p>To test the program you have deployed locally:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Call the <code>location</code> method in the program and pass your <code>city</code> argument of type <code>text</code> by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister call location_hello location "San Francisco"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because the argument in this case includes a space between <code>San</code> and <code>Francisco</code>, you need to enclose the argument in quotes.
+The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>("Hello, San Francisco!")</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the argument did not contain a space that required enclosing the text inside of quotation marks, you could allow the Candid interface description language to infer the data type like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister call location_hello location Paris</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Candid infers the data type as <code>Text</code> and returns the output from your program as text like this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>("Hello, Paris!")</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Call the <code>location</code> method in the program and pass your <code>city</code> argument explicitly using the Candid interface description language syntax for Text arguments:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister call location_hello location '("San Francisco and Paris")'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>("Hello, San Francisco and Paris!")</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because your program only accepts a single text argument, specifying multiple strings returns only the first argument.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you try this command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister call location_hello location '("San Francisco","Paris","Rome")'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Only the first argument—<code>("Hello, San Francisco!")</code>—is returned.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_revise_the_source_code_in_your_program"><a class="anchor" href="#_revise_the_source_code_in_your_program"></a>Revise the source code in your program</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To extend what you have learned in this tutorial, you might want to try modifying the source code to return different results.
+For example, you might want to modify the <code>location</code> function to return multiple city names.</p>
+</div>
+<div class="paragraph">
+<p>To experiment with modifying the source code for this tutorial:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <code>dfx.json</code> configuration file in a text editor and change the default <code>location_hello</code> settings to <code>favorite_cities</code>.</p>
+<div class="paragraph">
+<p>For this step, you should modify both the canister name and the path to the main program for the canister smart contract to use <code>favorite_cities</code>.</p>
+</div>
+</li>
+<li>
+<p>Save your changes and close the <code>dfx.json</code> file to continue.</p>
+</li>
+<li>
+<p>Copy the <code>location_hello</code> source file directory to match the name specified in the <code>dfx.json</code> configuration file by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp -r src/location_hello src/favorite_cities</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Open the <code>src/favorite_cities/main.mo</code> file in a text editor.</p>
+</li>
+<li>
+<p>Copy and paste the following code sample to replace the <code>location</code> function with two new functions.</p>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock copy">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-motoko hljs" data-lang="motoko">actor {
+
+  public func location(cities : [Text]) : async Text {
+    return "Hello, from " # (debug_show cities) # "!";
+  };
+
+  public func location_pretty(cities : [Text]) : async Text {
+    var str = "Hello from ";
+    for (city in cities.vals()) {
+      str := str # city #", ";
+    };
+    return str # "bon voyage!";
+  }
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You might notice that <code>Text</code> in this code example is enclosed by square (<code>[ ]</code>) brackets. By itself, <code>Text</code> represents a collection of UTF-8 characters.
+The square brackets around a type indicate that it is an <strong>array</strong> of that type.
+In this context, therefore, <code>[Text]</code> indicates an array of a collection of UTF-8 characters, enabling the program to accept and return multiple text strings.</p>
+</div>
+<div class="paragraph">
+<p>The code sample also uses the basic format of an <code>apply</code> operation for the array, which can be abstracted as:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>public func apply&lt;A, B&gt;(fs : [A -&gt; B], xs : [A]) : [B] {
+    var ys : [B] = [];
+    for (f in fs.vals()) {
+      ys := append&lt;B&gt;(ys, map&lt;A, B&gt;(f, xs));
+    };
+    ys;
+};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For information about the functions that perform operations on arrays, see the description of the Array module in the Motoko base library or the <em>Motoko Programming Language Reference</em>.
+For another example focused on the use of arrays, see <a href="https://github.com/dfinity/examples/tree/master/motoko/quicksort">Quicksort</a> in the <a href="https://github.com/dfinity/examples/">examples</a> repository.</p>
+</div>
+</li>
+<li>
+<p>Register, build, and deploy the dapp by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx deploy</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Call the <code>location</code> method in the program and pass your <code>city</code> argument using the Candid interface description syntax by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister call favorite_cities location '(vec {"San Francisco";"Paris";"Rome"})'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command uses the Candid interface description syntax <code>(vec { val1; val2; val3; })</code> to return a vector of values.
+For more information about the Candid interface description language, see the <a href="../../candid-guide/candid-intro.html">Candid</a> language guide.</p>
+</div>
+<div class="paragraph">
+<p>This command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>("Hello, from ["San Francisco", "Paris", "Rome"]!")</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Call the <code>location_pretty</code> method in the program and pass your <code>city</code> argument using the interface description syntax by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister call favorite_cities location_pretty '(vec {"San Francisco";"Paris";"Rome"})'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>("Hello from San Francisco, Paris, Rome, bon voyage!")</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="candid-ui"><a class="anchor" href="#candid-ui"></a>Test functions in a browser</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The canister interface description language—often referred to as Candid or more generally as the IDL—provides a common language for specifying the signature of a canister smart contract.
+Candid provides a unified way for you to interact with canister smart contracts that are written in different languages or accessed using different tools.
+For example, Candid provides a consistent view of a service whether the underlying program is native Rust, JavaScript, or Motoko.
+Candid also enables different tools—such as the <code>dfx</code> command-line interface and the Network Nervous System dapp—to share a common description for a service.</p>
+</div>
+<div class="paragraph">
+<p>Based on the type signature of the actor, Candid also provides a web interface that allows you to call canister functions for testing and debugging.</p>
+</div>
+<div class="paragraph">
+<p>After you have deployed your project in the local canister execution environment using the <code>dfx deploy</code> or <code>dfx canister install</code> command, you can access the Candid web interface endpoint in a browser.
+This web interface—the Candid UI—exposes the service description in a form, enabling you to quickly view and test functions and experiment with entering different data types without writing any front-end code.</p>
+</div>
+<div class="paragraph">
+<p>To use the Candid web interface to test canister functions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Find the Candid UI canister identifier associated with the current project using the <code>dfx canister id __Candid_UI</code> command.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister id __Candid_UI</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays the canister identifier for the Candid UI with output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>r7inp-6aaaa-aaaaa-aaabq-cai</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Copy the Candid UI canister identifier so that it is available in the clipboard.</p>
+</li>
+<li>
+<p>If you&#8217;ve stopped the local canister execution environment, restart it locally by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx start --background</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Open a browser and navigate to the address and port number specified in the <code>dfx.json</code> configuration file.</p>
+<div class="paragraph">
+<p>By default, the local canister execution environment binds to the <code>127.0.0.1:8000</code> address and port number.</p>
+</div>
+</li>
+<li>
+<p>Add the required <code>canisterId</code> parameter and the Candid UI canister identifier returned by the <code>dfx canister id __Candid_UI</code> command to the URL.</p>
+<div class="paragraph">
+<p>For example, the full URL should look similar to the following but with the <code>CANDID-UI-CANISTER-IDENTIFIER</code> that was returned by the <code>dfx canister id __Candid_UI</code> command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://127.0.0.1:8000/?canisterId=&lt;CANDID-UI-CANISTER-IDENTIFIER&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For instance, with the example canister identifier for the Candid UI as shown above, this could look as follows:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://127.0.0.1:8000/?canisterId=r7inp-6aaaa-aaaaa-aaabq-cai</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The browser then displays a form for you to specify a canister identifier or choose a Candid description (<code>.did</code>) file.
+Note that this field refers to the canister identifier of the canister you would like to interact with (as opposed to the canister identifier for the Candid UI that we used in the last step).</p>
+</div>
+</li>
+<li>
+<p>Specify the canister identifier of the canister you would like to test in the <strong>Provide a canister ID</strong> field, then click <strong>Go</strong> to display the service description.</p>
+<div class="paragraph">
+<p>If you aren’t sure which canister identifier to use, you can run the <code>dfx canister id</code> command to look up the identifier for a specific canister name.
+For instance, to get the canister identifier for a canister named <code>my_counter</code>, you would use:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx canister id my_counter</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Review the list of function calls and types defined in the dapp.</p>
+</li>
+<li>
+<p>Type a value of the appropriate type for a function or click <strong>Random</strong> to generate a value, then click <strong>Call</strong> or <strong>Query</strong> to see the result.</p>
+<div class="paragraph">
+<p>Note that depending on the data type, the Candid interface might display additional configuration settings for testing functions.
+For example, if a function takes an array, you might need to specify the number of items in the array before entering values.</p>
+</div>
+<div class="paragraph">
+<p>In this example, each function accepts an array of text strings. Therefore, you first select the length of the array, then set values for each item before clicking <strong>Call</strong>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/candid-favorite-cities-result.png" alt="Specifying an array"></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stop_the_local_canister_execution_environment"><a class="anchor" href="#_stop_the_local_canister_execution_environment"></a>Stop the local canister execution environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you finish experimenting with your program, you can stop the local canister execution environment so that it doesn’t continue running in the background.</p>
+</div>
+<div class="paragraph">
+<p>To stop the local canister execution environment:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the terminal that displays network operations, press Control-C to interrupt the local process.</p>
+</li>
+<li>
+<p>Stop the canister execution environment by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx stop</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Integrate with the Internet Computer ledger :: 互联网计算机开发者文档</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../quickstart/quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/cli-reference/dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../developers-guide/concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../developers-guide/computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">开发者文档</a></li>
+    <li>通用文档</li>
+    <li>ledger 概览</li>
+    <li><a href="ledger-quick-start.html">Ledger 快速开始</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/integration/pages/ledger-quick-start.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Integrate with the Internet Computer ledger</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div id="ledger-intro" class="paragraph">
+<p>This guide is an introduction to the Internet Computer Protocol (ICP) components for token distribution, transaction management, token-based staking, and payments for services.
+The document includes an overview of the design, implementation, security guarantees, system requirements, and the application programming interface (API) that support token management for the Internet Computer Protocol.</p>
+</div>
+<div class="paragraph">
+<p><em>Integrate with the Internet Computer ledger</em> is intended as a high-level overview for organizations and developers who need to understand the terminology and overall transaction management flow for Internet Computer Protocol (ICP) utility tokens.</p>
+</div>
+<div class="paragraph">
+<p>While you read this guide, be aware that additional details about specific components or interfaces might be available in subsequent documents to supplement the overview provided in this document.
+In addition, this overview focuses on how to integrate with the Internet Computer using the <a href="https://www.rosetta-api.org/docs/welcome.html">Rosetta API</a>.
+Other options for integration are possible.
+Information about other integration options and procedures might be available in future documentation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basic_terminology"><a class="anchor" href="#_basic_terminology"></a>Basic terminology</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Internet Computer is a blockchain system comprised of several subnet blockchains for running dapps.
+When you write dapps that run on the Internet Computer, you deploy your program in the form of a conceptual computational unit called a <strong>canister</strong>.
+A canister is a "smart contract" in that it consists of the source code of a program as well as its running state, and is replicated on a subnet blockchain that guarantees security as well as liveness.</p>
+</div>
+<div class="paragraph">
+<p>End-users or other canisters can send messages to canister functions to perform specific operations.
+The messages can be either <strong>query calls</strong> that retrieve information without modifying the state of a canister or <strong>update calls</strong> that may modify the state of canister.
+The order in which updates are executed is agreed upon using a consensus protocol between all nodes in the subnet that runs the canister.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ledger_canister_overview"><a class="anchor" href="#_ledger_canister_overview"></a>Ledger canister overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Internet Computer Protocol (ICP) implements management of its utility token (ticker "ICP") using a specialized canister, called the <strong>ledger canister</strong>.
+There is a single ledger canister which runs alongside other canisters on a special subnet of the Internet Computer, viz., the NNS subnet.
+The ledger canister is a smart contract that holds <strong>accounts</strong> and <strong>transactions</strong>.
+These transactions either <strong>mint ICP tokens</strong> for accounts,  <strong>transfer ICP tokens</strong> from one account to another, or <strong>burn ICP tokens</strong>, eliminating them from existence.
+The ledger canister maintains a traceable history of all transactions starting from its genesis state (initial state).</p>
+</div>
+<div class="sect2">
+<h3 id="_accounts"><a class="anchor" href="#_accounts"></a>Accounts</h3>
+<div class="paragraph">
+<p>An account belongs to and is controlled by the account owner who must be an IC principal. No account can be owned by two or more IC principals (no "joint accounts").</p>
+</div>
+<div class="paragraph">
+<p>An account owner may control more than one account. In this case, each account corresponds to a pair (account_owner, sub_account). The sub-account is an optional bitstring which helps distinguish between the different sub-accounts of the same owner.</p>
+</div>
+<div class="paragraph">
+<p>An account on the ledger is identified by its address, which is derived from the principal ID and sub-account identifier.</p>
+</div>
+<div class="paragraph">
+<p>In this context, you can think of principal identifiers as a rough equivalent to the hash of a user&#8217;s public key for Bitcoin or Ethereum. You use the corresponding secret key to sign messages and therefore authenticate to the ledger canister and operate on the principal&#8217;s account. Canisters can also have accounts in the ledger canister, in which case the address is derived from the canister&#8217;s principal.</p>
+</div>
+<div class="paragraph">
+<p>The ledger canister is initialized using administrative operations that are internal to the Internet Computer.
+As part of the initialization process, the canister is created with the set of accounts and associated ICP token balances.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_transaction_types"><a class="anchor" href="#_transaction_types"></a>Transaction types</h3>
+<div class="paragraph">
+<p>There are three operations that can change the internal state of the ledger canister:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Minting ICP tokens</strong> for accounts.</p>
+</li>
+<li>
+<p><strong>Transferring ICP tokens</strong> between accounts.</p>
+</li>
+<li>
+<p><strong>Burning ICP tokens</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All operations are recorded as transactions in the ledger canister.</p>
+</div>
+<div class="paragraph">
+<p>The ledger maintains the transactions as a hashed blockchain, i.e., a blockchain running inside a cansiter smart contract (the ledger canister), which in turn is running on the NNS subnet blockchain.</p>
+</div>
+<div class="paragraph">
+<p>As state changes are recorded, each new transaction is placed in a block and assigned a unique index.
+The entire chain is regularly authenticated by signing the latest chain link. The signature used to authenticate the chain can be verified by any third party who has access to the root public key of the Internet Computer.
+Specific transactions can be retrieved by querying the ledger.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_integrate_with_the_internet_computer_ledger_canister_using_the_rosetta_api"><a class="anchor" href="#_integrate_with_the_internet_computer_ledger_canister_using_the_rosetta_api"></a>Integrate with the Internet Computer ledger canister using the Rosetta API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One can interact with the Internet Computer and ledger canister in several ways.
+This document outlines how to integrate with the ledger canister using the <a href="https://www.rosetta-api.org/">Rosetta application programming interface</a>. This is a <a href="https://www.rosetta-api.org/docs/welcome.html">well-documented and open standard</a> designed to support multiple blockchain data formats and structured communication for exchange transactions.</p>
+</div>
+<div class="paragraph">
+<p>The interface is implemented by the integration software—`dfinity/rosetta-api. This piece of software enables you to deploy a passive Rosetta node outside of the Internet Computer blockchain and use the node to communicate with the ledger canister running on the Internet Computer.</p>
+</div>
+<div class="paragraph">
+<p>The following diagram provides a simplified view of the communication between the Rosetta node and the Internet Computer using the <code>dfinity/rosetta-api</code> integration software.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/basic-rosetta-api-integration.svg" alt="basic rosetta api integration"></span></p>
+</div>
+<div class="paragraph">
+<p>As this diagram suggests, the Rosetta node maintains a local copy of the Internet Computer ledger canister.
+Periodically, the <code>dfinity/rosetta-api</code> software running on the Rosetta node updates its local view of the ledger by querying the ledger canister for the latest block of the ledger chain, then querying for any missing ledger blocks.
+The Rosetta node uses the root key of the Internet Computer to ensure that the local copy of the ledger is genuine.
+The integration software also allows you to use the Rosetta node to submit transactions to the Internet Computer ledger.</p>
+</div>
+<div class="sect2">
+<h3 id="_integration_workflow_overview"><a class="anchor" href="#_integration_workflow_overview"></a>Integration workflow overview</h3>
+<div class="paragraph">
+<p>The following summarizes the basic operational workflow for transferring ICP tokens if you&#8217;re using a Rosetta node to communicate with the Internet Computer ledger canister. In this scenario, you must be an Internet Computer principal who authenticates to the Internet Computer using a signing key stored in a wallet.</p>
+</div>
+<div class="paragraph">
+<p>After a user submits a request to the Rosetta node to make a transaction, the request is passed to the integration software running on that node to interact with the Internet Computer and completes the following operations:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>It reads from the local copy of the ledger to determine the state of the latest transaction index and block height identified by the <code>latest_index</code> label.</p>
+</li>
+<li>
+<p>It generates a random <code>nonce</code> value&#8201;&#8212;&#8201;used to ensure transactions are unique.</p>
+</li>
+<li>
+<p>It creates an ingress message for the ledger canister that invokes the <code>send</code> function and specifies the amount and the destination for the transaction:</p>
+<div class="literalblock">
+<div class="content">
+<pre>send(nonce, latest_index, dst, amount)</pre>
+</div>
+</div>
+</li>
+<li>
+<p>It signs the ingress message using the key stored in the wallet to identify the principal ID for the owner.</p>
+</li>
+<li>
+<p>It forwards the message to the ledger canister on the Internet Computer.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_up_a_rosetta_node"><a class="anchor" href="#_set_up_a_rosetta_node"></a>Set up a Rosetta node</h3>
+<div class="paragraph">
+<p>You can set up a Rosetta API-compliant node to interact with the Internet Computer and exchange Internet Computer Protocol (ICP) tokens.
+To keep the instructions simple, we use a Docker image to create the integration with the Rosetta API &#8201;&#8212;&#8201;one can also build and run binary using the source code.
+If you don&#8217;t already have Docker on your local computer, download and install the latest version.</p>
+</div>
+<div class="paragraph">
+<p>To set up a Rosetta node (which connects to a testnet):</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://docs.docker.com/get-docker/">Install Docker</a> and <a href="https://docs.docker.com/config/daemon/">start the Docker daemon</a>.</p>
+<div class="paragraph">
+<p>The Docker daemon (<code>dockerd</code>) should automatically start when you reboot your computer. If you start the Docker daemon manually, the instructions vary depending on the local operating system.</p>
+</div>
+</li>
+<li>
+<p>Pull the latest <code>dfinity/rosetta-api</code> image from the Docker Hub by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker pull dfinity/rosetta-api</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start the integration software by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker run \
+    --interactive \
+    --tty \
+    --publish 8080:8080 \
+    --rm \
+   dfinity/rosetta-api</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command starts the software on the local host and displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Listening on 0.0.0.0:8080
+Starting Rosetta API server</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By default, the software <strong>does not</strong> connect to the ledger canister running on the Internet Computer blockchain mainnet, but rather it connects to a testnets.</p>
+</div>
+<div class="paragraph">
+<p>If you have been assigned a test network and corresponding ledger canister identifier, you can run the command against that network by specifying an additional <code>canister</code> argument. For example, the following command illustrates connecting to the ledger canister on a test network by setting the <code>canister</code> argument to <code>2xh5f-viaaa-aaaab-aae3q-cai</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker run \
+    --interactive \
+    --tty \
+    --publish 8080:8080 \
+    --rm \
+   dfinity/rosetta-api
+   --canister 2xh5f-viaaa-aaaab-aae3q-cai</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The first time you run the command it might take some time for the node to catch up to the current link of the chain.
+When the node is caught up, you should see output similar to the following:
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>You are all caught up to block height 109</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After completing this step, the node continues to run as a <strong>passive</strong> node that does not participate in block making.</p>
+</div>
+</li>
+<li>
+<p>Open a new terminal window or tab and run the <code>ps</code> command to verify the status of the service.</p>
+<div class="paragraph">
+<p>If you need to stop the service, press CONTROL-C. You might want to do this to change the canister identifier you are using, for example.</p>
+</div>
+<div class="paragraph">
+<p>To test the integration after setting up the node, you will need to write a program to simulate a principal submitting a transaction or looking up an account balance.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_run_the_rosetta_node_in_production"><a class="anchor" href="#_run_the_rosetta_node_in_production"></a>Run the Rosetta node in production</h3>
+<div class="paragraph">
+<p>When you are finished testing, you should run the Docker image in production mode without the <code>--interactive</code>, <code>--tty</code>, and <code>--rm</code> command-line options.
+These command-line options are used to attach an interactive terminal session and remove the container, and are primarily intended for testing purposes.</p>
+</div>
+<div class="paragraph">
+<p>To run the software in a production environment, you can start the Docker image using the <code>--detach</code> option to run the container in the background and, optionally, specify the <code>--volume</code> command for storing blocks.</p>
+</div>
+<div class="paragraph">
+<p>To connect the Rosetta node instance to the mainnet, add flags:
+<code>--mainnet</code> and <code>--not-whitelisted</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more information about Docker command-line options, see the <a href="https://docs.docker.com/engine/reference/commandline/run/">Docker reference documentation</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_requirements_and_limitations"><a class="anchor" href="#_requirements_and_limitations"></a>Requirements and limitations</h3>
+<div class="paragraph">
+<p>The integration software provided in the Docker image has one requirement that is not part of the standard Rosetta API specification.</p>
+</div>
+<div class="paragraph">
+<p>For transactions involving ICP tokens, the unsigned transaction must be created less than 24 hours before the network receives the signed transaction. The reason is that the 'created_at' field of each transaction refers to an existing transaction (essentially last_index available locally at the time of transaction creation). Any submitted transaction that refers to a transaction that is too old is rejected to maintain operational efficiency.</p>
+</div>
+<div class="paragraph">
+<p>Other than this requirement, the Rosetta API integration software is fully-compliant with all standard Rosetta endpoints and passes all of the <code>rosetta-cli</code> tests.
+The software can accept any valid Rosetta request.
+However, the integration software only prompts for transactions to be signed using Ed25519, rather than <a href="https://www.rosetta-api.org/docs/models/SignatureType.html#values">all the signature schemes listed here</a> and only replies with a small subset of the potential responses that the specification supports. For example, the software doesn&#8217;t implement any of the UTXO features of Rosetta, so you won&#8217;t see any UTXO messages in any of the software responses.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_basic_properties_for_icp_utility_tokens"><a class="anchor" href="#_basic_properties_for_icp_utility_tokens"></a>Basic properties for ICP utility tokens</h3>
+<div class="paragraph">
+<p>The ICP token is similar to utility tokens governing decentralized networks such as Bitcoin, but also differs in important ways.</p>
+</div>
+<div class="paragraph">
+<p>The ICP token is similar to Bitcoin in the following ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Each ICP token is divisible 10^8 times.</p>
+</li>
+<li>
+<p>All transactions are stored in the ledger starting with the genesis initial state.</p>
+</li>
+<li>
+<p>Tokens are entirely fungible.</p>
+</li>
+<li>
+<p>Account identifiers are 32 bytes and are roughly the equivalent of the hash of a public key, optionally together with some additional sub-account specifier.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The ICP token differs from Bitcoin in the following ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rather than using proof of work, staked participant nodes use a variant of threshold BLS signatures to agree on a valid state of the chain.</p>
+</li>
+<li>
+<p>Any transaction can store an 8-byte memo&#8201;&#8212;&#8201;this memo field is used by the Rosetta API to store the nonce that distinguishes between transactions. However, other uses for the field are possible.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_frequently_asked_questions"><a class="anchor" href="#_frequently_asked_questions"></a>Frequently asked questions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following questions are taken from the most commonly reported questions and blockers from the developer community regarding Rosetta integration with the Internet Computer.</p>
+</div>
+<div class="sect2">
+<h3 id="_the_rosetta_node"><a class="anchor" href="#_the_rosetta_node"></a>The Rosetta node</h3>
+<div class="sect3">
+<h4 id="_how_to_i_run_an_instance_of_the_rosetta_node"><a class="anchor" href="#_how_to_i_run_an_instance_of_the_rosetta_node"></a>How to I run an instance of the Rosetta node?</h4>
+<div class="paragraph">
+<p>An easy way to accomplish this is to use the <a href="https://hub.docker.com/r/dfinity/rosetta-api/tags?page=1&amp;ordering=last_updated"><code>dfinity/rosetta-api</code></a> Docker image. Once the node initializes and syncs all blocks, you can perform queries and submit transactions by invoking the Rosetta API on the node. The node listens on the <code>8080</code> port.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_do_i_connect_the_rosetta_node_to_the_mainnet"><a class="anchor" href="#_how_do_i_connect_the_rosetta_node_to_the_mainnet"></a>How do I connect the Rosetta node to the mainnet?</h4>
+<div class="paragraph">
+<p>Use flags <code>--mainnet</code> and <code>--not-whitelisted</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_do_i_connect_the_rosetta_node_to_the_mainnet_2"><a class="anchor" href="#_how_do_i_connect_the_rosetta_node_to_the_mainnet_2"></a>How do I connect the Rosetta node to the mainnet?</h4>
+<div class="paragraph">
+<p>Use flags <code>--mainnet</code> and <code>--not-whitelisted</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_do_i_know_if_the_node_has_caught_up_with_the_test_net"><a class="anchor" href="#_how_do_i_know_if_the_node_has_caught_up_with_the_test_net"></a>How do I know if the node has caught up with the test net?</h4>
+<div class="paragraph">
+<p>Search the <code>Starting Rosetta API server</code> startup log. There will be a log entry that says <code>You are all caught up to block XX</code>. This message confirms that you are caught up with all blocks.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_persist_synced_blocks_data"><a class="anchor" href="#_how_to_persist_synced_blocks_data"></a>How to persist synced blocks data?</h4>
+<div class="paragraph">
+<p>Mount the <code>/data</code> directory elsewhere.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_is_the_rosetta_node_versioned"><a class="anchor" href="#_is_the_rosetta_node_versioned"></a>Is the Rosetta node versioned?</h4>
+<div class="paragraph">
+<p>Not yet. Before launch, when we push to the <code>dfinity/rosetta-api:latest</code> image, it&#8217;s usually a major update that we&#8217;ll announce in our communication channels beforehand.</p>
+</div>
+<div class="paragraph">
+<p>We&#8217;ll soon implement nightly builds of the image, and CI will ensure it works before pushing. Other than <code>latest</code>, those images will also be tagged with the build date, so for more reproducibility, it&#8217;s possible to use the image of a specific date tag rather than <code>latest</code>. We&#8217;ll announce when nightly builds become available.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_do_i_connect_to_the_main_net_instead_of_the_test_net"><a class="anchor" href="#_how_do_i_connect_to_the_main_net_instead_of_the_test_net"></a>How do I connect to the main net instead of the test net?</h4>
+<div class="paragraph">
+<p>Start <code>dfinity/rosetta-api</code> with <code>--help</code>, you can see some additional CLI arguments that can be passed. Among those there are <code>--canister-id</code> and <code>--ic-url</code> which can be used to configure the ledger destination. At the moment, they default to the test net.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: The main net is not live yet; it will be live some time before the publicly announced date, and we&#8217;ll push the updated image to point to the main net to ensure you can perform testing on the main net beforehand.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_icp_specific_rosetta_api_details"><a class="anchor" href="#_icp_specific_rosetta_api_details"></a>ICP-specific Rosetta API details</h3>
+<div class="sect3">
+<h4 id="_how_are_accounts_generated_and_verified"><a class="anchor" href="#_how_are_accounts_generated_and_verified"></a>How are accounts generated and verified?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Generate an ED25519 keypair.</p>
+</li>
+<li>
+<p>The secret key is used for signing transactions.</p>
+</li>
+<li>
+<p>The public key is used for generating a self-authenticating Principal ID. For more information, see: <a href="https://sdk.dfinity.org/docs/interface-spec/index.html#_principals" class="bare">https://sdk.dfinity.org/docs/interface-spec/index.html#_principals</a>.</p>
+</li>
+<li>
+<p>The Principal ID is hashed to generate the account address.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_use_the_public_key_to_generate_its_account_address"><a class="anchor" href="#_how_to_use_the_public_key_to_generate_its_account_address"></a>How to use the public key to generate its account address?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Call the <a href="https://www.rosetta-api.org/docs/ConstructionApi.html#constructionderive"><code>/construction/derive</code></a> endpoint with the hex-encoded 32-byte public key.</p>
+</li>
+<li>
+<p>Call the <code>pub_key_to_address</code> function in the JavaScript SDK.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_verify_the_checksum_of_an_account_address"><a class="anchor" href="#_how_to_verify_the_checksum_of_an_account_address"></a>How to verify the checksum of an account address?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>After hex decoding, the first 4 bytes is the big-endian CRC32 checksum of the rest of the address.</p>
+</li>
+<li>
+<p>Call <a href="https://github.com/dfinity/rosetta-client#working-with-account-addresses"><code>address_from_hex</code></a> in the JavaScript SDK. It returns and error if checksum doesn&#8217;t match.</p>
+</li>
+<li>
+<p><a href="https://gist.github.com/TerrorJack/d6c79b33e5b5d0f5d52f3a2c5cdacc60">Here</a> is a Java implementation of address validation logic.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_are_signature_type_and_curve_type_for_ed25519"><a class="anchor" href="#_what_are_signature_type_and_curve_type_for_ed25519"></a>What are <code>signature_type</code> and <code>curve_type</code> for ED25519?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>signature_type</code> is <code>"ed25519"</code></p>
+</li>
+<li>
+<p><code>curve_type</code> is <code>"edwards25519"</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_kinds_of_transactions_can_appear_in_a_block_and_what_do_they_mean"><a class="anchor" href="#_what_kinds_of_transactions_can_appear_in_a_block_and_what_do_they_mean"></a>What kinds of transactions can appear in a block, and what do they mean?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Each block as queried from the <a href="https://www.rosetta-api.org/docs/BlockApi.html#block"><code>/block</code></a> endpoint contains exactly one transaction. Note that some operations, such as <code>burn</code>, are not suppoted in Rosetta API calls.</p>
+</li>
+<li>
+<p>Transfer</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Operation 0: type <code>"TRANSACTION"</code>, subtracts the transfer amount from the source account.</p>
+</li>
+<li>
+<p>Operation 1: type <code>"TRANSACTION"</code>, adds the same transfer amount to the destination account.</p>
+</li>
+<li>
+<p>Operation 2: type <code>"FEE"</code>, subtracts the fee from the source account.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Don&#8217;t rely on the order above, you can rearrange them in the <code>/construction/payloads</code> call, and when parsing transactions in a block, you should check for transaction type and amount sign instead.</p>
+</li>
+<li>
+<p>Mint</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Operation 0: type <code>"MINT"</code>, adds the minted amount to the destination account.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Burn</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Operation 0: type <code>"BURN"</code>, subtract the burned amount from the source account.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>"status"</code> is always <code>"COMPLETED"</code>, failed transactions don&#8217;t show up in the polled blocks</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_fee_is_needed_can_i_customize_the_fee"><a class="anchor" href="#_what_fee_is_needed_can_i_customize_the_fee"></a>What fee is needed? Can I customize the fee?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>By calling <a href="https://www.rosetta-api.org/docs/ConstructionApi.html#constructionmetadata"><code>/construction/metadata</code></a>, you can get <code>suggested_fee</code>.</p>
+</li>
+<li>
+<p>At the moment, <code>suggested_fee</code> is a constant, and the fee specified in a transfer must be equal to it.</p>
+</li>
+<li>
+<p>Fees do not apply to Mint or Burn operations.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_do_i_know_if_the_submitted_transaction_hit_the_chain"><a class="anchor" href="#_how_do_i_know_if_the_submitted_transaction_hit_the_chain"></a>How do I know if the submitted transaction hit the chain?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>The Rosetta server will wait for a short period of time after a <code>/construction/submit</code> call, if the transaction hit the chain, it&#8217;ll be returned.</p>
+</li>
+<li>
+<p>In case of an error from the ledger, the error information will be available in the <code>/construction/submit</code> result.</p>
+</li>
+<li>
+<p>It&#8217;s still possible that a <code>/construction/submit</code> call has returned successfully, but there&#8217;s still some time before it hits the chain. You can poll latest blocks and search for the transaction hash. We also implemented a subset of the <a href="https://www.rosetta-api.org/docs/SearchApi.html#searchtransactions"><code>/search/transactions</code></a> endpoint which allows searching for a transaction given its hash.</p>
+</li>
+<li>
+<p>5 minutes is a worst case timeout.</p>
+</li>
+<li>
+<p>Don&#8217;t use <code>mempool</code> APIs, our implementation is an empty stub.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_kinds_of_errors_might_i_get_from_rosetta_api_calls"><a class="anchor" href="#_what_kinds_of_errors_might_i_get_from_rosetta_api_calls"></a>What kinds of errors might I get from Rosetta API calls?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Successful calls always have <code>200</code> response status code.</p>
+</li>
+<li>
+<p>Failed calls always have <code>500</code> response status code, with a JSON payload containing more information. The possible Rosetta error codes and their text descriptions can be seen in the <code>/network/options</code> call result.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_do_i_send_mint_or_burn_transactions"><a class="anchor" href="#_how_do_i_send_mint_or_burn_transactions"></a>How do I send Mint or Burn transactions?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Mint is a privileged operation; we don&#8217;t support Burn through Rosetta API calls at the moment.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_happens_if_the_same_signed_transaction_is_submitted_multiple_times"><a class="anchor" href="#_what_happens_if_the_same_signed_transaction_is_submitted_multiple_times"></a>What happens if the same signed transaction is submitted multiple times?</h4>
+<div class="paragraph">
+<p>The ledger rejects duplicate transactions. Only the first transaction will make it to the chain and for the duplicate submissions the <code>/construction/submit</code> call will fail.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_sign_a_transaction_without_calling_rosetta_api"><a class="anchor" href="#_how_to_sign_a_transaction_without_calling_rosetta_api"></a>How to sign a transaction without calling Rosetta API?</h4>
+<div class="paragraph">
+<p>The JavaScript SDK contains an <a href="https://github.com/dfinity/rosetta-client/blob/master/lib/construction_combine.js">implementation</a> of the offline signing logic. This is deeply coupled with internal implementation details, so we strongly advise you to call <code>/construction/combine</code> to sign a transaction if possible.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_configure_the_ingress_time_period"><a class="anchor" href="#_how_to_configure_the_ingress_time_period"></a>How to configure the ingress time period?</h4>
+<div class="paragraph">
+<p>In the <code>/construction/payloads</code> call, you can add one or all of the <code>ingress_start</code> / <code>ingress_end</code> fields to specify the ingress time period. They are nanoseconds since the Unix epoch, and must be within the next 24 hours. This enables generating &amp; signing a transaction, but delaying the actual submission to a later time.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_deserialize_a_signed_transaction"><a class="anchor" href="#_how_to_deserialize_a_signed_transaction"></a>How to deserialize a signed transaction?</h4>
+<div class="paragraph">
+<p>The JavaScript SDK supports <a href="https://github.com/dfinity/rosetta-client/blob/master/lib/signed_transaction_decode.js">deserializing</a> a <code>signed_transaction</code> hex string and recovering some information about the transfer. This may be useful in the case that you&#8217;d like to perform a sanity check.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

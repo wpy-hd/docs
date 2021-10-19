@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Reproducible Canister Builds :: 互联网计算机开发者文档</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/search.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quickstart/quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quickstart/network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../cli-reference/dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../integration/ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">开发者文档</a></li>
+    <li><a href="reproducible-builds.html">Reproducible Canister Builds</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/developers-guide/pages/tutorials/reproducible-builds.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Reproducible Canister Builds</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thanks to its consensus protocol, the Internet Computer always runs canisters' code correctly.
+But this doesn&#8217;t mean that it&#8217;s running the <em>correct</em> code for a canister.
+If you are using a canister somebody else developed, you may want to verify that the canister is indeed running some intended code before giving it control to make important decision for you, e.g., sending your ICP to a canister smart contract.
+Verifying this requires answering two questions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Which WebAssembly (Wasm) code is being executed for a canister?</p>
+</li>
+<li>
+<p>The canisters are normally written in a higher-level language, such as Motoko or Rust, and not directly in Wasm.
+The second question is then: is the Wasm that&#8217;s running really the result of compiling the purported source code?</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The rest of the document answers these questions.
+For the first question, we will see how the Internet Computer provides information about canister code.
+To be able to answer the second question, canister authors should ensure trusted and
+<a href="https://reproducible-builds.org/docs/definition/">reproducible builds</a> of the Wasm code from the source.
+Such builds allow anyone to follow the same steps as the canister authors and yield the exact same Wasm code,
+which can then be compared to the Wasm code executing in the canister on the Internet Computer.</p>
+</div>
+<div class="paragraph">
+<p>The impatient reader who is familiar with the topic of reproducible builds can skip straight to the <a href="#repro-build-summary">summary</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_finding_out_which_canister_code_the_internet_computer_is_executing"><a class="anchor" href="#_finding_out_which_canister_code_the_internet_computer_is_executing"></a>Finding out which canister code the Internet Computer is executing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Internet Computer does not allow you to access the Wasm code of an arbitrary canister.
+This is a design decision, as developers might want to keep some code private.
+However, the Internet Computer does allow you to access the SHA-256 of the Wasm code of a canister.</p>
+</div>
+<div class="paragraph">
+<p>To obtain this hash, you must first note the principal of the Internet Computer canister whose code you want to check.
+For example, assume we&#8217;re interested in the code of the Internet Identity canister, whose principal is <code>rdmx6-jaaaa-aaaaa-aaadq-cai</code>.
+Then, the easiest way to access this service is using the <a href="https://dfinity.org/developers/"><code>dfx</code></a> tool from the terminal.
+Open your terminal, and run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ dfx canister --no-wallet --network ic info rdmx6-jaaaa-aaaaa-aaadq-cai
+Controller: r7inp-6aaaa-aaaaa-aaabq-cai
+Module hash: 0xda8d1bdd93fbf1edddeb2a423fa3c528c2e4877d39beed2277a12e60227e44d4</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you are running an older version of <code>dfx</code>, you will need to run this command from a directory that contains a valid <code>dfx.json</code> file.
+If you don&#8217;t have such a directory, you can create it using <code>dfx new</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Here, the Internet Computer tells us that the hash of the Wasm module of the <code>rdmx6-jaaaa-aaaaa-aaadq-cai</code> canister (which happens to be the Internet Identity canister) is <code>0xda8d1bdd93fbf1edddeb2a423fa3c528c2e4877d39beed2277a12e60227e44d4</code>.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The check above provides you the <em>current</em> hash of the canister&#8217;s Wasm module, but the <em>controllers</em> of an Internet Computer canister may change the code at any time (e.g., to upgrade a canister). However, if the list of controllers is empty, you know that the canister is immutable since nobody has the power to change the code.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Armed with this hash, you can next check whether it corresponds to some given source code.
+This only works if the build process for the code is reproducible.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reproducible_builds"><a class="anchor" href="#_reproducible_builds"></a>Reproducible builds</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As a canister author, there are a few things you have to provide to your users to allow them to reproduce your build:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The same source code that you used to create the Wasm module for the canister.</p>
+</li>
+<li>
+<p>Instructions on how to recreate your build environment.</p>
+</li>
+<li>
+<p>Instructions on how to repeat the process of building the Wasm from the source code.
+Crucially, the process must be deterministic, to ensure that it results in the exact same Wasm.
+It also has to be trusted, such that the user can be convinced that the Wasm is a faithful translation of the source code, and not an artifact of a malicious build tool.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We next look at each of these points in more detail.</p>
+</div>
+<div class="sect2">
+<h3 id="_providing_source_code"><a class="anchor" href="#_providing_source_code"></a>Providing source code</h3>
+<div class="paragraph">
+<p>Typically, you will version your code in <code>git</code> or some other version control system, and your versioned code may be available in a public repository, e.g., GitHub.
+In this case, you should note the particular commit that you used when producing the code to be deployed to the Internet Computer, and communicate it to the users who are trying to verify your canister.
+Alternatively, you can also provide a package (e.g., a zip file or a tarball) containing the source code you used to build your canister.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reproducing_build_environments"><a class="anchor" href="#_reproducing_build_environments"></a>Reproducing build environments</h3>
+<div class="paragraph">
+<p>Before building your code, you should document the build environment you are using in detail.
+In particular, for the languages supported by the Internet Computer SDK:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Note down the operating system and its version you are using to build your canister.</p>
+</li>
+<li>
+<p>If you are using <code>dfx</code>, note the version used, as specified in <code>dfx.json</code>. You can install arbitrary versions
+of <code>dfx</code> using <code>dfx toolchain install &lt;version&gt;</code>, or by running the installation script with the <code>DFX_VERSION</code>
+environment variable set to the desired version.</p>
+</li>
+<li>
+<p>If you are building Motoko code in a way other than <code>dfx build</code>, note the version of <code>moc</code> you are using.</p>
+</li>
+<li>
+<p>If you are building Rust, note the version of <code>cargo</code> you are using.</p>
+</li>
+<li>
+<p>If you are using Node.js and/or <code>webpack</code> for frontend development, note their versions.</p>
+</li>
+<li>
+<p>If your build process depends on any environment variables (such as the time zone or locale), note them down.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You should communicate all of these to your user in the instructions.
+Ideally, do so by providing an executable recipe to recreate the build environment, using tools such as Docker or Nix.
+We recommend using Docker, as this allows you to also pinpoint the operating system used for building the software.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_build_environments_using_docker"><a class="anchor" href="#_build_environments_using_docker"></a>Build environments using Docker</h3>
+<div class="paragraph">
+<p><a href="https://docs.docker.com/">Docker containers</a> are a popular solution for providing build environments.
+You can use a <code>Dockerfile</code> such as the following to provide the user with a particular version of the operating system,
+as well as <code>dfx</code>, Node.js and the Rust toolchain.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>FROM ubuntu:20.10
+
+# Install a basic environment needed for our build tools
+RUN \
+    apt -yq update &amp;&amp; \
+    apt -yqq install --no-install-recommends curl ca-certificates \
+        build-essential pkg-config libssl-dev llvm-dev liblmdb-dev clang cmake
+
+# Install Node.js using nvm
+# Specify the Node version
+ENV NODE_VERSION=14.17.1
+RUN curl --fail -sSf https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+ENV NVM_DIR=/root/.nvm
+RUN . "$NVM_DIR/nvm.sh" &amp;&amp; nvm install ${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" &amp;&amp; nvm use v${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" &amp;&amp; nvm alias default v${NODE_VERSION}
+ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+
+# Install Rust and Cargo in /opt
+# Specify the Rust toolchain version
+ARG rust_version=1.54.0
+ENV RUSTUP_HOME=/opt/rustup \
+    CARGO_HOME=/opt/cargo \
+    PATH=/opt/cargo/bin:$PATH
+RUN curl --fail https://sh.rustup.rs -sSf \
+        | sh -s -- -y --default-toolchain ${rust_version}-x86_64-unknown-linux-gnu --no-modify-path &amp;&amp; \
+    rustup default ${rust_version}-x86_64-unknown-linux-gnu &amp;&amp; \
+    rustup target add wasm32-unknown-unknown
+
+# Install dfx; the version is picked up from the DFX_VERSION environment variable
+ENV DFX_VERSION=0.8.2
+RUN sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
+
+COPY . /canister
+WORKDIR /canister</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There are a couple of things worth noting about this <code>Dockerfile</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It starts from an official Docker image. Furthermore, all the installed tools are standard,
+and come from standard sources.
+This provides the user with confidence that the build environment hasn&#8217;t been tampered with, and thus that
+the build process using Docker can be trusted.</p>
+</li>
+<li>
+<p>To ensure that specific versions of the build tools are installed, it installs them directly, rather than
+through <code>apt</code> (the package manager of Ubuntu, the Linux distribution running inside of the container).
+Such package managers usually don&#8217;t provide a way of pinning the build tools to specific versions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To use this <code>Dockerfile</code>, get Docker <a href="https://docs.docker.com">up and running</a>, place the <code>Dockerfile</code> in the project directory
+of your canister, and create the Docker container by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ docker build -t mycanister .</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This creates a Docker container image called <code>mycanister</code>, with Node.js, Rust and <code>dfx</code> installed in it, and your canister source code
+copied to <code>/canister</code> (recall that you should invoke <code>docker build</code> from the canister project directory).
+You can then enter an interactive shell inside of your container by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>docker run -it --rm mycanister</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From here, you can experiment with the steps needed to build your canister.
+Once you are confident that the steps are deterministic, you can also put them in the <code>Dockerfile</code>,
+to allow the user to automatically reproduce your build when creating the canister.
+You can see an example in the <a href="https://github.com/dfinity/internet-identity/blob/397d0087a29855564c47f0fd3323f60b5b67a8fa/Dockerfile">Dockerfile of the Internet Identity canister</a>.
+Next, we will investigate what is necessary to make the build deterministic.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ensuring_the_determinism_of_the_build_process"><a class="anchor" href="#_ensuring_the_determinism_of_the_build_process"></a>Ensuring the determinism of the build process</h3>
+<div class="paragraph">
+<p>For the build process to be deterministic:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You will need to ensure that any dependencies of your canister are always resolved in the same way.
+Most build tools now support a way of pinning dependencies to a particular version.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For <code>npm</code>, running <code>npm install</code> will create a <code>package-lock.json</code> file with some fixed versions of all
+transitive dependencies of your project that satisfy the requirements specified in your <code>package.json</code>.
+However, <code>npm install</code> will overwrite the <code>package-lock.json</code> file every time it is invoked.
+Thus, once you are ready to create the final version of your canister, run <code>npm install</code> only once.
+After that, commit <code>package-lock.json</code> to your version control system.
+Finally, when checking the build for reproducibility, use <code>npm ci</code> instead of <code>npm install</code>.</p>
+</li>
+<li>
+<p>For Rust code, Cargo will automatically generate a <code>Cargo.lock</code> file with the fixed versions of
+your (transitive) dependencies.
+Like with <code>package-lock.json</code>, you should commit this file to your version control system once you
+are ready to produce the final version of your canister.
+Furthermore, Cargo by default ignores the locked versions of dependencies.
+Pass the <code>--locked</code> flag to the <code>cargo</code> command to ensure that the locked dependencies are used.</p>
+</li>
+<li>
+<p>You have to allocate canister IDs in advance, as canisters refer to each other by their IDs.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Your own build scripts must not introduce non-determinism.
+Obvious sources of non-determinism include randomness, timestamps, concurrency, or code obfuscators.
+Less obvious sources include locales, absolute file paths, order of files in a directory, and remote URLs whose content can change.
+Furthermore, relying on third-party build plug-ins exposes you to any non-determinism introduced by these.</p>
+</li>
+<li>
+<p>Given the same dependencies and deterministic build scripts, the build tools themselves (<code>moc</code> for Motoko, <code>cargo</code> for Rust, <code>webpack</code>
+by default for front-end development) must also be deterministic.
+The good news is that all of these tools aim to be deterministic.
+However, they are complicated pieces of software, and ensuring determinism is non-trivial.
+Thus, non-determinism bugs can and do occur.
+For Rust, see the <a href="https://github.com/rust-lang/rust/labels/A-reproducibility">list of current potential non-determinism issues in Rust</a>.
+Furthermore, we have observed differences between Rust code compiled to Wasm under Linux and MacOS, and thus recommend pinning the build platform and its version.
+For webpack, determinism is important to ensure caching, and webpack has since version 5 introduced <a href="https://webpack.js.org/configuration/optimization/">deterministic naming of module and chunk IDs</a> that you should use.
+The Motoko compiler aims to be deterministic and reproducible; if you find reproducibility issues, please submit a <a href="https://github.com/dfinity/motoko/issues/new/choose">new issue</a>, and we will try to address them to the extent possible.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_testing_reproducibility"><a class="anchor" href="#_testing_reproducibility"></a>Testing reproducibility</h3>
+<div class="paragraph">
+<p>If reproducibility is vital for your code, you should test your builds to increase your confidence in their reproducibility.
+Such testing is non-trivial: we have seen real-world examples where non-determinism in a canister build took a month to show up!
+Fortunately, the Debian Reproducible Builds project created a tool called <a href="https://salsa.debian.org/reproducible-builds/reprotest">reprotest</a>, which can help you automate reproducibility tests.
+It tests your build by running it in two different environments that differ in characteristics such as paths, time, file order, and others,
+and comparing the results.
+To use it, you can put the following <code>Dockerfile</code> in the root directory of your canister project.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>FROM ubuntu:20.10
+
+# Install a basic environment needed for our build tools
+RUN \
+    apt -yq update &amp;&amp; \
+    apt -yqq install --no-install-recommends curl ca-certificates \
+        build-essential pkg-config libssl-dev llvm-dev liblmdb-dev clang cmake
+
+# Install Node.js using nvm
+ENV NODE_VERSION=14.17.1
+RUN curl --fail -sSf https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+ENV NVM_DIR=/root/.nvm
+RUN . "$NVM_DIR/nvm.sh" &amp;&amp; nvm install ${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" &amp;&amp; nvm use v${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" &amp;&amp; nvm alias default v${NODE_VERSION}
+ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"P
+
+# Install Rust and Cargo in /opt
+ARG rust_version=1.51.0
+ENV RUSTUP_HOME=/opt/rustup \
+    CARGO_HOME=/opt/cargo \
+    PATH=/opt/cargo/bin:$PATH
+RUN curl --fail https://sh.rustup.rs -sSf \
+        | sh -s -- -y --default-toolchain ${rust_version}-x86_64-unknown-linux-gnu --no-modify-path &amp;&amp; \
+    rustup default ${rust_version}-x86_64-unknown-linux-gnu &amp;&amp; \
+    rustup target add wasm32-unknown-unknown
+
+# Install dfx; the version is picked up the DFX_VERSION environment variable
+ENV DFX_VERSION=0.8.2
+RUN sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
+
+RUN apt -yqq install --no-install-recommends reprotest disorderfs faketime sudo wabt
+
+COPY . /canister
+WORKDIR /canister</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, create a <code>canister_ids.json</code> file containing the IDs of your canisters on the Internet Computer, and put it in your project directory.
+Now, from the root directory of your canister project, you can test the reproducibility of your <code>dfx</code> builds as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ docker build -t mycanister .
+...
+$ docker run --rm --privileged -it mycanister
+root@6fe19d89f8f5:/canister# reprotest -vv "dfx build --network ic" '.dfx/ic/canisters/*/*.wasm'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first command builds the Docker canister using the above <code>Dockerfile</code>.
+The second one opens an interactive shell (hence the <code>-it</code> flags) in the canister.
+We run this in privileged mode (the <code>--privileged</code> flag), as <code>reprotest</code> uses kernel modules for some build environment variations.
+You can also run it in non-privileged mode by excluding some of the variations; see the <a href="https://manpages.debian.org/stretch/reprotest/reprotest.1.en.html">reprotest manual</a>.
+The <code>--rm</code> flag will destroy the canister after you close its shell.
+Finally, once inside of the canister, we launch <code>reprotest</code> in verbose mode (the <code>-vv</code> flags).
+You need to give it the build command you want to run as the first argument.
+Here, we assume that it&#8217;s <code>dfx build --network ic</code> - adjust it if you&#8217;re using a different build process.
+It will then run the build in two different environments.
+Finally, you need to tell <code>reprotest</code> which paths to compare at the end of the two builds.
+Here, we compare the Wasm code for all canisters, which is found in the <code>.dfx/ic</code> directory.</p>
+</div>
+<div class="paragraph">
+<p>If the comparison doesn&#8217;t find any differences, you will see an output similar to this one:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>No differences in ./.dfx/ic/canisters/*/*.wasm
+27ff185372dbf51a860d6ddbe6fc9cbdd47cb41fba8c1b702bed9767cc34d66f  ./.dfx/ic/canisters/Map/Map.wasm
+6af1076f70407854cd6f62f23429d81f58398729f9ee5d4247ae4f93eb12770c  ./.dfx/ic/canisters/Test/Test.wasm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Congratulations - this is a good indicator that your build is not affected by your environment!
+Note that <code>reprotest</code> can&#8217;t check that your dependencies are pinned properly - use guidelines from the previous section for that.
+Moreover, we recommend you to run the container <code>reprotest</code> builds under several host operating systems and compare the results.
+If the comparison does find differences between the Wasm code produced in two builds, it will output a diff.
+You will then likely want to use the <code>--store-dir</code> flag of <code>reprotest</code> to store the outputs and the diff somewhere where you can analyze them.
+If you are struggling to achieve reproducibility, consider also using <a href="https://github.com/dettrace/dettrace">DetTrace</a>,
+which is a container abstraction that tries to make arbitrary builds deterministic.</p>
+</div>
+<div class="paragraph">
+<p>Finally, even after you achieve reproducibility for your builds, there are still other things to consider
+for the long term.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_long_term_considerations"><a class="anchor" href="#_long_term_considerations"></a>Long-term considerations</h3>
+<div class="paragraph">
+<p>Reproducibility can be more demanding if you expect your canister canister code to stay around for years, and stay reproducible.
+The biggest challenges are to ensure that your:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Build toolchain is still available in the future.</p>
+</li>
+<li>
+<p>Dependencies are avaiable.</p>
+</li>
+<li>
+<p>Toolchain still runs and still correctly builds your dependencies.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Distributions and package archives may drop old versions of packages, including both your toolchain and their dependencies.
+Web sites may go offline and URLs might stop working.
+Thus, it&#8217;s prudent to back up all of your toolchain and dependencies.
+You should consider getting involved in projects such as <a href="https://www.softwareheritage.org/">Software Heritage</a>, which do this on a large scale.
+At some later point in time, you might have to adjust your build process (e.g., by changing URLs) to ensure that your canister still builds.
+Even if the build changes, if it still yields the same result, your users can be confident that your canister is running the correct code.
+The trust argument is easier if your dependencies come from a trustworthy source, such as the Software Heritage project.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary"><a class="anchor" href="#_summary"></a>Summary</h2>
+<div class="sectionbody">
+<div id="repro-build-summary" class="paragraph">
+<p>Summarizing our recommendations for canister authors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ideally, when producing the final version of your container code, use Docker or a similar technology to conveniently set up the
+operating system and the build tools, and fix their versions for the user.
+If the build tools you are using don&#8217;t guarantee fully reproducible builds, Docker can also help by minimizing the differences in paths, environment variables etc.</p>
+</li>
+<li>
+<p>The build tools and the base Docker image should be sourced from somewhere that the user can trust.</p>
+</li>
+<li>
+<p>Rust and Motoko compilers aim to be deterministic, and thus to support reproducible builds. If you notice non-determinism, file bug reports.</p>
+</li>
+<li>
+<p>When using NPM, ensure that you specify the exact versions of all your dependencies (commit <code>package_lock.json</code> to your git repo!).
+Invoke NPM using the <code>ci</code> command rather than <code>install</code> to reproduce the build.
+Similarly, for Rust packages commit <code>Cargo.lock</code> to your repository, and then use <code>cargo build --locked</code> when building the package.</p>
+</li>
+<li>
+<p>Webpack builds should be deterministic, but obfuscators and similar tools may compromise reproducibility.
+Make sure you use deterministic chunk and module IDs.</p>
+</li>
+<li>
+<p>Build tools aren&#8217;t perfect, and may fail to ensure reproducible builds.
+If reproducibility is critical for your canister (e.g., it holds other users' funds), test it.
+Reprotest is a useful tool for this purpose.</p>
+</li>
+<li>
+<p>Ideally, you want to minimize the number of dependencies, as, in order to do a full audit, the user may have to (reproducibly) rebuild all
+of your dependencies too.</p>
+</li>
+<li>
+<p>Achieving reproducibility is harder over longer time scales, primarily as you need to ensure that a trustworthy source of your
+dependencies and build tools stays available.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Finally, if your build is reproducible, you can compare the hash of the resulting Wasm code to the hash of the code that is running in a canister, which you retrieve as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ dfx canister --no-wallet --network ic info &lt;canister-id&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Beware that this hash might change if the controllers upgrade the canister code.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

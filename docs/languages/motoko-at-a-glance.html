@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Motoko at-a-glance :: 互联网计算机开发者文档</title>
+    <meta name="keywords" content="Motoko,programming language,Internet Computer,developers">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../quickstart/quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/cli-reference/dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../developers-guide/concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../integration/ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../developers-guide/computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">开发者文档</a></li>
+    <li><a href="motoko-at-a-glance.html">Motoko at-a-glance</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/languages/pages/motoko-at-a-glance.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Motoko at-a-glance</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This summary provides a simple but comprehensive overview of Motoko with examples of key features to help you identify operations and patterns that you might know in other languages and what they look like in Motoko.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_motoko_motivation_and_goals"><a class="anchor" href="#_motoko_motivation_and_goals"></a>Motoko motivation and goals</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A simple, useful language for DFINITY and the {platform}.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Familiar syntax</p>
+</li>
+<li>
+<p>Safe by default</p>
+</li>
+<li>
+<p>Incorporates smart contracts using the <strong>canister</strong> model</p>
+</li>
+<li>
+<p>Provides seamless integration of DFINITY and the {platform} features</p>
+</li>
+<li>
+<p>Makes the most of present and future WebAssembly</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_design_points"><a class="anchor" href="#_key_design_points"></a>Key design points</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Motoko takes inspiration from several programming languages, including Java, JavaScript, C#, Swift, Pony, ML, Haskell.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Object-oriented, functional, and imperative</p>
+</li>
+<li>
+<p>Objects as records of members</p>
+</li>
+<li>
+<p><code>async</code>/<code>await</code> for sequential programming of asynchronous messaging</p>
+</li>
+<li>
+<p>Structural typing with simple generics and subtyping</p>
+</li>
+<li>
+<p>Safe arithmetic (unbounded and checked)</p>
+</li>
+<li>
+<p>Non-nullable types by default</p>
+</li>
+<li>
+<p>JavaScript-like syntax but statically typed and sane</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_semantics"><a class="anchor" href="#_semantics"></a>Semantics</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>call-by-value (like Java, C, JS, and ML; unlike Haskell and Nix)</p>
+</li>
+<li>
+<p>declarations are locally mutually recursive</p>
+</li>
+<li>
+<p>parametric, bounded polymorphism</p>
+</li>
+<li>
+<p>subtyping as subsumption, not coercion</p>
+</li>
+<li>
+<p>no dynamic casts</p>
+</li>
+<li>
+<p>no inheritance</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implementations"><a class="anchor" href="#_implementations"></a>Implementations</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>implemented in OCaml (leverages <code>wasm</code> library)</p>
+</li>
+<li>
+<p>simple reference interpreter</p>
+</li>
+<li>
+<p>less simple compiler to WebAssembly</p>
+</li>
+<li>
+<p>multipass with typed IR in each pass</p>
+</li>
+<li>
+<p>uniform representation, unboxed arithmetic</p>
+</li>
+<li>
+<p>two-space gc, gc between messages</p>
+</li>
+<li>
+<p>polymorphism by erasure</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_language_features"><a class="anchor" href="#_language_features"></a>Language features</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next sections highlight Motoko programming language features in simplified form.
+For additional information about using these and other features, see the <a href="../language-guide/language-manual.html">Language quick reference</a> in the ink:../language-guide/motoko.html[<em>Motoko Programming Language Guide</em>].</p>
+</div>
+<div class="sect2">
+<h3 id="_expressions"><a class="anchor" href="#_expressions"></a>Expressions</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>identifiers such as <code>x</code>, <code>foo_bar</code>, <code>test'</code>, <code>List</code>, <code>Map</code></p>
+</li>
+<li>
+<p>parentheses for grouping</p>
+</li>
+<li>
+<p>type annotations to help type inference, for example <code>(42 : Int)</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_blocks_and_declarations"><a class="anchor" href="#_blocks_and_declarations"></a>Blocks and declarations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>semi-colons are required after each declaration</p>
+</li>
+<li>
+<p>mutually recursive</p>
+</li>
+<li>
+<p>mutable variables marked explicitly</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>type Delta = Nat;
+func print() {
+  Debug.print(Int.toText(counter));
+};
+let d : Delta = 42;
+var counter = 1;
+counter := counter + tmp;
+print();</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_control_flow"><a class="anchor" href="#_control_flow"></a>Control flow</h3>
+<div class="paragraph">
+<p>if and if - else</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>if (b) …
+if (b) … else …</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>switch and case</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>switch x { case (pat1) e1; …; case _ en }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>while and loop</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>while (b) …
+
+loop …
+loop … while (b)`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>for</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>for (pat in e) …</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_primitive_types"><a class="anchor" href="#_primitive_types"></a>Primitive types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next sections highlight the primitive types in the Motoko programming language.</p>
+</div>
+<div class="sect2">
+<h3 id="_unbounded_integers"><a class="anchor" href="#_unbounded_integers"></a>Unbounded integers</h3>
+<div class="paragraph">
+<p><code>Int</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>inferred by default for negative literals</p>
+</li>
+<li>
+<p>literals: <code>13</code>, <code>0xf4</code>, <code>-20</code>, <code>+1</code>, <code>1_000_000</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_unbounded_naturals"><a class="anchor" href="#_unbounded_naturals"></a>Unbounded naturals</h3>
+<div class="paragraph">
+<p><code>Nat</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>non-negative numbers, trap upon underflow</p>
+</li>
+<li>
+<p>inferred by default for non-negative literals</p>
+</li>
+<li>
+<p>literals: <code>13</code>, <code>0xf4</code>, <code>1_000_000</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bounded_numbers_trapping"><a class="anchor" href="#_bounded_numbers_trapping"></a>Bounded numbers (trapping)</h3>
+<div class="paragraph">
+<p><code>Nat8</code>, <code>Nat16</code>, <code>Nat32</code>, <code>Nat64</code>, <code>Int8</code>, <code>Int16</code>, <code>Int32</code>, <code>Int64</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>trap on over- and underflow</p>
+</li>
+<li>
+<p>need type annotations specified</p>
+</li>
+<li>
+<p>literals: <code>13</code>, <code>0xf4</code>, <code>-20</code>, <code>1_000_000</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_floating_point_numbers"><a class="anchor" href="#_floating_point_numbers"></a>Floating point numbers</h3>
+<div class="paragraph">
+<p><code>Float</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IEEE 754 double precision (64 bit) semantics, normalized NaN</p>
+</li>
+<li>
+<p>inferred for fractional literals</p>
+</li>
+<li>
+<p>literals: <code>0</code>, <code>-10</code>, <code>2.71</code>, <code>-0.3e+15</code>, <code>3.141_592_653_589_793_12</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_numeric_operations"><a class="anchor" href="#_numeric_operations"></a>Numeric operations</h3>
+<div class="paragraph">
+<p>operators behave as you would expect (no surprises)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>a - b
+a + b
+a &amp; b</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_characters_and_text"><a class="anchor" href="#_characters_and_text"></a>Characters and text</h3>
+<div class="paragraph">
+<p><code>Char</code>, <code>Text</code></p>
+</div>
+<div class="paragraph">
+<p>Unicode, no random access</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>'x', '\u{\6a}', '☃'
+"boo", "foo \u{\62}ar ☃"
+"Concat" # "enation"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_booleans"><a class="anchor" href="#_booleans"></a>Booleans</h3>
+<div class="paragraph">
+<p><code>Bool</code></p>
+</div>
+<div class="paragraph">
+<p>literals: <code>true</code>, <code>false</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>a or b
+a and b
+not b
+if (b) e1 else e2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_functions"><a class="anchor" href="#_functions"></a>Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next sections provide examples for working with functions in the Motoko programming language.</p>
+</div>
+<div class="sect2">
+<h3 id="_function_types"><a class="anchor" href="#_function_types"></a>Function types</h3>
+<div class="paragraph">
+<p>simple functions</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>Int.toText : Int -&gt; Text</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>multiple arguments and return values</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>divRem : (Int, Int) -&gt; (Int, Int)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>can be generic/polymorphic</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>Option.unwrapOr : &lt;T&gt;(?T, default : T) -&gt; T</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>first-class (can be passed around, stored)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>map : &lt;A, B&gt;(f : A -&gt; B, xs : [A]) -&gt; [B]
+let funcs : [&lt;T&gt;(T) -&gt; T] = …</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_function_declarations_and_use"><a class="anchor" href="#_function_declarations_and_use"></a>Function declarations and use</h3>
+<div class="paragraph">
+<p><code>func() { … }</code> short for <code>func() : () = { … }</code></p>
+</div>
+<div class="paragraph">
+<p>parametric functions</p>
+</div>
+<div class="paragraph">
+<p>type instantiations may sometimes be omitted</p>
+</div>
+<div class="paragraph">
+<p>anonymous functions (a.k.a. lambdas)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>func add(x : Int, y : Int) : Int = x + y;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>func applyNTimes&lt;T&gt;(n : Nat, x : T, f : T -&gt; ()) {
+  if (n == 0) return;
+  f(x);
+  applyNTimes(n-1, x, f);
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>applyNTimes&lt;Text&gt;(10, "Hello!", func(x) = { Debug.print(x) } );</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_composite_types"><a class="anchor" href="#_composite_types"></a>Composite types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next sections provide examples for working with composite types in the Motoko programming language.</p>
+</div>
+<div class="sect2">
+<h3 id="_tuples"><a class="anchor" href="#_tuples"></a>Tuples</h3>
+<div class="paragraph">
+<p><code>(Bool, Float, Text)</code></p>
+</div>
+<div class="paragraph">
+<p>immutable, heterogeneous, fixed size</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>let tuple = (true, 1.2, "foo");
+tuple.1 &gt; 0.0;
+let (_,_,t) = tuple;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_options"><a class="anchor" href="#_options"></a>Options</h3>
+<div class="paragraph">
+<p><code>?Text</code></p>
+</div>
+<div class="paragraph">
+<p>is either a value of that type, or <code>null</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>func foo(x : ?Text) : Text {
+  switch x {
+    case (null) { "No value" };
+    case (?y) { "Value: " # y };
+  };
+};
+foo(null);
+foo(?"Test");</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arrays_immutable"><a class="anchor" href="#_arrays_immutable"></a>Arrays (immutable)</h3>
+<div class="paragraph">
+<p><code>[Text]</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>let days = ["Monday", "Tuesday", … ];
+assert(days.len() == 7);
+assert(days[1] == "Tuesday");
+// days[7] will trap (fixed size)
+for (d in days.vals()) { Debug.print(d) };</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arrays_mutable"><a class="anchor" href="#_arrays_mutable"></a>Arrays (mutable)</h3>
+<div class="paragraph">
+<p><code>[var Nat]</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>let counters = [var 1, 2, 3];
+assert(counters.len() == 3);
+counters[1] := counters[1] + 1;
+// counters[3] will trap (fixed size)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_records"><a class="anchor" href="#_records"></a>Records</h3>
+<div class="paragraph">
+<p><code>{name : Text; points : var Int}</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>let player = { name = "Joachim";  var points = 0 };
+Debug.print(
+  player.name # " has " #
+  Int.toText(player.points) # " points."
+);
+player.points += 1;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_objects"><a class="anchor" href="#_objects"></a>Objects</h3>
+<div class="paragraph">
+<p><code>{ get : () &#8594; Int; add : Int &#8594; () }</code></p>
+</div>
+<div class="paragraph">
+<p>different syntax, same type as records</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>object self {
+  var points = 0; // private by default
+  public func get() = points;
+  public func add(p : Int) { points += p };
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_variants"><a class="anchor" href="#_variants"></a>Variants</h3>
+<div class="paragraph">
+<p><code>{ #invincible; #alive : Int; #dead }</code></p>
+</div>
+<div class="paragraph">
+<p>similar to enumerated types</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>type Health = { #invincible; #alive : Nat; #dead };
+func takeDamage(h : Health, p : Nat) : Health {
+  switch (h) {
+    case (#invincible) #invincible;
+    case (#alive hp) {
+      if (hp &gt; p) (#alive (hp-p)) else #dead
+    };
+    case (#dead) #dead;
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_packages_and_modules"><a class="anchor" href="#_packages_and_modules"></a>Packages and modules</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next sections provide examples for working with packages and modules in the Motoko programming language.</p>
+</div>
+<div class="sect2">
+<h3 id="_modules"><a class="anchor" href="#_modules"></a>Modules</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>types and values like objects</p>
+</li>
+<li>
+<p>restricted to <em>static</em> content (pure, no state, …)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>// the type of base/Int.mo
+module {
+  toText : Int -&gt; Text;
+  abs : Int -&gt; Nat;
+  …
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_module_imports"><a class="anchor" href="#_module_imports"></a>Module imports</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>base</code> package provides basic features</p>
+</li>
+<li>
+<p>additional libraries evolving with community support</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>import Debug "mo:base/Debug";
+import Int "mo:base/Int";</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_platform_features"><a class="anchor" href="#_platform_features"></a>Platform features</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next sections provide examples of the Motoko programming language platform-specific features.</p>
+</div>
+<div class="sect2">
+<h3 id="_actor_types"><a class="anchor" href="#_actor_types"></a>Actor types</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>like object types, but marked as <code>actor</code>:</p>
+</li>
+<li>
+<p><em>sharable</em> arguments and <em>no</em> or <em>async</em> result type.</p>
+</li>
+<li>
+<p>“canister” ≈ “actor”</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>type Receiver = actor { recv : Text -&gt; async Nat };
+type Broadcast = actor {
+  register : Receiver -&gt; ();
+  send : Text -&gt; async Nat;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sharable_serializable"><a class="anchor" href="#_sharable_serializable"></a>Sharable ≈ serializable</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>all primitive types</p>
+</li>
+<li>
+<p>records, tuples, arrays, variants, options with immutable sharable components</p>
+</li>
+<li>
+<p><code>actor</code> types</p>
+</li>
+<li>
+<p><code>shared</code> function type</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following are <strong>not sharable:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>mutable things</p>
+</li>
+<li>
+<p>local functions</p>
+</li>
+<li>
+<p>objects (with methods)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_complete_actor_example"><a class="anchor" href="#_complete_actor_example"></a>Complete actor example</h3>
+<div class="paragraph">
+<p>typical canister main file</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>import Array "mo:base/Array";
+actor {
+  var r : [Receiver] = [];
+  public func register(a : Receiver) {
+    r := Array.append(r, [a]);
+  };
+  public func send(t : Text) : async Nat {
+    var sum := 0;
+    for (a in r.values()) {
+      sum += await a.recv(t);
+    };
+    return sum;
+  };
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_asyncawait"><a class="anchor" href="#_asyncawait"></a>Async/await</h3>
+<div class="paragraph">
+<p><code>async T</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>asynchronous future or promise</p>
+</li>
+<li>
+<p>introduced by <code>async { … }</code> (implicit in async function declaration)</p>
+</li>
+<li>
+<p><code>await e</code> suspends computation pending `e&#8217;s result</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actor_import"><a class="anchor" href="#_actor_import"></a>Actor import</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>import Broadcast "ic:ABCDEF23";
+actor Self {
+  public func go() {
+    Broadcast.register(Self);
+  };
+  public func recv(msg : Text) : async Nat {
+    …
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_principal_and_caller"><a class="anchor" href="#_principal_and_caller"></a>Principal and caller</h3>
+<div class="paragraph">
+<p>a <code>Principal</code> type represents the identity of a user or canister/actor</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>actor Self {
+  let myself : Principal = Principal.fromActor(Self);
+  public shared(context) func hello() : async Text {
+    if (context.caller == myself) {
+      "Talking to yourself is the first sign of madness";
+    } else {
+      "Hello, nice to see you";
+    };
+  };
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_type_system"><a class="anchor" href="#_type_system"></a>Type system</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next sections highlight details about type system used in the Motoko programming language.</p>
+</div>
+<div class="sect2">
+<h3 id="_structural"><a class="anchor" href="#_structural"></a>Structural</h3>
+<div class="paragraph">
+<p>type definitions do not create types, but name existing types</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>type Health1 = { #invincible; #alive : Nat; #dead };
+type Health2 = { #invincible; #alive : Nat; #dead };
+
+let takeDamage : (Health1, Nat) -&gt; Health1 = …;
+let h : Health2 = #invincible;
+let h' = takeDamage(h, 100); // works</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_subtyping"><a class="anchor" href="#_subtyping"></a>Subtyping</h3>
+<div class="paragraph">
+<p><code>Mortal &lt;: Health</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>type Health = { #invincible; #alive : Nat; #dead };
+type Mortal = { #alive : Nat; #dead };
+
+let takeDamage : (Health, Nat) -&gt; Health = …;
+let h : Mortal = #alive 1000;
+let h' = takeDamage(h, 100); // also works</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>t1 &lt;: t2</code>: <code>t1</code> can be used wherever <code>t2</code> is expected</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_generic_types"><a class="anchor" href="#_generic_types"></a>Generic types</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>type List&lt;T&gt; = ?{head : T; tail : List&lt;T&gt;};
+
+let l : List&lt;Nat&gt; = ?{head = 0; tail = ?{head = 1 ; tail = null }};</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_error_handling"><a class="anchor" href="#_error_handling"></a>Error handling</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>try … catch …
+
+throw …</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_class_declaration_example"><a class="anchor" href="#_class_declaration_example"></a>Class declaration example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following table compares class declarations in Motoko with class declarations in JavaScript and TypeScript.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Motoko</th>
+<th class="tableblock halign-left valign-top">JavaScript/TypeScript</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre>class Counter(initValue:Nat) {
+  var _value = initValue;
+  public func get() : Nat {
+    _value
+  };
+  func f(x: Nat) {};
+}</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre>class Counter {
+  private _value;
+  constructor(initValue) { _value = initValue }
+  public get() { return _value }
+  private f(x) {}
+}</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre>class Foo() = Self {
+  func f() : Foo = Self
+}</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

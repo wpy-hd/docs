@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sample code, applications, and microservices :: 互联网计算机开发者文档</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../quickstart/quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart/network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="cli-reference/dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tutorials/my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../integration/ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">开发者文档</a></li>
+    <li><a href="sample-apps.html">Sample code, applications, and microservices</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/developers-guide/pages/sample-apps.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Sample code, applications, and microservices</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sample code, applications, and microservices that have been developed by DFINITY or contributed by the community are available from the <a href="https://github.com/dfinity/examples">DFINITY public repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>By accessing the public repository, you can directly download, clone, fork, or share sample projects.
+You will also be able to contribute by suggesting updates or reporting issues for the published projects using the standard GitHub work flow.</p>
+</div>
+<div class="paragraph">
+<p>Sample projects provide a way for you to experiment and collaborate with other developers.
+The projects and sample code are not, however, intended to be used as commercial applications and do not provide any explicit or implied support or warranty of any kind.</p>
+</div>
+<div class="paragraph">
+<p>This section provides a preliminary look at some sample code for applications and microservices that you can copy and modify to jump-start your own projects.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_c"><a class="anchor" href="#_c"></a>C</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For examples of projects written in the C programming language for the Internet Computer, see <a href="https://github.com/dfinity/examples/tree/master/c">C++ sample projects</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/c/adventure">Adventure game</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/c/qr">QR code generator</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/c/reverse">Reverse game</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_motoko"><a class="anchor" href="#_motoko"></a>Motoko</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For projects that use the Motoko programming language, see <a href="https://github.com/dfinity/examples/tree/master/motoko">Motoko sample projects</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/calc">Calculator - simple functions</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/counter">Counter</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/echo">Echo</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/factorial">Factorial</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/hello-world">Hello, world</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/hello_cycles">Hello, cycles</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/life">Game of Life - upgrades</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/phone-book">Phone book</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/pub-sub">Publish/subscribe</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/quicksort">Quicksort</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/random_maze">Random maze - cryptographic randomness</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/simple-to-do">To-do checklist</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/superheroes">Superheroes database</a></p>
+</li>
+<li>
+<p><a href="https://github.com/dfinity/examples/tree/master/motoko/whoami">whoami</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_sample_applications"><a class="anchor" href="#_additional_sample_applications"></a>Additional sample applications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section includes sample code from projects that are not currently available in the public repository.</p>
+</div>
+<div class="sect2">
+<h3 id="_hex_encoding_and_decoding"><a class="anchor" href="#_hex_encoding_and_decoding"></a>Hex encoding and decoding</h3>
+<div class="paragraph">
+<p>The <code>mo-hex</code> project implements hexadecimal encoding and decoding routines for the Motoko programming language.</p>
+</div>
+<div class="sect3">
+<h4 id="_source_code"><a class="anchor" href="#_source_code"></a>Source code</h4>
+<div class="paragraph">
+<p>The project includes the following <a href="#hex">hex.mo</a> source code.</p>
+</div>
+<div class="sect4">
+<h5 id="hex"><a class="anchor" href="#hex"></a>hex.mo</h5>
+<div class="listingblock copy">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-motoko hljs" data-lang="motoko">/**
+ * Module      : Hex.mo
+ * Description : Hexadecimal encoding and decoding routines.
+ * Copyright   : 2020 Enzo Haussecker
+ * License     : Apache 2.0 with LLVM Exception
+ * Maintainer  : Enzo Haussecker &lt;enzo@dfinity.org&gt;
+ * Stability   : Stable
+ */
+
+import Array "mo:base/Array";
+import Iter "mo:base/Iter";
+import Option "mo:base/Option";
+import Nat8 "mo:base/Nat8";
+import Char "mo:base/Char";
+import Result "mo:base/Result";
+
+module {
+
+  private type Result&lt;Ok, Err&gt; = Result.Result&lt;Ok, Err&gt;;
+
+  private let base : Nat8 = 0x10;
+
+  private let symbols = [
+    '0', '1', '2', '3', '4', '5', '6', '7',
+    '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
+  ];
+
+  /**
+   * Define a type to indicate that the decoder has failed.
+   */
+  public type DecodeError = {
+    #msg : Text;
+  };
+
+  /**
+   * Encode an array of unsigned 8-bit integers in hexadecimal format.
+   */
+  public func encode(array : [Nat8]) : Text {
+    Array.foldLeft&lt;Nat8, Text&gt;(array, "", func (accum, w8) {
+      accum # encodeW8(w8);
+    });
+  };
+
+  /**
+   * Encode an unsigned 8-bit integer in hexadecimal format.
+   */
+  private func encodeW8(w8 : Nat8) : Text {
+    let c1 = symbols[Nat8.toNat(w8 / base)];
+    let c2 = symbols[Nat8.toNat(w8 % base)];
+    Char.toText(c1) # Char.toText(c2);
+  };
+
+  /**
+   * Decode an array of unsigned 8-bit integers in hexadecimal format.
+   */
+  public func decode(text : Text) : Result&lt;[Nat8], DecodeError&gt; {
+    let next = text.chars().next;
+    func parse() : Result&lt;Nat8, DecodeError&gt; {
+      Option.get&lt;Result&lt;Nat8, DecodeError&gt;&gt;(
+        do ? {
+          let c1 = next()!;
+          let c2 = next()!;
+          Result.chain&lt;Nat8, Nat8, DecodeError&gt;(decodeW4(c1), func (x1) {
+            Result.chain&lt;Nat8, Nat8, DecodeError&gt;(decodeW4(c2), func (x2) {
+                #ok (x1 * base + x2);
+            })
+          })
+        },
+        #err (#msg "Not enough input!"),
+      );
+    };
+    var i = 0;
+    let n = text.size() / 2 + text.size() % 2;
+    let array = Array.init&lt;Nat8&gt;(n, 0);
+    while (i != n) {
+      switch (parse()) {
+        case (#ok w8) {
+          array[i] := w8;
+          i += 1;
+        };
+        case (#err err) {
+          return #err err;
+        };
+      };
+    };
+    #ok (Array.freeze&lt;Nat8&gt;(array));
+  };
+
+  /**
+   * Decode an unsigned 4-bit integer in hexadecimal format.
+   */
+  private func decodeW4(char : Char) : Result&lt;Nat8, DecodeError&gt; {
+    for (i in Iter.range(0, 15)) {
+      if (symbols[i] == char) {
+        return #ok (Nat8.fromNat(i));
+      };
+    };
+    let str = "Unexpected character: " # Char.toText(char);
+    #err (#msg str);
+  };
+};</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_polynomial_long_division_in_gf256"><a class="anchor" href="#_polynomial_long_division_in_gf256"></a>Polynomial long-division in GF(256)</h3>
+<div class="paragraph">
+<p>This program performs polynomial long division for a Galois field GF(256) element.</p>
+</div>
+<div class="sect3">
+<h4 id="_source_code_2"><a class="anchor" href="#_source_code_2"></a>Source code</h4>
+<div class="paragraph">
+<p>In addition to standard libraries, this project uses two main Motoko source code files.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="#galois">Galois.mo</a> file contains the core programming logic.</p>
+</li>
+<li>
+<p>The <a href="#nat">Nat.mo</a> file contains additional functions that are imported for use in the <code>Galois.mo</code> file.</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="galois"><a class="anchor" href="#galois"></a>Galois.mo</h5>
+<div class="listingblock copy">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-motoko hljs" data-lang="motoko">/**
+ * Module     : Galois.mo
+ * Copyright  : 2020 DFINITY Stiftung
+ * License    : Apache 2.0 with LLVM Exception
+ * Maintainer : Enzo Haussecker &lt;enzo@dfinity.org&gt;
+ * Stability  : Stable
+ */
+
+import Array "mo:base/Array";
+import Debug "mo:base/Debug";
+import List "mo:base/List";
+import Nat "Nat";
+import Prelude "mo:base/Prelude";
+import Int "mo:base/Int";
+import Util "Util"
+
+module {
+
+  type List&lt;T&gt; = List.List&lt;T&gt;;
+
+  public let logs = [
+    000, 001, 025, 002, 050, 026, 198, 003, 223, 051,
+    238, 027, 104, 199, 075, 004, 100, 224, 014, 052,
+    141, 239, 129, 028, 193, 105, 248, 200, 008, 076,
+    113, 005, 138, 101, 047, 225, 036, 015, 033, 053,
+    147, 142, 218, 240, 018, 130, 069, 029, 181, 194,
+    125, 106, 039, 249, 185, 201, 154, 009, 120, 077,
+    228, 114, 166, 006, 191, 139, 098, 102, 221, 048,
+    253, 226, 152, 037, 179, 016, 145, 034, 136, 054,
+    208, 148, 206, 143, 150, 219, 189, 241, 210, 019,
+    092, 131, 056, 070, 064, 030, 066, 182, 163, 195,
+    072, 126, 110, 107, 058, 040, 084, 250, 133, 186,
+    061, 202, 094, 155, 159, 010, 021, 121, 043, 078,
+    212, 229, 172, 115, 243, 167, 087, 007, 112, 192,
+    247, 140, 128, 099, 013, 103, 074, 222, 237, 049,
+    197, 254, 024, 227, 165, 153, 119, 038, 184, 180,
+    124, 017, 068, 146, 217, 035, 032, 137, 046, 055,
+    063, 209, 091, 149, 188, 207, 205, 144, 135, 151,
+    178, 220, 252, 190, 097, 242, 086, 211, 171, 020,
+    042, 093, 158, 132, 060, 057, 083, 071, 109, 065,
+    162, 031, 045, 067, 216, 183, 123, 164, 118, 196,
+    023, 073, 236, 127, 012, 111, 246, 108, 161, 059,
+    082, 041, 157, 085, 170, 251, 096, 134, 177, 187,
+    204, 062, 090, 203, 089, 095, 176, 156, 169, 160,
+    081, 011, 245, 022, 235, 122, 117, 044, 215, 079,
+    174, 213, 233, 230, 231, 173, 232, 116, 214, 244,
+    234, 168, 080, 088, 175
+  ];
+
+  public func log(n : Nat) : Nat {
+    let m = n % 256;
+    if (m == 0) {
+      Debug.print("Error: Logarithm of zero is undefined in GF(256)!");
+      Prelude.unreachable()
+    };
+    logs[m - 1]
+  };
+
+  public let alogs = [
+    001, 002, 004, 008, 016, 032, 064, 128, 029, 058,
+    116, 232, 205, 135, 019, 038, 076, 152, 045, 090,
+    180, 117, 234, 201, 143, 003, 006, 012, 024, 048,
+    096, 192, 157, 039, 078, 156, 037, 074, 148, 053,
+    106, 212, 181, 119, 238, 193, 159, 035, 070, 140,
+    005, 010, 020, 040, 080, 160, 093, 186, 105, 210,
+    185, 111, 222, 161, 095, 190, 097, 194, 153, 047,
+    094, 188, 101, 202, 137, 015, 030, 060, 120, 240,
+    253, 231, 211, 187, 107, 214, 177, 127, 254, 225,
+    223, 163, 091, 182, 113, 226, 217, 175, 067, 134,
+    017, 034, 068, 136, 013, 026, 052, 104, 208, 189,
+    103, 206, 129, 031, 062, 124, 248, 237, 199, 147,
+    059, 118, 236, 197, 151, 051, 102, 204, 133, 023,
+    046, 092, 184, 109, 218, 169, 079, 158, 033, 066,
+    132, 021, 042, 084, 168, 077, 154, 041, 082, 164,
+    085, 170, 073, 146, 057, 114, 228, 213, 183, 115,
+    230, 209, 191, 099, 198, 145, 063, 126, 252, 229,
+    215, 179, 123, 246, 241, 255, 227, 219, 171, 075,
+    150, 049, 098, 196, 149, 055, 110, 220, 165, 087,
+    174, 065, 130, 025, 050, 100, 200, 141, 007, 014,
+    028, 056, 112, 224, 221, 167, 083, 166, 081, 162,
+    089, 178, 121, 242, 249, 239, 195, 155, 043, 086,
+    172, 069, 138, 009, 018, 036, 072, 144, 061, 122,
+    244, 245, 247, 243, 251, 235, 203, 139, 011, 022,
+    044, 088, 176, 125, 250, 233, 207, 131, 027, 054,
+    108, 216, 173, 071, 142
+  ];
+
+  public func alog(n : Nat) : Nat {
+    let m = n % 256;
+    if (m == 255) {
+      Debug.print("Error: Antilogarithm of 255 is undefined in GF(256)!");
+      Prelude.unreachable()
+    };
+    alogs[m]
+  };
+
+  public type Elem = { unbox : Nat };
+
+  public func elemNew(n : Nat) : Elem {
+    { unbox = n % 256 }
+  };
+
+  public func elemShow(elem : Elem) : Text {
+    debug_show(elem.unbox)
+  };
+
+  public func elemToBit(elem : Elem) : Bool {
+    elem.unbox &gt; 0
+  };
+
+  public func elemFromBit(bit : Bool) : Elem {
+    if bit {
+      { unbox = 1 }
+    } else {
+      { unbox = 0 }
+    }
+  };
+
+  public func elemToBits(elem : Elem) : List&lt;Bool&gt; {
+    Util.padLeftTo(8, Nat.natToBits(elem.unbox))
+  };
+
+  public func elemFromBits(bits : List&lt;Bool&gt;) : Elem {
+    elemNew(Nat.natFromBits(bits))
+  };
+
+  public func elemEq(elem1 : Elem, elem2 : Elem) : Bool {
+    elem1.unbox == elem2.unbox
+  };
+
+  public func elemAdd(elem1 : Elem, elem2 : Elem) : Elem {
+    { unbox = Nat.natXor(elem1.unbox, elem2.unbox) }
+  };
+
+  public func elemSub(elem1 : Elem, elem2 : Elem) : Elem {
+    elemAdd(elem1, elem2)
+  };
+
+  public func elemMul(elem1 : Elem, elem2 : Elem) : Elem {
+    switch (elem1.unbox, elem2.unbox) {
+      case (0, _) { elem1 };
+      case (_, 0) { elem2 };
+      case (a, b) {
+        { unbox = alog((log(a) + log(b)) % 255) }
+      }
+    }
+  };
+
+  public func elemDiv(elem1 : Elem, elem2 : Elem) : Elem {
+    switch (elem1.unbox, elem2.unbox) {
+      case (_, 0) {
+        Debug.print("Error: Division by zero is undefined in GF(256)!");
+        Prelude.unreachable()
+      };
+      case (0, _) {
+        { unbox = 0 }
+      };
+      case (a, b) {
+        { unbox = alog((255 + log(a) - log(b)) % 255) }
+      }
+    }
+  };
+
+  public func elemDivMod(elem1 : Elem, elem2 : Elem) : (Elem, Elem) {
+    let elem3 = elemDiv(elem1, elem2);
+    (elem3, elemSub(elem1, elem3))
+  };
+
+  public type Poly = { unbox : List&lt;Elem&gt; };
+
+  public func polyNew(coeffs : [Nat]) : Poly {
+    func step(n : Nat, accum : List&lt;Elem&gt;) : List&lt;Elem&gt; {
+      List.push&lt;Elem&gt;(elemNew(n), accum)
+    };
+    let base = List.nil&lt;Elem&gt;();
+    { unbox = Array.foldRight&lt;Nat, List&lt;Elem&gt;&gt;(coeffs, base, step) }
+  };
+
+  public func polyShow(poly : Poly) : Text {
+    switch (List.pop&lt;Elem&gt;(poly.unbox)) {
+      case (null, _) { "[]" };
+      case (?head, tail) {
+        let base = elemShow(head);
+        func step(accum : Text, elem : Elem) : Text {
+          accum # "," # elemShow(elem)
+        };
+        "[" # List.foldLeft&lt;Elem, Text&gt;(tail, base, step) # "]"
+      }
+    }
+  };
+
+  public func polyToBits(poly : Poly) : List&lt;Bool&gt; {
+    List.map&lt;Elem, Bool&gt;(poly.unbox, elemToBit)
+  };
+
+  public func polyFromBits(bits : List&lt;Bool&gt;) : Poly {
+    { unbox = List.map&lt;Bool, Elem&gt;(bits, elemFromBit) }
+  };
+
+  public func polyLen(poly : Poly) : Nat {
+    List.size&lt;Elem&gt;(poly.unbox)
+  };
+
+  public func polyTrim(poly : Poly) : Poly {
+    func go(elems : List&lt;Elem&gt;) : List&lt;Elem&gt; {
+      switch (List.pop&lt;Elem&gt;(elems)) {
+        case (?{ unbox = 0 }, tail) { go(tail) };
+        case _ { elems }
+      }
+    };
+    { unbox = go(poly.unbox) }
+  };
+
+  public func polyOrder(poly : Poly) : Int {
+    Int.abs(polyLen(polyTrim(poly))) - 1
+  };
+
+  public func polyLeadCoeff(poly : Poly) : Elem {
+    switch (List.pop&lt;Elem&gt;(polyTrim(poly).unbox).0) {
+      case (?elem) { elem };
+      case (null) {
+        { unbox = 0 }
+      }
+    }
+  };
+
+  public func polyPadLeft(n : Nat, poly : Poly) : Poly {
+    let zeros = List.replicate&lt;Elem&gt;(n, { unbox = 0 });
+    { unbox = List.append&lt;Elem&gt;(zeros, poly.unbox) }
+  };
+
+  public func polyPadRight(n : Nat, poly : Poly) : Poly {
+    let zeros = List.replicate&lt;Elem&gt;(n, { unbox = 0 });
+    { unbox = List.append&lt;Elem&gt;(poly.unbox, zeros) }
+  };
+
+  public func polyGrow(to : Nat, poly : Poly) : Poly {
+    let from = polyLen(poly);
+    if (to &gt; from) {
+      polyPadLeft(to - from, poly)
+    } else poly
+  };
+
+  public func polyZipWith(
+    poly1 : Poly,
+    poly2 : Poly,
+    f : (Elem, Elem) -&gt; Elem
+  ) : Poly {
+    let n1 = polyLen(poly1);
+    let n2 = polyLen(poly2);
+    let to = if (n1 &gt; n2) n1 else n2;
+    { unbox = List.zipWith&lt;Elem, Elem, Elem&gt;(
+      polyGrow(to, poly1).unbox,
+      polyGrow(to, poly2).unbox,
+      f
+    ) }
+  };
+
+  public func polyEq(poly1 : Poly, poly2 : Poly) : Bool {
+    List.equal&lt;Elem&gt;(polyTrim(poly1).unbox, polyTrim(poly2).unbox, elemEq)
+  };
+
+  public func polyAdd(poly1 : Poly, poly2 : Poly) : Poly {
+    polyZipWith(poly1, poly2, elemAdd)
+  };
+
+  public func polySub(poly1 : Poly, poly2 : Poly) : Poly {
+    polyAdd(poly1, poly2)
+  };
+
+  public func polyScale(alpha : Elem, poly : Poly) : Poly {
+    func scale(elem : Elem) : Elem = elemMul(alpha, elem);
+    { unbox = List.map&lt;Elem, Elem&gt;(poly.unbox, scale) }
+  };
+
+  public type Term = { coeff : Elem; order : Int };
+
+  public func polyAddTerm(poly : Poly, term : Term) : Poly {
+    let n = if (term.order &lt;= 0) 0 else Int.abs(term.order);
+    polyAdd(poly, polyPadRight(n, polyNew([term.coeff.unbox])))
+  };
+
+  public func polyMulTerm(poly : Poly, term : Term) : Poly {
+    let n = if (term.order &lt;= 0) 0 else Int.abs(term.order);
+    polyScale(term.coeff, polyPadRight(n, poly))
+  };
+
+  public func polyDivMod(poly1 : Poly, poly2 : Poly) : (Poly, Poly) {
+    let divisorLeadCoeff = polyLeadCoeff(poly2);
+    let divisorOrder = polyOrder(poly2);
+    func go(currentDividend : Poly, currentDivisor : Poly) : (Poly, Poly) {
+      let currentOrder = polyOrder(currentDividend) - divisorOrder;
+      if (currentOrder &lt; 0) {
+        (currentDivisor, currentDividend)
+      } else {
+        let currentDividendLeadCoeff = polyLeadCoeff(currentDividend);
+        let currentCoeff = elemDiv(currentDividendLeadCoeff, divisorLeadCoeff);
+        let currentTerm = { coeff = currentCoeff; order = currentOrder };
+        let currentQuotient = polyMulTerm(poly2, currentTerm);
+        let nextDividend = polySub(currentQuotient, currentDividend);
+        let nextDivisor = polyAddTerm(currentDivisor, currentTerm);
+        go(nextDividend, nextDivisor)
+      }
+    };
+    go(poly1, polyNew([]))
+  };
+
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="nat"><a class="anchor" href="#nat"></a>Nat.mo</h5>
+<div class="listingblock copy">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-motoko hljs" data-lang="motoko">/**
+ * Module      : NatUtil.mo
+ * Copyright   : 2019 Enzo Haussecker
+ * License     : Apache 2.0 with LLVM Exception
+ * Maintainer  : Enzo Haussecker &lt;enzo@dfinity.org&gt;
+ * Stability   : Experimental
+ */
+
+import Nat8 "mo:base/Nat8";
+import List "mo:base/List";
+
+module NatUtil {
+
+  type List&lt;T&gt; = List.List&lt;T&gt;;
+
+  public func natNot(a : Nat) : Nat {
+    natMap(a, func (x) { ^ x })
+  };
+
+  public func natAnd(a : Nat, b : Nat) : Nat {
+    natZipWith(a, b, func (x, y) { x &amp; y })
+  };
+
+  public func natOr(a : Nat, b : Nat) : Nat {
+    natZipWith(a, b, func (x, y) { x | y })
+  };
+
+  public func natXor(a : Nat, b : Nat) : Nat {
+    natZipWith(a, b, func (x, y) { x ^ y })
+  };
+
+  public func natMap(a : Nat, f : Nat8 -&gt; Nat8) : Nat {
+    natFromBytes(List.map&lt;Nat8, Nat8&gt;(natToBytes(a), f))
+  };
+
+  public func natZipWith(a : Nat, b : Nat, f : (Nat8, Nat8) -&gt; Nat8) : Nat {
+    var xs = natToBytes(a);
+    var ys = natToBytes(b);
+    let xsLen = List.size&lt;Nat8&gt;(xs);
+    let ysLen = List.size&lt;Nat8&gt;(ys);
+    if (xsLen &lt; ysLen) {
+      xs := List.append&lt;Nat8&gt;(List.replicate&lt;Nat8&gt;(ysLen - xsLen, 0), xs);
+    };
+    if (xsLen &gt; ysLen) {
+      ys := List.append&lt;Nat8&gt;(List.replicate&lt;Nat8&gt;(xsLen - ysLen, 0), xs);
+    };
+    let zs = List.zipWith&lt;Nat8, Nat8, Nat8&gt;(xs, ys, f);
+    let c = natFromBytes(zs);
+    c
+  };
+
+  public func natToBytes(n : Nat) : List&lt;Nat8&gt; {
+    var a = 0;
+    var b = n;
+    var bytes = List.nil&lt;Nat8&gt;();
+    var test = true;
+    while test {
+      a := b % 256;
+      b := b / 256;
+      bytes := List.push&lt;Nat8&gt;(Nat8.fromNat(a), bytes);
+      test := b &gt; 0;
+    };
+    bytes
+  };
+
+  public func natFromBytes(bytes : List&lt;Nat8&gt;) : Nat {
+    var n = 0;
+    var i = 0;
+    List.foldRight&lt;Nat8, ()&gt;(bytes, (), func (byte, _) {
+      n += Nat8.toNat(byte) * 256 ** i;
+      i += 1;
+    });
+    n
+  };
+
+  public func natToBits(n : Nat) : List&lt;Bool&gt; {
+    var a = 0;
+    var b = n;
+    var bits = List.nil&lt;Bool&gt;();
+    var test = true;
+    while test {
+      a := b % 2;
+      b := b / 2;
+      bits := List.push&lt;Bool&gt;(a == 1, bits);
+      test := b &gt; 0;
+    };
+    bits
+  };
+
+  public func natFromBits(bits : List&lt;Bool&gt;) : Nat {
+    var n = 0;
+    var i = 0;
+    List.foldRight&lt;Bool, ()&gt;(bits, (), func (test, _) {
+      if test { n += 2 ** i };
+      i += 1;
+    });
+    n
+  };
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

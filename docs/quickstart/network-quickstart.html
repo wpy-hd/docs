@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Network deployment :: 互联网计算机开发者文档</title>
+    <meta name="description" content="Download the DFINITY Canister SDK and deploy your first dapp on the Internet Computer blockchain.">
+    <meta name="keywords" content="Internet Computer,blockchain,cryptocurrency,ICP tokens,smart contracts,cycles,wallet,software canister,developer onboarding">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">互联网计算机开发者文档</a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">开发者文档</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../introduction/welcome.html"><strong>介绍</strong></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-first-timers">致初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-developers">致开发者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/welcome.html#for-protocol-enthusiasts">致协议爱好者</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="quickstart-intro.html">快速开始</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="newcomers.html">初学者</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="local-quickstart.html">本地开发</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="network-quickstart.html">网络部署</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开始</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SDK 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/install-upgrade-remove.html">安装，更新以及移除软件</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../release-notes/sdk-release-notes.html">版本更新</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.2-rn.html">0.8.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.1-rn.html">0.8.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.8.0-rn.html">0.8.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.7-rn.html">0.7.7</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.2-rn.html">0.7.2</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.1-rn.html">0.7.1</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.7.0-rn.html">0.7.0</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.26-rn.html">0.6.26</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.25-rn.html">0.6.25</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.24-rn.html">0.6.24</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.23-rn.html">0.6.23</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.22-rn.html">0.6.22</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.21-rn.html">0.6.21</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../release-notes/0.6.20-rn.html">0.6.20</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DFX 介绍</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/cli-reference.html">DFX 命令</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/cli-reference/dfx-envars.html">DFX 环境变量</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/glossary.html">术语表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">在互联网计算机上构建程序</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">学习如何：</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/sdk-guide.html">在 IC 上开发智能合约</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/design-apps.html">设计应用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/customize-projects.html">管理项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/working-with-canisters.html">管理 canisters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/default-wallet.html">使用默认的 cycles 钱包</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/explore-templates.html">探索基础项目</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/define-an-actor.html">使用 actor 查询</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/hello-location.html">处理文本参数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/counter-tutorial.html">增加一个自然数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/calculator.html">在计算器函数中使用整数</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/phonebook.html">添加模块库</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/multiple-actors.html">使用多个 actor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/intercanister-calls.html">canister 内容调用</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/access-control.html">使用身份添加权限控制</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/simple-cycles.html">从钱包接收 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/troubleshooting.html">issues 追踪</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">探索编程语言</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/work-with-languages.html">使用不同的编程语言开发</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#language-guide:motoko.adoc">Motoko</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#base-libraries:stdlib-intro.adoc">Motoko 基础库</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Motoko 指南</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:about-this-guide.adoc">关于语言指南</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-introduction.adoc">介绍</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:basic-concepts.adoc">基础概念与术语</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:mutable-state.adoc">可变状态</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:local-objects-classes.adoc">本地对象和类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actors-async.adoc">Actors 和异步数据</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:errors.adoc">错误处理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:pattern-matching.adoc">模式匹配</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:sharing.adoc">共享数据和行为</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:modules-and-imports.adoc">模块与导入</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:control-flow.adoc">Imperative control flow</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:structural-equality.adoc">Structural equality</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:actor-classes.adoc">Actor 类</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:caller-id.adoc">Principals 和 caller 认证</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:cycles.adoc">管理</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:upgrades.adoc">稳定变量和升级方法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:language-manual.adoc">语言参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:compiler-ref.adoc">编译器参考</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:motoko-grammar.adoc">Motoko 语法</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#language-guide:style.adoc">Motoko 风格指南</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:multiply-dependency.adoc">基础依赖教程</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-profile.adoc">Profile tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#rust-guide:rust-optimize.adoc">优化 Rust 程序</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-intro.adoc">Candid</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-concepts.adoc">什么是 Candid？</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="#candid-guide:candid-howto.adoc">如何使用</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#candid-guide:candid-ref.adoc">参考</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="#candid-guide:candid-types.adoc">类型</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://github.com/dfinity/candid" target="_blank" rel="noopener">Candid 规范</a></span>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <span class="nav-text"><a href="https://docs.rs/candid" target="_blank" rel="noopener">Candid Rust crate</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">介绍互联网身份</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:what-is-ic-identity.adoc">什么是互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:auth-how-to.adoc">如何使用互联网身份</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#ic-identity-guide:hello-guide.adoc">Windows Hello 指南</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">前端开发</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/webpack-config.html">添加前端资源</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/custom-frontend.html">定制化前端</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../developers-guide/tutorials/my-contacts.html">添加样式表</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../developers-guide/concepts/concepts-intro.html">概念</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/what-is-IC.html">什么是 {IC}</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/nodes-subnets.html">节点与子网</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/data-centers.html">去中心化的数据中心</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/canisters-code.html">Canisters 和代码</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/tokens-cycles.html">代币和 cycles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../developers-guide/concepts/governance.html">神经元与治理</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">通用文档</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview of self-custody</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/custody-options-intro.html">Choosing self-custody for digital assets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/self-custody-quickstart.html">Self-custody quick start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">ledger 概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../integration/ledger-quick-start.html">Ledger 快速开始</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">NNS 应用概览</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">其他资源</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=oxEr8UzGeBo&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=11&amp;ab_channel=DFINITY" target="_blank" rel="noopener">互联网身份</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=4eSceDOS-Ms&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=21&amp;ab_channel=DFINITY" target="_blank" rel="noopener">Motoko</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=GzkRsbqPaA0&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上创建一个多玩家游戏</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=b_nc6yx5_DQ&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=7&amp;ab_channel=DFINITY" target="_blank" rel="noopener">在 IC 上部署一个静态网站</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://www.youtube.com/watch?v=2miweY9-vZc&amp;list=PLuhDt1vhGcrf4DgKZecU3ar_RA1cB0vUT&amp;index=6&amp;ab_channel=DFINITY" target="_blank" rel="noopener">从零到全栈：互联网计算机上的 web 应用</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">协议视频</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://dfinity.org/technicals/" target="_blank" rel="noopener">Technical library</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">开发者工具</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../download.html">DFINITY Canister SDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cdk-rs" target="_blank" rel="noopener">Rust CDK</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/kritzcreek/vessel" target="_blank" rel="noopener">Vessel 包管理器</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko" target="_blank" rel="noopener">Motoko VS Code Extension</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/agent-js" target="_blank" rel="noopener">Agent JS</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/sudograph/sudograph" target="_blank" rel="noopener">Sudograph</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cycles-wallet" target="_blank" rel="noopener">Cycles 钱包</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/" target="_blank" rel="noopener">Motoko Playground</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/quill" target="_blank" rel="noopener">Quill</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">应用程序样例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/awesome-dfinity" target="_blank" rel="noopener">Awesome DFINITY</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/cancan" target="_blank" rel="noopener">CanCan</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://github.com/dfinity/examples" target="_blank" rel="noopener">Mini Motoko 样例</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区贡献</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://ic.rocks/" target="_blank" rel="noopener">ic.rocks (区块浏览器)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://plugwallet.ooo/" target="_blank" rel="noopener">Plug (基于浏览器的钱包插件)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="https://fleek.co/" target="_blank" rel="noopener">Fleek (开放互联网的 Netlify)</a></span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text"><a href="http://faucet.dfinity.org/" target="_blank" rel="noopener">Cycles 水龙头</a></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../developers-guide/computation-and-storage-costs.html">计算以及存储开销</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">社区</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://discord.gg/cA7y6ezyE2" target="_blank" rel="noopener">Developer Discord</a></span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text"><a href="https://forum.dfinity.org/" target="_blank" rel="noopener">Developer 论坛</a></span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者文档</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">开发者文档</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">开发者文档</a></li>
+    <li><a href="quickstart-intro.html">快速开始</a></li>
+    <li><a href="network-quickstart.html">网络部署</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/fifteen42/docs/edit/main/modules/quickstart/pages/network-quickstart.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Network deployment</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div id="net-quick-start" class="paragraph">
+<p>This <em>Quick Start</em> scenario assumes that you are installing the {sdk-short-name} for the first time and deploying the default project on the Internet Computer blockchain mainnet.</p>
+</div>
+<div class="paragraph">
+<p>If you are only deploying projects in a local development environment, see the <a href="local-quickstart.html">Local development</a> scenario.</p>
+</div>
+<div class="paragraph">
+<p>To get started, let&#8217;s build and deploy a simple Hello dapp that has just one function—called <code>greet</code>.
+The <code>greet</code> function accepts one text argument and returns the result with a greeting similar to <strong>Hello,&#160;everyone!</strong> in a terminal if you run the dapp using the command-line or in an HTML page if you access the dapp in a browser.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-before"><a class="anchor" href="#net-before"></a>Before you begin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you download and install this release of the {sdk-short-name}, verify the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have an internet connection and access to a shell terminal on your local <strong>macOS</strong> or <strong>Linux</strong> computer.</p>
+<div class="paragraph">
+<p>Currently, the {sdk-short-name} only runs on computers with a macOS or Linux operating system.</p>
+</div>
+</li>
+<li>
+<p>You have <code>node.js</code> installed if you want to access the default front-end for the default project.</p>
+</li>
+<li>
+<p>You have ICP tokens or cycles available for you to use.</p>
+<div class="paragraph">
+<p>You must have <strong>cycles</strong> available to complete this tutorial. To get cycles, you must either convert ICP tokens to cycles or be provided cycles from another source, for example, from a canister controlled by another developer or from a third-party cycles provider. This tutorial assumes that you have an account with ICP tokens available and illustrates how to convert ICP tokens into cycles and transfer those cycles to a <strong>cycles wallet</strong> that you control.</p>
+</div>
+<div class="paragraph">
+<p>For information about how to get ICP tokens, see <a href="../developers-guide/concepts/tokens-cycles.html#get-cycles">How you can get ICP tokens</a>.
+For an introduction to using the Network Nervous System application to manage ICP tokens, see <a href="../token-holders/nns-app-quickstart.html">Network nervous system dapp quick start</a>.
+For information about using your default cycles wallet after you have created it, see <a href="../developers-guide/default-wallet.html">Use the default cycles wallet</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This tutorial assumes you know how to perform common tasks—like opening a terminal and running commands—on your computer.
+If you aren’t sure how to open a new terminal shell or how to install software packages like <code>node.js</code>, see <a href="newcomers.html">Preliminary steps for newcomers</a>.
+If you are comfortable meeting the prerequisites without instructions, continue to <a href="#net-download-sdk">Download and install</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-download-sdk"><a class="anchor" href="#net-download-sdk"></a>Download and install</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can download the latest version of the {sdk-long-name} directly from within a terminal shell on your local computer. If you have previously installed the {sdk-short-name}, you can skip this section and start with <a href="#net-new-project">Create a new project</a>.</p>
+</div>
+<div class="paragraph">
+<p>To download and install:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a terminal shell on your local computer.</p>
+<div class="paragraph">
+<p>For example, open Applications, Utilities, then double-click <strong>Terminal</strong> or press <span class="keyseq"><kbd>&#8984;</kbd>+<kbd>spacebar</kbd></span> to open Search, then type <code>terminal</code>.</p>
+</div>
+</li>
+<li>
+<p>Download and install the {sdk-short-name} package by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command prompts you to read and accept the license agreement before installing the DFINITY execution command-line interface (CLI) and its dependencies on your local computer.</p>
+</div>
+</li>
+<li>
+<p>Type <code>y</code> and press <kbd>Return</kbd> to continue with the installation.</p>
+<div class="paragraph">
+<p>The command displays information about the components being installed on the local computer.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-verify-sdk-version"><a class="anchor" href="#net-verify-sdk-version"></a>Verify the SDK is ready to use</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If the installation script runs without any errors, everything you need to start developing programs that run on the {platform} will be available on your local computer.</p>
+</div>
+<div class="paragraph">
+<p>To verify the SDK is ready to use:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a terminal shell on your local computer, if you don’t already have one open.</p>
+</li>
+<li>
+<p>Check that you have the DFINITY execution command-line interface (CLI) installed and the <code>dfx</code> executable is available in your PATH by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --version</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays version information for the <code>dfx</code> command-line executable similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx 0.8.2</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Preview usage information for the other <code>dfx</code> command-line sub-commands by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --help</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays usage information for the <code>dfx</code> parent command and its subcommands.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-new-project"><a class="anchor" href="#net-new-project"></a>Create a new project</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dapps for the Internet Computer start as <strong>projects</strong>.
+You create projects using the <code>dfx</code> parent command and its subcommands.</p>
+</div>
+<div class="paragraph">
+<p>For this tutorial, we&#8217;ll start with the default sample dapp to illustrate creating a dapp using the starter files in a project.
+When you create a new project, the <code>dfx</code> command-line interface adds a default project directory structure to your workspace. We cover the template files that make up a project directory in the <a href="../developers-guide/tutorials/explore-templates.html">Explore the default project</a> tutorial.</p>
+</div>
+<div class="paragraph">
+<p>To create a new project for your first dapp:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a terminal shell on your local computer, if you don’t already have one open.</p>
+</li>
+<li>
+<p>Create a new project named <code>hello</code> by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx new hello</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>dfx new hello</code> command creates a new <code>hello</code> project directory, template files, and a new <code>hello</code> Git repository for your project.</p>
+</div>
+<div class="paragraph">
+<p>If you use a different project name instead of <code>hello</code>, make note of the name you used. You&#8217;ll need to use that project name in place of the <code>hello</code> project name throughout these instructions.</p>
+</div>
+</li>
+<li>
+<p>Change to your project directory by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd hello</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ping-the-network"><a class="anchor" href="#ping-the-network"></a>Check the connection to the {platform} mainnet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There is a reserved network alias that you can use to access the Internet Computer blockchain mainnet. The network alias is a system setting that&#8217;s defined internally, so there&#8217;s nothing you need to configure in your projects by default.</p>
+</div>
+<div class="paragraph">
+<p>To check your connection to the {platform}:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check that you are in the root directory for your project, if needed.</p>
+</li>
+<li>
+<p>Check the current status of the {platform} and your ability to connect to it by running the following command for the network alias <code>ic</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx ping ic</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Verify that the <code>dfx ping ic</code> command returns information about the {platform}.</p>
+<div class="paragraph">
+<p>For example, you should see output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{
+  "ic_api_version": "0.18.0"  "impl_hash": "d639545e0f38e075ad240fd4ec45d4eeeb11e1f67a52cdd449cd664d825e7fec"  "impl_version": "8dc1a28b4fb9605558c03121811c9af9701a6142"  "replica_health_status": "healthy"  "root_key": [48, 129, 130, 48, 29, 6, 13, 43, 6, 1, 4, 1, 130, 220, 124, 5, 3, 1, 2, 1, 6, 12, 43, 6, 1, 4, 1, 130, 220, 124, 5, 3, 2, 1, 3, 97, 0, 129, 76, 14, 110, 199, 31, 171, 88, 59, 8, 189, 129, 55, 60, 37, 92, 60, 55, 27, 46, 132, 134, 60, 152, 164, 241, 224, 139, 116, 35, 93, 20, 251, 93, 156, 12, 213, 70, 217, 104, 95, 145, 58, 12, 11, 44, 197, 52, 21, 131, 191, 75, 67, 146, 228, 103, 219, 150, 214, 91, 155, 180, 203, 113, 113, 18, 248, 71, 46, 13, 90, 77, 20, 80, 95, 253, 116, 132, 176, 18, 145, 9, 28, 95, 135, 185, 136, 131, 70, 63, 152, 9, 26, 11, 170, 174]
+}</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-ledger-id"><a class="anchor" href="#net-ledger-id"></a>Confirm your developer identity and ledger account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All ICP token transactions are recorded in a <a href="../developers-guide/glossary.html#g-ledger">ledger canister</a> running on the Internet Computer blockchain.
+The ledger canister consists of <strong>account identifiers</strong> and <strong>balances</strong> for all ICP token holders.</p>
+</div>
+<div class="paragraph">
+<p>Before you can transfer any ICP tokens you hold in your ledger account, you need to send a secure and properly-signed message that verifies your identity to the ledger and authorizes your developer identity to complete the transaction.</p>
+</div>
+<div class="paragraph">
+<p>Depending on how you have set up custody for holding your ICP tokens, the hardware, software, and steps required to connect to the ledger and complete a transaction can vary.
+For example, you might connect to the ledger and start a transaction from a hardware wallet, using a hardware security module (HSM) appliance, through the Network Nervous System (NNS) front-end application, or using the {sdk-short-name} <code>dfx</code> command-line interface.
+Each approach presents a different interface for signing and sending messages to the ledger and representing your identity as an account holder.</p>
+</div>
+<div class="sect2">
+<h3 id="_about_your_developer_identity"><a class="anchor" href="#_about_your_developer_identity"></a>About your developer identity</h3>
+<div class="paragraph">
+<p>The first time you use the {sdk-short-name}, the <code>dfx</code> command-line tool creates a <code>default</code> developer identity for you. This identity is represented by a <strong>principal</strong> data type and a textual representation of the principal often referred to as your <strong>principal identifier</strong>.
+This representation of your identity is similar to a Bitcoin or Ethereum address.</p>
+</div>
+<div class="paragraph">
+<p>However, the principal associated with your developer identity is typically not the same as your <strong>account identifier</strong> in the ledger. The principal identifier and the account identifier are related—both provide a textual representation of your identity—but they use different formats.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_connect_to_the_ledger_to_get_account_information"><a class="anchor" href="#_connect_to_the_ledger_to_get_account_information"></a>Connect to the ledger to get account information</h3>
+<div class="paragraph">
+<p>For the purposes of this tutorial—where there&#8217;s no hardware wallet or external application to connect to the ledger—we&#8217;ll use your developer identity to retrieve your ledger account identifier, then transfer ICP tokens from the ledger account identifier to a cycles wallet canister controlled by your developer identity.</p>
+</div>
+<div class="paragraph">
+<p>To look up your account in the ledger:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Confirm the developer identity you are currently using by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity whoami</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In most cases, you should see that you are currently using default` developer identity.
+For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>default</pre>
+</div>
+</div>
+</li>
+<li>
+<p>View the textual representation of the principal for your current identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity get-principal</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>tsqwz-udeik-5migd-ehrev-pvoqv-szx2g-akh5s-fkyqc-zy6q7-snav6-uqe</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the account identifier for your developer identity by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx ledger account-id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command displays the ledger account identifier associated with your developer identity.
+For example, you should see output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>03e3d86f29a069c6f2c5c48e01bc084e4ea18ad02b0eec8fccadf4487183c223</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check your account balance by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx ledger --network ic balance</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command displays the ICP token balance from the ledger account.
+For example, you should see output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>10.00000000 ICP</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="convert-icp"><a class="anchor" href="#convert-icp"></a>Convert ICP tokens to cycles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you have confirmed your account information and current ICP token balance, you can convert some of those ICP tokens to cycles and move them into a cycles wallet.</p>
+</div>
+<div class="paragraph">
+<p>To transfer ICP tokens to create a cycles wallet:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a new canister with cycles by transferring ICP tokens from your ledger account by running a command similar to the following:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx ledger --network ic create-canister &lt;principal-identifier&gt; --amount &lt;icp-tokens&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command converts the number of ICP tokens you specify for the <code>--amount</code> argument into cycles, and associates the cycles with a new canister identifier controlled by the principal you specify.</p>
+</div>
+<div class="paragraph">
+<p>For example, the following command converts .25 ICP tokens into cycles and specifies the principal identifier for the default identity as the controller of the new canister:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx ledger --network ic create-canister tsqwz-udeik-5migd-ehrev-pvoqv-szx2g-akh5s-fkyqc-zy6q7-snav6-uqe --amount .25</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the transaction is successful, the ledger records the event and you should see output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Transfer sent at BlockHeight: 20
+Canister created with id: "gastn-uqaaa-aaaae-aaafq-cai"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Install the cycles wallet code in the newly-created canister placeholder by running a command similar to the following:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity --network ic deploy-wallet &lt;canister-identifer&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx identity --network ic deploy-wallet gastn-uqaaa-aaaae-aaafq-cai</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command displays output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Creating a wallet canister on the ic network.
+The wallet canister on the "ic" network for user "default" is "gastn-uqaaa-aaaae-aaafq-cai"</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_validate_your_cycles_wallet"><a class="anchor" href="#_validate_your_cycles_wallet"></a>Validate your cycles wallet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you convert ICP tokens to cycles, you can validate the cycles wallet canister and check your current cycles balance.</p>
+</div>
+<div class="paragraph">
+<p>To validate your cycles wallet:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Verify the canister identifier for the cycles wallet you deployed by running the following command:</p>
+<div class="listingblock bash">
+<div class="content">
+<pre class="highlightjs highlight"><code>dfx identity --network ic get-wallet</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command displays the canister identifier for your cycles wallet with output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>gastn-uqaaa-aaaae-aaafq-cai</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check that your cycles wallet canister is properly configured and holds a balance of cycles by running a command similar to the following:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx wallet --network ic balance</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command returns the balance for the your cycles wallet.
+For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>15430122328028812 cycles.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also access your default cycles wallet in a web browser by using a URL similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>https://&lt;WALLET-CANISTER-ID&gt;.raw.ic0.app</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first time you access the application, you see a notice that you are using an Anonymous Device and are prompted to authenticate your identity, authorize access to the wallet, and register your device.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Authenticate</strong> to continue to the Internet Identity service.</p>
+</li>
+<li>
+<p>Enter your <strong>User Number</strong> if you have previously registered an identity or register with the service as a new user.</p>
+<div class="paragraph">
+<p>For more information about the Internet Identity service and how to register multiple authentication devices and methods, see <a href="../ic-identity-guide/auth-how-to.html">How to use the Internet Identity service</a>.</p>
+</div>
+</li>
+<li>
+<p>Authenticate using your user number and the authentication method—for example, a security key or fingerprint—you have registered.</p>
+</li>
+<li>
+<p>Click <strong>Proceed</strong> to access to the default cycles wallet application.</p>
+</li>
+<li>
+<p>Register the device you are using for this session by copying the command displayed in the <strong>Register Device</strong> page and running it in a terminal.</p>
+<div class="paragraph">
+<p>For example, call the <code>authorize</code> method for the cycles wallet canister with a command similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx canister --no-wallet --network ic call "gastn-uqaaa-aaaae-aaafq-cai" authorize '(principal "ejta3-neil3-qek6c-i7rdw-sxreh-lypfe-v6hjg-6so7x-5ugze-3iohr-2qe")'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Be sure that the command you copy has the <code>--no-wallet</code> option and the correct network (<code>ic</code>) alias.
+You should recognize the canister identifier—in this example, <code>gastn-uqaaa-aaaae-aaafq-cai</code>—as the cycles wallet associated with your identity.
+If this is your first wallet on the {platform}, however, you might not recognize the principal being authorized. The use of a different principal is the expected behavior in this case.</p>
+</div>
+<div class="paragraph">
+<p>When the browser refreshes after running the <code>authorize</code> command, the cycles wallet for your principal account is displayed.</p>
+</div>
+</li>
+<li>
+<p>View your cycles balance and activity in the browser.</p>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/cycles-wallet.png" alt="cycles wallet">
+</div>
+</div>
+<div class="paragraph">
+<p>For more information about the commands and methods available for working with the default cycles wallet, see <a href="../developers-guide/default-wallet.html">Use the default cycles wallet</a>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-deploy"><a class="anchor" href="#net-deploy"></a>Register, build, and deploy the application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you have validated your cycles wallet balance, you can register, build, and deploy your sample application.</p>
+</div>
+<div class="paragraph">
+<p>To deploy your first application on the Internet Computer blockchain mainnet:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In your terminal shell, check that you are still in the root directory for your project.</p>
+</li>
+<li>
+<p>Ensure that <code>node</code> modules are available in your project directory, if needed, by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information about this step, see <a href="../developers-guide/webpack-config.html#troubleshoot-node">Ensuring node is available in a project</a>.</p>
+</div>
+</li>
+<li>
+<p>Register, build, and deploy your first application by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx deploy --network ic</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>--network</code> option specifies the network alias or URL for deploying the dapp.
+This option is required to install on the Internet Computer blockchain mainnet.</p>
+</div>
+<div class="paragraph">
+<p>The <code>dfx deploy</code> command output displays information about the operations it performs.</p>
+</div>
+<div class="paragraph">
+<p>For example, this step registers two identifiers—one for the <code>hello</code> main program and one for the <code>hello_assets</code> front-end user interface—and installation information similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Deploying all canisters.
+Creating canisters...
+Creating canister "hello"...
+"hello" canister created on network "ic" with canister id: "5o6tz-saaaa-aaaaa-qaacq-cai"
+Creating canister "hello_assets"...
+"hello_assets" canister created on network "ic" with canister id: "5h5yf-eiaaa-aaaaa-qaada-cai"
+Building canisters...
+Building frontend...
+Installing canisters...
+Installing code for canister hello, with canister_id 5o6tz-saaaa-aaaaa-qaacq-cai
+Installing code for canister hello_assets, with canister_id 5h5yf-eiaaa-aaaaa-qaada-cai
+Authorizing our identity (default) to the asset canister...
+Uploading assets to asset canister...
+  /index.html 1/1 (472 bytes)
+  /index.html (gzip) 1/1 (314 bytes)
+  /index.js 1/1 (260215 bytes)
+  /index.js (gzip) 1/1 (87776 bytes)
+  /main.css 1/1 (484 bytes)
+  /main.css (gzip) 1/1 (263 bytes)
+  /sample-asset.txt 1/1 (24 bytes)
+  /logo.png 1/1 (25397 bytes)
+  /index.js.map 1/1 (842511 bytes)
+  /index.js.map (gzip) 1/1 (228404 bytes)
+  /index.js.LICENSE.txt 1/1 (499 bytes)
+  /index.js.LICENSE.txt (gzip) 1/1 (285 bytes)
+Deployed canisters.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you didn&#8217;t convert enough ICP tokens to cycles to complete the operation, you can add cycles to your cycles wallet by running a command similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dfx ledger --network ic top-up gastn-uqaaa-aaaae-aaafq-cai --amount 1.005</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command converts an additional <code>1.005</code> ICP tokens to cycles for the <code>gastn-uqaaa-aaaae-aaafq-cai</code> cycles wallet identifier.
+The command returns output similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Transfer sent at BlockHeight: 81520
+Canister was topped up!</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Call the <code>hello</code> canister and the predefined <code>greet</code> function by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister --network ic call hello greet '("everyone": text)'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a closer look at this example:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Using the <code>--network ic</code> option indicates that the canister you want to call is deployed on the <code>ic</code>. The <code>ic</code> network alias is an internally-reserved alias for accessing the Internet Computer blockchain mainnet.</p>
+</li>
+<li>
+<p>Note that the <code>--network ic</code> option must precede the operation subcommand, which, in this case, is the <code>dfx canister call</code> command.</p>
+</li>
+<li>
+<p>The <code>hello</code> argument specifies the name of the canister you want to call.</p>
+</li>
+<li>
+<p>The <code>greet</code> argument specifies the name of the function you want to call in the <code>hello</code> canister.</p>
+</li>
+<li>
+<p>The text string <code>everyone</code> is the argument that you want to pass to the <code>greet</code> function.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Verify the command displays the return value of the <code>greet</code> function.</p>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>("Hello, everyone!")</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Rerun the <code>dfx wallet balance</code> command or refresh the browser to see your new cycle balance and recent activity.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quickstart-frontend"><a class="anchor" href="#quickstart-frontend"></a>Test the dapp front-end</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you have verified that your dapp has been deployed and tested its operation using the command line, let&#8217;s verify that you can access the front-end using your web browser.</p>
+</div>
+<div class="paragraph">
+<p>To access the dapp front-end:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a browser.</p>
+</li>
+<li>
+<p>Navigate to the front-end for the dapp using a URL that consists of the <code>hello_assets</code> identifier and the <code>boundary.ic0.app</code> suffix.</p>
+<div class="paragraph">
+<p>If you didn’t make a note of the canister identifier, you can look it up by running the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister --network ic id hello_assets</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example, the full URL should look similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>https://gsueu-yaaaa-aaaae-aaagq-cai.raw.ic0.app</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Navigating to this URL displays the HTML entry page for the template application.
+For example:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/net-front-end-prompt.png" alt="HTML page with prompt"></span></p>
+</div>
+</li>
+<li>
+<p>Type a greeting, then click <strong>Click Me</strong> to return the greeting.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next steps</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you have seen how to deploy a dapp on the Internet Computer blockchain, you are ready to develop and deploy programs of your own.</p>
+</div>
+<div class="paragraph">
+<p>You can find more detailed examples and tutorials to help you learn about how to use Motoko and how to develop dapps for the Internet Computer blockchain throughout the documentation.</p>
+</div>
+<div class="paragraph">
+<p>Here are some suggestions for where to go next:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../developers-guide/tutorials-intro.html">Tutorials</a> to explore building front-end and back-end dapps in a local development environment.</p>
+</li>
+<li>
+<p><a href="../candid-guide/candid-concepts.html">What is Candid?</a> to learn how the Candid interface description language enables service interoperability and composability.</p>
+</li>
+<li>
+<p><a href="../languages/motoko-at-a-glance.html">Motoko at-a-glance</a> to learn about the features and syntax for using Motoko.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
