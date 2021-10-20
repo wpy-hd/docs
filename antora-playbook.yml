@@ -17,9 +17,9 @@ asciidoc:
     proglang: Motoko
     company-id: DFINITY
     toc: ~
-    platform: Internet Computer platform
-    IC: Internet Computer
+    platform: 互联网计算机平台
+    IC: 互联网计算机
     sdk-short-name: DFINITY Canister SDK
-    sdk-long-name: DFINITY Canister Software Development Kit (SDK)
+    sdk-long-name: DFINITY Canister 软件开发工具包 (SDK)
     # page-moc-version: 0.5.5
     # page-moc-base-tag: dfx-0.6.18
