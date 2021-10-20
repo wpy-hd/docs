@@ -10,7 +10,7 @@
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 
 [[quick-start-intro]]
-此 _快速入门_ 章节假设您首次安装 {sdk-short-name} 并想在本地 canister 执行环境中运行一份 canister 智能合约，而不是部署在 {IC} 区块链上。
+本章节假设您首次安装 {sdk-short-name} 并想在本地 canister 执行环境中运行一份 canister 智能合约，而不是部署在 {IC} 区块链上。
 
 首先，我们构建并部署一个简单的 Hello canister，它只有一个叫做 `+greet+` 的函数。如果使用命令行运行 canister 或在浏览器页面中访问 canister ，`+greet+` 功能将接收一个文本参数并在一个终端中返回类似于 “Hello，everyone！” 的消息。
 
