@@ -612,86 +612,90 @@
 <div id="preamble">
 <div class="sectionbody">
 <div id="net-quick-start" class="paragraph">
-<p>This <em>Quick Start</em> scenario assumes that you are installing the DFINITY Canister SDK for the first time and deploying the default project on the 互联网计算机 blockchain mainnet.</p>
+<p>本章节假设您是第一次安装DFINITY Canister SDK并在远程运行的 Internet Computer 区块链上部署默认项目。</p>
 </div>
 <div class="paragraph">
-<p>If you are only deploying projects in a local development environment, see the <a href="local-quickstart.html">Local development</a> scenario.</p>
+<p>如果您只是在本地开发环境中部署项目，请参考 <a href="local-quickstart.html">本地开发</a> 教程。</p>
 </div>
 <div class="paragraph">
-<p>To get started, let&#8217;s build and deploy a simple Hello dapp that has just one function—called <code>greet</code>.
-The <code>greet</code> function accepts one text argument and returns the result with a greeting similar to <strong>Hello,&#160;everyone!</strong> in a terminal if you run the dapp using the command-line or in an HTML page if you access the dapp in a browser.</p>
+<p>首先，让我们构建和部署一个简单的 Hello 应用程序，它只有一个函数——称为 <code>greet</code>， <code>greet</code> 函数接受一个文本参数并返回（命令行运行应用程序时在终端，浏览器访问应用程序时在网页）一个问候语。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="net-before"><a class="anchor" href="#net-before"></a>Before you begin</h2>
+<h2 id="net-before"><a class="anchor" href="#net-before"></a>准备工作</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Before you download and install this release of the DFINITY Canister SDK, verify the following:</p>
 </div>
+<div class="paragraph">
+<p>在下载并安装此版本的 DFINITY Canister SDK 之前，请确保：</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>You have an internet connection and access to a shell terminal on your local <strong>macOS</strong> or <strong>Linux</strong> computer.</p>
+<p>已连接互联网，并可以通过 macOS 或者 Linux 访问本地的 shell 终端。</p>
 <div class="paragraph">
-<p>Currently, the DFINITY Canister SDK only runs on computers with a macOS or Linux operating system.</p>
+<p>目前，DFINITY Canister SDK 只可在 macOS 或者 Linux 系统中运行。</p>
 </div>
 </li>
 <li>
-<p>You have <code>node.js</code> installed if you want to access the default front-end for the default project.</p>
-</li>
-<li>
-<p>You have ICP tokens or cycles available for you to use.</p>
-<div class="paragraph">
-<p>You must have <strong>cycles</strong> available to complete this tutorial. To get cycles, you must either convert ICP tokens to cycles or be provided cycles from another source, for example, from a canister controlled by another developer or from a third-party cycles provider. This tutorial assumes that you have an account with ICP tokens available and illustrates how to convert ICP tokens into cycles and transfer those cycles to a <strong>cycles wallet</strong> that you control.</p>
-</div>
-<div class="paragraph">
-<p>For information about how to get ICP tokens, see <a href="../developers-guide/concepts/tokens-cycles.html#get-cycles">How you can get ICP tokens</a>.
-For an introduction to using the Network Nervous System application to manage ICP tokens, see <a href="../token-holders/nns-app-quickstart.html">Network nervous system dapp quick start</a>.
-For information about using your default cycles wallet after you have created it, see <a href="../developers-guide/default-wallet.html">Use the default cycles wallet</a>.</p>
-</div>
+<p>如果想在项目前端开发中使用 SDK 的默认的前端模板文件，请安装 <code>node.js</code>。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>This tutorial assumes you know how to perform common tasks—like opening a terminal and running commands—on your computer.
-If you aren’t sure how to open a new terminal shell or how to install software packages like <code>node.js</code>, see <a href="newcomers.html">Preliminary steps for newcomers</a>.
-If you are comfortable meeting the prerequisites without instructions, continue to <a href="#net-download-sdk">Download and install</a>.</p>
+<p>有可用的 ICP 代币或 Cycles 您必须有可用的Cycles才能完成本教程。 ﻿ ﻿有关如何获取 ICP 令牌的信息，请参阅如何获取 ICP 令牌。 关于使用网络神经系统应用程序管理ICP令牌的介绍，请参见网络神经系统应用程序快速入门。 有关在创建后使用默认Cycles钱包的信息，请参阅使用默认Cycles钱包。
+* 有可用的 ICP 代币或 Cycles</p>
+</div>
+<div class="paragraph">
+<p>+
+您必须有可用的 Cycles 才能完成本教程。  T要获得Cycles，您必须将 ICP 代币转换为Cycles，或者从其他来源获得，例如，从另一个开发者控制的 Canister 或第三方 Cycles 提供商处获得。 本教程假设您有一个可用的 ICP 代币帐户，并说明如何将 ICP 代币转换为 Cycles 并将这些 Cycles 转移到您控制的钱包中。</p>
+</div>
+<div class="paragraph">
+<p>+
+更多有关获取 ICP 代币的信息，请参考 <a href="../developers-guide/concepts/tokens-cycles.html#get-cycles">如何获取 ICP 代币</a>.
+想了解网络神经系统应用是如何管理 ICP 代币的，请看 <a href="../token-holders/nns-app-quickstart.html">网络神经系统应用快速入门</a>.
+有关在创建后使用默认 cycles 钱包的信息，请参考 <a href="../developers-guide/default-wallet.html">使用 cycles 钱包 </a>.</p>
+</div>
+<div class="paragraph">
+<p>本教程假设你了解一些基本操作，比如打开命令行并且在计算机上运行命令。
+如果您不确定如何在本地计算机上打开新的终端或如何安装 <code>node.js</code>，请参阅 <a href="newcomers.html">新手基础教程</a>。如果您能够满足上述条件，请继续<a href="#net-download-sdk">下载和安装</a>。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="net-download-sdk"><a class="anchor" href="#net-download-sdk"></a>Download and install</h2>
+<h2 id="net-download-sdk"><a class="anchor" href="#net-download-sdk"></a>下载和安装</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can download the latest version of the DFINITY Canister 软件开发工具包 (SDK) directly from within a terminal shell on your local computer. If you have previously installed the DFINITY Canister SDK, you can skip this section and start with <a href="#net-new-project">Create a new project</a>.</p>
+<p>你可以直接从本地计算机终端下载最新版本的 DFINITY Canister 软件开发工具包 (SDK)。如果你已经安装了DFINITY Canister SDK, 你可以跳过这一小节直接从<a href="#net-new-project">创建一个项目</a> 开始.</p>
 </div>
 <div class="paragraph">
-<p>To download and install:</p>
+<p>下载和安装：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a terminal shell on your local computer.</p>
+<p>打开本地 shell 终端</p>
 <div class="paragraph">
-<p>For example, open Applications, Utilities, then double-click <strong>Terminal</strong> or press <span class="keyseq"><kbd>&#8984;</kbd>+<kbd>spacebar</kbd></span> to open Search, then type <code>terminal</code>.</p>
+<p>打开“应用程序”、“实用程序”，然后双击“Terminal ”或按 <span class="keyseq"><kbd>&#8984;</kbd>+<kbd>空格</kbd></span> 打开搜索栏后输入终端。</p>
 </div>
 </li>
 <li>
-<p>Download and install the DFINITY Canister SDK package by running the following command:</p>
+<p>通过运行以下命令下载并安装 DFINITY Canister 软件开发工具包 (SDK):</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command prompts you to read and accept the license agreement before installing the DFINITY execution command-line interface (CLI) and its dependencies on your local computer.</p>
+<p>此命令将提示您在安装 DFINITY 命令行(CLI)及本地计算机的依赖项之前，先阅读并接受许可协议。</p>
 </div>
 </li>
 <li>
-<p>Type <code>y</code> and press <kbd>Return</kbd> to continue with the installation.</p>
+<p>输入 <code>y</code> 并按回车键继续安装。</p>
 <div class="paragraph">
-<p>The command displays information about the components being installed on the local computer.</p>
+<p>该命令将显示在本地计算机上正在安装的组件信息。</p>
 </div>
 </li>
 </ol>
@@ -699,28 +703,28 @@ If you are comfortable meeting the prerequisites without instructions, continue 
 </div>
 </div>
 <div class="sect1">
-<h2 id="net-verify-sdk-version"><a class="anchor" href="#net-verify-sdk-version"></a>Verify the SDK is ready to use</h2>
+<h2 id="verify-the-sdk-is-ready-to-use"><a class="anchor" href="#verify-the-sdk-is-ready-to-use"></a>验证 SDK</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If the installation script runs without any errors, everything you need to start developing programs that run on the 互联网计算机平台 will be available on your local computer.</p>
+<p>如果您在安装运行脚本时没有任何错误，则您启动的在计算机互联网平台上运行的程序都可以在本地计算机上使用。</p>
 </div>
 <div class="paragraph">
-<p>To verify the SDK is ready to use:</p>
+<p>验证 SDK 已经可以使用:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a terminal shell on your local computer, if you don’t already have one open.</p>
+<p>打开本地 shell 终端</p>
 </li>
 <li>
-<p>Check that you have the DFINITY execution command-line interface (CLI) installed and the <code>dfx</code> executable is available in your PATH by running the following command:</p>
+<p>检查是否安装了 DFINITY 命令行程序以及 `dfx`是否在当前路径中可用：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --version</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The command displays version information for the <code>dfx</code> command-line executable similar to the following:</p>
+<p>该命令会显示版本信息，如下所示：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -729,14 +733,14 @@ If you are comfortable meeting the prerequisites without instructions, continue 
 </div>
 </li>
 <li>
-<p>Preview usage information for the other <code>dfx</code> command-line sub-commands by running the following command:</p>
+<p>通过运行以下命令， 预览 <code>dfx</code> 的子命令的信息：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --help</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The command displays usage information for the <code>dfx</code> parent command and its subcommands.</p>
+<p>该命令将显示 <code>dfx</code> 父命令及其子命令的使用信息。</p>
 </div>
 </li>
 </ol>
@@ -744,66 +748,66 @@ If you are comfortable meeting the prerequisites without instructions, continue 
 </div>
 </div>
 <div class="sect1">
-<h2 id="net-new-project"><a class="anchor" href="#net-new-project"></a>Create a new project</h2>
+<h2 id="net-new-project"><a class="anchor" href="#net-new-project"></a>创建一个新项目</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dapps for the 互联网计算机 start as <strong>projects</strong>.
-You create projects using the <code>dfx</code> parent command and its subcommands.</p>
+<p>互联网计算机 上的 Dapp 以 <strong>projects</strong> 的形式呈现.
+您可以使用 <code>dfx</code> 父命令及其子命令来创建 projects</p>
 </div>
 <div class="paragraph">
-<p>For this tutorial, we&#8217;ll start with the default sample dapp to illustrate creating a dapp using the starter files in a project.
-When you create a new project, the <code>dfx</code> command-line interface adds a default project directory structure to your workspace. We cover the template files that make up a project directory in the <a href="../developers-guide/tutorials/explore-templates.html">Explore the default project</a> tutorial.</p>
+<p>在本教程中，我们将从默认示例 dapp 开始，以说明使用项目中的启动文件创建 dapp。
+当您创建一个新项目时，<code>dfx</code> 命令行会向您的工作区添加一个默认的项目目录结构。 我们在 <a href="../developers-guide/tutorials/explore-templates.html">探索基础项目</a> 教程中介绍了构成项目目录的模板文件。</p>
 </div>
 <div class="paragraph">
-<p>To create a new project for your first dapp:</p>
+<p>为你的第一个应用创建一个 project:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a terminal shell on your local computer, if you don’t already have one open.</p>
+<p>打开本地 shell 终端</p>
 </li>
 <li>
-<p>Create a new project named <code>hello</code> by running the following command:</p>
+<p>通过运行以下命令来创建一个名为 <code>hello</code> 的新项目：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx new hello</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>dfx new hello</code> command creates a new <code>hello</code> project directory, template files, and a new <code>hello</code> Git repository for your project.</p>
+<p><code>dfx new hello</code> 命令创建了一个 新的 <code>hello</code> 项目，其中包含默认项目目录、一些模板文件和项目的 Git 存储库。</p>
 </div>
 <div class="paragraph">
-<p>If you use a different project name instead of <code>hello</code>, make note of the name you used. You&#8217;ll need to use that project name in place of the <code>hello</code> project name throughout these instructions.</p>
+<p>如果您使用的是不同的项目名称而不是 <code>hello</code>，请记下您使用的名称。您需要在这些说明中使用新的项目名称而不是hello。</p>
 </div>
 </li>
 <li>
-<p>Change to your project directory by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd hello</code></pre>
-</div>
-</div>
+<p>通过运行以下命令更改项目目录：</p>
 </li>
 </ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cd hello</pre>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ping-the-network"><a class="anchor" href="#ping-the-network"></a>Check the connection to the 互联网计算机平台 mainnet</h2>
+<h2 id="ping-the-network"><a class="anchor" href="#ping-the-network"></a>检查与互联网计算机平台的链接情况</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>There is a reserved network alias that you can use to access the 互联网计算机 blockchain mainnet. The network alias is a system setting that&#8217;s defined internally, so there&#8217;s nothing you need to configure in your projects by default.</p>
+<p>在 Internet Computer上部署您的第一个项目之前，您需要连接到远程运行在您可以访问的子网上的网络网关。 有一个保留的网络别名，您可以使用它来访问在数据中心节点上远程运行的互联网计算机。 网络别名是内部定义的系统设置，因此默认情况下您无需在项目中配置任何内容。</p>
 </div>
 <div class="paragraph">
-<p>To check your connection to the 互联网计算机平台:</p>
+<p>检查与互联网计算机平台的网络连接情况：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Check that you are in the root directory for your project, if needed.</p>
+<p>进入项目根目录。</p>
 </li>
 <li>
-<p>Check the current status of the 互联网计算机平台 and your ability to connect to it by running the following command for the network alias <code>ic</code>:</p>
+<p>运行以下命令，检查 Internet Computer网络的当前状态以及能否连接：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx ping ic</code></pre>
@@ -811,9 +815,9 @@ When you create a new project, the <code>dfx</code> command-line interface adds 
 </div>
 </li>
 <li>
-<p>Verify that the <code>dfx ping ic</code> command returns information about the 互联网计算机平台.</p>
+<p>验证命令返回消息如下，您将看到类似输出：</p>
 <div class="paragraph">
-<p>For example, you should see output similar to the following:</p>
+<p>您将看到类似输出：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -828,50 +832,42 @@ When you create a new project, the <code>dfx</code> command-line interface adds 
 </div>
 </div>
 <div class="sect1">
-<h2 id="net-ledger-id"><a class="anchor" href="#net-ledger-id"></a>Confirm your developer identity and ledger account</h2>
+<h2 id="net-ledger-id"><a class="anchor" href="#net-ledger-id"></a>确认您的开发者身份和Ledger帐户</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>All ICP token transactions are recorded in a <a href="../developers-guide/glossary.html#g-ledger">ledger canister</a> running on the Internet Computer blockchain.
-The ledger canister consists of <strong>account identifiers</strong> and <strong>balances</strong> for all ICP token holders.</p>
+<p>所有 ICP 代币交易都记录在运行在互联网计算机区块链上的 <a href="../developers-guide/glossary.html#g-ledger">ledger canister</a> 中。在您可以转移您在帐户中持有的任何 ICP 代币之前，您需要向Ledger发送一条安全且经过正确签名的消息，以验证您的身份并授权您的开发人员身份完成交易。</p>
 </div>
 <div class="paragraph">
-<p>Before you can transfer any ICP tokens you hold in your ledger account, you need to send a secure and properly-signed message that verifies your identity to the ledger and authorizes your developer identity to complete the transaction.</p>
-</div>
-<div class="paragraph">
-<p>Depending on how you have set up custody for holding your ICP tokens, the hardware, software, and steps required to connect to the ledger and complete a transaction can vary.
-For example, you might connect to the ledger and start a transaction from a hardware wallet, using a hardware security module (HSM) appliance, through the Network Nervous System (NNS) front-end application, or using the DFINITY Canister SDK <code>dfx</code> command-line interface.
-Each approach presents a different interface for signing and sending messages to the ledger and representing your identity as an account holder.</p>
+<p>根据您设置保管 ICP 代币的方式，连接到账户和完成交易所需的硬件、软件和步骤可能会有所不同。 例如，您可以使用硬件安全模块 (HSM) 设备、通过网络神经系统 (NNS) 前端应用程序或使用 DFINITY Canister SDK dfx` 命令行工具。 每种方法都提供了一个不同的界面，用于签署和发送消息到Ledger并代表您作为帐户持有人的身份。</p>
 </div>
 <div class="sect2">
-<h3 id="_about_your_developer_identity"><a class="anchor" href="#_about_your_developer_identity"></a>About your developer identity</h3>
+<h3 id="_有关开发者身份"><a class="anchor" href="#_有关开发者身份"></a>有关开发者身份</h3>
 <div class="paragraph">
-<p>The first time you use the DFINITY Canister SDK, the <code>dfx</code> command-line tool creates a <code>default</code> developer identity for you. This identity is represented by a <strong>principal</strong> data type and a textual representation of the principal often referred to as your <strong>principal identifier</strong>.
-This representation of your identity is similar to a Bitcoin or Ethereum address.</p>
+<p>首次使用 DFINITY Canister SDK 时，<code>dfx</code> 命令行工具会为您创建默认的开发人员身份。 此身份由主体数据类型和主体的文本表示形式表示，通常称为 principal 标识符。这种身份表示类似于比特币或以太坊地址。</p>
 </div>
 <div class="paragraph">
-<p>However, the principal associated with your developer identity is typically not the same as your <strong>account identifier</strong> in the ledger. The principal identifier and the account identifier are related—both provide a textual representation of your identity—but they use different formats.</p>
+<p>但是，与您的开发人员身份相关联的委托人通常与帐户标识符不同。 principal 标识符和帐户标识符是相关的——两者都提供您身份的文本表示——但它们使用不同的格式。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_connect_to_the_ledger_to_get_account_information"><a class="anchor" href="#_connect_to_the_ledger_to_get_account_information"></a>Connect to the ledger to get account information</h3>
+<h3 id="_连接到ledger以获取账户信息"><a class="anchor" href="#_连接到ledger以获取账户信息"></a>连接到Ledger以获取账户信息</h3>
 <div class="paragraph">
-<p>For the purposes of this tutorial—where there&#8217;s no hardware wallet or external application to connect to the ledger—we&#8217;ll use your developer identity to retrieve your ledger account identifier, then transfer ICP tokens from the ledger account identifier to a cycles wallet canister controlled by your developer identity.</p>
+<p>出于本教程的目的 - 在没有硬件钱包或外部应用程序连接到 Ledger 的情况下 - 我们将使用您的开发人员身份来检索您的帐户标识符，然后将 ICP 代币从帐户转移到cycles钱包。</p>
 </div>
 <div class="paragraph">
-<p>To look up your account in the ledger:</p>
+<p>在 Ledger 中查找您的帐户：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Confirm the developer identity you are currently using by running the following command:</p>
+<p>运行以下命令确认您当前开发者身份：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity whoami</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In most cases, you should see that you are currently using default` developer identity.
-For example:</p>
+<p>在大多数情况下，您应该看到您当前使用的是默认的开发者身份。 例如：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -880,14 +876,14 @@ For example:</p>
 </div>
 </li>
 <li>
-<p>View the textual representation of the principal for your current identity by running the following command:</p>
+<p>运行以下命令查看当前账户。</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity get-principal</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command displays output similar to the following:</p>
+<p>输出如下所示：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -896,15 +892,14 @@ For example:</p>
 </div>
 </li>
 <li>
-<p>Get the account identifier for your developer identity by running the following command:</p>
+<p>运行以下命令获取您的开发人员身份的帐户标识符：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx ledger account-id</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command displays the ledger account identifier associated with your developer identity.
-For example, you should see output similar to the following:</p>
+<p>此命令显示与您的开发人员身份关联的帐户标识符。 例如，您应该会看到类似于以下内容的输出：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -913,15 +908,14 @@ For example, you should see output similar to the following:</p>
 </div>
 </li>
 <li>
-<p>Check your account balance by running the following command:</p>
+<p>运行以下命令显示账户余额：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx ledger --network ic balance</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command displays the ICP token balance from the ledger account.
-For example, you should see output similar to the following:</p>
+<p>此命令显示帐户中的 ICP 代币余额。 例如，您应该会看到类似于以下内容的输出：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -935,28 +929,28 @@ For example, you should see output similar to the following:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="convert-icp"><a class="anchor" href="#convert-icp"></a>Convert ICP tokens to cycles</h2>
+<h2 id="convert-icp"><a class="anchor" href="#convert-icp"></a>将 ICP 代币转换为Cycles</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Now that you have confirmed your account information and current ICP token balance, you can convert some of those ICP tokens to cycles and move them into a cycles wallet.</p>
+<p>现在您已经确认了您的账户信息和当前的 ICP 代币余额，您可以将其中一些 ICP 代币转换为Cycles并将它们移动到Cycles钱包中。</p>
 </div>
 <div class="paragraph">
-<p>To transfer ICP tokens to create a cycles wallet:</p>
+<p>转移 ICP 代币以创建Cycles钱包：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create a new canister with cycles by transferring ICP tokens from your ledger account by running a command similar to the following:</p>
+<p>运行类似于以下的命令，从您的帐户转移 ICP 代币来创建一个带有Cycles的新 Canister</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx ledger --network ic create-canister &lt;principal-identifier&gt; --amount &lt;icp-tokens&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command converts the number of ICP tokens you specify for the <code>--amount</code> argument into cycles, and associates the cycles with a new canister identifier controlled by the principal you specify.</p>
+<p>此命令将您为 --amount 参数指定的 ICP 令牌数量转换为Cycles，并将Cycles与由您指定的控制账户标识符相关联。</p>
 </div>
 <div class="paragraph">
-<p>For example, the following command converts .25 ICP tokens into cycles and specifies the principal identifier for the default identity as the controller of the new canister:</p>
+<p>例如，以下命令将 .25 个 ICP 令牌转换为Cycles，并将默认身份的账户标识符指定为新Canister的控制器：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -964,7 +958,7 @@ For example, you should see output similar to the following:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If the transaction is successful, the ledger records the event and you should see output similar to the following:</p>
+<p>如果交易成功，Ledger会记录该事件，您应该会看到类似于以下内容的输出：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -974,14 +968,14 @@ Canister created with id: "gastn-uqaaa-aaaae-aaafq-cai"</pre>
 </div>
 </li>
 <li>
-<p>Install the cycles wallet code in the newly-created canister placeholder by running a command similar to the following:</p>
+<p>运行类似于以下的命令，在新创建的Canister中安装Cycles钱包代码</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx identity --network ic deploy-wallet &lt;canister-identifer&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>For example:</p>
+<p>例如：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -989,7 +983,7 @@ Canister created with id: "gastn-uqaaa-aaaae-aaafq-cai"</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command displays output similar to the following:</p>
+<p>命令输出如下：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1003,25 +997,25 @@ The wallet canister on the "ic" network for user "default" is "gastn-uqaaa-aaaae
 </div>
 </div>
 <div class="sect1">
-<h2 id="_validate_your_cycles_wallet"><a class="anchor" href="#_validate_your_cycles_wallet"></a>Validate your cycles wallet</h2>
+<h2 id="_验证_cycles_钱包"><a class="anchor" href="#_验证_cycles_钱包"></a>验证 Cycles 钱包</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After you convert ICP tokens to cycles, you can validate the cycles wallet canister and check your current cycles balance.</p>
+<p>将 ICP 代币转换为Cycles后，您可以验证Cycles钱包Canister并检查您当前的Cycles余额。</p>
 </div>
 <div class="paragraph">
-<p>To validate your cycles wallet:</p>
+<p>验证 Cycles 钱包:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Verify the canister identifier for the cycles wallet you deployed by running the following command:</p>
+<p>运行以下命令验证您部署的Cycles钱包的Canister标识符：</p>
 <div class="listingblock bash">
 <div class="content">
 <pre class="highlightjs highlight"><code>dfx identity --network ic get-wallet</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The command displays the canister identifier for your cycles wallet with output similar to the following:</p>
+<p>输出类似如下</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1030,15 +1024,14 @@ The wallet canister on the "ic" network for user "default" is "gastn-uqaaa-aaaae
 </div>
 </li>
 <li>
-<p>Check that your cycles wallet canister is properly configured and holds a balance of cycles by running a command similar to the following:</p>
+<p>运行类似于以下的命令，检查您的Cycles钱包Canister是否已正确配置并有余额：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx wallet --network ic balance</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The command returns the balance for the your cycles wallet.
-For example:</p>
+<p>该命令返回余额，例如：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1046,7 +1039,7 @@ For example:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>You can also access your default cycles wallet in a web browser by using a URL similar to the following:</p>
+<p>您还可以使用类似于以下内容的 URL 在 Web 浏览器中访问您的默认Cycles钱包：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1054,28 +1047,28 @@ For example:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The first time you access the application, you see a notice that you are using an Anonymous Device and are prompted to authenticate your identity, authorize access to the wallet, and register your device.</p>
+<p>首次访问该应用程序时，您会看到一条通知，提示您正在使用匿名设备，并提示您验证您的身份、授权访问钱包并注册您的设备。</p>
 </div>
 </li>
 <li>
-<p>Click <strong>Authenticate</strong> to continue to the Internet Identity service.</p>
+<p>单击 <strong>Authenticate</strong> 以继续使用 Internet 身份服务。</p>
 </li>
 <li>
-<p>Enter your <strong>User Number</strong> if you have previously registered an identity or register with the service as a new user.</p>
+<p>输入 <strong>User Number</strong> 如果你之前注册过一个身份。</p>
 <div class="paragraph">
-<p>For more information about the Internet Identity service and how to register multiple authentication devices and methods, see <a href="../ic-identity-guide/auth-how-to.html">How to use the Internet Identity service</a>.</p>
+<p>有关 Internet 身份服务以及如何注册多个身份验证设备和方法的详细信息，请参考 <a href="../ic-identity-guide/auth-how-to.html">如何使用互联网身份服务</a>.</p>
 </div>
 </li>
 <li>
-<p>Authenticate using your user number and the authentication method—for example, a security key or fingerprint—you have registered.</p>
+<p>使用您的用户号和您注册的身份验证方法（例如，安全密钥或指纹）进行身份验证。</p>
 </li>
 <li>
-<p>Click <strong>Proceed</strong> to access to the default cycles wallet application.</p>
+<p>单击Proceed以访问默认周期钱包应用程序。</p>
 </li>
 <li>
-<p>Register the device you are using for this session by copying the command displayed in the <strong>Register Device</strong> page and running it in a terminal.</p>
+<p>通过复制“注册设备”页面中显示的命令并在终端中运行它来注册您用于此会话的设备。</p>
 <div class="paragraph">
-<p>For example, call the <code>authorize</code> method for the cycles wallet canister with a command similar to the following:</p>
+<p>例如，使用类似于以下的命令调用Cycles钱包Canister的授权方法：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1083,18 +1076,16 @@ For example:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Be sure that the command you copy has the <code>--no-wallet</code> option and the correct network (<code>ic</code>) alias.
-You should recognize the canister identifier—in this example, <code>gastn-uqaaa-aaaae-aaafq-cai</code>—as the cycles wallet associated with your identity.
-If this is your first wallet on the 互联网计算机平台, however, you might not recognize the principal being authorized. The use of a different principal is the expected behavior in this case.</p>
+<p>确保您复制的命令具有 <code>--no-wallet</code> 选项和正确的网络 ( <code>ic</code> ) 别名。 您应该将Canister标识符（在本例中为+gastn-uqaaa-aaaae-aaafq-cai+` ）指定为与您的身份相关联的Cycles钱包。  但是，如果这是您在网络上的第一个钱包，您可能无法识别被授权的委托人。 在这种情况下，使用不同的账户是预期的行为。</p>
 </div>
 <div class="paragraph">
-<p>When the browser refreshes after running the <code>authorize</code> command, the cycles wallet for your principal account is displayed.</p>
+<p>当运行授权命令后浏览器刷新时，将显示您的主账户的 Cycles 钱包。</p>
 </div>
 </li>
 <li>
-<p>View your cycles balance and activity in the browser.</p>
+<p>在浏览器中查看您的Cycles余额和活动。</p>
 <div class="paragraph">
-<p>For example:</p>
+<p>例如:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1102,7 +1093,7 @@ If this is your first wallet on the 互联网计算机平台, however, you might
 </div>
 </div>
 <div class="paragraph">
-<p>For more information about the commands and methods available for working with the default cycles wallet, see <a href="../developers-guide/default-wallet.html">Use the default cycles wallet</a>.</p>
+<p>有关可用于使用默认 cycles 钱包的命令和方法的更多信息，查看 <a href="../developers-guide/default-wallet.html">使用默认 cycles 钱包</a>.</p>
 </div>
 </li>
 </ol>
@@ -1110,46 +1101,46 @@ If this is your first wallet on the 互联网计算机平台, however, you might
 </div>
 </div>
 <div class="sect1">
-<h2 id="net-deploy"><a class="anchor" href="#net-deploy"></a>Register, build, and deploy the application</h2>
+<h2 id="net-deploy"><a class="anchor" href="#net-deploy"></a>注册、构建和部署应用程序</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After you have validated your cycles wallet balance, you can register, build, and deploy your sample application.</p>
+<p>在验证您的 cycles 钱包余额后，您可以注册、构建和部署您的示例应用程序。</p>
 </div>
 <div class="paragraph">
-<p>To deploy your first application on the 互联网计算机 blockchain mainnet:</p>
+<p>在 互联网计算机 区块链主网上部署您的第一个应用程序：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>In your terminal shell, check that you are still in the root directory for your project.</p>
+<p>如有必要，请检查您是否仍在项目的根目录中。</p>
 </li>
 <li>
-<p>Ensure that <code>node</code> modules are available in your project directory, if needed, by running the following command:</p>
+<p>如有必要，请通过运行以下命令确保 <code>node</code> modules 文件夹在项目目录中可用：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>For more information about this step, see <a href="../developers-guide/webpack-config.html#troubleshoot-node">Ensuring node is available in a project</a>.</p>
+<p>有关此步骤的详细信息，请参阅 <a href="../developers-guide/webpack-config.html#troubleshoot-node">阅确保项目节点可用</a> 章节。</p>
 </div>
 </li>
 <li>
-<p>Register, build, and deploy your first application by running the following command:</p>
+<p>通过运行以下命令来注册、构建和部署第一个应用程序：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx deploy --network ic</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>--network</code> option specifies the network alias or URL for deploying the dapp.
-This option is required to install on the 互联网计算机 blockchain mainnet.</p>
+<p><code>--network</code> 选项指定了将要部署的 App 的网络别名或者 URL。
+如果要将程序安装在 互联网计算机 区块链主网上，那么就需要这个选项。</p>
 </div>
 <div class="paragraph">
-<p>The <code>dfx deploy</code> command output displays information about the operations it performs.</p>
+<p>输出 <code>dfx deploy</code> 命令将显示执行操作的信息。</p>
 </div>
 <div class="paragraph">
-<p>For example, this step registers two identifiers—one for the <code>hello</code> main program and one for the <code>hello_assets</code> front-end user interface—and installation information similar to the following:</p>
+<p>例如，此步骤会注册两个网络特定标识符（一个用于 <code>hello</code> 主程序，一个用于 <code>hello_assets</code> 前端用户界面）以及类似以下内容的安装信息：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1182,7 +1173,7 @@ Deployed canisters.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If you didn&#8217;t convert enough ICP tokens to cycles to complete the operation, you can add cycles to your cycles wallet by running a command similar to the following:</p>
+<p>如果您没有将足够的 ICP 代币转换为Cycles来完成操作，您可以通过运行类似于以下的命令将Cycles添加到您的钱包中：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1190,8 +1181,8 @@ Deployed canisters.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command converts an additional <code>1.005</code> ICP tokens to cycles for the <code>gastn-uqaaa-aaaae-aaafq-cai</code> cycles wallet identifier.
-The command returns output similar to the following:</p>
+<p>此命令将额外的 <code>1.005</code> 个 ICP 代币转换为 <code>gastn-uqaaa-aaaae-aaafq-cai</code> 钱包标识符的Cycles。
+该命令返回类似于以下内容的输出：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1199,35 +1190,35 @@ The command returns output similar to the following:</p>
 Canister was topped up!</pre>
 </div>
 </div>
-</li>
-<li>
-<p>Call the <code>hello</code> canister and the predefined <code>greet</code> function by running the following command:</p>
+<div class="paragraph">
+<p>运行以下命令调用 <code>hello</code> Canister 和预定义的 greet 函数：</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister --network ic call hello greet '("everyone": text)'</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s take a closer look at this example:</p>
+<p>我们仔细观察一下这个例子：</p>
 </div>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Using the <code>--network ic</code> option indicates that the canister you want to call is deployed on the <code>ic</code>. The <code>ic</code> network alias is an internally-reserved alias for accessing the 互联网计算机 blockchain mainnet.</p>
+<p>使用 <code>--network ic</code> 选项表明你想要将 canister 部署在 canister 上。<code>ic</code> 网络别名是内部保留的用于访问 互联网计算机 网络的名称。</p>
 </li>
 <li>
-<p>Note that the <code>--network ic</code> option must precede the operation subcommand, which, in this case, is the <code>dfx canister call</code> command.</p>
+<p>请注意，<code>--network ic</code> 选项必须位于操作子命令之前，在这种情况下，它是 dfx canister call 命令。</p>
 </li>
 <li>
-<p>The <code>hello</code> argument specifies the name of the canister you want to call.</p>
+<p><code>hello</code> 参数指定要调用的Canister的名称。</p>
 </li>
 <li>
-<p>The <code>greet</code> argument specifies the name of the function you want to call in the <code>hello</code> canister.</p>
+<p><code>greet</code> 参数指定要在 hello Canister 中调用的函数的名称。</p>
 </li>
 <li>
-<p>The text string <code>everyone</code> is the argument that you want to pass to the <code>greet</code> function.</p>
+<p>文本字符串 <code>everyone</code> 是您要传递给 greet 函数的参数。</p>
 </li>
 </ul>
 </div>
@@ -1235,18 +1226,18 @@ Canister was topped up!</pre>
 </div>
 </li>
 <li>
-<p>Verify the command displays the return value of the <code>greet</code> function.</p>
+<p>验证greet函数返回值。("Hello, everyone!")</p>
 <div class="paragraph">
-<p>For example:</p>
+<p>例如：</p>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>("Hello, everyone!")</pre>
 </div>
 </div>
-</li>
-<li>
-<p>Rerun the <code>dfx wallet balance</code> command or refresh the browser to see your new cycle balance and recent activity.</p>
+<div class="paragraph">
+<p>重新运行 <code>dfx wallet balance</code> 命令或刷新浏览器以查看您的新Cycles余额和最近的活动。</p>
+</div>
 </li>
 </ol>
 </div>
@@ -1256,7 +1247,7 @@ Canister was topped up!</pre>
 <h2 id="quickstart-frontend"><a class="anchor" href="#quickstart-frontend"></a>Test the dapp front-end</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Now that you have verified that your dapp has been deployed and tested its operation using the command line, let&#8217;s verify that you can access the front-end using your web browser.</p>
+<p>既然您已部署应用程序并使用命令行测试了其操作，那么让我们验证是否可以使用网络浏览器访问前端弹出窗口。</p>
 </div>
 <div class="paragraph">
 <p>To access the dapp front-end:</p>
@@ -1264,12 +1255,12 @@ Canister was topped up!</pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a browser.</p>
+<p>打开浏览器</p>
 </li>
 <li>
-<p>Navigate to the front-end for the dapp using a URL that consists of the <code>hello_assets</code> identifier and the <code>boundary.ic0.app</code> suffix.</p>
+<p>使用由 <code>hello_assets</code> 标识符和 <code>boundary.ic0.app</code> 后缀组成的 URL 导航到 dapp 的前端。</p>
 <div class="paragraph">
-<p>If you didn’t make a note of the canister identifier, you can look it up by running the following command:</p>
+<p>如果您没有记下 canister 标识符，则可以通过运行以下命令来查找它：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1277,7 +1268,7 @@ Canister was topped up!</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>For example, the full URL should look similar to the following:</p>
+<p>例如，完整的 URL 类似以下：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1285,15 +1276,14 @@ Canister was topped up!</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Navigating to this URL displays the HTML entry page for the template application.
-For example:</p>
+<p>导航到此 URL 将显示模板应用程序的 HTML 页面。 例如：</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="_images/net-front-end-prompt.png" alt="HTML page with prompt"></span></p>
 </div>
 </li>
 <li>
-<p>Type a greeting, then click <strong>Click Me</strong> to return the greeting.</p>
+<p>键入想问候的人，然后单击“Click Me”以返回问候语。</p>
 </li>
 </ol>
 </div>
@@ -1303,24 +1293,24 @@ For example:</p>
 <h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next steps</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Now that you have seen how to deploy a dapp on the 互联网计算机 blockchain, you are ready to develop and deploy programs of your own.</p>
+<p>现在您已经了解了如何在 互联网计算机 区块链上部署 dapp，您已经准备好开发和部署您自己的程序了。</p>
 </div>
 <div class="paragraph">
-<p>You can find more detailed examples and tutorials to help you learn about how to use Motoko and how to develop dapps for the Internet Computer blockchain throughout the documentation.</p>
+<p>您可以在文档中找到更详细的示例和教程，以帮助您了解如何使用 Motoko 以及如何开发 dapps 以在 互联网计算机 区块链上运行 dapps。</p>
 </div>
 <div class="paragraph">
-<p>Here are some suggestions for where to go next:</p>
+<p>一些建议的链接:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../developers-guide/tutorials-intro.html">Tutorials</a> to explore building front-end and back-end dapps in a local development environment.</p>
+<p><a href="../developers-guide/tutorials-intro.html">教程</a> 探索使用本地容器执行环境构建简单的 dapp。</p>
 </li>
 <li>
-<p><a href="../candid-guide/candid-concepts.html">What is Candid?</a> to learn how the Candid interface description language enables service interoperability and composability.</p>
+<p><a href="../candid-guide/candid-concepts.html">什么是 Candid？</a> 了解 Candid 接口描述语言如何实现服务互操作性和可组合性。</p>
 </li>
 <li>
-<p><a href="../languages/motoko-at-a-glance.html">Motoko at-a-glance</a> to learn about the features and syntax for using Motoko.</p>
+<p><a href="../languages/motoko-at-a-glance.html">初步认识 Motoko</a> 了解使用 Motoko 的功能和语法。</p>
 </li>
 </ul>
 </div>
