@@ -56,7 +56,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="quickstart/quickstart-intro.html">快速开始</a>
+    <a class="nav-link" href="quickstart/quickstart-intro.html">快速入门</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="quickstart/newcomers.html">初学者</a>
@@ -75,7 +75,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">开始</span>
+    <span class="nav-text">入门</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -299,7 +299,7 @@
     <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速入门</a>
   </li>
   <li class="nav-item" data-depth="5">
     <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
@@ -387,7 +387,7 @@
     <a class="nav-link" href="developers-guide/concepts/concepts-intro.html">概念</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="developers-guide/concepts/what-is-IC.html">什么是 {IC}</a>
+    <a class="nav-link" href="developers-guide/concepts/what-is-IC.html">什么是 Internet Computer</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
@@ -432,7 +432,7 @@
     <span class="nav-text">ledger 概览</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="integration/ledger-quick-start.html">Ledger 快速开始</a>
+    <a class="nav-link" href="integration/ledger-quick-start.html">Ledger 快速入门</a>
   </li>
 </ul>
   </li>
@@ -441,7 +441,7 @@
     <span class="nav-text">NNS 应用概览</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+    <a class="nav-link" href="token-holders/nns-app-quickstart.html">NNS App 快速入门</a>
   </li>
 </ul>
   </li>
@@ -609,8 +609,8 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you are installing any 0.7.0 (or later) version of the {sdk-short-name}, you might have noticed that those versions have introduced some major improvements for handling HTTP queries and front-end assets.
-When these changes are officially rolled into the next publicly-available release of the {sdk-short-name}, they will change how you build and deploy applications on the Internet Computer.</p>
+<p>If you are installing any 0.7.0 (or later) version of the DFINITY Canister SDK, you might have noticed that those versions have introduced some major improvements for handling HTTP queries and front-end assets.
+When these changes are officially rolled into the next publicly-available release of the DFINITY Canister SDK, they will change how you build and deploy applications on the Internet Computer.</p>
 </div>
 <div class="paragraph">
 <p>If you are creating new projects, the changes to the underlying architecture will have little, if any, effect on your development workflow. In fact, you might find that the new architecture makes building applications that run on the Internet Computer a more familiar experience.</p>
@@ -669,7 +669,7 @@ Handling assets in this way led to problems in the browser, such as:</p>
 <p>The <code>bootstrap</code> approach provided advantages in terms of security and decentralization, but those advantages were offset by the poor HTTP and asset handling that front-end developers and application users didn&#8217;t expect to experience.</p>
 </div>
 <div class="paragraph">
-<p>Over the last year, the {sdk-short-name} team has been gathering and evaluating feedback from the developer community. Based on that feedback, the team has decided to provide a more flexible developer experience while continuing to provide an equivalent security model.</p>
+<p>Over the last year, the DFINITY Canister SDK team has been gathering and evaluating feedback from the developer community. Based on that feedback, the team has decided to provide a more flexible developer experience while continuing to provide an equivalent security model.</p>
 </div>
 </div>
 </div>
@@ -678,7 +678,7 @@ Handling assets in this way led to problems in the browser, such as:</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>After considering the advantages and disadvantages of different  proposals, the team decided on an architecture that would allow canisters to answer HTTP requests directly.
-With this new approach, the {sdk-short-name} implements an HTTP middleware server.</p>
+With this new approach, the DFINITY Canister SDK implements an HTTP middleware server.</p>
 </div>
 <div class="paragraph">
 <p>The HTTP middleware server handles the processing for the HTTP request by doing the following:</p>
@@ -809,7 +809,7 @@ const example = Actor.createActor(example_idl, { agent, canisterId: example_id }
 <h2 id="_migrating_an_existing_project"><a class="anchor" href="#_migrating_an_existing_project"></a>Migrating an existing project</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you have an existing project, chances are it will not work seamlessly after you update the {sdk-short-name}.
+<p>If you have an existing project, chances are it will not work seamlessly after you update the DFINITY Canister SDK.
 Unfortunately, a direct migration path isn’t possible in this case.
 The best way to migrate your current front-end is to create a new project and move your code manually to the new structure.</p>
 </div>

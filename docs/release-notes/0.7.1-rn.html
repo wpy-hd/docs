@@ -57,7 +57,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../quickstart/quickstart-intro.html">快速开始</a>
+    <a class="nav-link" href="../quickstart/quickstart-intro.html">快速入门</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../quickstart/newcomers.html">初学者</a>
@@ -76,7 +76,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">开始</span>
+    <span class="nav-text">入门</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -300,7 +300,7 @@
     <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速入门</a>
   </li>
   <li class="nav-item" data-depth="5">
     <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
@@ -388,7 +388,7 @@
     <a class="nav-link" href="../developers-guide/concepts/concepts-intro.html">概念</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../developers-guide/concepts/what-is-IC.html">什么是 {IC}</a>
+    <a class="nav-link" href="../developers-guide/concepts/what-is-IC.html">什么是 Internet Computer</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
@@ -433,7 +433,7 @@
     <span class="nav-text">ledger 概览</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../integration/ledger-quick-start.html">Ledger 快速开始</a>
+    <a class="nav-link" href="../integration/ledger-quick-start.html">Ledger 快速入门</a>
   </li>
 </ul>
   </li>
@@ -442,7 +442,7 @@
     <span class="nav-text">NNS 应用概览</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+    <a class="nav-link" href="../token-holders/nns-app-quickstart.html">NNS App 快速入门</a>
   </li>
 </ul>
   </li>
@@ -596,7 +596,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li>开发者文档</li>
-    <li>开始</li>
+    <li>入门</li>
     <li>SDK 介绍</li>
     <li><a href="sdk-release-notes.html">版本更新</a></li>
     <li><a href="0.7.1-rn.html">0.7.1</a></li>
@@ -664,7 +664,7 @@ For example, you can now send cycles from your cycles wallet to a specific canis
 <p>A new <code>--no-artificial-delay</code> option enables you to reduce the time it takes for the local Internet Computer to start.</p>
 <div class="paragraph">
 <p>This change adds the <code>--no-artificial-delay</code> flag to <code>dfx start</code> and <code>dfx replica</code> commands.
-By default, the local Internet Computer replica that is installed with the {sdk-short-name} has an artificial consensus delay to simulate the delay users might see in a networked environment.
+By default, the local Internet Computer replica that is installed with the DFINITY Canister SDK has an artificial consensus delay to simulate the delay users might see in a networked environment.
 With this new flag, you can skip the built-in delay when you start the local Internet Computer by running either the <code>dfx start --no-artificial-delay</code> or <code>dfx replica --no-artificial-delay</code> command.</p>
 </div>
 <div class="paragraph">
@@ -687,15 +687,15 @@ With this new flag, you can skip the built-in delay when you start the local Int
 <h2 id="_breaking_change"><a class="anchor" href="#_breaking_change"></a>Breaking change</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The {sdk-short-name} version 0.7.1 introduces a change to the default principal used when you run <code>dfx canister call</code> commands.
-Depending on the version of the {sdk-short-name} that you were previously using, this change might require changes to your program code or to the way you call methods in deployed canisters.</p>
+<p>The DFINITY Canister SDK version 0.7.1 introduces a change to the default principal used when you run <code>dfx canister call</code> commands.
+Depending on the version of the DFINITY Canister SDK that you were previously using, this change might require changes to your program code or to the way you call methods in deployed canisters.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>The cycles wallet canister identifier is not longer used as the message caller by default.</p>
 <div class="paragraph">
-<p>In some previous versions of the {sdk-short-name}, the <code>dfx canister call</code> command would use the cycles wallet canister identifier as the message caller to perform queries and update calls by default.</p>
+<p>In some previous versions of the DFINITY Canister SDK, the <code>dfx canister call</code> command would use the cycles wallet canister identifier as the message caller to perform queries and update calls by default.</p>
 </div>
 <div class="paragraph">
 <p>The <code>--no-wallet</code> command-line option was introduced to allow you to bypass the cycles wallet canister identifier and perform query and update calls using the currently-selected identity.</p>

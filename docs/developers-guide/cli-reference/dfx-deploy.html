@@ -56,7 +56,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../quickstart/quickstart-intro.html">快速开始</a>
+    <a class="nav-link" href="../../quickstart/quickstart-intro.html">快速入门</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../quickstart/newcomers.html">初学者</a>
@@ -75,7 +75,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">开始</span>
+    <span class="nav-text">入门</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -299,7 +299,7 @@
     <a class="nav-link" href="#rust-guide:rust-intro.adoc">Rust</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速开始</a>
+    <a class="nav-link" href="#rust-guide:rust-quickstart.adoc">Hello, World! 快速入门</a>
   </li>
   <li class="nav-item" data-depth="5">
     <a class="nav-link" href="#rust-guide:rust-counter.adoc">简单的计数器教程</a>
@@ -387,7 +387,7 @@
     <a class="nav-link" href="../concepts/concepts-intro.html">概念</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 {IC}</a>
+    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 Internet Computer</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
@@ -432,7 +432,7 @@
     <span class="nav-text">ledger 概览</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../integration/ledger-quick-start.html">Ledger 快速开始</a>
+    <a class="nav-link" href="../../integration/ledger-quick-start.html">Ledger 快速入门</a>
   </li>
 </ul>
   </li>
@@ -441,7 +441,7 @@
     <span class="nav-text">NNS 应用概览</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../token-holders/nns-app-quickstart.html">NNS App 快速开始</a>
+    <a class="nav-link" href="../../token-holders/nns-app-quickstart.html">NNS App 快速入门</a>
   </li>
 </ul>
   </li>
@@ -609,7 +609,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Use the <code>dfx deploy</code> command to register, build, and deploy a dapp on the local canister execution environment, on the {platform} or on a specified testnet.
+<p>Use the <code>dfx deploy</code> command to register, build, and deploy a dapp on the local canister execution environment, on the Internet Computer platform or on a specified testnet.
 By default, all canisters defined in the project <code>dfx.json</code> configuration file are deployed.</p>
 </div>
 <div class="paragraph">
@@ -694,7 +694,7 @@ By default, the local canister execution environment is used.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--argument &lt;argument&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies an argument using Candid syntax to pass to the canister during deployment.
-Note that this option requires you to define an actor class in the {proglang} program.</p></td>
+Note that this option requires you to define an actor class in the Motoko program.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--with-cycles &lt;number-of-cycles&gt;</code></p></td>
@@ -734,7 +734,7 @@ If you don&#8217;t specify a canister name, <code>dfx deploy</code> will deploy 
 <h2 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use the <code>dfx deploy</code> command to deploy all or specific canisters on the local canister execution environment, on the {platform} or on a specified testnet.</p>
+<p>You can use the <code>dfx deploy</code> command to deploy all or specific canisters on the local canister execution environment, on the Internet Computer platform or on a specified testnet.</p>
 </div>
 <div class="paragraph">
 <p>For example, to deploy the <code>hello</code> project on the hypothetical <code>ic-pubs</code> testnet configured in the <code>dfx.json</code> configuration file, you can run the following command:</p>
@@ -753,7 +753,7 @@ If you don&#8217;t specify a canister name, <code>dfx deploy</code> will deploy 
 </div>
 </div>
 <div class="paragraph">
-<p>Note that currently you must use an actor class in your {proglang} dapp.
+<p>Note that currently you must use an actor class in your Motoko dapp.
 In this example, the <code>dfx deploy</code> command specifies an argument to pass to the <code>hello_actor_class</code> canister.
 The main program for the <code>hello_actor_class</code> canister looks like this:</p>
 </div>
