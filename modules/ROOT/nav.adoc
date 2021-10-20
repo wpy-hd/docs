@@ -3,13 +3,13 @@
 ** xref:introduction:welcome.adoc#for-developers[致开发者]
 ** xref:introduction:welcome.adoc#for-protocol-enthusiasts[致协议爱好者]
 
-* xref:quickstart:quickstart-intro.adoc[快速开始]
+* xref:quickstart:quickstart-intro.adoc[快速入门]
 ** xref:quickstart:newcomers.adoc[初学者]
 ** xref:quickstart:local-quickstart.adoc[本地开发]
 ** xref:quickstart:network-quickstart.adoc[网络部署]
 
 * 开发者文档
-** 开始
+** 入门
 *** SDK 介绍
 **** xref:developers-guide:install-upgrade-remove.adoc[安装，更新以及移除软件]
 **** xref:release-notes:sdk-release-notes.adoc[版本更新]
@@ -79,7 +79,7 @@
 ****** xref:language-guide:style.adoc[Motoko 风格指南]
 
 **** xref:rust-guide:rust-intro.adoc[Rust]
-***** xref:rust-guide:rust-quickstart.adoc[Hello, World! 快速开始]
+***** xref:rust-guide:rust-quickstart.adoc[Hello, World! 快速入门]
 ***** xref:rust-guide:rust-counter.adoc[简单的计数器教程]
 ***** xref:rust-guide:multiply-dependency.adoc[基础依赖教程]
 ***** xref:rust-guide:rust-profile.adoc[Profile tutorial]
@@ -118,9 +118,9 @@
 *** xref:token-holders:custody-options-intro.adoc[Choosing self-custody for digital assets]
 *** xref:token-holders:self-custody-quickstart.adoc[Self-custody quick start]
 ** ledger 概览
-*** xref:integration:ledger-quick-start.adoc[Ledger 快速开始]
+*** xref:integration:ledger-quick-start.adoc[Ledger 快速入门]
 ** NNS 应用概览
-*** xref:token-holders:nns-app-quickstart.adoc[NNS App 快速开始]
+*** xref:token-holders:nns-app-quickstart.adoc[NNS App 快速入门]
 
 * 其他资源
 ** 开发者视频
