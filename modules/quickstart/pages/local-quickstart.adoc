@@ -25,7 +25,7 @@ ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 
 * 如果想在项目前端开发中使用 SDK 的默认的前端模板文件，请安装 `+node.js+`。
 
-如果您不确定如何在本地计算机上打开新的终端或如何安装 `+node.js+`，请参阅 link:newcomers{outfilesuffix}[新手基础教程]。如果您能够满足上述条件，请继续<<下载和安装>>。
+如果您不确定如何在本地计算机上打开新的终端或如何安装 `+node.js+`，请参阅 link:newcomers{outfilesuffix}[新手基础教程]。如果您能够满足上述条件，请继续<<download-and-install, 下载和安装>>。
 
 [[download-and-install]]
 == 下载和安装
@@ -260,7 +260,7 @@ dfx stop
 这个快速入门教程只涉及几个关键步骤用来介绍您开发自己的项目时所遵循的基本工作流程。在教学指引 和 {proglang} 编程语言导引中，有更多详细的示例和教程供您探索。
 您可以在文档中找到更详细的示例和教程，以帮助您了解如何使用 {proglang} 以及如何开发 dapps 以在 {IC} 区块链上运行 dapps。
 
-一些连接的链接:
+一些建议的链接:
 
 * link:../developers-guide/tutorials-intro{outfilesuffix}[教程] 探索使用本地容器执行环境构建简单的 dapp。
 

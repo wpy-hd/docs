@@ -10,135 +10,138 @@
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 
 [[net-quick-start]]
-This _Quick Start_ scenario assumes that you are installing the {sdk-short-name} for the first time and deploying the default project on the {IC} blockchain mainnet.
+本章节假设您是第一次安装{sdk-short-name}并在远程运行的 Internet Computer 区块链上部署默认项目。
 
-If you are only deploying projects in a local development environment, see the link:local-quickstart{outfilesuffix}[Local development] scenario.
+如果您只是在本地开发环境中部署项目，请参考 link:local-quickstart{outfilesuffix}[本地开发] 教程。
 
-To get started, let's build and deploy a simple Hello dapp that has just one function—called `+greet+`. 
-The `+greet+` function accepts one text argument and returns the result with a greeting similar to **Hello,{nbsp}everyone!** in a terminal if you run the dapp using the command-line or in an HTML page if you access the dapp in a browser.
+首先，让我们构建和部署一个简单的 Hello 应用程序，它只有一个函数——称为 `+greet+`， `+greet+` 函数接受一个文本参数并返回（命令行运行应用程序时在终端，浏览器访问应用程序时在网页）一个问候语。
 
 [[net-before]]
-== Before you begin
+== 准备工作
 
 Before you download and install this release of the {sdk-short-name}, verify the following:
 
-* You have an internet connection and access to a shell terminal on your local **macOS** or **Linux** computer.
-+
-Currently, the {sdk-short-name} only runs on computers with a macOS or Linux operating system.
+在下载并安装此版本的 {sdk-short-name} 之前，请确保：
 
-* You have `+node.js+` installed if you want to access the default front-end for the default project.
-
-* You have ICP tokens or cycles available for you to use. 
+* 已连接互联网，并可以通过 macOS 或者 Linux 访问本地的 shell 终端。
 +
-You must have *cycles* available to complete this tutorial. To get cycles, you must either convert ICP tokens to cycles or be provided cycles from another source, for example, from a canister controlled by another developer or from a third-party cycles provider. This tutorial assumes that you have an account with ICP tokens available and illustrates how to convert ICP tokens into cycles and transfer those cycles to a **cycles wallet** that you control.
-+
-For information about how to get ICP tokens, see link:../developers-guide/concepts/tokens-cycles{outfilesuffix}#get-cycles[How you can get ICP tokens].
-For an introduction to using the Network Nervous System application to manage ICP tokens, see link:../token-holders/nns-app-quickstart{outfilesuffix}[Network nervous system dapp quick start].
-For information about using your default cycles wallet after you have created it, see link:../developers-guide/default-wallet{outfilesuffix}[Use the default cycles wallet].
+目前，{sdk-short-name} 只可在 macOS 或者 Linux 系统中运行。
 
-This tutorial assumes you know how to perform common tasks—like opening a terminal and running commands—on your computer.
-If you aren’t sure how to open a new terminal shell or how to install software packages like `node.js`, see link:newcomers{outfilesuffix}[Preliminary steps for newcomers].
-If you are comfortable meeting the prerequisites without instructions, continue to <<Download and install>>.
+* 如果想在项目前端开发中使用 SDK 的默认的前端模板文件，请安装 `+node.js+`。
+
+有可用的 ICP 代币或 Cycles 您必须有可用的Cycles才能完成本教程。 ﻿ ﻿有关如何获取 ICP 令牌的信息，请参阅如何获取 ICP 令牌。 关于使用网络神经系统应用程序管理ICP令牌的介绍，请参见网络神经系统应用程序快速入门。 有关在创建后使用默认Cycles钱包的信息，请参阅使用默认Cycles钱包。
+* 有可用的 ICP 代币或 Cycles
++
+您必须有可用的 Cycles 才能完成本教程。  T要获得Cycles，您必须将 ICP 代币转换为Cycles，或者从其他来源获得，例如，从另一个开发者控制的 Canister 或第三方 Cycles 提供商处获得。 本教程假设您有一个可用的 ICP 代币帐户，并说明如何将 ICP 代币转换为 Cycles 并将这些 Cycles 转移到您控制的钱包中。
++
+更多有关获取 ICP 代币的信息，请参考 link:../developers-guide/concepts/tokens-cycles{outfilesuffix}#get-cycles[如何获取 ICP 代币].
+想了解网络神经系统应用是如何管理 ICP 代币的，请看 link:../token-holders/nns-app-quickstart{outfilesuffix}[网络神经系统应用快速入门].
+有关在创建后使用默认 cycles 钱包的信息，请参考 link:../developers-guide/default-wallet{outfilesuffix}[使用 cycles 钱包 ].
+
+本教程假设你了解一些基本操作，比如打开命令行并且在计算机上运行命令。
+如果您不确定如何在本地计算机上打开新的终端或如何安装 `+node.js+`，请参阅 link:newcomers{outfilesuffix}[新手基础教程]。如果您能够满足上述条件，请继续<<net-download-sdk, 下载和安装>>。
 
 [[net-download-sdk]]
-== Download and install
+== 下载和安装
 
-You can download the latest version of the {sdk-long-name} directly from within a terminal shell on your local computer. If you have previously installed the {sdk-short-name}, you can skip this section and start with <<net-new-project,Create a new project>>.
+你可以直接从本地计算机终端下载最新版本的 {sdk-long-name}。如果你已经安装了{sdk-short-name}, 你可以跳过这一小节直接从<<net-new-project,创建一个项目>> 开始.
 //<<net-ledger-id,Confirm your developer identity and ledger account>>.
 
-To download and install:
+下载和安装：
 
-. Open a terminal shell on your local computer.
+[arabic]
+. 打开本地 shell 终端
 +
-For example, open Applications, Utilities, then double-click *Terminal* or press kbd:[{commandkey} + spacebar] to open Search, then type `terminal`.
-. Download and install the {sdk-short-name} package by running the following command:
+打开“应用程序”、“实用程序”，然后双击“Terminal ”或按 kbd:[{commandkey} + 空格] 打开搜索栏后输入终端。
+. 通过运行以下命令下载并安装 {sdk-long-name}:
 +
 [source,bash]
 ----
 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
 ----
 +
-This command prompts you to read and accept the license agreement before installing the {company-id} execution command-line interface (CLI) and its dependencies on your local computer.
-. Type `+y+` and press kbd:[Return] to continue with the installation.
+此命令将提示您在安装 {company-id} 命令行(CLI)及本地计算机的依赖项之前，先阅读并接受许可协议。
+. 输入 `+y+` 并按回车键继续安装。
 +
-The command displays information about the components being installed on the local computer.
+该命令将显示在本地计算机上正在安装的组件信息。
 
-[[net-verify-sdk-version]]
-== Verify the SDK is ready to use
+[[verify-the-sdk-is-ready-to-use]]
+== 验证 SDK
 
-If the installation script runs without any errors, everything you need to start developing programs that run on the {platform} will be available on your local computer.
+如果您在安装运行脚本时没有任何错误，则您启动的在计算机互联网平台上运行的程序都可以在本地计算机上使用。
 
-To verify the SDK is ready to use:
+验证 SDK 已经可以使用:
 
-. Open a terminal shell on your local computer, if you don’t already have one open.
-. Check that you have the {company-id} execution command-line interface (CLI) installed and the `+dfx+` executable is available in your PATH by running the following command:
+[arabic]
+. 打开本地 shell 终端
+. 检查是否安装了 {company-id} 命令行程序以及 `+dfx+`是否在当前路径中可用：
 +
 [source,bash]
 ----
 dfx --version
 ----
 +
-The command displays version information for the `+dfx+` command-line executable similar to the following:
+该命令会显示版本信息，如下所示：
 +
 ....
 dfx 0.8.2
 ....
-. Preview usage information for the other `+dfx+` command-line sub-commands by running the following command:
+. 通过运行以下命令， 预览 `+dfx+` 的子命令的信息：
 +
 [source,bash]
 ----
 dfx --help
 ----
 +
-The command displays usage information for the `+dfx+` parent command and its subcommands.
+该命令将显示 `+dfx+` 父命令及其子命令的使用信息。
+
 
 [[net-new-project]]
-== Create a new project
+== 创建一个新项目
 
-Dapps for the {IC} start as **projects**.
-You create projects using the `+dfx+` parent command and its subcommands.
+{IC} 上的 Dapp 以 **projects** 的形式呈现.
+您可以使用 `+dfx+` 父命令及其子命令来创建 projects
 
-For this tutorial, we'll start with the default sample dapp to illustrate creating a dapp using the starter files in a project.
-When you create a new project, the `+dfx+` command-line interface adds a default project directory structure to your workspace. We cover the template files that make up a project directory in the link:../developers-guide/tutorials/explore-templates{outfilesuffix}[Explore the default project] tutorial.
+在本教程中，我们将从默认示例 dapp 开始，以说明使用项目中的启动文件创建 dapp。
+当您创建一个新项目时，`+dfx+` 命令行会向您的工作区添加一个默认的项目目录结构。 我们在 link:../developers-guide/tutorials/explore-templates{outfilesuffix}[探索基础项目] 教程中介绍了构成项目目录的模板文件。
 
-To create a new project for your first dapp:
+为你的第一个应用创建一个 project:
 
-. Open a terminal shell on your local computer, if you don’t already have one open.
-. Create a new project named `+hello+` by running the following command:
+[arabic]
+. 打开本地 shell 终端
+. 通过运行以下命令来创建一个名为 `+hello+` 的新项目：
 +
 [source,bash]
 ----
 dfx new hello
 ----
 +
-The `+dfx new hello+` command creates a new `+hello+` project directory, template files, and a new `+hello+` Git repository for your project.
+`+dfx new hello+` 命令创建了一个 新的 `+hello+` 项目，其中包含默认项目目录、一些模板文件和项目的 Git 存储库。
 +
-If you use a different project name instead of `+hello+`, make note of the name you used. You'll need to use that project name in place of the `+hello+` project name throughout these instructions.
-. Change to your project directory by running the following command:
-+
-[source,bash]
+如果您使用的是不同的项目名称而不是 `+hello+`，请记下您使用的名称。您需要在这些说明中使用新的项目名称而不是hello。
+. 通过运行以下命令更改项目目录：
 ----
 cd hello
 ----
 
 [[ping-the-network]]
-== Check the connection to the {platform} mainnet
+== 检查与{platform}的链接情况
 
-There is a reserved network alias that you can use to access the {IC} blockchain mainnet. The network alias is a system setting that's defined internally, so there's nothing you need to configure in your projects by default.
+在 Internet Computer上部署您的第一个项目之前，您需要连接到远程运行在您可以访问的子网上的网络网关。 有一个保留的网络别名，您可以使用它来访问在数据中心节点上远程运行的{IC}。 网络别名是内部定义的系统设置，因此默认情况下您无需在项目中配置任何内容。
 
-To check your connection to the {platform}:
+检查与{platform}的网络连接情况：
 
 [arabic]
-. Check that you are in the root directory for your project, if needed.
-. Check the current status of the {platform} and your ability to connect to it by running the following command for the network alias `+ic+`:
+. 进入项目根目录。
+. 运行以下命令，检查 Internet Computer网络的当前状态以及能否连接：
 +
 [source,bash]
 ----
 dfx ping ic
 ----
-. Verify that the `+dfx ping ic+` command returns information about the {platform}.
+. 验证命令返回消息如下，您将看到类似输出：
 +
-For example, you should see output similar to the following:
+您将看到类似输出：
 +
 ....
 {
@@ -147,225 +150,213 @@ For example, you should see output similar to the following:
 ....
 
 [[net-ledger-id]]
-== Confirm your developer identity and ledger account
+== 确认您的开发者身份和Ledger帐户
 
-All ICP token transactions are recorded in a link:../developers-guide/glossary{outfilesuffix}#g-ledger[ledger canister] running on the Internet Computer blockchain.
-The ledger canister consists of *account identifiers* and *balances* for all ICP token holders.
+所有 ICP 代币交易都记录在运行在互联网计算机区块链上的 link:../developers-guide/glossary{outfilesuffix}#g-ledger[ledger canister] 中。在您可以转移您在帐户中持有的任何 ICP 代币之前，您需要向Ledger发送一条安全且经过正确签名的消息，以验证您的身份并授权您的开发人员身份完成交易。
 
-Before you can transfer any ICP tokens you hold in your ledger account, you need to send a secure and properly-signed message that verifies your identity to the ledger and authorizes your developer identity to complete the transaction.
+根据您设置保管 ICP 代币的方式，连接到账户和完成交易所需的硬件、软件和步骤可能会有所不同。 例如，您可以使用硬件安全模块 (HSM) 设备、通过网络神经系统 (NNS) 前端应用程序或使用 DFINITY Canister SDK +dfx+` 命令行工具。 每种方法都提供了一个不同的界面，用于签署和发送消息到Ledger并代表您作为帐户持有人的身份。
 
-Depending on how you have set up custody for holding your ICP tokens, the hardware, software, and steps required to connect to the ledger and complete a transaction can vary.
-For example, you might connect to the ledger and start a transaction from a hardware wallet, using a hardware security module (HSM) appliance, through the Network Nervous System (NNS) front-end application, or using the {sdk-short-name} `+dfx+` command-line interface.
-Each approach presents a different interface for signing and sending messages to the ledger and representing your identity as an account holder.
+=== 有关开发者身份
 
-=== About your developer identity
+首次使用 {sdk-short-name} 时，`+dfx+` 命令行工具会为您创建默认的开发人员身份。 此身份由主体数据类型和主体的文本表示形式表示，通常称为 principal 标识符。这种身份表示类似于比特币或以太坊地址。
 
-The first time you use the {sdk-short-name}, the `+dfx+` command-line tool creates a `+default+` developer identity for you. This identity is represented by a *principal* data type and a textual representation of the principal often referred to as your *principal identifier*.
-This representation of your identity is similar to a Bitcoin or Ethereum address.
+但是，与您的开发人员身份相关联的委托人通常与帐户标识符不同。 principal 标识符和帐户标识符是相关的——两者都提供您身份的文本表示——但它们使用不同的格式。
 
-However, the principal associated with your developer identity is typically not the same as your *account identifier* in the ledger. The principal identifier and the account identifier are related—both provide a textual representation of your identity—but they use different formats.
+=== 连接到Ledger以获取账户信息
 
-=== Connect to the ledger to get account information
+出于本教程的目的 - 在没有硬件钱包或外部应用程序连接到 Ledger 的情况下 - 我们将使用您的开发人员身份来检索您的帐户标识符，然后将 ICP 代币从帐户转移到cycles钱包。
 
-For the purposes of this tutorial—where there's no hardware wallet or external application to connect to the ledger—we'll use your developer identity to retrieve your ledger account identifier, then transfer ICP tokens from the ledger account identifier to a cycles wallet canister controlled by your developer identity.
+在 Ledger 中查找您的帐户：
 
-To look up your account in the ledger:
-
-. Confirm the developer identity you are currently using by running the following command:
+. 运行以下命令确认您当前开发者身份：
 +
 [source,bash]
 ----
 dfx identity whoami
 ----
 +
-In most cases, you should see that you are currently using +default+` developer identity.
-For example:
+在大多数情况下，您应该看到您当前使用的是默认的开发者身份。 例如：
 +
 ....
 default
 ....
-. View the textual representation of the principal for your current identity by running the following command:
+. 运行以下命令查看当前账户。
 +
 [source,bash]
 ----
 dfx identity get-principal
 ----
 +
-This command displays output similar to the following:
+输出如下所示：
 +
 ....
 tsqwz-udeik-5migd-ehrev-pvoqv-szx2g-akh5s-fkyqc-zy6q7-snav6-uqe
 ....
-. Get the account identifier for your developer identity by running the following command:
+. 运行以下命令获取您的开发人员身份的帐户标识符：﻿
 +
 [source,bash]
 ----
 dfx ledger account-id
 ----
 +
-This command displays the ledger account identifier associated with your developer identity.
-For example, you should see output similar to the following:
+此命令显示与您的开发人员身份关联的帐户标识符。 例如，您应该会看到类似于以下内容的输出：
 +
 ....
 03e3d86f29a069c6f2c5c48e01bc084e4ea18ad02b0eec8fccadf4487183c223
 ....
-. Check your account balance by running the following command:
+. 运行以下命令显示账户余额：
 +
 [source,bash]
 ----
 dfx ledger --network ic balance
 ----
-This command displays the ICP token balance from the ledger account.
-For example, you should see output similar to the following:
+此命令显示帐户中的 ICP 代币余额。 例如，您应该会看到类似于以下内容的输出：
 +
 ....
 10.00000000 ICP
 ....
 
 [[convert-icp]]
-== Convert ICP tokens to cycles
+== 将 ICP 代币转换为Cycles
 
-Now that you have confirmed your account information and current ICP token balance, you can convert some of those ICP tokens to cycles and move them into a cycles wallet.
+现在您已经确认了您的账户信息和当前的 ICP 代币余额，您可以将其中一些 ICP 代币转换为Cycles并将它们移动到Cycles钱包中。
 
-To transfer ICP tokens to create a cycles wallet:
+转移 ICP 代币以创建Cycles钱包：
 
-. Create a new canister with cycles by transferring ICP tokens from your ledger account by running a command similar to the following:
+. 运行类似于以下的命令，从您的帐户转移 ICP 代币来创建一个带有Cycles的新 Canister
 +
 [source,bash]
 ----
 dfx ledger --network ic create-canister <principal-identifier> --amount <icp-tokens>
 ----
 +
-This command converts the number of ICP tokens you specify for the `+--amount+` argument into cycles, and associates the cycles with a new canister identifier controlled by the principal you specify.
+此命令将您为 --amount 参数指定的 ICP 令牌数量转换为Cycles，并将Cycles与由您指定的控制账户标识符相关联。
 +
-For example, the following command converts .25 ICP tokens into cycles and specifies the principal identifier for the default identity as the controller of the new canister:
+例如，以下命令将 .25 个 ICP 令牌转换为Cycles，并将默认身份的账户标识符指定为新Canister的控制器：
 +
 ....
 dfx ledger --network ic create-canister tsqwz-udeik-5migd-ehrev-pvoqv-szx2g-akh5s-fkyqc-zy6q7-snav6-uqe --amount .25
 ....
 +
-If the transaction is successful, the ledger records the event and you should see output similar to the following:
+如果交易成功，Ledger会记录该事件，您应该会看到类似于以下内容的输出：
 +
 ....
 Transfer sent at BlockHeight: 20
 Canister created with id: "gastn-uqaaa-aaaae-aaafq-cai"
 ....
-. Install the cycles wallet code in the newly-created canister placeholder by running a command similar to the following:
+. 运行类似于以下的命令，在新创建的Canister中安装Cycles钱包代码
 +
 [source,bash]
 ----
 dfx identity --network ic deploy-wallet <canister-identifer>
 ----
 +
-For example:
+例如：
 +
 ....
 dfx identity --network ic deploy-wallet gastn-uqaaa-aaaae-aaafq-cai
 ....
 +
-This command displays output similar to the following:
+命令输出如下：
 +
 ....
 Creating a wallet canister on the ic network.
 The wallet canister on the "ic" network for user "default" is "gastn-uqaaa-aaaae-aaafq-cai"
 ....
 
-== Validate your cycles wallet
+== 验证 Cycles 钱包
 
-After you convert ICP tokens to cycles, you can validate the cycles wallet canister and check your current cycles balance.
+将 ICP 代币转换为Cycles后，您可以验证Cycles钱包Canister并检查您当前的Cycles余额。
 
-To validate your cycles wallet:
+验证 Cycles 钱包:
 
-. Verify the canister identifier for the cycles wallet you deployed by running the following command:
+. 运行以下命令验证您部署的Cycles钱包的Canister标识符：
 +
 [source.bash]
 ----
 dfx identity --network ic get-wallet
 ----
 +
-The command displays the canister identifier for your cycles wallet with output similar to the following:
+输出类似如下
 +
 ....
 gastn-uqaaa-aaaae-aaafq-cai
 ....
-. Check that your cycles wallet canister is properly configured and holds a balance of cycles by running a command similar to the following:
+. 运行类似于以下的命令，检查您的Cycles钱包Canister是否已正确配置并有余额：
 +
 [source,bash]
 ----
 dfx wallet --network ic balance
 ----
 +
-The command returns the balance for the your cycles wallet.
-For example:
+该命令返回余额，例如：
 + 
 ....
 15430122328028812 cycles.
 ....
 +
-You can also access your default cycles wallet in a web browser by using a URL similar to the following:
+您还可以使用类似于以下内容的 URL 在 Web 浏览器中访问您的默认Cycles钱包：
 +
 ....
 https://<WALLET-CANISTER-ID>.raw.ic0.app
 ....
 +
-The first time you access the application, you see a notice that you are using an Anonymous Device and are prompted to authenticate your identity, authorize access to the wallet, and register your device.
-. Click *Authenticate* to continue to the Internet Identity service.
-. Enter your *User Number* if you have previously registered an identity or register with the service as a new user.
+首次访问该应用程序时，您会看到一条通知，提示您正在使用匿名设备，并提示您验证您的身份、授权访问钱包并注册您的设备。
+. 单击 *Authenticate* 以继续使用 Internet 身份服务。
+. 输入 *User Number* 如果你之前注册过一个身份。
 +
-For more information about the Internet Identity service and how to register multiple authentication devices and methods, see link:../ic-identity-guide/auth-how-to{outfilesuffix}[How to use the Internet Identity service].
-. Authenticate using your user number and the authentication method—for example, a security key or fingerprint—you have registered.
-. Click *Proceed* to access to the default cycles wallet application. 
-. Register the device you are using for this session by copying the command displayed in the *Register Device* page and running it in a terminal.
+有关 Internet 身份服务以及如何注册多个身份验证设备和方法的详细信息，请参考 link:../ic-identity-guide/auth-how-to{outfilesuffix}[如何使用互联网身份服务].
+. 使用您的用户号和您注册的身份验证方法（例如，安全密钥或指纹）进行身份验证。
+. 单击Proceed以访问默认周期钱包应用程序。
+. 通过复制“注册设备”页面中显示的命令并在终端中运行它来注册您用于此会话的设备。
 +
-For example, call the `+authorize+` method for the cycles wallet canister with a command similar to the following:
+例如，使用类似于以下的命令调用Cycles钱包Canister的授权方法：
 +
 ....
 dfx canister --no-wallet --network ic call "gastn-uqaaa-aaaae-aaafq-cai" authorize '(principal "ejta3-neil3-qek6c-i7rdw-sxreh-lypfe-v6hjg-6so7x-5ugze-3iohr-2qe")'
 ....
 +
-Be sure that the command you copy has the `+--no-wallet+` option and the correct network (`+ic+`) alias.
-You should recognize the canister identifier—in this example, `+gastn-uqaaa-aaaae-aaafq-cai+`—as the cycles wallet associated with your identity.
-If this is your first wallet on the {platform}, however, you might not recognize the principal being authorized. The use of a different principal is the expected behavior in this case. 
+确保您复制的命令具有 `+--no-wallet+` 选项和正确的网络 ( `+ic+` ) 别名。 您应该将Canister标识符（在本例中为+gastn-uqaaa-aaaae-aaafq-cai+` ）指定为与您的身份相关联的Cycles钱包。  但是，如果这是您在网络上的第一个钱包，您可能无法识别被授权的委托人。 在这种情况下，使用不同的账户是预期的行为。
 +
-When the browser refreshes after running the `+authorize+` command, the cycles wallet for your principal account is displayed.
-. View your cycles balance and activity in the browser.
+当运行授权命令后浏览器刷新时，将显示您的主账户的 Cycles 钱包。
+. 在浏览器中查看您的Cycles余额和活动。
 +
-For example:
+例如:
 +
 
 image::cycles-wallet.png[]
 +
-For more information about the commands and methods available for working with the default cycles wallet, see link:../developers-guide/default-wallet{outfilesuffix}[Use the default cycles wallet].
+有关可用于使用默认 cycles 钱包的命令和方法的更多信息，查看 link:../developers-guide/default-wallet{outfilesuffix}[使用默认 cycles 钱包].
 
 [[net-deploy]]
-== Register, build, and deploy the application
+== 注册、构建和部署应用程序
 
-After you have validated your cycles wallet balance, you can register, build, and deploy your sample application.
+在验证您的 cycles 钱包余额后，您可以注册、构建和部署您的示例应用程序。
 
-To deploy your first application on the {IC} blockchain mainnet:
+在 {IC} 区块链主网上部署您的第一个应用程序：
 
-. In your terminal shell, check that you are still in the root directory for your project.
-. Ensure that `+node+` modules are available in your project directory, if needed, by running the following command:
+. 如有必要，请检查您是否仍在项目的根目录中。
+. 如有必要，请通过运行以下命令确保 `+node+` modules 文件夹在项目目录中可用：
 +
 [source,bash]
 ----
 npm install
 ----
 +
-For more information about this step, see link:../developers-guide/webpack-config{outfilesuffix}#troubleshoot-node[Ensuring node is available in a project].
-. Register, build, and deploy your first application by running the following command:
+有关此步骤的详细信息，请参阅 link:../developers-guide/webpack-config{outfilesuffix}#troubleshoot-node[阅确保项目节点可用] 章节。
+. 通过运行以下命令来注册、构建和部署第一个应用程序：
 +
 [source,bash]
 ----
 dfx deploy --network ic
 ----
 +
-The `+--network+` option specifies the network alias or URL for deploying the dapp.
-This option is required to install on the {IC} blockchain mainnet.
+`+--network+` 选项指定了将要部署的 App 的网络别名或者 URL。
+如果要将程序安装在 {IC} 区块链主网上，那么就需要这个选项。
 +
-The `+dfx deploy+` command output displays information about the operations it performs.
+输出 `+dfx deploy+` 命令将显示执行操作的信息。
 +
-For example, this step registers two identifiers—one for the `+hello+` main program and one for the `+hello_assets+` front-end user interface—and installation information similar to the following:
+例如，此步骤会注册两个网络特定标识符（一个用于 `+hello+` 主程序，一个用于 `+hello_assets+` 前端用户界面）以及类似以下内容的安装信息：
 +
 ....
 Deploying all canisters.
@@ -396,86 +387,84 @@ Uploading assets to asset canister...
 Deployed canisters.
 ....
 +
-If you didn't convert enough ICP tokens to cycles to complete the operation, you can add cycles to your cycles wallet by running a command similar to the following:
+如果您没有将足够的 ICP 代币转换为Cycles来完成操作，您可以通过运行类似于以下的命令将Cycles添加到您的钱包中：
 +
 ....
 dfx ledger --network ic top-up gastn-uqaaa-aaaae-aaafq-cai --amount 1.005
 ....
 +
-This command converts an additional `+1.005+` ICP tokens to cycles for the `+gastn-uqaaa-aaaae-aaafq-cai+` cycles wallet identifier.
-The command returns output similar to the following:
+此命令将额外的 `+1.005+` 个 ICP 代币转换为 `+gastn-uqaaa-aaaae-aaafq-cai+` 钱包标识符的Cycles。
+该命令返回类似于以下内容的输出：
 +
 ....
 Transfer sent at BlockHeight: 81520
 Canister was topped up!
 ....
-. Call the `+hello+` canister and the predefined `+greet+` function by running the following command:
+运行以下命令调用 `+hello+` Canister 和预定义的 greet 函数：
 +
 [source,bash]
 ----
 dfx canister --network ic call hello greet '("everyone": text)'
 ----
 +
-Let's take a closer look at this example:
+我们仔细观察一下这个例子：
 +
 -- 
-
-* Using the `+--network ic+` option indicates that the canister you want to call is deployed on the `+ic+`. The `+ic+` network alias is an internally-reserved alias for accessing the {IC} blockchain mainnet.
-* Note that the `+--network ic+` option must precede the operation subcommand, which, in this case, is the `+dfx canister call+` command.
-* The `+hello+` argument specifies the name of the canister you want to call.
-* The `+greet+` argument specifies the name of the function you want to call in the `+hello+` canister.
-* The text string `+everyone+` is the argument that you want to pass to the `+greet+` function.
+* 使用 `+--network ic+` 选项表明你想要将 canister 部署在 canister 上。`+ic+` 网络别名是内部保留的用于访问 {IC} 网络的名称。
+* 请注意，`+--network ic+` 选项必须位于操作子命令之前，在这种情况下，它是 dfx canister call 命令。
+* `+hello+` 参数指定要调用的Canister的名称。
+* `+greet+` 参数指定要在 hello Canister 中调用的函数的名称。
+* 文本字符串 `+everyone+` 是您要传递给 greet 函数的参数。
 --
-. Verify the command displays the return value of the `+greet+` function.
+. 验证greet函数返回值。("Hello, everyone!")
 +
-For example:
+例如：
 +
 ....
 ("Hello, everyone!")
 ....
-. Rerun the `+dfx wallet balance+` command or refresh the browser to see your new cycle balance and recent activity.
+重新运行 `+dfx wallet balance+` 命令或刷新浏览器以查看您的新Cycles余额和最近的活动。
 
 [[quickstart-frontend]]
 == Test the dapp front-end
 
-Now that you have verified that your dapp has been deployed and tested its operation using the command line, let's verify that you can access the front-end using your web browser.
+既然您已部署应用程序并使用命令行测试了其操作，那么让我们验证是否可以使用网络浏览器访问前端弹出窗口。
 
 To access the dapp front-end:
 
-. Open a browser.
-. Navigate to the front-end for the dapp using a URL that consists of the `+hello_assets+` identifier and the `+boundary.ic0.app+` suffix.
+. 打开浏览器
+. 使用由 `+hello_assets+` 标识符和 `+boundary.ic0.app+` 后缀组成的 URL 导航到 dapp 的前端。
 +
-If you didn’t make a note of the canister identifier, you can look it up by running the following command:
+如果您没有记下 canister 标识符，则可以通过运行以下命令来查找它：
 +
 [source,bash]
 ----
 dfx canister --network ic id hello_assets
 ----
 +
-For example, the full URL should look similar to the following:
+例如，完整的 URL 类似以下：
 +
 ....
 https://gsueu-yaaaa-aaaae-aaagq-cai.raw.ic0.app
 ....
 +
-Navigating to this URL displays the HTML entry page for the template application.
-For example:
+导航到此 URL 将显示模板应用程序的 HTML 页面。 例如：
 +
 image:net-front-end-prompt.png[HTML page with prompt]
 
-. Type a greeting, then click *Click Me* to return the greeting.
+. 键入想问候的人，然后单击“Click Me”以返回问候语。
 
 [[next-steps]]
 == Next steps
 
-Now that you have seen how to deploy a dapp on the {IC} blockchain, you are ready to develop and deploy programs of your own.
+现在您已经了解了如何在 {IC} 区块链上部署 dapp，您已经准备好开发和部署您自己的程序了。
 
-You can find more detailed examples and tutorials to help you learn about how to use Motoko and how to develop dapps for the Internet Computer blockchain throughout the documentation.
+您可以在文档中找到更详细的示例和教程，以帮助您了解如何使用 {proglang} 以及如何开发 dapps 以在 {IC} 区块链上运行 dapps。
 
-Here are some suggestions for where to go next:
+一些建议的链接:
 
-* link:../developers-guide/tutorials-intro{outfilesuffix}[Tutorials] to explore building front-end and back-end dapps in a local development environment.
+* link:../developers-guide/tutorials-intro{outfilesuffix}[教程] 探索使用本地容器执行环境构建简单的 dapp。
 
-* link:../candid-guide/candid-concepts{outfilesuffix}[What is Candid?] to learn how the Candid interface description language enables service interoperability and composability.
+* link:../candid-guide/candid-concepts{outfilesuffix}[什么是 Candid？] 了解 Candid 接口描述语言如何实现服务互操作性和可组合性。
 
-* link:../languages/motoko-at-a-glance{outfilesuffix}[{proglang} at-a-glance] to learn about the features and syntax for using Motoko.
+* link:../languages/motoko-at-a-glance{outfilesuffix}[初步认识 {proglang}] 了解使用 {proglang} 的功能和语法。
