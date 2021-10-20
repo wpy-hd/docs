@@ -19,7 +19,7 @@ ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 
 在下载并安装此版本的 {sdk-short-name} 之前，请确保：
 
-* 已连接互联网，并可以通过 macOS 或者 Linux访 问本地的 shell 终端。
+* 已连接互联网，并可以通过 macOS 或者 Linux 访问本地的 shell 终端。
 +
 目前，{sdk-short-name} 只可在 macOS 或者 Linux 系统中运行。
 
@@ -185,8 +185,7 @@ Uploading assets to asset canister...
 Deployed canisters.
 ....
 +
-但是，如果您创建了一个不同名称的项目，那么您的 canister 名称将与您的项目名称相匹配，而不是与 `+hello+ ，`+hello_assets+` 匹配。
-If you created a project with a different name, however, your canister names will match your project name instead of `+hello+` and `+hello_assets+`.
+但是，如果您创建了一个不同名称的项目，那么您的 canister 名称将与您的项目名称相匹配，而不是与 `+hello+`, `+hello_assets+` 匹配。
 +
 第一次部署时，dfx 将创建默认身份和由默认身份控制的本地 cycles 钱包。
 还应注意，cycles 钱包是一种特殊的 canister，可以使您能将 link:../developers-guide/concepts/tokens-cycles{outfilesuffix}[cycles] 转移到其他 canister。
