@@ -387,7 +387,7 @@
     <a class="nav-link" href="../concepts/concepts-intro.html">概念</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 Internet Computer</a>
+    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 互联网计算机</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
@@ -611,7 +611,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the <a href="../../quickstart/quickstart-intro.html">Quick start</a>, you had your first look at a simple canister for the Internet Computer involving an actor object and asynchronous messaging.
+<p>In the <a href="../../quickstart/quickstart-intro.html">Quick start</a>, you had your first look at a simple canister for the 互联网计算机 involving an actor object and asynchronous messaging.
 As the next step in learning to write canisters that take advantage of actor-based messaging, this tutorial illustrates how to modify a traditional <code>Hello, World!</code> canister to define an actor, then deploy and test your canister on a local canister execution environment.</p>
 </div>
 </div>
@@ -650,7 +650,7 @@ As the next step in learning to write canisters that take advantage of actor-bas
 have one open.</p>
 </li>
 <li>
-<p>Change to the folder you are using for your Internet Computer projects, if you are using one.</p>
+<p>Change to the folder you are using for your 互联网计算机 projects, if you are using one.</p>
 </li>
 <li>
 <p>Create a new project by running the following command:</p>
@@ -747,7 +747,7 @@ If you plan to use the default directory and file names, no changes are necessar
 <div class="sectionbody">
 <div class="paragraph">
 <p>In the <a href="explore-templates.html">Exploring the default project</a> tutorial, you saw that creating a new project creates a default <code>src</code> directory with a template <code>main.mo</code> file.
-In this tutorial, you modify the template code to create a simple "Hello, World!" canister. by defining an actor in Motoko. In Motoko,  an Internet Computer canister is representeded as a Motoko actor.</p>
+In this tutorial, you modify the template code to create a simple "Hello, World!" canister. by defining an actor in Motoko. In Motoko,  an 互联网计算机 canister is representeded as a Motoko actor.</p>
 </div>
 <div class="paragraph">
 <p>To modify the default template source code:</p>
@@ -766,7 +766,7 @@ In this tutorial, you modify the template code to create a simple "Hello, World!
 <p>Open the template <code>main.mo</code> file in a text editor and delete the existing content.</p>
 <div class="paragraph">
 <p>The next step is to write a canister that prints a statement like the traditional "Hello, World!" sample canister.
-To compile the canister for the Internet Computer, however, your Motoko code must define an <code>actor</code>.</p>
+To compile the canister for the 互联网计算机, however, your Motoko code must define an <code>actor</code>.</p>
 </div>
 </li>
 <li>
@@ -792,7 +792,7 @@ actor HelloActor {
 <p>The code imports a <code>Debug</code> module to provide the <code>print</code> functionality.</p>
 </li>
 <li>
-<p>The actor uses the <code>public query func</code> declaration to define an Internet Computer <em>query</em> method.  Our method doesn&#8217;t need to make any permanent changes to the state of the actor. Declaring it as a query means that  any changes it does make are transient and discarded after the query completes.</p>
+<p>The actor uses the <code>public query func</code> declaration to define an 互联网计算机 <em>query</em> method.  Our method doesn&#8217;t need to make any permanent changes to the state of the actor. Declaring it as a query means that  any changes it does make are transient and discarded after the query completes.</p>
 </li>
 </ul>
 </div>
@@ -814,10 +814,10 @@ actor HelloActor {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Usually, in order to build a canister, it&#8217;s necessary to first reserve a unique canister identifier
-on the Internet Computer blockchain mainnet.</p>
+on the 互联网计算机 blockchain mainnet.</p>
 </div>
 <div class="paragraph">
-<p>However, it&#8217;s also possible to compile your program without connecting to the Internet Computer blockchain mainnet at all.
+<p>However, it&#8217;s also possible to compile your program without connecting to the 互联网计算机 blockchain mainnet at all.
 The <code>dfx build --check</code> command uses a temporary, hard-coded canister identifier to accomplish this.</p>
 </div>
 <div class="paragraph">
@@ -882,13 +882,13 @@ Building canisters...</pre>
 <h2 id="_deploy_the_project"><a class="anchor" href="#_deploy_the_project"></a>Deploy the project</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You cannot deploy the output from the <code>dfx build --check</code> command to  a local canister execution environment or the Internet Computer mainnet.
+<p>You cannot deploy the output from the <code>dfx build --check</code> command to  a local canister execution environment or the 互联网计算机 mainnet.
 If you wanted to deploy this project, you would need to do the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Connect to the either the local canister execution environment or Internet Computer mainnet.</p>
+<p>Connect to the either the local canister execution environment or 互联网计算机 mainnet.</p>
 </li>
 <li>
 <p>Register a connection-specific canister identifier.</p>
@@ -901,7 +901,7 @@ If you wanted to deploy this project, you would need to do the following:</p>
 <div class="paragraph">
 <p>Let&#8217;s consider these steps in a bit more detail.
 Before you can deploy this project, you must connect to either your local canister execution environment, provided by <code>dfx</code>, or to the Internet Computer blockchain mainnet.
-After you connect to a local canister execution environment or Internet Computer mainnet, you must also generate a unique, <strong>connection-specific</strong> canister identifier to replace your locally-defined identifier.
+After you connect to a local canister execution environment or 互联网计算机 mainnet, you must also generate a unique, <strong>connection-specific</strong> canister identifier to replace your locally-defined identifier.
 To see the steps involved for yourself, let&#8217;s deploy the project locally.</p>
 </div>
 <div class="paragraph">

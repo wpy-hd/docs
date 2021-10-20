@@ -389,7 +389,7 @@
     <a class="nav-link" href="../developers-guide/concepts/concepts-intro.html">概念</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../developers-guide/concepts/what-is-IC.html">什么是 Internet Computer</a>
+    <a class="nav-link" href="../developers-guide/concepts/what-is-IC.html">什么是 互联网计算机</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
@@ -612,36 +612,34 @@
 <div id="preamble">
 <div class="sectionbody">
 <div id="quick-start-intro" class="paragraph">
-<p>This <em>Quick Start</em> scenario assumes that you are installing the DFINITY Canister SDK for the first time and want to run a canister smart contract in a <strong>local canister execution environment</strong> instead of deploying it to the Internet Computer blockchain.</p>
+<p>此 <em>快速入门</em> 章节假设您首次安装 DFINITY Canister SDK 并想在本地 canister 执行环境中运行一份 canister 智能合约，而不是部署在 互联网计算机 区块链上。</p>
 </div>
 <div class="paragraph">
-<p>To get started, let&#8217;s build and deploy a simple Hello canister that has just one function—called <code>greet</code>. The <code>greet</code> function accepts one text argument and returns the result with a greeting similar to <strong>Hello,&#160;everyone!</strong> in a terminal if you run the canister using the command-line or in an HTML page if you access the canister in a browser.</p>
+<p>首先，我们构建并部署一个简单的 Hello canister，它只有一个叫做 <code>greet</code> 的函数。如果使用命令行运行 canister 或在浏览器页面中访问 canister ，<code>greet</code> 功能将接收一个文本参数并在一个终端中返回类似于 “Hello，everyone！” 的消息。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="before-you-begin"><a class="anchor" href="#before-you-begin"></a>Before you begin</h2>
+<h2 id="before-you-begin"><a class="anchor" href="#before-you-begin"></a>准备工作</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before you download and install this release of the DFINITY Canister SDK, verify the following:</p>
+<p>在下载并安装此版本的 DFINITY Canister SDK 之前，请确保：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>You have an internet connection and access to a shell terminal on your local <strong>macOS</strong> or <strong>Linux</strong> computer.</p>
+<p>已连接互联网，并可以通过 macOS 或者 Linux访 问本地的 shell 终端。</p>
 <div class="paragraph">
-<p>Currently, the DFINITY Canister SDK only runs on computers with a macOS or Linux operating system.</p>
+<p>目前，DFINITY Canister SDK 只可在 macOS 或者 Linux 系统中运行。</p>
 </div>
 </li>
 <li>
-<p>You have <code>node.js</code> installed if you want to include the default template files for front-end development in your project.</p>
+<p>如果想在项目前端开发中使用 SDK 的默认的前端模板文件，请安装 <code>node.js</code>。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>This tutorial assumes you know how to perform common tasks—like opening a terminal and running commands—on your computer.
-If you aren’t sure how to open a new terminal shell on your local computer or how to install <code>node.js</code>, see <a href="newcomers.html">Preliminary steps for newcomers</a>.
-If you are comfortable meeting the prerequisites without instructions, continue to <a href="#download-and-install">Download and install</a>.</p>
+<p>如果您不确定如何在本地计算机上打开新的终端或如何安装 <code>node.js</code>，请参阅 <a href="newcomers.html">新手基础教程</a>。如果您能够满足上述条件，请继续<a href="#下载和安装">[下载和安装]</a>。</p>
 </div>
 </div>
 </div>
@@ -649,34 +647,34 @@ If you are comfortable meeting the prerequisites without instructions, continue 
 <h2 id="download-and-install"><a class="anchor" href="#download-and-install"></a>Download and install</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can download the latest version of the DFINITY Canister Software Development Kit (SDK) directly from within a terminal shell on your local computer.</p>
+<p>你可以直接从本地计算机终端下载最新版本的 DFINITY Canister 软件开发工具包 (SDK)</p>
 </div>
 <div class="paragraph">
-<p>To download and install:</p>
+<p>下载和安装：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a terminal shell on your local computer.</p>
+<p>打开本地 shell 终端</p>
 <div class="paragraph">
-<p>For example, open Applications, Utilities, then double-click <strong>Terminal</strong> or press <span class="keyseq"><kbd>&#8984;</kbd>+<kbd>spacebar</kbd></span> to open Search, then type <code>terminal</code>.</p>
+<p>打开“应用程序”、“实用程序”，然后双击“Terminal ”或按 <span class="keyseq"><kbd>&#8984;</kbd>+<kbd>空格</kbd></span> 打开搜索栏后输入终端。</p>
 </div>
 </li>
 <li>
-<p>Download and install the DFINITY Canister SDK package by running the following command:</p>
+<p>通过运行以下命令下载并安装 DFINITY Canister 软件开发工具包 (SDK):</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command prompts you to read and accept the license agreement before installing the DFINITY execution command-line interface (CLI) and its dependencies on your local computer.</p>
+<p>此命令将提示您在安装 DFINITY 命令行(CLI)及本地计算机的依赖项之前，先阅读并接受许可协议。</p>
 </div>
 </li>
 <li>
-<p>Type <code>y</code> and press <kbd>Return</kbd> to continue with the installation.</p>
+<p>输入 <code>y</code> 并按回车键继续安装。</p>
 <div class="paragraph">
-<p>The command displays information about the components being installed on the local computer.</p>
+<p>该命令将显示在本地计算机上正在安装的组件信息。</p>
 </div>
 </li>
 </ol>
@@ -684,28 +682,28 @@ If you are comfortable meeting the prerequisites without instructions, continue 
 </div>
 </div>
 <div class="sect1">
-<h2 id="verify-the-sdk-is-ready-to-use"><a class="anchor" href="#verify-the-sdk-is-ready-to-use"></a>Verify the SDK is ready to use</h2>
+<h2 id="verify-the-sdk-is-ready-to-use"><a class="anchor" href="#verify-the-sdk-is-ready-to-use"></a>验证 SDK</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If the installation script runs without any errors, everything you need to start developing programs that run on the Internet Computer platform will be available on your local computer.</p>
+<p>如果您在安装运行脚本时没有任何错误，则您启动的在计算机互联网平台上运行的程序都可以在本地计算机上使用。</p>
 </div>
 <div class="paragraph">
-<p>To verify the SDK is ready to use:</p>
+<p>验证 SDK 已经可以使用:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a terminal shell on your local computer, if you don’t already have one open.</p>
+<p>打开本地 shell 终端</p>
 </li>
 <li>
-<p>Check that you have the DFINITY execution command-line interface (CLI) installed and the <code>dfx</code> executable is available in your PATH by running the following command:</p>
+<p>检查是否安装了 DFINITY 命令行程序以及 `dfx`是否在当前路径中可用：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --version</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The command displays version information for the <code>dfx</code> command-line executable similar to the following:</p>
+<p>该命令会显示版本信息，如下所示：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -714,14 +712,14 @@ If you are comfortable meeting the prerequisites without instructions, continue 
 </div>
 </li>
 <li>
-<p>Preview usage information for the other <code>dfx</code> command-line sub-commands by running the following command:</p>
+<p>通过运行以下命令， 预览 <code>dfx</code> 的子命令的信息：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx --help</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The command displays usage information for the <code>dfx</code> parent command and its subcommands.</p>
+<p>该命令将显示 <code>dfx</code> 父命令及其子命令的使用信息。</p>
 </div>
 </li>
 </ol>
@@ -729,87 +727,88 @@ If you are comfortable meeting the prerequisites without instructions, continue 
 </div>
 </div>
 <div class="sect1">
-<h2 id="create-a-new-project"><a class="anchor" href="#create-a-new-project"></a>Create a new project</h2>
+<h2 id="create-a-new-project"><a class="anchor" href="#create-a-new-project"></a>创建新项目</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dapps on the Internet Computer start as <strong>projects</strong>.
-You create projects using the <code>dfx</code> parent command and its subcommands.</p>
+<p>互联网计算机 上的 Dapp 以 <strong>projects</strong> 的形式呈现.
+您可以使用 <code>dfx</code> 父命令及其子命令来创建 projects</p>
 </div>
 <div class="paragraph">
-<p>For this tutorial, we&#8217;ll start with the default sample dapp to illustrate creating dapp using the starter files in a project.
-When you create a new project, the <code>dfx</code> command-line interface adds a default project directory structure to your workspace. We cover the template files that make up a project directory in the <a href="../developers-guide/tutorials/explore-templates.html">Explore the default project</a> tutorial.</p>
+<p>在本教程中，我们将从默认示例 dapp 开始，以说明使用项目中的启动文件创建 dapp。
+当您创建一个新项目时，<code>dfx</code> 命令行会向您的工作区添加一个默认的项目目录结构。 我们在 <a href="../developers-guide/tutorials/explore-templates.html">探索基础项目</a> 教程中介绍了构成项目目录的模板文件。</p>
 </div>
 <div class="paragraph">
-<p>To create a new project for your first application:</p>
+<p>为你的第一个应用创建一个 project:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a terminal shell on your local computer, if you don’t already have one open.</p>
+<p>打开本地 shell 终端</p>
 </li>
 <li>
-<p>Create a new project named <code>hello</code> by running the following command:</p>
+<p>通过运行以下命令来创建一个名为 <code>hello</code> 的新项目：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx new hello</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>dfx new hello</code> command creates a new <code>hello</code> project directory, template files, and a new <code>hello</code> Git repository for your project.</p>
+<p><code>dfx new hello</code> 命令创建了一个 新的 <code>hello</code> 项目，其中包含默认项目目录、一些模板文件和项目的 Git 存储库。</p>
 </div>
 <div class="paragraph">
-<p>If you use a different project name instead of <code>hello</code>, make note of the name you used. You&#8217;ll need to use that project name in place of the <code>hello</code> project name throughout these instructions.</p>
+<p>如果您使用的是不同的项目名称而不是 <code>hello</code>，请记下您使用的名称。您需要在这些说明中使用新的项目名称而不是hello。</p>
 </div>
 </li>
 <li>
-<p>Change to your project directory by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd hello</code></pre>
-</div>
-</div>
+<p>通过运行以下命令更改项目目录：</p>
 </li>
 </ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cd hello</pre>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="start-the-local-network"><a class="anchor" href="#start-the-local-network"></a>Start the local deployment</h2>
+<h2 id="start-the-local-network"><a class="anchor" href="#start-the-local-network"></a>开始本地部署</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before you can build your first project, you need to connect to the local canister execution environment.
-As a best practice, this step requires you to have <strong>two terminal shells</strong> open, so that you can start and see canister execution operations in one terminal and manage your project in another.</p>
+<p>在构建第一个项目之前，您需要连接到IC网络，这个网络可以是在你本地开发环境中运行的，也可以是在你能访问到的子网络上远程运行的。</p>
 </div>
 <div class="paragraph">
-<p>To prepare the local canister execution environment:</p>
+<p>这些说明的前提是您正在运行本地Internet网络。如果要连接到外部Internet计算机网络，则可以跳过此部分。作为最佳做法，此步骤需要打开两个终端，以便可以在一个终端中启动并查看网络操作，并在另一个终端中管理项目。</p>
+</div>
+<div class="paragraph">
+<p>启动本地网络：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a new second terminal window or tab on your local computer.</p>
+<p>在本地计算机上打开新的第二个终端窗口或选项卡。</p>
 </li>
 <li>
-<p>Navigate to the root directory for your project, if necessary.</p>
+<p>如果有必要，请导航至项目的根目录。</p>
 <div class="paragraph">
-<p>You should now have <strong>two terminals</strong> open with your <strong>project directory</strong> as your <strong>current working directory</strong> in both terminals.</p>
+<p>现在应该保持两个终端呈打开状态，并将项目目录作为两个终端的当前工作目录。</p>
 </div>
 </li>
 <li>
-<p>Start the local canister execution environment on your computer in your second terminal by running the following command:</p>
+<p>通过运行以下命令，在本地计算机上的第二个终端启动IC网络：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx start</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Depending on your platform and local security settings, you might see a warning displayed.
-If you are prompted to allow or deny incoming network connections, click <strong>Allow</strong>.</p>
+<p>如果系统提示您选择“允许或拒绝传入的网络连接”，请单击“允许”。启动本地网络后，会看到IC副本启动的消息以及当前网络配置的详细信息。</p>
 </div>
 </li>
 <li>
-<p>Leave the terminal window that displays canister execution operations open and switch your focus to the first terminal window where you created your new project.</p>
+<p>将显示网络操作的终端窗口打开，并切换到创建新项目的第一个终端窗口。</p>
 <div class="paragraph">
-<p>You perform the remaining steps in the terminal that doesn&#8217;t display canister execution operations.</p>
+<p>您可以在终端中执行不显示网络操作的其余步骤。</p>
 </div>
 </li>
 </ol>
@@ -817,122 +816,113 @@ If you are prompted to allow or deny incoming network connections, click <strong
 </div>
 </div>
 <div class="sect1">
-<h2 id="register-ids"><a class="anchor" href="#register-ids"></a>Register, build, and deploy the application</h2>
+<h2 id="register-ids"><a class="anchor" href="#register-ids"></a>注册、构建和部署该应用程序</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After you connect to the local canister execution environment you can register, build, and deploy your dapp locally.</p>
+<p>当在开发环境中连接至本地运行的IC网络后，您可以在本地注册、构建和部署应用程序。</p>
 </div>
 <div class="paragraph">
-<p>To deploy your first dapp locally:</p>
+<p>在本地部署第一个应用程序：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Check that you are still in the root directory for your project, if needed.</p>
+<p>如有必要，请检查您是否仍在项目的根目录中。</p>
 </li>
 <li>
-<p>Ensure that <code>node</code> modules are available in your project directory, if needed, by running the following command:</p>
+<p>如有必要，请通过运行以下命令确保 <code>node</code> modules 文件夹在项目目录中可用：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>For more information about this step, see <a href="../developers-guide/webpack-config.html#troubleshoot-node">Ensuring node is available in a project</a>.</p>
+<p>有关此步骤的详细信息，请参阅 <a href="../developers-guide/webpack-config.html#troubleshoot-node">阅确保项目节点可用</a> 章节。</p>
 </div>
 </li>
 <li>
-<p>Register, build, and deploy your first dapp by running the following command:</p>
+<p>通过运行以下命令来注册、构建和部署第一个应用程序：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx deploy</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>dfx deploy</code> command output displays information about the operations it performs.
-For example, this step registers two identifiers—one for the <code>hello</code> main program and one for the <code>hello_assets</code> front-end user interface—and installation information similar to the following:</p>
+<p>输出 <code>dfx deploy</code> 命令将显示执行操作的信息。例如，此步骤会注册两个网络特定标识符（一个用于 <code>hello</code> 主程序，一个用于 <code>hello_assets</code> 前端用户界面）以及类似以下内容的安装信息：</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Creating a wallet canister on the local network.
-The wallet canister on the "local" network for user "default" is "rwlgt-iiaaa-aaaaa-aaaaa-cai"
+<pre>Creating the "default" identity.
+  - generating new key at /Users/pubs/.config/dfx/identity/default/identity.pem
+Created the "default" identity.
 Deploying all canisters.
 Creating canisters...
 Creating canister "hello"...
+Creating the canister using the wallet canister...
+Creating a wallet canister on the local network.
+The wallet canister on the "local" network for user "default" is "rwlgt-iiaaa-aaaaa-aaaaa-cai"
 "hello" canister created with canister id: "rrkah-fqaaa-aaaaa-aaaaq-cai"
 Creating canister "hello_assets"...
+Creating the canister using the wallet canister...
 "hello_assets" canister created with canister id: "ryjl3-tyaaa-aaaaa-aaaba-cai"
 Building canisters...
 Building frontend...
 Installing canisters...
-Creating UI canister on the local network.
-The UI canister on the "local" network is "r7inp-6aaaa-aaaaa-aaabq-cai"
 Installing code for canister hello, with canister_id rrkah-fqaaa-aaaaa-aaaaq-cai
 Installing code for canister hello_assets, with canister_id ryjl3-tyaaa-aaaaa-aaaba-cai
 Authorizing our identity (default) to the asset canister...
 Uploading assets to asset canister...
-  /index.html 1/1 (573 bytes)
-  /index.html (gzip) 1/1 (342 bytes)
-  /index.js 1/1 (605692 bytes)
-  /index.js (gzip) 1/1 (143882 bytes)
-  /main.css 1/1 (484 bytes)
-  /main.css (gzip) 1/1 (263 bytes)
-  /sample-asset.txt 1/1 (24 bytes)
-  /logo.png 1/1 (25397 bytes)
-  /index.js.map 1/1 (649485 bytes)
-  /index.js.map (gzip) 1/1 (149014 bytes)
 Deployed canisters.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If you created a project with a different name, however, your canister names will match your project name instead of <code>hello</code> and <code>hello_assets</code>.</p>
+<p>但是，如果您创建了一个不同名称的项目，那么您的 canister 名称将与您的项目名称相匹配，而不是与 <code>+hello+ ，</code>+hello_assets+` 匹配。
+If you created a project with a different name, however, your canister names will match your project name instead of <code>hello</code> and <code>hello_assets</code>.</p>
 </div>
 <div class="paragraph">
-<p>You should also note that the <strong>first time you deploy</strong>, <code>dfx</code> creates a <code>default</code> identity and a local cycle wallet controlled by your <code>default</code> identity.
-A cycles wallet is a special type of canister that enables you to transfer <a href="../developers-guide/concepts/tokens-cycles.html">cycles</a> to other canisters.</p>
+<p>第一次部署时，dfx 将创建默认身份和由默认身份控制的本地 cycles 钱包。
+还应注意，cycles 钱包是一种特殊的 canister，可以使您能将 <a href="../developers-guide/concepts/tokens-cycles.html">cycles</a> 转移到其他 canister。</p>
 </div>
 <div class="paragraph">
-<p><strong>To deploy this sample dapp locally</strong>, you don&#8217;t need to know anything about your default developer identity, using a cycles wallet, or managing cycles. We&#8217;ll cover these topics later, but for now, just note that these are created for you automatically.</p>
+<p><strong>要在本地部署此示例 dapp</strong>，您无需了解有关默认开发人员身份、使用 cycles 钱包或管理 cycles 的任何信息。 我们稍后将介绍这些主题，但现在，请注意这些东西都会自动创建。</p>
 </div>
 </li>
 <li>
-<p>Call the <code>hello</code> canister and the predefined <code>greet</code> function by running the following command:</p>
+<p>通过运行以下命令调用 <code>hello</code> 容器和预定义greet功能：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister call hello greet everyone</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s take a closer look at this example command:</p>
+<p>我们仔细观察一下这个命令：</p>
 </div>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>dfx canister call</code> command requires you to specify a canister name and a method—or function—to call.</p>
+<p><code>dfx canister call</code> 命令需要明确一个 canister 的名字以及一个要调用的方法或者函数。</p>
 </li>
 <li>
-<p><code>hello</code> specifies the name of the <strong>canister</strong> you want to call.</p>
+<p><code>hello</code> 明确了将要调用的 canister 的名称。</p>
 </li>
 <li>
-<p><code>greet</code> specifies the name of the <strong>function</strong> you want to call in the <code>hello</code> canister.</p>
-</li>
-<li>
-<p><code>everyone</code> is the text data type argument that you want to pass to the <code>greet</code> function.</p>
+<p><code>greet</code> 指定了要在 <code>hello</code> canister 中调用的函数名称。
+<code>everyone</code> 是你想要传递给 <code>greet</code> 函数的文本类型参数。</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Remember, however, that if you created a project with a different name, the canister name will match your project name and you&#8217;ll need to modify the command line to match the name you used instead of <code>hello</code>.</p>
+<p>但请记住，如果创建了不同名称的项目，canister 名称将与新的项目名称匹配，您需要修改命令行以匹配您使用的名称而不是 <code>hello</code>。</p>
 </div>
 </li>
 <li>
-<p>Verify the command displays the return value of the <code>greet</code> function.</p>
+<p>验证命令并显示 <code>greet</code> 功能的返回值。</p>
 <div class="paragraph">
-<p>For example:</p>
+<p>例如：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -945,27 +935,27 @@ A cycles wallet is a special type of canister that enables you to transfer <a hr
 </div>
 </div>
 <div class="sect1">
-<h2 id="quickstart-frontend"><a class="anchor" href="#quickstart-frontend"></a>Test the dapp front-end</h2>
+<h2 id="quickstart-frontend"><a class="anchor" href="#quickstart-frontend"></a>测试 Dapp 的前端</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Now that you have verified that your dapp has been deployed and tested its operation using the command line, let&#8217;s verify that you can access the front-end using your web browser.</p>
+<p>既然您已部署应用程序并使用命令行测试了其操作，那么让我们验证是否可以使用网络浏览器访问前端弹出窗口。</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Start the development server with <code>npm start</code></p>
+<p>使用 `npm start 打开开发服务器</p>
 </li>
 <li>
-<p>Open a browser.</p>
+<p>打开浏览器</p>
 </li>
 <li>
-<p>Navigate to <a href="http://localhost:8080/" class="bare">http://localhost:8080/</a></p>
+<p>输入 <a href="http://localhost:8080/" class="bare">http://localhost:8080/</a></p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Navigating to this URL displays a simple HTML page with a sample asset image file, an input field, and a button.
-For example:</p>
+<p>导航到此 URL 会显示一个简单的 HTML 页面，其中包含一个示例图像文件、一个输入字段和一个按钮。
+例如:</p>
 </div>
 <div class="paragraph">
 <p>+
@@ -974,9 +964,9 @@ For example:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Type a greeting, then click <strong>Click Me</strong> to return the greeting.</p>
+<p>输入一个端文本, 然后点击 <strong>Click Me</strong> 就会返回依据问候语.</p>
 <div class="paragraph">
-<p>For example:</p>
+<p>例如:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="_images/front-end-result.png" alt="Hello" width="everyone! greeting"></span></p>
@@ -987,24 +977,24 @@ For example:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_stop_the_local_canister_execution_environment"><a class="anchor" href="#_stop_the_local_canister_execution_environment"></a>Stop the local canister execution environment</h2>
+<h2 id="_停止本地_canister_执行环境"><a class="anchor" href="#_停止本地_canister_执行环境"></a>停止本地 canister 执行环境</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After testing the application in the browser, you can stop the local canister execution environment so that it doesn’t continue running in the background.</p>
+<p>在浏览器中测试该应用程序后，您可以停止本地IC网络，使其不在后台运行。</p>
 </div>
 <div class="paragraph">
-<p>To stop the local deployment:</p>
+<p>停止本地网络：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>In the terminal that displays the development server, press Control-C to interrupt the development server process.</p>
+<p>在显示开发服务器终端界面中，按 Control-C 键以中断本地网络进程。</p>
 </li>
 <li>
-<p>In the terminal that displays canister execution operations, press Control-C to interrupt the local network process.</p>
+<p>在显示网络操作的终端中，按 Control-C 键以中断本地网络进程。</p>
 </li>
 <li>
-<p>Stop the local canister execution environment running on your local computer by running the following command:</p>
+<p>通过运行以下命令，停止在本地计算机上运行的Internet网络：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx stop</code></pre>
@@ -1016,31 +1006,31 @@ For example:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next steps</h2>
+<h2 id="next-steps"><a class="anchor" href="#next-steps"></a>接下来的步骤</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This <em>Quick Start</em> touched on only a few key steps to introduce the basic workflow for developing dapps of your own.
-You can find more detailed examples and tutorials to help you learn about how to use Motoko and how to develop dapps to run on the Internet Computer blockchain throughout the documentation.</p>
+<p>这个快速入门教程只涉及几个关键步骤用来介绍您开发自己的项目时所遵循的基本工作流程。在教学指引 和 Motoko 编程语言导引中，有更多详细的示例和教程供您探索。
+您可以在文档中找到更详细的示例和教程，以帮助您了解如何使用 Motoko 以及如何开发 dapps 以在 互联网计算机 区块链上运行 dapps。</p>
 </div>
 <div class="paragraph">
-<p>Here are some suggestions for where to go next:</p>
+<p>一些连接的链接:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../developers-guide/tutorials-intro.html">Tutorials</a> to explore building simple dapps using a local canister execution environment.</p>
+<p><a href="../developers-guide/tutorials-intro.html">教程</a> 探索使用本地容器执行环境构建简单的 dapp。</p>
 </li>
 <li>
-<p><a href="network-quickstart.html#convert-icp">Convert ICP tokens to cycles</a> if you have ICP tokens that you want to convert to cycles to enable you to deploy dapp to the Internet Computer blockchain.</p>
+<p><a href="network-quickstart.html#convert-icp">Convert ICP tokens to cycle</a> 如果您有 ICP 代币并想要转换为 cycles，以便您能够将 dapp 部署到 互联网计算机 区块链。</p>
 </li>
 <li>
-<p><a href="network-quickstart.html">On-chain deployment</a> if you have cycles and are ready to deploy an application to the Internet Computer blockchain mainnet.</p>
+<p><a href="network-quickstart.html">链上部署</a> 如果您有 cycles 并准备将应用程序部署到 互联网计算机 区块链主网。</p>
 </li>
 <li>
-<p><a href="../candid-guide/candid-concepts.html">What is Candid?</a> to learn how the Candid interface description language enables service interoperability and composability.</p>
+<p><a href="../candid-guide/candid-concepts.html">什么是 Candid？</a> 了解 Candid 接口描述语言如何实现服务互操作性和可组合性。</p>
 </li>
 <li>
-<p><a href="../languages/motoko-at-a-glance.html">Motoko at-a-glance</a> to learn about the features and syntax for using Motoko.</p>
+<p><a href="../languages/motoko-at-a-glance.html">初步认识 Motoko</a> 了解使用 Motoko 的功能和语法。</p>
 </li>
 </ul>
 </div>

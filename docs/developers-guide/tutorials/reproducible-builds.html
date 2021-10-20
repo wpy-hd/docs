@@ -387,7 +387,7 @@
     <a class="nav-link" href="../concepts/concepts-intro.html">概念</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 Internet Computer</a>
+    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 互联网计算机</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
@@ -609,7 +609,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Thanks to its consensus protocol, the Internet Computer always runs canisters' code correctly.
+<p>Thanks to its consensus protocol, the 互联网计算机 always runs canisters' code correctly.
 But this doesn&#8217;t mean that it&#8217;s running the <em>correct</em> code for a canister.
 If you are using a canister somebody else developed, you may want to verify that the canister is indeed running some intended code before giving it control to make important decision for you, e.g., sending your ICP to a canister smart contract.
 Verifying this requires answering two questions:</p>
@@ -627,11 +627,11 @@ The second question is then: is the Wasm that&#8217;s running really the result 
 </div>
 <div class="paragraph">
 <p>The rest of the document answers these questions.
-For the first question, we will see how the Internet Computer provides information about canister code.
+For the first question, we will see how the 互联网计算机 provides information about canister code.
 To be able to answer the second question, canister authors should ensure trusted and
 <a href="https://reproducible-builds.org/docs/definition/">reproducible builds</a> of the Wasm code from the source.
 Such builds allow anyone to follow the same steps as the canister authors and yield the exact same Wasm code,
-which can then be compared to the Wasm code executing in the canister on the Internet Computer.</p>
+which can then be compared to the Wasm code executing in the canister on the 互联网计算机.</p>
 </div>
 <div class="paragraph">
 <p>The impatient reader who is familiar with the topic of reproducible builds can skip straight to the <a href="#repro-build-summary">summary</a>.</p>
@@ -639,15 +639,15 @@ which can then be compared to the Wasm code executing in the canister on the Int
 </div>
 </div>
 <div class="sect1">
-<h2 id="_finding_out_which_canister_code_the_internet_computer_is_executing"><a class="anchor" href="#_finding_out_which_canister_code_the_internet_computer_is_executing"></a>Finding out which canister code the Internet Computer is executing</h2>
+<h2 id="_finding_out_which_canister_code_the_互联网计算机_is_executing"><a class="anchor" href="#_finding_out_which_canister_code_the_互联网计算机_is_executing"></a>Finding out which canister code the 互联网计算机 is executing</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Internet Computer does not allow you to access the Wasm code of an arbitrary canister.
+<p>互联网计算机 does not allow you to access the Wasm code of an arbitrary canister.
 This is a design decision, as developers might want to keep some code private.
-However, the Internet Computer does allow you to access the SHA-256 of the Wasm code of a canister.</p>
+However, the 互联网计算机 does allow you to access the SHA-256 of the Wasm code of a canister.</p>
 </div>
 <div class="paragraph">
-<p>To obtain this hash, you must first note the principal of the Internet Computer canister whose code you want to check.
+<p>To obtain this hash, you must first note the principal of the 互联网计算机 canister whose code you want to check.
 For example, assume we&#8217;re interested in the code of the Internet Identity canister, whose principal is <code>rdmx6-jaaaa-aaaaa-aaadq-cai</code>.
 Then, the easiest way to access this service is using the <a href="https://dfinity.org/developers/"><code>dfx</code></a> tool from the terminal.
 Open your terminal, and run:</p>
@@ -673,7 +673,7 @@ If you don&#8217;t have such a directory, you can create it using <code>dfx new<
 </table>
 </div>
 <div class="paragraph">
-<p>Here, the Internet Computer tells us that the hash of the Wasm module of the <code>rdmx6-jaaaa-aaaaa-aaadq-cai</code> canister (which happens to be the Internet Identity canister) is <code>0xda8d1bdd93fbf1edddeb2a423fa3c528c2e4877d39beed2277a12e60227e44d4</code>.</p>
+<p>Here, the 互联网计算机 tells us that the hash of the Wasm module of the <code>rdmx6-jaaaa-aaaaa-aaadq-cai</code> canister (which happens to be the Internet Identity canister) is <code>0xda8d1bdd93fbf1edddeb2a423fa3c528c2e4877d39beed2277a12e60227e44d4</code>.</p>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -682,7 +682,7 @@ If you don&#8217;t have such a directory, you can create it using <code>dfx new<
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-The check above provides you the <em>current</em> hash of the canister&#8217;s Wasm module, but the <em>controllers</em> of an Internet Computer canister may change the code at any time (e.g., to upgrade a canister). However, if the list of controllers is empty, you know that the canister is immutable since nobody has the power to change the code.
+The check above provides you the <em>current</em> hash of the canister&#8217;s Wasm module, but the <em>controllers</em> of an 互联网计算机 canister may change the code at any time (e.g., to upgrade a canister). However, if the list of controllers is empty, you know that the canister is immutable since nobody has the power to change the code.
 </td>
 </tr>
 </table>
@@ -721,7 +721,7 @@ It also has to be trusted, such that the user can be convinced that the Wasm is 
 <h3 id="_providing_source_code"><a class="anchor" href="#_providing_source_code"></a>Providing source code</h3>
 <div class="paragraph">
 <p>Typically, you will version your code in <code>git</code> or some other version control system, and your versioned code may be available in a public repository, e.g., GitHub.
-In this case, you should note the particular commit that you used when producing the code to be deployed to the Internet Computer, and communicate it to the users who are trying to verify your canister.
+In this case, you should note the particular commit that you used when producing the code to be deployed to the 互联网计算机, and communicate it to the users who are trying to verify your canister.
 Alternatively, you can also provide a package (e.g., a zip file or a tarball) containing the source code you used to build your canister.</p>
 </div>
 </div>
@@ -729,7 +729,7 @@ Alternatively, you can also provide a package (e.g., a zip file or a tarball) co
 <h3 id="_reproducing_build_environments"><a class="anchor" href="#_reproducing_build_environments"></a>Reproducing build environments</h3>
 <div class="paragraph">
 <p>Before building your code, you should document the build environment you are using in detail.
-In particular, for the languages supported by the Internet Computer SDK:</p>
+In particular, for the languages supported by the 互联网计算机 SDK:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -956,7 +956,7 @@ WORKDIR /canister</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Next, create a <code>canister_ids.json</code> file containing the IDs of your canisters on the Internet Computer, and put it in your project directory.
+<p>Next, create a <code>canister_ids.json</code> file containing the IDs of your canisters on the 互联网计算机, and put it in your project directory.
 Now, from the root directory of your canister project, you can test the reproducibility of your <code>dfx</code> builds as follows:</p>
 </div>
 <div class="listingblock">

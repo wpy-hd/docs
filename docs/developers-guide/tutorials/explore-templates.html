@@ -387,7 +387,7 @@
     <a class="nav-link" href="../concepts/concepts-intro.html">概念</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 Internet Computer</a>
+    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 互联网计算机</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
@@ -611,11 +611,11 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you started your tour of the DFINITY Canister Software Development Kit (SDK) with the <a href="../../quickstart/quickstart-intro.html">Quick start</a>, you have already seen the basic work flow for creating dapps that run on the Internet Computer.
+<p>If you started your tour of the DFINITY Canister 软件开发工具包 (SDK) with the <a href="../../quickstart/quickstart-intro.html">Quick start</a>, you have already seen the basic work flow for creating dapps that run on the 互联网计算机.
 Now, let&#8217;s take a closer look at that work flow by exploring the default files and folders that are added to your workspace when you create a new project.</p>
 </div>
 <div class="paragraph">
-<p>As a preview, the following diagram illustrates the development work flow when running the Internet Computer locally on you computer.</p>
+<p>As a preview, the following diagram illustrates the development work flow when running the 互联网计算机 locally on you computer.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="../_images/dev-workflow-explore.svg" alt="Development work flow"></span></p>
@@ -656,7 +656,7 @@ Now, let&#8217;s take a closer look at that work flow by exploring the default f
 <h2 id="create-a-new-project"><a class="anchor" href="#create-a-new-project"></a>Create a new project</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As discussed in the <a href="../../quickstart/quickstart-intro.html">Quick start</a>, dapps for the Internet Computer start as <strong>projects</strong> that you create. You can create projects using the <code>dfx</code> executable command-line interface (CLI).</p>
+<p>As discussed in the <a href="../../quickstart/quickstart-intro.html">Quick start</a>, dapps for the 互联网计算机 start as <strong>projects</strong> that you create. You can create projects using the <code>dfx</code> executable command-line interface (CLI).</p>
 </div>
 <div class="paragraph">
 <p>To take a closer look at the files and folders that are included in a  project by default, let&#8217;s create a new project to work with.</p>
@@ -670,7 +670,7 @@ Now, let&#8217;s take a closer look at that work flow by exploring the default f
 <p>Open a terminal shell on your local computer, if you don’t already have one open.</p>
 </li>
 <li>
-<p>Navigate to the folder you are using for your Internet Computer projects, if you are using a separate working folder.</p>
+<p>Navigate to the folder you are using for your 互联网计算机 projects, if you are using a separate working folder.</p>
 </li>
 <li>
 <p>Create a new project by running the following command:</p>
@@ -846,7 +846,7 @@ You can edit these template files to customize the configuration settings for yo
 <li>
 <p>The <code>networks</code> section specifies information about the networks to which you connect. The default settings bind the local canister execution environment to the local host address <code>127.0.0.1</code> and port <code>8000</code>.</p>
 <div class="paragraph">
-<p>If you have access to other Internet Computer network providers, the <code>networks</code> section can include network aliases and URLs for connecting to those providers.</p>
+<p>If you have access to other 互联网计算机 network providers, the <code>networks</code> section can include network aliases and URLs for connecting to those providers.</p>
 </div>
 </li>
 </ul>
@@ -910,7 +910,7 @@ You can edit this file to include your own code to speed up the development cycl
 For Motoko, the <code>main</code> function is implicit in the file itself.</p>
 </li>
 <li>
-<p>Although the traditional "Hello, World!" program illustrates how you can print a string using a <code>print</code> or <code>println</code> function, that traditional program would not represent a typical use case for Motoko dapps that run on the Internet Computer.</p>
+<p>Although the traditional "Hello, World!" program illustrates how you can print a string using a <code>print</code> or <code>println</code> function, that traditional program would not represent a typical use case for Motoko dapps that run on the 互联网计算机.</p>
 </li>
 <li>
 <p>Instead of a print function, this sample program defines an <code>actor</code> with a public <code>greet</code> function that takes a <code>name</code> argument with a type of <code>Text</code>.</p>
@@ -938,7 +938,7 @@ For now, you can continue to the next section.</p>
 <h2 id="start-the-local-network"><a class="anchor" href="#start-the-local-network"></a>Start the local canister execution environment</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before you can deploy the default project, you need to connect to either the local canister execution environment, or to the Internet Computer blockchain mainnet.</p>
+<p>Before you can deploy the default project, you need to connect to either the local canister execution environment, or to the 互联网计算机 blockchain mainnet.</p>
 </div>
 <div class="paragraph">
 <p>Starting the local canister execution environment requires a <code>dfx.json</code> file, so you should be sure you are in your project&#8217;s root directory.
@@ -1153,7 +1153,7 @@ Building frontend...</pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You&#8217;ve seen that the <code>dfx build</code> command creates several artifacts in a <code>canisters</code> directory for your project.
-The WebAssembly modules and the <code>canister_manifest.json</code> file are required for your dapp to be deployed on the Internet Computer network.</p>
+The WebAssembly modules and the <code>canister_manifest.json</code> file are required for your dapp to be deployed on the 互联网计算机 network.</p>
 </div>
 <div class="paragraph">
 <p>To deploy to the local canister execution environment:</p>

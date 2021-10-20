@@ -387,7 +387,7 @@
     <a class="nav-link" href="../developers-guide/concepts/concepts-intro.html">概念</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../developers-guide/concepts/what-is-IC.html">什么是 Internet Computer</a>
+    <a class="nav-link" href="../developers-guide/concepts/what-is-IC.html">什么是 互联网计算机</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
@@ -702,7 +702,7 @@ Specific transactions can be retrieved by querying the ledger.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_integrate_with_the_internet_computer_ledger_canister_using_the_rosetta_api"><a class="anchor" href="#_integrate_with_the_internet_computer_ledger_canister_using_the_rosetta_api"></a>Integrate with the Internet Computer ledger canister using the Rosetta API</h2>
+<h2 id="_integrate_with_the_互联网计算机_ledger_canister_using_the_rosetta_api"><a class="anchor" href="#_integrate_with_the_互联网计算机_ledger_canister_using_the_rosetta_api"></a>Integrate with the 互联网计算机 ledger canister using the Rosetta API</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>One can interact with the Internet Computer and ledger canister in several ways.
@@ -718,18 +718,18 @@ This document outlines how to integrate with the ledger canister using the <a hr
 <p><span class="image"><img src="_images/basic-rosetta-api-integration.svg" alt="basic rosetta api integration"></span></p>
 </div>
 <div class="paragraph">
-<p>As this diagram suggests, the Rosetta node maintains a local copy of the Internet Computer ledger canister.
+<p>As this diagram suggests, the Rosetta node maintains a local copy of the 互联网计算机 ledger canister.
 Periodically, the <code>dfinity/rosetta-api</code> software running on the Rosetta node updates its local view of the ledger by querying the ledger canister for the latest block of the ledger chain, then querying for any missing ledger blocks.
 The Rosetta node uses the root key of the Internet Computer to ensure that the local copy of the ledger is genuine.
-The integration software also allows you to use the Rosetta node to submit transactions to the Internet Computer ledger.</p>
+The integration software also allows you to use the Rosetta node to submit transactions to the 互联网计算机 ledger.</p>
 </div>
 <div class="sect2">
 <h3 id="_integration_workflow_overview"><a class="anchor" href="#_integration_workflow_overview"></a>Integration workflow overview</h3>
 <div class="paragraph">
-<p>The following summarizes the basic operational workflow for transferring ICP tokens if you&#8217;re using a Rosetta node to communicate with the Internet Computer ledger canister. In this scenario, you must be an Internet Computer principal who authenticates to the Internet Computer using a signing key stored in a wallet.</p>
+<p>The following summarizes the basic operational workflow for transferring ICP tokens if you&#8217;re using a Rosetta node to communicate with the 互联网计算机 ledger canister. In this scenario, you must be an 互联网计算机 principal who authenticates to the 互联网计算机 using a signing key stored in a wallet.</p>
 </div>
 <div class="paragraph">
-<p>After a user submits a request to the Rosetta node to make a transaction, the request is passed to the integration software running on that node to interact with the Internet Computer and completes the following operations:</p>
+<p>After a user submits a request to the Rosetta node to make a transaction, the request is passed to the integration software running on that node to interact with the 互联网计算机 and completes the following operations:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -929,7 +929,7 @@ However, the integration software only prompts for transactions to be signed usi
 <h2 id="_frequently_asked_questions"><a class="anchor" href="#_frequently_asked_questions"></a>Frequently asked questions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following questions are taken from the most commonly reported questions and blockers from the developer community regarding Rosetta integration with the Internet Computer.</p>
+<p>The following questions are taken from the most commonly reported questions and blockers from the developer community regarding Rosetta integration with the 互联网计算机.</p>
 </div>
 <div class="sect2">
 <h3 id="_the_rosetta_node"><a class="anchor" href="#_the_rosetta_node"></a>The Rosetta node</h3>

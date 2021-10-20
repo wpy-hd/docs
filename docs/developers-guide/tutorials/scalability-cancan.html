@@ -387,7 +387,7 @@
     <a class="nav-link" href="../concepts/concepts-intro.html">概念</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 Internet Computer</a>
+    <a class="nav-link" href="../concepts/what-is-IC.html">什么是 互联网计算机</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#interface-spec:index.adoc">互联网计算机接口标准</a>
@@ -643,7 +643,7 @@ For example, currently WebAssembly modules have a maximum of 4GB for memory and 
 <div class="sect2">
 <h3 id="_implementing_a_distributed_hash_table"><a class="anchor" href="#_implementing_a_distributed_hash_table"></a>Implementing a distributed hash table</h3>
 <div class="paragraph">
-<p>The initial attempt to build a scalable video-sharing service for the Internet Computer used a distributed hash table (DHT) as a back-end service with simple get and put functions that distributed data—chunks of the video to be uploaded or streamed—into a predefined set of canisters.
+<p>The initial attempt to build a scalable video-sharing service for the 互联网计算机 used a distributed hash table (DHT) as a back-end service with simple get and put functions that distributed data—chunks of the video to be uploaded or streamed—into a predefined set of canisters.
 In the early phases of the project, this approach was sufficient for a proof-of-concept and verifying that the video data could be properly transcoded for storage and retrieval.</p>
 </div>
 <div class="paragraph">
@@ -654,10 +654,10 @@ In addition, the original implementation of the distributed hash table back-end 
 <div class="sect2">
 <h3 id="_simplifying_scalability"><a class="anchor" href="#_simplifying_scalability"></a>Simplifying scalability</h3>
 <div class="paragraph">
-<p>Because the Internet Computer protocol relies on replicated state across nodes in a subnet, it provides certain guarantees about fault tolerance and failover natively that are not generally available to applications running on other platforms or protocols.</p>
+<p>Because the 互联网计算机 protocol relies on replicated state across nodes in a subnet, it provides certain guarantees about fault tolerance and failover natively that are not generally available to applications running on other platforms or protocols.</p>
 </div>
 <div class="paragraph">
-<p>With the realization that the Internet Computer could ensure that canisters were available to receive and respond to requests,the original distributed hash table back-end service was replaced with a simpler but more scalable back-end service called BigMap.</p>
+<p>With the realization that the 互联网计算机 could ensure that canisters were available to receive and respond to requests,the original distributed hash table back-end service was replaced with a simpler but more scalable back-end service called BigMap.</p>
 </div>
 <div class="paragraph">
 <p>BigMap provides a simple, plug-in library for building scalable applications using key-value storage on the Internet Computer.
@@ -668,7 +668,7 @@ By using the BigMap library as a back-end service, the CanCan sample application
 Each canister still has limited capacity, but the application instantiates the canisters it needs and keeps track of the fragments that make up the full video content for each user&#8217;s videos in an index file called the <code>manifest</code>.</p>
 </div>
 <div class="paragraph">
-<p>The code required for the <code>BigMap</code> service is much simpler than a traditional distributed hash table because the Internet Computer as a platform provides scalability, replication, failover, and fault tolerance.</p>
+<p>The code required for the <code>BigMap</code> service is much simpler than a traditional distributed hash table because the 互联网计算机 as a platform provides scalability, replication, failover, and fault tolerance.</p>
 </div>
 </div>
 </div>
@@ -692,7 +692,7 @@ However, the CanCan sample application also demonstrates interoperability betwee
 <div class="ulist">
 <ul>
 <li>
-<p>You can run both Motoko code and Rust code deployed as canisters on the Internet Computer.</p>
+<p>You can run both Motoko code and Rust code deployed as canisters on the 互联网计算机.</p>
 </li>
 <li>
 <p>You can switch between back-end languages without affecting the operation of the CanCan sample application.</p>
