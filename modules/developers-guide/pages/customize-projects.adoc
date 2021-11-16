@@ -1,26 +1,24 @@
-= Manage projects
+= 管理项目
 :proglang: Motoko
 :IC: Internet Computer blockchain
 :company-id: DFINITY
 
-You can modify some key settings for individual projects by modifying each project’s `+dfx.json+` configuration file. 
-You can use the `+dfx config+` command to change these settings programmatically or manually edit the `+dfx.json+` file directly.
+您可以通过修改每个项目的`+dfx.json+`配置文件来修改项目的一些关键设置。 您可以使用`+dfx config+`命令以程序化方式更改这些设置，也可以直接手动编辑`+dfx.json+`文件。
 
-== How to change your source directory
+== 如何更改源文件目录
 
-Before you compile source code for your project using the `+dfx build+` command, you might want to check the default location for storing the source code for your dapp.
-By default, the name you use to create a new project is the name used for one canister smart contract (`+canister_name+`) and one assets canister (`+canister_name_assets+`), and dapp source code is expected to be in the `+src/canister_name+` directory. Similarly, the default location for front-end source code is in the `+src/canister_name_assets/src+` directory and front-end output is located in the `+dist/canister_name_assets+` directory.
+在使用`+dfx build+`命令编译项目的源代码之前，您可能需要检查用于存储程序源代码的默认位置。默认情况下，用于创建新项目的名称是用于一个数据Canister (`+canister_name+`)和一个资源canister (`+canister_name_assets+`)的名称，并且程序源代码应位于src/canister_name目录中。
 
-Depending on your dapp's complexity and architecture, however, you might want to modify the default location for the dapp source code, the front-end source code, or front-end output. 
+但是，根据应用程序的复杂度和体系结构，您可能需要修改源代码的默认位置。
 
-For example, for a simple dapp, you might want to eliminate one directory level and place the source code in the `+src+` directory:
+例如，对于一个简单的程序，您可能想要去掉一个目录层级，并将源代码放在+src+目录中：
 
 [source,text]
 ----
   "main": "src/main.mo",
 ----
 
-For more complex dapps, you might want to use a multi-tiered directory structure:
+对于更复杂的应用程序，您可能需要使用多层目录结构：
 
 [source,text]
 ----
@@ -37,7 +35,7 @@ For more complex dapps, you might want to use a multi-tiered directory structure
 }
 ----
 
-NOTE: If you modify the default settings for a source code directory, be sure that the settings in the `+dfx.json+` configuration file match the directory location on the file system.
+提示：如果您修改源代码目录的默认设置，请确保dfx.json配置文件中的设置与文件系统上的目录位置匹配。
 
 ////
 == How to change your output directory
@@ -81,28 +79,26 @@ For example:
 ----
 ////
 
-== How to change the main dapp file name
+== 如何修改主程序文件名
 
-Before you compile source code for your project using the `+dfx build+` command, you should verify the location and file name used for your dapp’s source code.
+在使用 `+dfx build+` 命令编译项目的源代码之前，应验证用于程序源代码的位置和文件名。
 
-For example, if you want to build a canister smart contract for the `+factorial+` dapp and the source code for the dapp is located in `+src/math/factorial.mo+`, you should be sure that you have the correct
-path specified for the `+main+` setting in the `+canisters+` section of the configuration file.
+例如，如果要为 `+factorial+` 程序构建容器，并且该程序的源代码位于 `+src/math/factorial.mo+` 中，您应确保在配置文件的Canister部分指定了正确的路径。
 
-For example:
+例如：
 
 [source,json]
 ----
 "main": "src/math/factorial.mo",
 ----
 
-Keep in mind that changing the configuration setting for the dapp file name only affects where the `+dfx build+` command looks for the source code to compile. Making changes in the configuration file does not rename any files or directories on the file system.
-If you change the path to the main dapp file or the name of the file itself, be sure to change the name and location within your project directory.
+请记住，更改程序文件名的配置设置仅会影响dfx build命令在哪里寻找要编译的源代码。在配置文件中进行更改不会重命名文件系统上的任何文件或目录。如果更改主程序文件的路径或文件名，请确保更改项目目录中的名称和位置。
 
-== How to change the location for serving the dapp front-end
+== 如何更改应用前端服务的位置
 
-You can change the default host name and port number for serving the dapp front-end by modifying the local network settings in the `+dfx.json+` configuration file.
+您可以通过修改dfx.json配置文件中的设置来更改默认的主机名和端口号，以运行本地Internet Computer副本进程并为应用程序前端提供服务。
 
-For example, you can change the IP address for the local network by modifying the `+bind+` setting:
+例如：
 
 [source,json]
 ----
