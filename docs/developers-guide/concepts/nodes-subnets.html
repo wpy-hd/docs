@@ -610,39 +610,38 @@
 <article class="doc">
 <h1 class="page">Nodes and subnet blockchains</h1>
 <div class="paragraph">
-<p>互联网计算机 <strong>subnet blockchains</strong> provide physical hardware and resources—like CPU and memory—for performing software operations. Each subnet is a blockchain that consists of some number of decentralized, independently owned and controlled machines—connected peer computers called <strong>nodes</strong>—that run the software components of the 互联网计算机 protocol.</p>
+<p>互联网计算机 子网区块链提供软件运行所需要的物理硬件和资源，比如 CPU和内存。每个子网由一组点对点连接，称之为Node的独立机器组成。节点上运行遵循互联网计算机协议的软件。</p>
 </div>
 <div class="paragraph">
-<p>The 互联网计算机 software components that run on each node are called a <strong>replica</strong> because they replicate state and computation across all of the nodes in a subnet blockchain.</p>
+<p>运行在节点上的IC软件，称之为副本，因为他们在子网中的各个节点上都有副本。</p>
 </div>
 <div class="paragraph">
-<p>The core components of a replica are organized into the following logical layers:</p>
+<p>replica的核心组件由以下逻辑层组成：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A <strong>peer-to-peer</strong> (P2P) networking layer that collects and advertises messages from users, from other nodes in its subnet blockchain, and from other subnet blockchains. Messages received by the peer-to-peer layer are replicated to all of the nodes in the subnet to ensure the security, reliability, and resiliency.</p>
+<p>点对点网络层：收集传播子网中以及子网间用户和节点的通信消息。该层收到的消息会复 制到子网中的所有节点，以确保平台的安全、可靠与弹性。</p>
 </li>
 <li>
-<p>A <strong>consensus</strong> layer that selects and sequences messages received from users and from different subnets to create blockchain blocks that can be notarized and finalized by Byzantine Fault Tolerant Consensus forming the evolving blockchain.  These finalized blocks are delivered to the message routing layer.</p>
+<p>共识层：选择并序列化来自用户和其他子网的消息，形成输入块，在发送到路由层之前进 行最终证实确认。</p>
 </li>
 <li>
-<p>A <strong>message routing</strong> layer that routes user- and system-generated messages between subnets, manages the input and output queues for dapps, and schedules messages for execution.</p>
+<p>消息路由层：转发不同子网间用户和系统产生的消息，与应用建立消息的输入输出队列， 调度消息的执行。</p>
 </li>
 <li>
-<p>An <strong>execution environment</strong> that calculates the deterministic computation involved in executing a smart contract by processes the messages it receives from the message routing layer.</p>
+<p>执行环境：执行程序、处理来自路由层的消息，保证计算的确定性。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The following diagram provides a simplified overview of the 互联网计算机 protocol components deployed as a local canister execution environment in a development environment.</p>
+<p>下图展示了互联网计算机 协议组件的整体结构。这些组件部署在本地开发环境的replica中：</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="../_images/SDK-protocol-local-overview.svg" alt="Internet Computer components in a developer’s environment"></span></p>
 </div>
 <div class="paragraph">
-<p>As a developer, it isn’t necessary to know the details about how your dapps and user interactions with your dapps are routed through the 互联网计算机 architecture or replicated on the blockchain network.
-However, a general understanding of the key components can be useful because the development environment includes the replica components to provide a {EE} for deployment and a realistic sense of the workflow for a production deployment.</p>
+<p>作为开发者，并不需要知道用户通过IC架构与你的应用交互的细节。不过，对一些核心组件的基础知识，有助于你理解本地开发环境和生产环境的工作流。</p>
 </div>
 </article>
   </div>
