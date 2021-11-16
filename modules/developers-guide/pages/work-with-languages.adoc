@@ -1,77 +1,69 @@
-= Develop using different languages
+= 使用不用的语言开发
 :cpp: C++
 
-Most of the example dapps in this guide use {proglang}—the programming language specifically designed to work with the {IC}. 
-Potentially, however, you can write dapps in any language that compiles to WebAssembly to deploy applications that run on the {IC}.
-This section provides some high-level guidance for writing dapps in different languages and how to deploy them on the {IC}.
+本文档中的大多数示例都使用Motoko（一种专门设计用于Internet Computer的编程语言）。但是，您可以使用可编译为WebAssembly的任何语言编写程序，以部署在Internet Computer上运行的应用程序。
 
-== Using Rust
+== Rust
 
-You can create Rust projects to run on the {IC} by using Cargo and compiling your dapp to use WebAssembly as the target output.
+您可以使用Cargo编译程序并使用WebAssembly作为输出来创建一个Rust项目运行在Internet Computer上。
 
-This section provides a summary of the key steps involved in deploying a Rust program as a canister smart contract on the {IC}.
-You should note, however, that the steps described here only illustrate one approach. 
-Other implementation approaches are also possible. 
+本节总结了在Internet Computer上将Rust程序作为Canister部署时所涉及的关键步骤。然而，您应该知道，此处描述的步骤仅说明了一种方法，其他的实现方式也是可能的。
 
-Note that the link:https://github.com/dfinity/cdk-rs[Rust canister development kit (Rust CDK)] for provides some shortcuts to make it easier to write functions as query and update calls and includes several link:https://github.com/dfinity/cdk-rs/tree/next/examples[examples] to get you started building Rust-based projects, but you can also develop dapps for the {IC} without using the Rust CDK.
+请注意，link:https://github.com/dfinity/cdk-rs[Rust Canister开发工具包（Rust CDK）] 提供了一些快捷方式，可简化编写查询和更新函数调用的过程，并提供了一些link:https://github.com/dfinity/cdk-rs/tree/next/examples[示例]来帮助您开始构建基于Rust的项目，但您也可以为Internet Computer开发应用程序而不使用Rust CDK。
 
-=== Create a project
+=== 创建项目
 
-Because most Rust programmers use Cargo to handle build and package management tasks, such as downloading and compiling the libraries your dapp depends on, your first step is to create a new Rust project using the Cargo command-line interface.
+因为大部分的Rust程序员使用Cargo来处理创建和包管理任务（储如下载和编译依赖库），首先使用Cargo命令行接口来创建一个新的Rust项目。
 
-Alternatively, you could create a new project using {sdk-long-name} instead of Cargo, but creating a project using Cargo represents the typical workflow for creating Rust projects.
+或者，您可以使用DFINITY Canister软件开发包(SDK)来代替Cargo创建新的项目，但是使用Cargo来创建新项目代表了Rust项目的典型工作流程。
 
-To create a new Rust project:
+创建一个新项目：
 
 [arabic]
-. Open a terminal shell on your local computer, if you don’t already
-have one open.
-. Verify that you have Cargo installed by running the following command:
+. 在本地计算机上打开终端。
+. 运行以下命令以验证Cargo是否安装：
 +
 [source,bash]
 ----
 cargo --version
 ----
-. Change to the folder you are using for your {IC} or Rust sample projects.
-. Create a new project by running a command similar to the following:
+. 更改您的IC或Rust示例项目的目录。
+. 运行类似以下命令来创新项目：
 +
 [source,bash]
 ----
 cargo new my_rust_dapp
 ----
 +
-This command creates a new `+my_rust_dapp+` directory with a default `+Cargo.toml+` file and a `+src+` directory with a default `+main.rs+` file.
-. Change to your project directory by running the following command:
+该命令创建一个新的`+my_rust_dapp+`目录，包含了默认的`+Cargo.toml+`文件和带有默认`+main.rs+`文件的`+src+`目录。
+. 运行以下命令进入到项目录：
 +
 [source,bash]
 ----
 cd my_rust_dapp
 ----
 +
-If you list the contents of this directory, you'll see that it only contains the `+Cargo.toml+` file and `+src+` directory. 
-To compile this project to run on the {IC}, you'll need some additional files.
+如果您显示该目录内容，您将看到目录下仅包含`+Cargo.toml+`文件和`+src+`目录。为了编译项目以使能在Internet Computer上运行，您还需要一些其他文件。
 
-=== Modify the Cargo configuration file
+=== 修改Cargo配置文件
 
-The `+Cargo.toml+` file provides a *manifest* for each Rust package. 
-The manifest contains sections that specify configuration details for the package.
-To prepare the Rust project to run on the {IC}, we'll copy the default `+Cargo.toml+` file then modify some of the configuration details for the project.
+*manifest* 文件为每个Rust包提供一个清单。清单包含了包的配置明细。为准备Rust项目运行在Internet Computer上，我们需要拷贝默认的*manifest*文件并修改一些详细配置信息。
 
-To modify the `+Cargo.toml+` file:
+修改`+Cargo.toml+`文件：
 
-. Check that you are in the root directory for your project by running the `+pwd+` command, if necessary.
-. Copy the default `+Cargo.toml+` file to the `+src+` directory by running the following command:
+. 如果有必要，运行pwd命令来检查您是否在项目的根目录下。
+. 运行以下命令拷贝默认的`+Cargo.toml+`文件到src目录：
 +
 [source,toml]
 ----
 cp Cargo.toml src/Cargo.toml
 ----
 +
-Projects that run on the {IC} typically use one project-level `+Cargo.toml+` file to set up a workspace for the canister members of the project and a second `+Cargo.toml+` file in the source code directory to configure settings for each canister.
-. Open the `+Cargo.toml+` file that is the root directory of your project in a text editor. 
+在Internet Computer上运行的项目通常使用一个项目级别的`+Cargo.toml+`文件为项目的Canister成员设置工作区，并在源代码目录中使用第二个`+Cargo.toml+`文件为每个Canister配置参数。
+. 用文本编辑器打开项目根目录下的`+Cargo.toml+`文件
 +
-By default, the file contains the `+[package]+` and the `+[dependencies]+` sections.
-. Replace the `+[package]+` section with a `+[workspace]+` section similar to the following:
+默认情况下，该文件包含[package]和[dependencies]部分。
+. 用类似以下`+[workspace]+`部分来替换`+[package]+`：
 +
 [source,toml]
 ----
@@ -81,32 +73,31 @@ members = [
 ]
 ----
 +
-For information about the `+[workspace]+` section and `+[workspace]+` keys, see link:https://doc.rust-lang.org/cargo/reference/workspaces.html[Workspaces].
-For information about the other sections and keys you can configure in the `+Cargo.toml+` file, see link:https://doc.rust-lang.org/cargo/reference/manifest.html[The Manifest Format].
-. Remove the `+[dependencies]+` section.
-. Save your changes and close the file to continue.
-. Open the `+src/Cargo.toml+` file in a text editor.
-. Add a `+[lib]+` section with the path to the main source code similar to the following: 
+有关`+[workspace]+`部分和键值信息，请参阅link:https://doc.rust-lang.org/cargo/reference/workspaces.html[Workspaces]。有关`+Cargo.toml+`配置的其他部分和键值，请参阅link:https://doc.rust-lang.org/cargo/reference/manifest.html[清单格式]。
+. 删除`+[dependencies]+`
+. 部分保存并关闭文件
+. 在文本编辑器中打开`+src/Cargo.toml+` 文件
+. 增加类似以下带有主要源代码目录的`+[lib]+`
 +
 [source,toml]
 ----
 [lib]
 path = "main.rs"
 ----
-. Update the `+[dependencies]+` section with any package dependencies.
-. Save your changes and close the file to continue.
+. 更新`+[dependencies]+`部分的依赖项
+. 保存并关闭文件。
 
 === Add a canister configuration file
 
-When you create a new project using the {sdk-short-name}, the `+dfx new+` command automatically adds a default `+dfx.json+` configuration file to the project directory.
-Because we created the Rust project using Cargo, you need to manually create this file in your project directory.
+当您用{sdk-short-name}创建一个新项目时，`+dfx new+`命令自动添加一个默认`+dfx.json+`配置文件到项目目录。因为他们已经使用Cargo来创建Rust项目，所以您需要手工在项目目录下创建该文件。
 
-To add the `+dfx.json+` configuration file:
+添加`+dfx.json+`配置文件：
 
-. Check that you are still in your project directory by running the `+pwd+` command, if necessary.
-. Create a new `+dfx.json+` configuration file in the root directory for your project.
-. Open the `+dfx.json+` file in a text editor.
-. Add the `+version+` and `+canisters+` keys with settings similar to the following to the `+dfx.json+` file:
+. 如有必要，用pwd命令来检查您是否仍在项目目录下。
+. 在项目根目录下创建一个dfx.json配置文件。
+. 在文本编辑器中打开dfx.json文件。
+. 添加类似以下设置的version和canisters键到dfx.json文件
+
 +
 [source,json]
 ----
@@ -123,33 +114,31 @@ To add the `+dfx.json+` configuration file:
 }
 ----
 +
-Let's take a closer look at these settings.
+让我们详细看看这些配置
 +
 --
-* The `+version+` setting is used to identify the version of the software used to create the project.
-* The `+canisters+` section specifies the name of the project's canisters.
-In this case, there's only one canister and it is named `+my_rust_dapp+`.
-* The `+type+` key is set to `+custom+` because this canister is not one of the currently recognized (`+motoko+` or `+assets+`) canister types.
-* The `+candid+` key specifies the name and location of the Candid interface description file to use for this project.
-* The `+wasm+` key specifies the path to the WebAssembly file generated by the `+cargo build+` command.
-* The `+build+` key specifies the `+cargo+` command used to compile the output.
+* `+version+`用于标识创建项目软件的版本号
+* `+version+`部分指定项目的Canister名字。在本例中，仅有一个名为my_rust_program的Canister
+* 因为不是可标识的canister类型之一（motoko或assets），`+type+`键设置为custom
+* `+candid+`键指定用于此项目的Candid接口描述文件的名称和位置。
+* `+wasm+`键指定cargo编译命令生成的WebAssembly文件路径
+* `+build+`键指定用于编译输出的cargo命令
 --
 +
-These are the minimum settings required.
-As you build more complex programs, you might need to include additional configuration details in the `+Cargo.toml+` file, the `+dfx.json+` file, or both files.
-. Save your changes and close the file to continue.
+这些是最小配置需要。随着您构建更复杂的程序，您会需要在 Cargo.toml, dfx.json中进行其他详细配置
+. 保存并关闭文件。
 
-=== Create a Candid interface description file
+=== 创建一个Candid接口描述文件
 
-In addition to the `+dfx.json+` configuration file, you need to have a Candid interface description file—for example, `+my_rust_dapp.did+`—to map your dapp's input parameters and return value formats to their language-agnostic representation in Candid.
+除了`+dfx.json+`配置文件之外，您还需要一个Candid接口描述文件（例如，`+my_rust_dapp.did+`），以映射程序输入参数和返回值格式到Candid中伪代码表现形式。
 
-To add the Candid interface description file:
+添加Candid接口描述文件：
 
-. Check that you are still in your project directory by running the `+pwd+` command, if necessary.
-. Create a new Candid interface description file—for example, `+my_rust_dapp.did+`—in the `+src+` directory for your project.
-. Open the Candid interface description file in a text editor and add a description for each function the dapp defines.
+. 如有必要，用`+pwd+`命令来检查您是否仍在项目目录下。
+. 在项目的src目录下创建一个新的Candid接口描述文件（例如`+my_rust_dapp.did+`）
+. 在文本编辑器中打开这个描述文件并且为程序中每一个函数添加描述。
 +
-For example, if the `+my_rust_dapp+` is a simple dapp that increments a counter using the `+increment+`, `+read+`, and `+write+` functions, the `+my_rust_dapp.did+` file might look like this:
+例如，如果 `+my_rust_dapp+` 是一个简单的计数器程序，使用`+increment+`, `+read+`和`+write+`函数，`+my_rust_dapp.did+`看起来是这样的：
 +
 [source,candid]
 ----
@@ -159,91 +148,87 @@ service : {
   "write": (nat) -> ();
 }
 ----
-. Save your changes and close the file to continue.
+. 保存并关闭文件。
 
-=== Modify the default dapp
+=== 修改默认程序
 
-When you create a new project, your project `+src+` directory includes a template `+main.rs+` file with the "Hello, World!" program.
+当您创建一个新的项目，`+src+`目录包含了一个"Hello World!"的模板`+main.rs+`文件
 
-To modify the template source code:
+修改模板源代码：
 
-. Open the template `+src/main.rs+` file in a text editor and delete the existing content.
-. Write the program you want to deploy on the {IC}.
+. 在文本编辑器中打开`+src/main.rs+`文件并删除存在的内容。
+. 编写您想在 {IC} 上发布的程序。
 +
-As you write your program, keep in mind that there are two types of calls—update calls and query calls—and that update functions use asynchronous messaging.
-. Save your changes and close the `+main.rs+` file.
+编写程序时，请注意有两种类型的调用（更新调用和查询调用），更新函数使用异步消息
+. 保存并关闭 src/main.rs文件。
 
-=== Deploy the dapp
+=== 连接到网络并部署
 
-Before you can deploy and test your dapp, you need to do the following:
+在您部署和测试程序之前，您有以下工作要做：
 
-* Connect to either the local canister execution environment, or to the {IC} blockchain mainnet.
-* Register a network-specific identifier for the application.
-* Compile the dapp with a target output of WebAssembly.
+* 连接您开发环境Internet Computer网络本地运行或连接到您能访问的子网上远程运行。
+* 为您的应用注册一个网络特定标识符。
+* 编译带有WebAssembly输出目标的程序。
 
-Because you configured the custom `+dfx.json+` file with a `+cargo build+` command that compiles to WebAssembly, you can use the `+dfx+` command-line interface and standard work flow to perform all of the remaining steps.
+因为您使用编译成WebAssembly的 `+cargo build+` 命令配置了自定义 `+dfx.json+` 文件，所以可以使用dfx命令行接口和标准工作流程来执行所有其余步骤。
 
-To build and deploy the dapp locally:
+本地生成和部署：
 
-. Check that you are still in your project directory by running the `+pwd+` command, if necessary.
-. Open a new terminal window or tab on your local computer and navigate to your project directory.
+. 如有必要，用pwd命令来检查您是否仍在项目目录下。
+. 打开一个新的终端窗口或tab页并进入项目目录。
 +
-For example, you can do either of the following if running Terminal on macOS:
-+
+例如，在macOS终端上执行以下任一操作：
 --
-* Click *Shell*, then select *New Tab* to open a new terminal in your current working directory.
-* Click *Shell* and select *New Window*, then run `+cd ~/ic-projects/location_hello+` in the new terminal if your `+location_hello+` project is in the `+ic-projects+` working folder.
+* 单击Shell，在当前工作目录选择新选项卡以打开新的终端。
+* 点击Shell，选择新窗口，在新终端运行cd ~/ic-projects/location_hello（如果location_hello项目在ic-projects工作目录）。
 --
 +
-You should now have two terminals open with your project directory as your current working directory**.
-. Start the local canister execution environment by running the following command:
+您现在应该打开了两个已进入当前工作目录的终端。
+. 执行以下命令在本地计算机上启动Internet Computer网络。
 +
 [source,bash]
 ----
 dfx start
 ----
 +
-Depending on your platform and local security settings, you might see a warning displayed. 
-If you are prompted to allow or deny incoming network connections, click *Allow*.
-. Leave the terminal that displays network operations open and switch your focus to your original terminal where you created your project.
-. Register a unique canister identifier for the application by running the following command:
+根据您的平台和本地安全设置，您可能会看到一个警告。如果提示您允许或拒绝传入网络连接，请单点允许。
+. 离开网络操作显示信息的终端并切换到原来的终端
+. 运行以下命令为应用注册一个唯一Canister标识符：
 +
 [source,bash]
 ----
 dfx canister create --all
 ----
-. Build the dapp by running the following command:
+. 运行以下命令构建程序：
 +
 [source,bash]
 ----
 dfx build
 ----
-. Deploy the dapp on the local canister execution environment by running the following command:
+. 运行以下命令在本地部署程序：
 +
 [source,bash]
 ----
 dfx canister install --all
 ----
-. Test functions in the dapp from the command-line or in a browser.
+. 从命令行或浏览器测试功能。
 
 == Using C
 
-Because the {IC} supports dapps compiled to standard WebAssembly modules, you can use standard compilers and toolchains to build applications in languages such as  C, {cpp}, Objective-C, and Objective-{cpp} programming languages and the `+Clang+` compiler.
+因为Internet Computer支持应用编译到标准的WebAssembly模块，您能用C, C++, Objective-C和Objective-C++语言标准编译器和工具和Clang编译器来生成应用程序。
 
-To illustrate how to migrate dapps written in C to run on the {IC}, let’s look at the simple `+reverse.c+` program in the link:https://github.com/dfinity/examples/tree/master/c[examples] repository. 
-The `+reverse.c+` program contains one function—named `+go+`—that reverses a string in place.
+为了说明如何迁移用C编写的程序以在Internet Computer上运行，让我们看一下 link:https://github.com/dfinity/examples/tree/master/c[示例库]中的简单reverse.c程序。reverse.c程序包含一个名为go的函数，该函数可以反转字符串。
 
-=== Set up the development environment
+=== 搭建开发环境
 
-To compile the `+reverse.c+` program into WebAssembly, you need to have the `+clang+` compiler and standard libraries installed. 
-You can check whether you have `+clang+` installed on your local computer by running the following command:
+要将`+reverse.c+`程序编译为WebAssembly，需要安装clang编译器和标准库。 您可以通过运行以下命令来检查本地计算机上是否已安装clang：
 
 [source,bash]
 ----
 clang --version
 ----
 
-If `+clang+` is installed, the command displays information similar to the following:
+如果安装了`+clang+`，该命令将显示类似于以下内容的信息：
 
 ....
 clang version 10.0.0 
@@ -252,87 +237,83 @@ Thread model: posix
 InstalledDir: /usr/local/opt/llvm/bin
 ....
 
-If the command doesn’t return version information, install `+clang+` before continuing. 
-The steps to install `+clang+` vary depending on the operating system you are using.
-On Debian Linux, for example, run the following command:
+如果该命令未返回版本信息，请在继续之前安装clang。 根据您所使用的操作系统，安装clang的步骤会有所不同。 例如，在Debian Linux上，运行以下命令：
 
 [source,bash]
 ----
 sudo apt-get install clang lld gcc-multilib
 ----
 
-On macOS, you can install `+clang+` by installing the Developer Command-Line Tools or by installing LLVM using Homebrew. 
-For example, if `+clang+` is not installed, run the following command:
+在macOS上，您可以通过安装开发人员命令行工具或使用Homebrew安装LLVM来安装clang。 例如，如果未安装clang，请运行以下命令：
 
 [source,bash]
 ----
 brew install llvm
 ----
 
-=== Compile the program into WebAssembly
+=== 将程序编译为WebAssembly
 
-You can compile a C program to run as a WebAssembly module by first compiling using `+clang+`, then linking using `+wasm-ld+`. 
-Depending on the operating system and version of `+clang+` you are using, you might use a different version of the WebAssembly linker, such as `+wasm-ld+` on macOS or `+wasm-ld-8+` on Debian. 
+您可以先使用clang进行编译，然后使用wasm-ld进行链接，以将C程序编译为作为WebAssembly模块运行。 根据所使用的操作系统和Clang版本，您可能会使用其他版本的WebAssembly链接器，例如macOS上的wasm-ld或Debian上的wasm-ld-8。‌
+
+在macOS上编译为WebAssembly：‌
  
-To compile to WebAssembly on macOS:
- 
-. Compile the program by running the following clang command:
+. 通过运行以下clang命令来编译程序：‌
 +
 [source,bash]
 ----
 clang --target=wasm32 -c -O3 reverse.c
 ----
-. Run the linker to create the WebAssembly module by running the following `+wasm-ld+` command:
+. 通过运行以下wasm-ld命令，运行链接器以创建WebAssembly模块：‌
 +
 [source,bash]
 ----
 wasm-ld --no-entry --export-dynamic --allow-undefined reverse.o -o reverse.wasm
 ----
 
-=== Create a minimal configuration file
+=== 创建一个最小的配置文件
 
-Next, you need to prepare a simple configuration file that identifies the `+reverse+` dapp binary as a package that can be installed on the {IC} and a `+build+` directory so that you can use the `+dfx+` command-line interface to install and run the package as a canister.
+接下来，您需要准备一个简单的配置文件，标识了能安装在Internet Computer上的reverse二进制包和一个build目录，以便您能使用dfx命令行接口来作为Canister安装并运行。‌
 
-To prepare a configuration file and build directory:
+准备配置文件和构建目录：‌
 
-. Create a `+dfx.json+` file with a canisters key by running the following command:
+. 使用以下命令来创建一个带有canisters键的dfx.json文件
 +
 [source,bash]
 ----
 echo '{"canisters":{"reverse":{"main":"reverse"}}}' > dfx.json
 ----
-. Create a `+build+` directory for the dapp by running the following command:
+. 使用以下命令创建一个build目录‌
 +
 [source,bash]
 ----
 mkdir build
 ----
-. Create a `+reverse+` directory for the dapp by running the following command:
+. 运行以下命令创建一个reverse目录‌
 +
 [source,bash]
 ----
 mkdir build/reverse
 ----
-. Copy the WebAssembly modules to the new `+build/reverse+` directory by running the following command:
+. 运行以下命令拷贝WebAssembly模块到新的build/reverse目录‌
 +
 [source,bash]
 ----
 cp reverse.wasm build/reverse/
 ----
 
-=== Create a minimal interface description file
+=== 创建一个最小接口描述文件
 
-In a standard development workflow, running the `+dfx build+` command creates several files in the `+canisters+` output directory, including one or more Candid interface description (`+.did+`) files that handle type matching for the data types associated with a program’s functions.
+在标准开发工作流程中，运行dfx build命令会在Canister的输出目录中创建多个文件，包括一个或多个Candid接口描述（.did）文件，这些文件处理与程序功能关联的数据类型的类型匹配。‌
 
-For details about the syntax to use for different data types, see the link:../candid-guide/candid-intro{outfilesuffix}[_Candid Guide_] and link:https://github.com/dfinity/candid/tree/master/spec[Candid specification].
+有关用于不同数据类型的语法的详细信息，请参见link:../candid-guide/candid-intro{outfilesuffix}[_Candid规范_] 和 link:https://github.com/dfinity/candid/tree/master/spec[Candid 指导]。
 
-To create a Candid interface description file for this program:
+为此程序创建一个Candid接口描述文件：‌
 
-. Open a terminal in the `+build+` directory you created for the `+reverse.c+` program source
-. Create a new text file named `+reverse.did+`.
-. Add a description of the `+go+` function.
+. 在您为reverse.c程序源创建的build目录中打开一个终端。‌
+. 创建一个名为reverse.did的新文本文件。‌
+. 添加go函数的描述。‌
 +
-For example:
+例如：
 +
 [source.bash]
 ----
@@ -340,39 +321,39 @@ service : {
   "go": (text) -> (text);
 }
 ----
-. Save your changes and close the file to continue.
+. 保存并关闭文件。
 
-=== Deploy and test the dapp
+=== 部署和测试程序
 
-Before you can deploy and test your dapp, you need to do the following:
+在部署和测试程序之前，您需要执行以下操作：‌
 
-* Connect to either the local canister execution environment, or to the {IC} blockchain mainnet.
-* Register a network-specific identifier for the application.
+* 连接到Internet Computer网络，该网络可以在您的开发环境中本地运行，也可以在您可以访问的子网中远程运行。
+* 为应用注册一个特定网络标识。
 
-To deploy and test the dapp locally:
+在本地部署和测试：‌
 
-. Open a new terminal window or tab on your local computer.
+. 在本地计算机上打开一个新的终端窗口或选项卡。‌
 +
-For example, if running Terminal on macOS,click *Shell*, then select *New Tab* to open a new terminal in your current working directory.
-. Start the local canister execution environment in your second terminal by running the following command:
+例如，如果在macOS上运行Terminal，请单击Shell，然后选择New Tab在当前工作目录中打开一个新终端。‌
+. 通过运行以下命令，在第二个终端中的本地计算机上启动Internet Computer网络：‌
 +
 [source,bash]
 ----
 dfx start
 ----
-. Register a unique canister identifier for the `+reverse+` application by running the following command:
+. 通过运行以下命令，为reverse应用程序注册唯一的容器标识符‌
 +
 [source,bash]
 ----
 dfx canister create --all
 ----
-. Deploy the default dapp on the local canister execution environment by running the following command:
+. 通过运行以下命令在本地网络上部署默认程序：‌
 +
 [source,bash]
 ----
 dfx canister install --all
 ----
-. Call the `+go+` function in the dapp by running the following command:
+. 通过运行以下命令在程序中调用go函数：
 +
 [source,bash]
 ----
@@ -380,4 +361,4 @@ dfx canister call reverse go reward
 ("drawer")
 ----
 
-You can find additional examples of C dapps in the link:https://github.com/dfinity/examples/tree/master/c[examples] repository.
+您可以在link:https://github.com/dfinity/examples/tree/master/c[示例库]中找到C程序的其他示例。
