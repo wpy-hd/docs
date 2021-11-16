@@ -4,20 +4,19 @@
 :company-id: DFINITY
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 
-Currently, you can download the {sdk-long-name} directly from within a terminal shell on your local computer.
-With this installation option, you can be logged on as any user and no additional software is required.
+目前你能从本地计算机的终端 shell 中直接下载 {sdk-long-name}。
 
 // tag::install[] 
 [[install-latest]]
-== Install the latest directly from a terminal
+== 从终端直接安装最新版本
 
-To download and install from a terminal shell:
+从终端命令行下载和安装：
 
-. Open a terminal shell on your local computer.
+. 在本机上打开一个终端 
 +
-For example, on macOS open the Applications folder, then open Utilities and double-click *Terminal*.
+例如，在 macOS 上，打开“应用程序”文件夹，然后打开“实用程序”，然后双击“终端”。
 
-. Download and install the SDK package by running the following `curl` command:
+. 运行以下命令下载和安装 SDK 包：
 +
 [source,bash]
 ----
@@ -25,17 +24,16 @@ sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
 ----
 
 [[install-version]]
-== Install a specific version from a terminal
+== 从终端安装指定版本
 
-If you want to install a specific version, for example, to test against a previous version, you can modify the installation command to include a version.
+如果您要安装指定版本，例如测试一个以前的版本，您可以修改命令以包含指定的版本号。
 
-To download and install a specific version from a terminal shell:
+从终端命令行下载和安装指定版本：
 
-. Open a terminal shell on your local computer.
-
-. Set the `DFX_VERSION` environment variable to the version of the {sdk-short-name} package you want to install as a prefix to `+curl+` command.
+. 在本机上打开一个终端。
+. 将需要安装的版本号设置到环境变量 `DFX_VERSION`，并放置在 `+curl+` 命令前 
 +
-For example, to install version 0.8.2, you would run the following command:
+例如，安装 0.8.2 版本，运行下列命令：
 +
 [source,bash]
 ----
