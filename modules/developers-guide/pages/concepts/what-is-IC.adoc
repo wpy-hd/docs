@@ -6,41 +6,45 @@
 
 [[ic-overview]]
 
-The *{IC}* is a blockchain that enables developers, organizations, and entrepreneurs to build and deploy secure, autonomous, and tamper-proof *canisters*, an evolution of *smart contracts*.
+*{IC}* 为开发者、组织和企业提供一个计算基础设施，从而构建部署安全、自主且可信的软件程序。在IC的开放平台上，软件和服务是直接在互联网上运行的，而传统的云和分布式架构中，是运行在私有的基础设施或者特定的托管服务里。
 
-As a dapp developer, you might find it useful to think of the {IC} as providing the following key features:
+作为应用开发者，你可以理解 {IC} 提供了以下关键的基础设施：
 
-* A *globally-accessible, public blockchain* for running smart contracts at web speed, that can serve interactive web content to users.
-* A secure cryptographic protocol (*Internet Computer Protocol*) run by nodes machines operated by independent node providers in independent data centers all over the world. This guarantees the secure execution of smart contracts.
-* A *network of blockchains* connected using Chain Key cryptography that can scale out its capacity as required.
+* 一个让通用计算任务在互联网上直接运行的开发通信协议
+* 一个连接独立计算中心的分布式网络，为计算任务提供计算能力，例如硬件、CPU、内存等
+* 一个运行软件应用的全球接入扩展平台
 
-== An open blockchain
+== 一条公链
 
-The {IC} is a blockchain hosted on node machines operated by independent parties and located in geographically distributed datacenters. The nodes run the {IC} Protocol, an advanced cryptographic fault-tolerant protocol which ensures that smart contracts running on the blockchain cannot be tampered with or stopped.  The {IC} is composed of individual subnet blockchains running in parallel and connected using chain key cryptography. This means that canisters running on a subnet can seamlessly call canisters hosted in any other subnet of the {IC} blockchain.
+{IC} 不是运行在某个地方运行的硬件实物，而是由全球的独立数据中心提供的计算资源。IC整合这些资源，为用户和机构提供安全的应用服务和事务处理服务。
 
-Another important feature of the {IC} is that it runs under the control of a decentralized permissionless governance system, called *Network Nervous System* (NNS), which runs completely on-chain. The NNS can make decisions on several topics, including scaling out the {IC} by creating new subnet blockchains, updating the node machines, and configuring parameters used in the {IC} protocol. Anyone can participate in the governance and submit new proposals to the NNS or vote on open proposals. To do so, users have to stake ICP, the {IC} utility tokens, and create a *neuron* with the NNS.
+你可以认为 {IC} 是计算基础设施平台，就像亚马逊Web服务（AWS）、Google云平台（GCP）、微软Azure和企业内部部署的私有云。
+
+和公有云、私有云不同的是，IC平台不属于任何人，也不是由单独一家企业所运营。相反的，{IC} 平台的更新和运营是通过协议定义的分布式治理体系所管理。其架构将多个计算机组合成一个更强大的虚拟机。
+
+组成虚拟机的计算机在全球形成多个数据中心子网。分布式架构确保在没有防火墙和防攻击技术安全的情况下，能够进行安全的通信。独立的数据中心根据其在 {IC} 平台贡献的计算资源，获得奖励。
 
 [[next-gen]]
-== Building the next generation of software and services
+== 构架下一代软件与服务
 
-The {IC} protocol reduces platform-based risks and paves the way for innovation by re-imagining how software is built, deployed, and accessed. 
+{IC} 协议降低了平台系统的风险，为软件开发、部署和使用提供了创新的机制。
 
-For example, with the {IC}, developers can focus on writing code using canister smart contracts without environment-related distractions such as:
+例如，通过{IC}，开发者只需要关心代码开发，而不用操心运行环境相关的杂事：
 
-* physical or virtual network configuration requirements
-* load balancing services
-* firewalls, network topology, or port management
-* database configuration and maintenance
-* storage volumes and devices
+* 物理、虚拟网络配置需求
+* 负载平衡服务
+* 防火墙，网络拓扑和端口管理
+* 数据库配置和维护
+* 存储容量和存储设备
 
-By enabling developers to focus on building applications and delivering value, the {IC} helps simplify the development process, reduce time to market, and foster innovation.
+开发人员在IC平台上只要关注如何构建应用创造价值，从而简化了开发流程、加速了软件发布时间、提升了创新速度。
 
-For end-users, the {IC} provides a secure environment for accessing dapps with fewer risks.
-Because of the inherent security of the blockchain, programs running on the {IC} cannot be hijacked by malicious code, which also reduces the total cost of ownership for both application end-users or organizations.
+对于用户来说，{IC} 提供了安全的访问环境。因为区块链安全性，运行在 {IC} 上的应用不会被黑客攻击，从而保障了用户和组织的软件使用成本。
 
-In addition, because dapps can be "autonomous" and public, developers can write services that communicate with each other and share functions in ways that increase productivity and efficiency while leaving room to innovate and improve projects with confidence.
+此外，因为软件服务是自主公开的在{IC}上运行，开发者能够编写服务互相调用，从而提升了开发效率，为协作创新提供了广阔的空间。
 
-The {IC} also enables developers to use cryptographically-secure identities to enforce access controls, reducing the need to rely on usernames and passwords or external identity management plug-ins.
+开发者通过密码安全的认证方式访问{IC}资源，从而避免了对外部认证系统上的用户名和密码登录方式的的依赖。
+
 
 ////
 == Want to learn more?
