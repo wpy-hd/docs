@@ -7,40 +7,36 @@
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 
 [[quick-start-intro]]
-This {sdk-long-name} provides tools, sample code, and documentation to help you create canister smart contract dapps and deploy them on the {IC} blockchain mainnet.
-The _Quick Start_ tutorial assumes that you are installing the {sdk-short-name} for the first time and illustrates how to create, build, and deploy your first dapp. 
+{sdk-long-name} 提供工具、示例代码和文档，可帮助您创建在 Internet Computer网络上运行的程序。 快速入门教程假设您是第一次安装 DFINITY Canister SDK，并说明如何创建、构建和部署您的第一个应用程序。 
 
-To keep the instructions simple and focused on the task at hand, the _Quick start_ is split into two scenarios:
+为了使说明简单并专注于手头的任务，快速入门分为两个场景：
 
-* In the link:local-quickstart{outfilesuffix}[Local development] scenario, you create and deploy the sample dapp with processes that in a _local canister execution environment_.
+* 在 link:local-quickstart{outfilesuffix}[本地开发] 章节, 您使用本地运行的 Internet computer 进程创建和部署示例应用程序，以模拟连接到网络。
+* 在 link:network-quickstart{outfilesuffix}[On-chain deployment] 章节, 您在本地创建示例应用程序，但远程连接到外部数据中心的Internet Computer网络。
 
-* In the link:network-quickstart{outfilesuffix}[On-chain deployment] scenario, you create the sample dapp locally but _connect to the {platform}_ running on node machines in independent data centers and deploy the dapp there.
-
-If you need some help setting up your development environment—for example, if you aren’t sure how to open a new terminal, install packages, or create folders and navigate between directories—you might want to start with the link:newcomers{outfilesuffix}[Preliminary steps for newcomers].
+如果您在设置开发环境时需要一些帮助——例如，如果您不确定如何打开新终端、安装软件包或创建文件夹并在目录之间导航——您可能需要从link:newcomers{outfilesuffix}[新手的预备步骤]开始。
 
 [[default-app]]
-== Default dapp
+== 默认应用
 
-Both scenarios build and deploy a simple Hello canister smart contract that has just one function—called `+greet+`. The `+greet+` function accepts one text argument and returns the result with a greeting similar to **Hello,{nbsp}everyone!** in a terminal if you run the canister using the command-line or in an alert pop-up window if you access the dapp in a browser.
+这两个章节都构建和部署了一个简单的 Hello 应用程序，该应用程序只有一个 `+greet+` `+greet+` 函数接受一个文本参数并返回（命令行运行应用程序时在终端，浏览器访问应用程序时在弹出窗口）一个问候语。
 
-The default dapp consists of back-end code written in  {proglang}, a programming language specifically designed for interacting with the {IC}, and a simple webpack-based front-end.
+默认 dapp 包含用 {proglang} 写的后端代码，Motoko 是一门专门为与 {IC} 交互而设计的编程语言，以及一个简单的基于 webpack 的前端。
 
-== Getting ICP tokens and cycles
+== 获取 ICP 代币和 Cycles
+正如 link:../developers-guide/concepts/tokens-cycles{outfilesuffix}[代币和 cycles] 中所讨论的，需要 Cycles 来为 Internet Computer上运行的应用程序的Canister操作赋能。作为开发人员，您有几种不同的选择来获取和管理应用程序的Cycles：
 
-As discussed in link:../developers-guide/concepts/tokens-cycles{outfilesuffix}[Tokens and cycles], *cycles* are required to power canister smart contract operations for dapps running on the {platform}. 
-As a developer, you have a few different options for acquiring and managing cycles for your dapps:
+* 交易所购买ICP 代币，然后使用 link:network-quickstart{outfilesuffix}#convert-tokens[DFINITY Canister SDK 命令行]或link:https://nns.ic0.app/#/auth[网络神经系统应用程序]将您的代币转换为Cycles。
+* 通过提供这些服务的提供商注册帐户或Cycles钱包。
+* 通过Cycles钱包或其他应用直接从Canister中发送和接收。
 
-* Purchase or claim ICP tokens through an exchange that lists ICP tokens available for trade, then convert your tokens to cycles using the link:network-quickstart{outfilesuffix}#convert-tokens[{sdk-short-name} command-line interface] or the link:https://nns.ic0.app/#/auth[Network Nervous System application].
-* Register for cycles by signing up for an account or link:../developers-guide/default-wallet{outfilesuffix}#wallet-create-wallets[cycles wallet] through a provider offering those services.
-* Coordinate with other developers to link:../developers-guide/default-wallet{outfilesuffix}#wallet-send[send] and link:../developers-guide/default-wallet{outfilesuffix}#wallet-receive[receive] cycles directly to and from canisters through a cycles wallet or another canister.
+因为只有Canister需要和消耗Cycles——执行操作并为它们使用的资源付费——cycles总是在Canister之间转移，而不是给用户或开发者。 但是，您可以通过为您创建的Cycles钱包或使用类似的应用程序来管理Cycles的分配。
 
-Because only canisters require and consume cycles—to perform operations and to pay for the resources they use—cycles are always transferred between canisters and not to users or developers. You can manage the distribution of cycles, however, through a cycles wallet created for you or using a similar dapp. 
+== 想了解更多
 
-== Want to learn more?
+如果您在开始之前想查看更多信息，或者想在亲自尝试之前查看如何部署的演示，请查看以下相关资源：
 
-If you are looking for more information before getting started or want to view a demonstration of how to deploy before you try it for yourself, check out the following related resources:
-
-* link:../developers-guide/concepts/tokens-cycles{outfilesuffix}#using-tokens[How you can use ICP tokens (overview)]
-* link:https://www.youtube.com/watch?v=jduSMHxdYD8[Building on the Internet Computer: Fundamentals (video)]
-* link:https://www.youtube.com/watch?v=60uHQfoA8Dk[What is the DFINITY Canister SDK (video)]
-* link:https://www.youtube.com/watch?v=yqIoiyuGYNA[Deploying your first dapp (video)]
+* link:../developers-guide/concepts/tokens-cycles{outfilesuffix}#using-tokens[如何使用 ICP 代币（概述）]
+* link:https://www.youtube.com/watch?v=jduSMHxdYD8[在 Internet Computer上构建：基础知识（视频）]
+* link:https://www.youtube.com/watch?v=60uHQfoA8Dk[DFINITY Canister SDK是什么（视频）]
+* link:https://www.youtube.com/watch?v=yqIoiyuGYNA[部署您的第一个应用程序（视频）]
