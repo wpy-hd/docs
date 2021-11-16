@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Develop using different languages :: 互联网计算机开发者文档</title>
+    <title>使用不用的语言开发 :: 互联网计算机开发者文档</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
@@ -607,49 +607,44 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Develop using different languages</h1>
+<h1 class="page">使用不用的语言开发</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Most of the example dapps in this guide use Motoko—the programming language specifically designed to work with the 互联网计算机.
-Potentially, however, you can write dapps in any language that compiles to WebAssembly to deploy applications that run on the 互联网计算机.
-This section provides some high-level guidance for writing dapps in different languages and how to deploy them on the 互联网计算机.</p>
+<p>本文档中的大多数示例都使用Motoko（一种专门设计用于Internet Computer的编程语言）。但是，您可以使用可编译为WebAssembly的任何语言编写程序，以部署在Internet Computer上运行的应用程序。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_rust"><a class="anchor" href="#_using_rust"></a>Using Rust</h2>
+<h2 id="_rust"><a class="anchor" href="#_rust"></a>Rust</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can create Rust projects to run on the 互联网计算机 by using Cargo and compiling your dapp to use WebAssembly as the target output.</p>
+<p>您可以使用Cargo编译程序并使用WebAssembly作为输出来创建一个Rust项目运行在Internet Computer上。</p>
 </div>
 <div class="paragraph">
-<p>This section provides a summary of the key steps involved in deploying a Rust program as a canister smart contract on the 互联网计算机.
-You should note, however, that the steps described here only illustrate one approach.
-Other implementation approaches are also possible.</p>
+<p>本节总结了在Internet Computer上将Rust程序作为Canister部署时所涉及的关键步骤。然而，您应该知道，此处描述的步骤仅说明了一种方法，其他的实现方式也是可能的。</p>
 </div>
 <div class="paragraph">
-<p>Note that the <a href="https://github.com/dfinity/cdk-rs">Rust canister development kit (Rust CDK)</a> for provides some shortcuts to make it easier to write functions as query and update calls and includes several <a href="https://github.com/dfinity/cdk-rs/tree/next/examples">examples</a> to get you started building Rust-based projects, but you can also develop dapps for the 互联网计算机 without using the Rust CDK.</p>
+<p>请注意，<a href="https://github.com/dfinity/cdk-rs">Rust Canister开发工具包（Rust CDK）</a> 提供了一些快捷方式，可简化编写查询和更新函数调用的过程，并提供了一些<a href="https://github.com/dfinity/cdk-rs/tree/next/examples">示例</a>来帮助您开始构建基于Rust的项目，但您也可以为Internet Computer开发应用程序而不使用Rust CDK。</p>
 </div>
 <div class="sect2">
-<h3 id="_create_a_project"><a class="anchor" href="#_create_a_project"></a>Create a project</h3>
+<h3 id="_创建项目"><a class="anchor" href="#_创建项目"></a>创建项目</h3>
 <div class="paragraph">
-<p>Because most Rust programmers use Cargo to handle build and package management tasks, such as downloading and compiling the libraries your dapp depends on, your first step is to create a new Rust project using the Cargo command-line interface.</p>
+<p>因为大部分的Rust程序员使用Cargo来处理创建和包管理任务（储如下载和编译依赖库），首先使用Cargo命令行接口来创建一个新的Rust项目。</p>
 </div>
 <div class="paragraph">
-<p>Alternatively, you could create a new project using DFINITY Canister 软件开发工具包 (SDK) instead of Cargo, but creating a project using Cargo represents the typical workflow for creating Rust projects.</p>
+<p>或者，您可以使用DFINITY Canister软件开发包(SDK)来代替Cargo创建新的项目，但是使用Cargo来创建新项目代表了Rust项目的典型工作流程。</p>
 </div>
 <div class="paragraph">
-<p>To create a new Rust project:</p>
+<p>创建一个新项目：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a terminal shell on your local computer, if you don’t already
-have one open.</p>
+<p>在本地计算机上打开终端。</p>
 </li>
 <li>
-<p>Verify that you have Cargo installed by running the following command:</p>
+<p>运行以下命令以验证Cargo是否安装：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cargo --version</code></pre>
@@ -657,68 +652,65 @@ have one open.</p>
 </div>
 </li>
 <li>
-<p>Change to the folder you are using for your 互联网计算机 or Rust sample projects.</p>
+<p>更改您的IC或Rust示例项目的目录。</p>
 </li>
 <li>
-<p>Create a new project by running a command similar to the following:</p>
+<p>运行类似以下命令来创新项目：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cargo new my_rust_dapp</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command creates a new <code>my_rust_dapp</code> directory with a default <code>Cargo.toml</code> file and a <code>src</code> directory with a default <code>main.rs</code> file.</p>
+<p>该命令创建一个新的`my_rust_dapp<code>目录，包含了默认的</code>Cargo.toml<code>文件和带有默认</code>main.rs<code>文件的</code>src`目录。</p>
 </div>
 </li>
 <li>
-<p>Change to your project directory by running the following command:</p>
+<p>运行以下命令进入到项目录：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd my_rust_dapp</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If you list the contents of this directory, you&#8217;ll see that it only contains the <code>Cargo.toml</code> file and <code>src</code> directory.
-To compile this project to run on the 互联网计算机, you&#8217;ll need some additional files.</p>
+<p>如果您显示该目录内容，您将看到目录下仅包含`Cargo.toml<code>文件和</code>src`目录。为了编译项目以使能在Internet Computer上运行，您还需要一些其他文件。</p>
 </div>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_modify_the_cargo_configuration_file"><a class="anchor" href="#_modify_the_cargo_configuration_file"></a>Modify the Cargo configuration file</h3>
+<h3 id="_修改cargo配置文件"><a class="anchor" href="#_修改cargo配置文件"></a>修改Cargo配置文件</h3>
 <div class="paragraph">
-<p>The <code>Cargo.toml</code> file provides a <strong>manifest</strong> for each Rust package.
-The manifest contains sections that specify configuration details for the package.
-To prepare the Rust project to run on the 互联网计算机, we&#8217;ll copy the default <code>Cargo.toml</code> file then modify some of the configuration details for the project.</p>
+<p><strong>manifest</strong> 文件为每个Rust包提供一个清单。清单包含了包的配置明细。为准备Rust项目运行在Internet Computer上，我们需要拷贝默认的*manifest*文件并修改一些详细配置信息。</p>
 </div>
 <div class="paragraph">
-<p>To modify the <code>Cargo.toml</code> file:</p>
+<p>修改`Cargo.toml`文件：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Check that you are in the root directory for your project by running the <code>pwd</code> command, if necessary.</p>
+<p>如果有必要，运行pwd命令来检查您是否在项目的根目录下。</p>
 </li>
 <li>
-<p>Copy the default <code>Cargo.toml</code> file to the <code>src</code> directory by running the following command:</p>
+<p>运行以下命令拷贝默认的`Cargo.toml`文件到src目录：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">cp Cargo.toml src/Cargo.toml</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Projects that run on the 互联网计算机 typically use one project-level <code>Cargo.toml</code> file to set up a workspace for the canister members of the project and a second <code>Cargo.toml</code> file in the source code directory to configure settings for each canister.</p>
+<p>在Internet Computer上运行的项目通常使用一个项目级别的`Cargo.toml<code>文件为项目的Canister成员设置工作区，并在源代码目录中使用第二个</code>Cargo.toml`文件为每个Canister配置参数。</p>
 </div>
 </li>
 <li>
-<p>Open the <code>Cargo.toml</code> file that is the root directory of your project in a text editor.</p>
+<p>用文本编辑器打开项目根目录下的`Cargo.toml`文件</p>
 <div class="paragraph">
-<p>By default, the file contains the <code>[package]</code> and the <code>[dependencies]</code> sections.</p>
+<p>默认情况下，该文件包含[package]和[dependencies]部分。</p>
 </div>
 </li>
 <li>
-<p>Replace the <code>[package]</code> section with a <code>[workspace]</code> section similar to the following:</p>
+<p>用类似以下`[workspace]<code>部分来替换</code>[package]`：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">[workspace]
@@ -728,21 +720,20 @@ members = [
 </div>
 </div>
 <div class="paragraph">
-<p>For information about the <code>[workspace]</code> section and <code>[workspace]</code> keys, see <a href="https://doc.rust-lang.org/cargo/reference/workspaces.html">Workspaces</a>.
-For information about the other sections and keys you can configure in the <code>Cargo.toml</code> file, see <a href="https://doc.rust-lang.org/cargo/reference/manifest.html">The Manifest Format</a>.</p>
+<p>有关`[workspace]<code>部分和键值信息，请参阅<a href="https://doc.rust-lang.org/cargo/reference/workspaces.html">Workspaces</a>。有关</code>Cargo.toml`配置的其他部分和键值，请参阅<a href="https://doc.rust-lang.org/cargo/reference/manifest.html">清单格式</a>。</p>
 </div>
 </li>
 <li>
-<p>Remove the <code>[dependencies]</code> section.</p>
+<p>删除`[dependencies]`</p>
 </li>
 <li>
-<p>Save your changes and close the file to continue.</p>
+<p>部分保存并关闭文件</p>
 </li>
 <li>
-<p>Open the <code>src/Cargo.toml</code> file in a text editor.</p>
+<p>在文本编辑器中打开`src/Cargo.toml` 文件</p>
 </li>
 <li>
-<p>Add a <code>[lib]</code> section with the path to the main source code similar to the following:</p>
+<p>增加类似以下带有主要源代码目录的`[lib]`</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">[lib]
@@ -751,10 +742,10 @@ path = "main.rs"</code></pre>
 </div>
 </li>
 <li>
-<p>Update the <code>[dependencies]</code> section with any package dependencies.</p>
+<p>更新`[dependencies]`部分的依赖项</p>
 </li>
 <li>
-<p>Save your changes and close the file to continue.</p>
+<p>保存并关闭文件。</p>
 </li>
 </ol>
 </div>
@@ -762,25 +753,24 @@ path = "main.rs"</code></pre>
 <div class="sect2">
 <h3 id="_add_a_canister_configuration_file"><a class="anchor" href="#_add_a_canister_configuration_file"></a>Add a canister configuration file</h3>
 <div class="paragraph">
-<p>When you create a new project using the DFINITY Canister SDK, the <code>dfx new</code> command automatically adds a default <code>dfx.json</code> configuration file to the project directory.
-Because we created the Rust project using Cargo, you need to manually create this file in your project directory.</p>
+<p>当您用DFINITY Canister SDK创建一个新项目时，<code>+dfx new+`命令自动添加一个默认</code>+dfx.json+`配置文件到项目目录。因为他们已经使用Cargo来创建Rust项目，所以您需要手工在项目目录下创建该文件。</p>
 </div>
 <div class="paragraph">
-<p>To add the <code>dfx.json</code> configuration file:</p>
+<p>添加`dfx.json`配置文件：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Check that you are still in your project directory by running the <code>pwd</code> command, if necessary.</p>
+<p>如有必要，用pwd命令来检查您是否仍在项目目录下。</p>
 </li>
 <li>
-<p>Create a new <code>dfx.json</code> configuration file in the root directory for your project.</p>
+<p>在项目根目录下创建一个dfx.json配置文件。</p>
 </li>
 <li>
-<p>Open the <code>dfx.json</code> file in a text editor.</p>
+<p>在文本编辑器中打开dfx.json文件。</p>
 </li>
 <li>
-<p>Add the <code>version</code> and <code>canisters</code> keys with settings similar to the following to the <code>dfx.json</code> file:</p>
+<p>添加类似以下设置的version和canisters键到dfx.json文件</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
@@ -797,66 +787,64 @@ Because we created the Rust project using Cargo, you need to manually create thi
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s take a closer look at these settings.</p>
+<p>让我们详细看看这些配置</p>
 </div>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>version</code> setting is used to identify the version of the software used to create the project.</p>
+<p>`version`用于标识创建项目软件的版本号</p>
 </li>
 <li>
-<p>The <code>canisters</code> section specifies the name of the project&#8217;s canisters.
-In this case, there&#8217;s only one canister and it is named <code>my_rust_dapp</code>.</p>
+<p>`version`部分指定项目的Canister名字。在本例中，仅有一个名为my_rust_program的Canister</p>
 </li>
 <li>
-<p>The <code>type</code> key is set to <code>custom</code> because this canister is not one of the currently recognized (<code>motoko</code> or <code>assets</code>) canister types.</p>
+<p>因为不是可标识的canister类型之一（motoko或assets），`type`键设置为custom</p>
 </li>
 <li>
-<p>The <code>candid</code> key specifies the name and location of the Candid interface description file to use for this project.</p>
+<p>`candid`键指定用于此项目的Candid接口描述文件的名称和位置。</p>
 </li>
 <li>
-<p>The <code>wasm</code> key specifies the path to the WebAssembly file generated by the <code>cargo build</code> command.</p>
+<p>`wasm`键指定cargo编译命令生成的WebAssembly文件路径</p>
 </li>
 <li>
-<p>The <code>build</code> key specifies the <code>cargo</code> command used to compile the output.</p>
+<p>`build`键指定用于编译输出的cargo命令</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>These are the minimum settings required.
-As you build more complex programs, you might need to include additional configuration details in the <code>Cargo.toml</code> file, the <code>dfx.json</code> file, or both files.</p>
+<p>这些是最小配置需要。随着您构建更复杂的程序，您会需要在 Cargo.toml, dfx.json中进行其他详细配置</p>
 </div>
 </li>
 <li>
-<p>Save your changes and close the file to continue.</p>
+<p>保存并关闭文件。</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_a_candid_interface_description_file"><a class="anchor" href="#_create_a_candid_interface_description_file"></a>Create a Candid interface description file</h3>
+<h3 id="_创建一个candid接口描述文件"><a class="anchor" href="#_创建一个candid接口描述文件"></a>创建一个Candid接口描述文件</h3>
 <div class="paragraph">
-<p>In addition to the <code>dfx.json</code> configuration file, you need to have a Candid interface description file—for example, <code>my_rust_dapp.did</code>—to map your dapp&#8217;s input parameters and return value formats to their language-agnostic representation in Candid.</p>
+<p>除了`dfx.json<code>配置文件之外，您还需要一个Candid接口描述文件（例如，</code>my_rust_dapp.did`），以映射程序输入参数和返回值格式到Candid中伪代码表现形式。</p>
 </div>
 <div class="paragraph">
-<p>To add the Candid interface description file:</p>
+<p>添加Candid接口描述文件：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Check that you are still in your project directory by running the <code>pwd</code> command, if necessary.</p>
+<p>如有必要，用`pwd`命令来检查您是否仍在项目目录下。</p>
 </li>
 <li>
-<p>Create a new Candid interface description file—for example, <code>my_rust_dapp.did</code>—in the <code>src</code> directory for your project.</p>
+<p>在项目的src目录下创建一个新的Candid接口描述文件（例如`my_rust_dapp.did`）</p>
 </li>
 <li>
-<p>Open the Candid interface description file in a text editor and add a description for each function the dapp defines.</p>
+<p>在文本编辑器中打开这个描述文件并且为程序中每一个函数添加描述。</p>
 <div class="paragraph">
-<p>For example, if the <code>my_rust_dapp</code> is a simple dapp that increments a counter using the <code>increment</code>, <code>read</code>, and <code>write</code> functions, the <code>my_rust_dapp.did</code> file might look like this:</p>
+<p>例如，如果 <code>my_rust_dapp</code> 是一个简单的计数器程序，使用`increment<code>, `+read+`和</code>+write+<code>函数，</code>+my_rust_dapp.did+`看起来是这样的：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -869,113 +857,118 @@ As you build more complex programs, you might need to include additional configu
 </div>
 </li>
 <li>
-<p>Save your changes and close the file to continue.</p>
+<p>保存并关闭文件。</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_modify_the_default_dapp"><a class="anchor" href="#_modify_the_default_dapp"></a>Modify the default dapp</h3>
+<h3 id="_修改默认程序"><a class="anchor" href="#_修改默认程序"></a>修改默认程序</h3>
 <div class="paragraph">
-<p>When you create a new project, your project <code>src</code> directory includes a template <code>main.rs</code> file with the "Hello, World!" program.</p>
+<p>当您创建一个新的项目，<code>+src+`目录包含了一个"Hello World!"的模板</code>+main.rs+`文件</p>
 </div>
 <div class="paragraph">
-<p>To modify the template source code:</p>
+<p>修改模板源代码：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open the template <code>src/main.rs</code> file in a text editor and delete the existing content.</p>
+<p>在文本编辑器中打开`src/main.rs`文件并删除存在的内容。</p>
 </li>
 <li>
-<p>Write the program you want to deploy on the 互联网计算机.</p>
+<p>编写您想在 互联网计算机 上发布的程序。</p>
 <div class="paragraph">
-<p>As you write your program, keep in mind that there are two types of calls—update calls and query calls—and that update functions use asynchronous messaging.</p>
+<p>编写程序时，请注意有两种类型的调用（更新调用和查询调用），更新函数使用异步消息</p>
 </div>
 </li>
 <li>
-<p>Save your changes and close the <code>main.rs</code> file.</p>
+<p>保存并关闭 src/main.rs文件。</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deploy_the_dapp"><a class="anchor" href="#_deploy_the_dapp"></a>Deploy the dapp</h3>
+<h3 id="_连接到网络并部署"><a class="anchor" href="#_连接到网络并部署"></a>连接到网络并部署</h3>
 <div class="paragraph">
-<p>Before you can deploy and test your dapp, you need to do the following:</p>
+<p>在您部署和测试程序之前，您有以下工作要做：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Connect to either the local canister execution environment, or to the 互联网计算机 blockchain mainnet.</p>
+<p>连接您开发环境Internet Computer网络本地运行或连接到您能访问的子网上远程运行。</p>
 </li>
 <li>
-<p>Register a network-specific identifier for the application.</p>
+<p>为您的应用注册一个网络特定标识符。</p>
 </li>
 <li>
-<p>Compile the dapp with a target output of WebAssembly.</p>
+<p>编译带有WebAssembly输出目标的程序。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Because you configured the custom <code>dfx.json</code> file with a <code>cargo build</code> command that compiles to WebAssembly, you can use the <code>dfx</code> command-line interface and standard work flow to perform all of the remaining steps.</p>
+<p>因为您使用编译成WebAssembly的 <code>cargo build</code> 命令配置了自定义 <code>dfx.json</code> 文件，所以可以使用dfx命令行接口和标准工作流程来执行所有其余步骤。</p>
 </div>
 <div class="paragraph">
-<p>To build and deploy the dapp locally:</p>
+<p>本地生成和部署：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Check that you are still in your project directory by running the <code>pwd</code> command, if necessary.</p>
+<p>如有必要，用pwd命令来检查您是否仍在项目目录下。</p>
 </li>
 <li>
-<p>Open a new terminal window or tab on your local computer and navigate to your project directory.</p>
+<p>打开一个新的终端窗口或tab页并进入项目目录。</p>
 <div class="paragraph">
-<p>For example, you can do either of the following if running Terminal on macOS:</p>
+<p>例如，在macOS终端上执行以下任一操作：</p>
+</div>
+</li>
+</ol>
 </div>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Click <strong>Shell</strong>, then select <strong>New Tab</strong> to open a new terminal in your current working directory.</p>
+<p>单击Shell，在当前工作目录选择新选项卡以打开新的终端。</p>
 </li>
 <li>
-<p>Click <strong>Shell</strong> and select <strong>New Window</strong>, then run <code>cd ~/ic-projects/location_hello</code> in the new terminal if your <code>location_hello</code> project is in the <code>ic-projects</code> working folder.</p>
+<p>点击Shell，选择新窗口，在新终端运行cd ~/ic-projects/location_hello（如果location_hello项目在ic-projects工作目录）。</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>You should now have two terminals open with your project directory as your current working directory**.</p>
+<p>+
+您现在应该打开了两个已进入当前工作目录的终端。
+. 执行以下命令在本地计算机上启动Internet Computer网络。</p>
 </div>
-</li>
-<li>
-<p>Start the local canister execution environment by running the following command:</p>
+<div class="paragraph">
+<p>+</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx start</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Depending on your platform and local security settings, you might see a warning displayed.
-If you are prompted to allow or deny incoming network connections, click <strong>Allow</strong>.</p>
+<p>+
+根据您的平台和本地安全设置，您可能会看到一个警告。如果提示您允许或拒绝传入网络连接，请单点允许。
+. 离开网络操作显示信息的终端并切换到原来的终端
+. 运行以下命令为应用注册一个唯一Canister标识符：</p>
 </div>
-</li>
-<li>
-<p>Leave the terminal that displays network operations open and switch your focus to your original terminal where you created your project.</p>
-</li>
-<li>
-<p>Register a unique canister identifier for the application by running the following command:</p>
+<div class="paragraph">
+<p>+</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister create --all</code></pre>
 </div>
 </div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Build the dapp by running the following command:</p>
+<p>运行以下命令构建程序：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx build</code></pre>
@@ -983,7 +976,7 @@ If you are prompted to allow or deny incoming network connections, click <strong
 </div>
 </li>
 <li>
-<p>Deploy the dapp on the local canister execution environment by running the following command:</p>
+<p>运行以下命令在本地部署程序：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister install --all</code></pre>
@@ -991,7 +984,7 @@ If you are prompted to allow or deny incoming network connections, click <strong
 </div>
 </li>
 <li>
-<p>Test functions in the dapp from the command-line or in a browser.</p>
+<p>从命令行或浏览器测试功能。</p>
 </li>
 </ol>
 </div>
@@ -1002,17 +995,15 @@ If you are prompted to allow or deny incoming network connections, click <strong
 <h2 id="_using_c"><a class="anchor" href="#_using_c"></a>Using C</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Because the 互联网计算机 supports dapps compiled to standard WebAssembly modules, you can use standard compilers and toolchains to build applications in languages such as  C, C++, Objective-C, and Objective-C++ programming languages and the <code>Clang</code> compiler.</p>
+<p>因为Internet Computer支持应用编译到标准的WebAssembly模块，您能用C, C, Objective-C和Objective-C语言标准编译器和工具和Clang编译器来生成应用程序。</p>
 </div>
 <div class="paragraph">
-<p>To illustrate how to migrate dapps written in C to run on the 互联网计算机, let’s look at the simple <code>reverse.c</code> program in the <a href="https://github.com/dfinity/examples/tree/master/c">examples</a> repository.
-The <code>reverse.c</code> program contains one function—named <code>go</code>—that reverses a string in place.</p>
+<p>为了说明如何迁移用C编写的程序以在Internet Computer上运行，让我们看一下 <a href="https://github.com/dfinity/examples/tree/master/c">示例库</a>中的简单reverse.c程序。reverse.c程序包含一个名为go的函数，该函数可以反转字符串。</p>
 </div>
 <div class="sect2">
-<h3 id="_set_up_the_development_environment"><a class="anchor" href="#_set_up_the_development_environment"></a>Set up the development environment</h3>
+<h3 id="_搭建开发环境"><a class="anchor" href="#_搭建开发环境"></a>搭建开发环境</h3>
 <div class="paragraph">
-<p>To compile the <code>reverse.c</code> program into WebAssembly, you need to have the <code>clang</code> compiler and standard libraries installed.
-You can check whether you have <code>clang</code> installed on your local computer by running the following command:</p>
+<p>要将`reverse.c`程序编译为WebAssembly，需要安装clang编译器和标准库。 您可以通过运行以下命令来检查本地计算机上是否已安装clang：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1020,7 +1011,7 @@ You can check whether you have <code>clang</code> installed on your local comput
 </div>
 </div>
 <div class="paragraph">
-<p>If <code>clang</code> is installed, the command displays information similar to the following:</p>
+<p>如果安装了`clang`，该命令将显示类似于以下内容的信息：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1031,9 +1022,7 @@ InstalledDir: /usr/local/opt/llvm/bin</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If the command doesn’t return version information, install <code>clang</code> before continuing.
-The steps to install <code>clang</code> vary depending on the operating system you are using.
-On Debian Linux, for example, run the following command:</p>
+<p>如果该命令未返回版本信息，请在继续之前安装clang。 根据您所使用的操作系统，安装clang的步骤会有所不同。 例如，在Debian Linux上，运行以下命令：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1041,8 +1030,7 @@ On Debian Linux, for example, run the following command:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>On macOS, you can install <code>clang</code> by installing the Developer Command-Line Tools or by installing LLVM using Homebrew.
-For example, if <code>clang</code> is not installed, run the following command:</p>
+<p>在macOS上，您可以通过安装开发人员命令行工具或使用Homebrew安装LLVM来安装clang。 例如，如果未安装clang，请运行以下命令：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1051,18 +1039,17 @@ For example, if <code>clang</code> is not installed, run the following command:<
 </div>
 </div>
 <div class="sect2">
-<h3 id="_compile_the_program_into_webassembly"><a class="anchor" href="#_compile_the_program_into_webassembly"></a>Compile the program into WebAssembly</h3>
+<h3 id="_将程序编译为webassembly"><a class="anchor" href="#_将程序编译为webassembly"></a>将程序编译为WebAssembly</h3>
 <div class="paragraph">
-<p>You can compile a C program to run as a WebAssembly module by first compiling using <code>clang</code>, then linking using <code>wasm-ld</code>.
-Depending on the operating system and version of <code>clang</code> you are using, you might use a different version of the WebAssembly linker, such as <code>wasm-ld</code> on macOS or <code>wasm-ld-8</code> on Debian.</p>
+<p>您可以先使用clang进行编译，然后使用wasm-ld进行链接，以将C程序编译为作为WebAssembly模块运行。 根据所使用的操作系统和Clang版本，您可能会使用其他版本的WebAssembly链接器，例如macOS上的wasm-ld或Debian上的wasm-ld-8。‌</p>
 </div>
 <div class="paragraph">
-<p>To compile to WebAssembly on macOS:</p>
+<p>在macOS上编译为WebAssembly：‌</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Compile the program by running the following clang command:</p>
+<p>通过运行以下clang命令来编译程序：‌</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">clang --target=wasm32 -c -O3 reverse.c</code></pre>
@@ -1070,7 +1057,7 @@ Depending on the operating system and version of <code>clang</code> you are usin
 </div>
 </li>
 <li>
-<p>Run the linker to create the WebAssembly module by running the following <code>wasm-ld</code> command:</p>
+<p>通过运行以下wasm-ld命令，运行链接器以创建WebAssembly模块：‌</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">wasm-ld --no-entry --export-dynamic --allow-undefined reverse.o -o reverse.wasm</code></pre>
@@ -1081,17 +1068,17 @@ Depending on the operating system and version of <code>clang</code> you are usin
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_a_minimal_configuration_file"><a class="anchor" href="#_create_a_minimal_configuration_file"></a>Create a minimal configuration file</h3>
+<h3 id="_创建一个最小的配置文件"><a class="anchor" href="#_创建一个最小的配置文件"></a>创建一个最小的配置文件</h3>
 <div class="paragraph">
-<p>Next, you need to prepare a simple configuration file that identifies the <code>reverse</code> dapp binary as a package that can be installed on the 互联网计算机 and a <code>build</code> directory so that you can use the <code>dfx</code> command-line interface to install and run the package as a canister.</p>
+<p>接下来，您需要准备一个简单的配置文件，标识了能安装在Internet Computer上的reverse二进制包和一个build目录，以便您能使用dfx命令行接口来作为Canister安装并运行。‌</p>
 </div>
 <div class="paragraph">
-<p>To prepare a configuration file and build directory:</p>
+<p>准备配置文件和构建目录：‌</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create a <code>dfx.json</code> file with a canisters key by running the following command:</p>
+<p>使用以下命令来创建一个带有canisters键的dfx.json文件</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">echo '{"canisters":{"reverse":{"main":"reverse"}}}' &gt; dfx.json</code></pre>
@@ -1099,7 +1086,7 @@ Depending on the operating system and version of <code>clang</code> you are usin
 </div>
 </li>
 <li>
-<p>Create a <code>build</code> directory for the dapp by running the following command:</p>
+<p>使用以下命令创建一个build目录‌</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir build</code></pre>
@@ -1107,7 +1094,7 @@ Depending on the operating system and version of <code>clang</code> you are usin
 </div>
 </li>
 <li>
-<p>Create a <code>reverse</code> directory for the dapp by running the following command:</p>
+<p>运行以下命令创建一个reverse目录‌</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir build/reverse</code></pre>
@@ -1115,7 +1102,7 @@ Depending on the operating system and version of <code>clang</code> you are usin
 </div>
 </li>
 <li>
-<p>Copy the WebAssembly modules to the new <code>build/reverse</code> directory by running the following command:</p>
+<p>运行以下命令拷贝WebAssembly模块到新的build/reverse目录‌</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp reverse.wasm build/reverse/</code></pre>
@@ -1126,28 +1113,28 @@ Depending on the operating system and version of <code>clang</code> you are usin
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_a_minimal_interface_description_file"><a class="anchor" href="#_create_a_minimal_interface_description_file"></a>Create a minimal interface description file</h3>
+<h3 id="_创建一个最小接口描述文件"><a class="anchor" href="#_创建一个最小接口描述文件"></a>创建一个最小接口描述文件</h3>
 <div class="paragraph">
-<p>In a standard development workflow, running the <code>dfx build</code> command creates several files in the <code>canisters</code> output directory, including one or more Candid interface description (<code>.did</code>) files that handle type matching for the data types associated with a program’s functions.</p>
+<p>在标准开发工作流程中，运行dfx build命令会在Canister的输出目录中创建多个文件，包括一个或多个Candid接口描述（.did）文件，这些文件处理与程序功能关联的数据类型的类型匹配。‌</p>
 </div>
 <div class="paragraph">
-<p>For details about the syntax to use for different data types, see the <a href="../candid-guide/candid-intro.html"><em>Candid Guide</em></a> and <a href="https://github.com/dfinity/candid/tree/master/spec">Candid specification</a>.</p>
+<p>有关用于不同数据类型的语法的详细信息，请参见<a href="../candid-guide/candid-intro.html"><em>Candid规范</em></a> 和 <a href="https://github.com/dfinity/candid/tree/master/spec">Candid 指导</a>。</p>
 </div>
 <div class="paragraph">
-<p>To create a Candid interface description file for this program:</p>
+<p>为此程序创建一个Candid接口描述文件：‌</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a terminal in the <code>build</code> directory you created for the <code>reverse.c</code> program source</p>
+<p>在您为reverse.c程序源创建的build目录中打开一个终端。‌</p>
 </li>
 <li>
-<p>Create a new text file named <code>reverse.did</code>.</p>
+<p>创建一个名为reverse.did的新文本文件。‌</p>
 </li>
 <li>
-<p>Add a description of the <code>go</code> function.</p>
+<p>添加go函数的描述。‌</p>
 <div class="paragraph">
-<p>For example:</p>
+<p>例如：</p>
 </div>
 <div class="listingblock bash">
 <div class="content">
@@ -1158,39 +1145,39 @@ Depending on the operating system and version of <code>clang</code> you are usin
 </div>
 </li>
 <li>
-<p>Save your changes and close the file to continue.</p>
+<p>保存并关闭文件。</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deploy_and_test_the_dapp"><a class="anchor" href="#_deploy_and_test_the_dapp"></a>Deploy and test the dapp</h3>
+<h3 id="_部署和测试程序"><a class="anchor" href="#_部署和测试程序"></a>部署和测试程序</h3>
 <div class="paragraph">
-<p>Before you can deploy and test your dapp, you need to do the following:</p>
+<p>在部署和测试程序之前，您需要执行以下操作：‌</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Connect to either the local canister execution environment, or to the 互联网计算机 blockchain mainnet.</p>
+<p>连接到Internet Computer网络，该网络可以在您的开发环境中本地运行，也可以在您可以访问的子网中远程运行。</p>
 </li>
 <li>
-<p>Register a network-specific identifier for the application.</p>
+<p>为应用注册一个特定网络标识。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>To deploy and test the dapp locally:</p>
+<p>在本地部署和测试：‌</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a new terminal window or tab on your local computer.</p>
+<p>在本地计算机上打开一个新的终端窗口或选项卡。‌</p>
 <div class="paragraph">
-<p>For example, if running Terminal on macOS,click <strong>Shell</strong>, then select <strong>New Tab</strong> to open a new terminal in your current working directory.</p>
+<p>例如，如果在macOS上运行Terminal，请单击Shell，然后选择New Tab在当前工作目录中打开一个新终端。‌</p>
 </div>
 </li>
 <li>
-<p>Start the local canister execution environment in your second terminal by running the following command:</p>
+<p>通过运行以下命令，在第二个终端中的本地计算机上启动Internet Computer网络：‌</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx start</code></pre>
@@ -1198,7 +1185,7 @@ Depending on the operating system and version of <code>clang</code> you are usin
 </div>
 </li>
 <li>
-<p>Register a unique canister identifier for the <code>reverse</code> application by running the following command:</p>
+<p>通过运行以下命令，为reverse应用程序注册唯一的容器标识符‌</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister create --all</code></pre>
@@ -1206,7 +1193,7 @@ Depending on the operating system and version of <code>clang</code> you are usin
 </div>
 </li>
 <li>
-<p>Deploy the default dapp on the local canister execution environment by running the following command:</p>
+<p>通过运行以下命令在本地网络上部署默认程序：‌</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister install --all</code></pre>
@@ -1214,7 +1201,7 @@ Depending on the operating system and version of <code>clang</code> you are usin
 </div>
 </li>
 <li>
-<p>Call the <code>go</code> function in the dapp by running the following command:</p>
+<p>通过运行以下命令在程序中调用go函数：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx canister call reverse go reward
@@ -1225,7 +1212,7 @@ Depending on the operating system and version of <code>clang</code> you are usin
 </ol>
 </div>
 <div class="paragraph">
-<p>You can find additional examples of C dapps in the <a href="https://github.com/dfinity/examples/tree/master/c">examples</a> repository.</p>
+<p>您可以在<a href="https://github.com/dfinity/examples/tree/master/c">示例库</a>中找到C程序的其他示例。</p>
 </div>
 </div>
 </div>

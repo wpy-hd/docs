@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Design dapps :: 互联网计算机开发者文档</title>
+    <title>设计应用 :: 互联网计算机开发者文档</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
@@ -607,12 +607,11 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Design dapps</h1>
+<h1 class="page">设计应用</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>As you come up with ideas for dapps, you are going to make many design decisions about how to structure and organize your project.
-On the 互联网计算机, there are a few design decisions that you should pay particular attention to as you plan the implementation for your app.</p>
+<p>在您提出应用程序构想时，您将做出许多有关如何构建和组织项目的设计决定。这些设计决定中的大多数与您将应用程序部署在传统云服务还是Internet Computer上无关。但是，如果要在Internet Computer上进行部署，则在规划应用程序的实现时，应特别注意一些设计决策。</p>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -621,7 +620,7 @@ On the 互联网计算机, there are a few design decisions that you should pay 
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-This section is work-in-progress and incomplete. As best practices and design patterns evolve for building dapps that run on the 互联网计算机, the information included here will also evolve and change accordingly.
+此部分正在进行中且不完整。 随着构建在 互联网计算机 上运行的 dapp 的最佳实践和设计模式不断发展，此处包含的信息也将相应地发展和变化。
 </td>
 </tr>
 </table>
@@ -629,72 +628,66 @@ This section is work-in-progress and incomplete. As best practices and design pa
 </div>
 </div>
 <div class="sect1">
-<h2 id="_single_or_multiple_canister_architecture"><a class="anchor" href="#_single_or_multiple_canister_architecture"></a>Single or multiple canister architecture</h2>
+<h2 id="_单或多个canister架构"><a class="anchor" href="#_单或多个canister架构"></a>单或多个Canister架构</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>One of the first decisions you might want to consider when designing your dapp is whether it should be encapsulated in a single canister smart contract or consist of multiple canister smart contracts.</p>
+<p>在设计应用程序时，您首先要考虑的是将其封装在单个容器中还是由多个容器组成。</p>
 </div>
 <div class="paragraph">
-<p>For example, if you are writing a simple service with no front-end, you might want to use a single canister to simplify project management and maintenance and focus on adding features.
-If your dapp has both front-end assets and back-end business logic, your project is likely to consist of at least two canisters, with one canister for managing user interface components and another canister for the backend services the application provides.</p>
+<p>例如，如果要编写没有前端的简单服务，您可能想要使用单个容器来简化项目管理和维护，并着重于添加功能。如果您的应用程序同时具有前端资源和后端业务逻辑，则您的项目可能至少包含两个容器，一个容器用于管理用户界面组件，另一个容器用于应用程序提供的后端服务。</p>
 </div>
 <div class="paragraph">
-<p>In planning, you might also consider placing some common reusable services in their own canister so that they can be imported and called from other more-specialized canisters or made available for other developers to use.
-The <a href="https://github.com/dfinity/linkedup">LinkedUp</a> sample dapp illustrates this approach by splitting the professional service dapp into two canisters.
-In the LinkedUp example, the functions that establish social connections are defined in the <code>connectd</code> canister and separate from the functions used to set up professional profiles that are defined in the <code>linkedup</code> canister.
-It is easy to imagine extending the dapp with a third canister, for example to schedule events based on profile attributes or shared connections.</p>
+<p>在规划中，您可能还考虑将一些常见的可重用服务放在其自己的容器中，以便可以从其他更专业的容器中导入和调用它们，或将其提供给其他开发人员使用。LinkedUp示例应用程序通过将专业服务应用分为两个容器来说明此方法。</p>
+</div>
+<div class="paragraph">
+<p>在<a href="https://github.com/dfinity/linkedup">LinkedUp</a>示例中，建立社交连接的功能在connectd Canister中定义，并且与用于设置在linkedup Canister中定义的专业配置的功能分开。</p>
+</div>
+<div class="paragraph">
+<p>很容易想象用第三个Canister来扩展应用，例如基于配置属性和共享连接来安排事件。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_segregating_actors_from_types_and_utilities"><a class="anchor" href="#_segregating_actors_from_types_and_utilities"></a>Segregating actors from types and utilities</h2>
+<h2 id="_将actor从类型和实用程序区分开"><a class="anchor" href="#_将actor从类型和实用程序区分开"></a>将Actor从类型和实用程序区分开</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In planning the architecture for your project, one common practice is to place the code for the main actor in one file with separate additional files for defining the types you program uses and utility functions that don&#8217;t require an actor.</p>
-</div>
-<div class="paragraph">
-<p>For example, you might set up the back-end logic for your dapp to consist of the following files:</p>
+<p>在规划项目的体系结构时，一种常见的做法是将主要Actor的代码放在一个文件中，并使用单独的其他文件来定义程序使用的类型和不需要Actor的实用程序功能。‌
+例如，您可以将应用程序的后端逻辑设置为包含以下文件：‌</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Main.mo</code> or <code>main.rs</code> with the functions that require an actor to send query and update calls.</p>
+<p><code>+Main.mo+`或</code>+main.rs+`具有Actor发送查询和更新调用的功能。</p>
 </li>
 <li>
-<p><code>Util.mo</code> or <code>util.rs</code> with helper functions that can be imported for the actor to use.</p>
+<p>具有助手功能的`Util.mo<code>或</code>Util.mo`可以导入以供actor使用。</p>
 </li>
 <li>
-<p><code>Types.mo</code> or <code>types.rs</code> with all of the data type definitions for your dapp.</p>
+<p><code>+Types.mo+`或</code>+types.rs+`，其中包含应用程序的所有数据类型定义。</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_query_calls"><a class="anchor" href="#_using_query_calls"></a>Using query calls</h2>
+<h2 id="_使用查询调用"><a class="anchor" href="#_使用查询调用"></a>使用查询调用</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As discussed in <a href="../developers-guide/concepts/canisters-code.html#query-update">Query and update methods</a>, queries return results faster than update calls. Therefore,explicitly marking a function as a <code>query</code> is an effective strategy for improving application performance.
-In the planning and design phase, you should consider how best to use query calls instead of functions that can perform queries or updates.</p>
+<p>如<a href="../developers-guide/concepts/canisters-code.html#query-update">查询和更新方法</a>中所述，查询返回结果比更新调用更快。 因此，将功能明确标记为查询是提高应用程序性能的有效策略。 在规划和设计阶段，应考虑如何更好地使用查询调用，而不是可以执行查询或更新的功能。</p>
 </div>
 <div class="paragraph">
-<p>That is a good general rule to follow and can be applied broadly to most categories of dapps.
-However, you should also consider the security and performance trade-off that queries don’t go through consensus and do not appear on the blockchain.
-For some dapps, that trade-off might be appropriate. For example, if you are developing a blogging platform, queries that retrieve articles matching a tag probably don’t warrant going through consensus to ensure that a majority of nodes agree on the results.
-However, if your dapp is retrieving sensitive information—like financial data—you might want more assurance about your results than a basic query provides.</p>
+<p>这是遵循的良好通用规则，可以广泛应用于大多数类别的应用程序。 但是，您还应该考虑安全性和性能之间的折衷，即查询无法达成共识。 对于某些应用程序，这种折衷可能是合适的。 例如，如果您正在开发博客平台，则检索与标签匹配的文章的查询可能不必保证通过共识来确保大多数节点都同意结果。 但是，如果您的应用程序正在检索敏感信息（例如财务数据），则可能需要提供更多有关结果的保证。</p>
 </div>
 <div class="paragraph">
-<p>As an alternative to basic queries, the 互联网计算机 also supports <strong>certified queries</strong>. Certified queries enable you to receive <strong>authenticated responses</strong> that end users can trust. Using certified queries is an advanced technique that is not covered in the tutorials or other developer-focused documentation, but you can learn about how the authentication works and what you need to do to configure your program to return certified data in response to queries in the <a href="../interface-spec/index.html">Interface specification</a>.</p>
+<p>作为基本查询的替代方法，Internet Computer还支持经过认证的查询。 认证查询使您能够接收信任的认证响应。 使用认证查询是一种高级技术，在教程或其他以开发人员为中心的文档中均未涉及，但是您可以了解身份验证的工作原理，以及如何配置程序以响应接口规范中的查询返回认证数据。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_data_storage_and_retrieval"><a class="anchor" href="#_data_storage_and_retrieval"></a>Data storage and retrieval</h2>
+<h2 id="_数据存储与检索"><a class="anchor" href="#_数据存储与检索"></a>数据存储与检索</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The 互联网计算机 enables you to use <strong>stable memory</strong> to handle long-term data storage—often referred to as orthogonal persistence—and to use <strong>query calls</strong> to retrieve your data.
-Efficiently retrieving data using one or more keys can typically be achieved by using data structures like hash tables.
-It is also possible to implement a more traditional database inside a canister.</p>
+<p>对于许多应用程序，数据库主要用于提供记录的长期存储，可以使用一个或多个关键字段有效地检索记录。在Internet Computer上，通常通过诸如哈希表之类的数据结构来解决这种用例。代替传统的数据库，Internet Computer使您可以使用稳定的内存来处理长期数据存储（通常称为正交持久性），并可以使用查询调用来检索数据。 尽管这种方法适用于大多数应用程序和简单的键值数据库请求，但它不能完全模拟关系数据库。</p>
 </div>
 </div>
 </div>

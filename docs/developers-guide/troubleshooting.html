@@ -632,15 +632,15 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="troubleshoot-node"><a class="anchor" href="#troubleshoot-node"></a>Ensuring node is available in a project</h2>
+<h2 id="troubleshoot-node"><a class="anchor" href="#troubleshoot-node"></a>确保 node 在项目中可用</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Because projects rely on webpack to provide the framework for the default front-end, you must have <code>node.js</code> installed in your development environment and accessible in the project directory.</p>
+<p>因为项目依赖webpack为默认前端提供框架，所以你的开发环境中必须安装`node.js`，并且在项目目录下可以访问。</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you want to develop your project without using the default webpack configuration and canister aliases, you can remove the <code>assets</code> canister from the <code>dfx.json</code> file or build your project using a specific canister name. For example, you can choose to build only the hello program without front-end assets by running the following command:</p>
+<p>如果你想在不使用默认 webpack 配置和 canister别名的情况下开发你的项目，你可以从 <code>dfx.json</code> 文件中删除 <code>assets</code>  canister或使用特定的 canister名称构建你的项目。 例如，您可以通过运行以下命令来选择仅构建 hello 程序，而无需前端资源：</p>
 <div class="literalblock">
 <div class="content">
 <pre>dfx build hello</pre>
@@ -648,10 +648,10 @@
 </div>
 </li>
 <li>
-<p>If you are using the default webpack configuration and running <code>dfx build</code> fails, you should try running <code>npm install</code> in the project directory then re-running <code>dfx build</code>.</p>
+<p>如果你使用默认的 webpack 配置并且运行 <code>dfx build</code> 失败，你应该尝试在项目目录中运行 <code>npm install</code> 然后重新运行 <code>dfx build</code>。</p>
 </li>
 <li>
-<p>If running <code>npm install</code> in the project directory doesn&#8217;t fix the issue, you should check the configuration of the <code>webpack.config.js</code> file for syntax errors.</p>
+<p>如果在项目目录下运行 <code>npm install</code> 没有解决问题，你应该检查 <code>webpack.config.js</code> 文件的配置是否有语法错误。</p>
 </li>
 </ul>
 </div>
