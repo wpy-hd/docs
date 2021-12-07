@@ -1,24 +1,21 @@
-= Manage canister smart contracts
+= 管理 canister 智能合约
 March 2020 (Alpha)
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 :proglang: Motoko
 :IC: Internet Computer
 :company-id: DFINITY
 
-If you have experimented with using the {sdk-long-name} by following the tutorials in the link:tutorials-intro{outfilesuffix}[Tutorials] section or by cloning examples from the link:https://github.com/dfinity/examples[examples] repository, you are already familiar with how to build and deploy programs as **canister smart contracts**.
-This section provides additional information about the canister lifecycle and how to manage canisters.
+如果您已经按照链接中的教程尝试使用 {sdk-long-name}：link:tutorials-intro{outfilesuffix}[教程] 部分或通过从链接中下载示例：link:https://github.com/dfinity/examples[示例]代码库，您已经熟悉如何构建和部署程序为**canister 智能合约**。本节提供有关canister生命周期以及如何管理canister的信息。
 
 [[create-canister]]
-== Obtaining a canister smart contract identifier
+== 获取 canister 标识符
 
-Depending on your preferred development workflow, you can obtain a unique identifier for your canister smart contract, before or after you have a program ready to compile.
-For example, if you want to reserve a unique identifier for your canister smart contract on a subnet before you have written any code, you can do so by running the `+dfx canister create+` command.
-This command essentially creates an empty canister placeholder into which you can later install your code. The resulting canister will obtain a unique identifier.
+根据您喜欢的开发工作流程，您可以在准备好编译程序之前或之后获取 canister 智能合约的唯一标识符。 例如，如果您想在编写任何代码之前为子网上的容器智能合约保留一个唯一标识符，您可以通过运行 dfx canister create 命令来实现。 此命令实质上创建了一个空的 canister 占位符，您可以稍后将代码安装到其中。 生成的 canister 将获得唯一标识符。
 
-To obtain a unique identifier for a canister:
+为 canister 注册唯一标识符：‌
 
-. Open a new terminal window or tab on your local computer.
-. Create a new project for the canister you plan to create by running a command similar to the following:
+. 在本地计算机打开终端
+. 通过运行与以下命令类似的命令，为计划创建的Canister创建一个新项目。‌
 +
 [source,bash]
 ----
