@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Manage canister smart contracts :: 互联网计算机开发者文档</title>
+    <title>管理 canister 智能合约 :: 互联网计算机开发者文档</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
@@ -607,33 +607,30 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Manage canister smart contracts</h1>
+<h1 class="page">管理 canister 智能合约</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you have experimented with using the DFINITY Canister 软件开发工具包 (SDK) by following the tutorials in the <a href="tutorials-intro.html">Tutorials</a> section or by cloning examples from the <a href="https://github.com/dfinity/examples">examples</a> repository, you are already familiar with how to build and deploy programs as <strong>canister smart contracts</strong>.
-This section provides additional information about the canister lifecycle and how to manage canisters.</p>
+<p>如果您已经按照链接中的教程尝试使用 DFINITY Canister 软件开发工具包 (SDK)：<a href="tutorials-intro.html">教程</a> 部分或通过从链接中下载示例：<a href="https://github.com/dfinity/examples">示例</a>代码库，您已经熟悉如何构建和部署程序为<strong>canister 智能合约</strong>。本节提供有关canister生命周期以及如何管理canister的信息。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="create-canister"><a class="anchor" href="#create-canister"></a>Obtaining a canister smart contract identifier</h2>
+<h2 id="create-canister"><a class="anchor" href="#create-canister"></a>获取 canister 标识符</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Depending on your preferred development workflow, you can obtain a unique identifier for your canister smart contract, before or after you have a program ready to compile.
-For example, if you want to reserve a unique identifier for your canister smart contract on a subnet before you have written any code, you can do so by running the <code>dfx canister create</code> command.
-This command essentially creates an empty canister placeholder into which you can later install your code. The resulting canister will obtain a unique identifier.</p>
+<p>根据您喜欢的开发工作流程，您可以在准备好编译程序之前或之后获取 canister 智能合约的唯一标识符。 例如，如果您想在编写任何代码之前为子网上的容器智能合约保留一个唯一标识符，您可以通过运行 dfx canister create 命令来实现。 此命令实质上创建了一个空的 canister 占位符，您可以稍后将代码安装到其中。 生成的 canister 将获得唯一标识符。</p>
 </div>
 <div class="paragraph">
-<p>To obtain a unique identifier for a canister:</p>
+<p>为 canister 注册唯一标识符：‌</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open a new terminal window or tab on your local computer.</p>
+<p>在本地计算机打开终端</p>
 </li>
 <li>
-<p>Create a new project for the canister you plan to create by running a command similar to the following:</p>
+<p>通过运行与以下命令类似的命令，为计划创建的Canister创建一个新项目。‌</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dfx new YOUR-PROJECT-NAME</code></pre>
