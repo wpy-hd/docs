@@ -95,22 +95,23 @@ dfx build
 ////
 
 [[deploy-canister]]
-== Deploy canister smart contracts
+== 在Internet Computer网络上部署Canister
 
-After you have compiled a program, you can install the compiled code in a canister smart contract running either on a local canister execution environment or on the {IC} blockchain.
+编译程序后，可以将编译后的代码安装在本地运行的Internet Computer网络上，也可以安装在远程网络上。
 
-The canister identifier that was created in advance or during the build process determines where your code is installed during deployment.
+预先创建的Canister标识符或在构建过程中创建的Canister标识符决定了在部署过程中代码的安装位置。
 
-To deploy the code for the first time:
+首次在Internet Computer网络上进行部署：
 
-. Open a new terminal and navigate to your project directory.
-. Start the local canister execution environment, if necessary.
+. 打开一个终端并进入项目目录。
+
+. 如有必要，启动Internet Computer网络。
 +
-In most cases, this step is only necessary if you are running the canisters locally.
+多数情况下，仅当您在本机运行Internet Computer网络，才需要执行该步骤。
 +
-If you were registering canisters to run on a remote execution environment, e.g. the {IC} blockchain, you would include the `+--network+` command-line option to perform tasks on the environment specified under this parameter.
-. Verify you have canister identifiers for all of the canisters you want to deploy.
-. Deploy all of the canisters by running the following command:
+如果Canister安装在远程网络上，则应包括--network命令行选项，以在该网络上执行任务。
+. 验证您具有要部署的所有Canister的标识符。
+. 运行以下命令部署所有Canister。
 +
 [source,bash]
 ----
@@ -118,44 +119,40 @@ dfx canister install --all
 ----
 
 [[lookup-id]]
-== Look up a canister smart contract identifier
+== 查找Canister标识符
 
-All canisters have unique identifiers.
-You often need to use these identifiers to interact with the canister.
-For example, if you want to access the front-end canister for a dapp or interact with a service using the Candid web interface, you must specify the appropriate canister identifier.
+所有Canister都具有唯一的，特定网络的标识符。
 
-Because the identifiers are specific to the environment where the canisters are deployed, the files used to store the information are in different directories.
-For example, identifiers for a canister deployed locally are located in the project's `+.dfx/local/canister_ids.json+` file.
+您通常需要使用这些标识符与Canister进行交互。 例如，如果要访问应用程序的前端Canister或使用Candid Web接口与服务进行交互，则必须指定适当的Canister标识符。
 
-You can look up the canister identifier for any specific canister by running the `+dfx canister id+` command.
-For example, to look up the the canister identifier for the `+lookup+` canister deployed on the local canister execution environment, you could run the following command:
+由于标识符是特定于网络的，因此用于存储信息的文件位于不同的目录中。 例如，本地部署的Canister的标识符位于项目的.dfx/local/canister_ids.json文件中。
 
+您可以通过运行dfx canister id命令来查找任何特定Canister的标识符。 例如，要查找部署在本地网络上的名为lookup的Canister标识符，可以运行以下命令：
 ....
 dfx canister id lookup
 ....
 
-To look up the canister identifier for the same canister deployed on the environment specified by the `+ic+` alias, you would run the following command:
-
+要查找由IC别名指定的网络上部署的同一Canister的标识符，请运行以下命令：
 ....
 dfx canister --network=ic id lookup
 ....
 
 [[add-wallet]]
-== Add a wallet for existing canister smart contracts
+== 为现有的Canister添加钱包
 
-When you are doing local development, creating a new project automatically creates a default wallet for you to use with the canisters in that project. If you want to add a wallet for projects with canisters that you have previously created, you can force `dfx` to generate one by taking a couple of manual steps.
+当您本地开发创建新项目时会同时自动创建一个默认钱包，如果想为原来创建的Canister添加一个钱包，您可强制用dfx通过手动步骤来生成。
 
-To add a wallet for use with an existing canister:
+为现有Canister添加钱包：
 
-. Open a terminal and navigate to your project directory.
-. Stop the local canister execution environment, if necessary, by running the following command:
+. 打开一个终端并进入项目目录。
+. 如有必要，运行以下命令来停止Internet Computer网络。
 +
 [source,bash]
 ----
 dfx stop
 ----
-. Delete the `+.dfx+` directory.
-. Start the local canister execution environment network by running the following command:
+. 删除.dfx目录。
+. 使用以下命令启动Internet Computer网络。
 +
 [source,bash]
 ----
@@ -163,74 +160,71 @@ dfx start --clean
 ----
 
 [[reinstall-canister]]
-== Reinstall a canister smart contract
+== 重新安装Canister
 
-During the development cycle, you might want to install, then replace your program as you debug and improve it.
+在开发周期中，您可能会安装，然后随着调试和改进的需要替换程序。
 
-In this scenario, you might want to keep the canister identifier you have registered but without preserving any of the canister code or state.
-For example, your canister might only have test data that you don't want to keep or you might have decided to change the program altogether but want to reinstall under a canister identifier you used to install a previous program. 
+在这种情况下，您可能希望保留已注册的Canister标识符，但不保留任何Canister的代码或状态。例如，您的Canister可能只包含您不想保留的测试数据，或者您可能决定完全更改程序，但想在先前安装的Canister标识符下重新安装。
 
-To reinstall a canister:
+在Internet Computer网络上重新安装： 
 
-. Open a new terminal and navigate to your project directory.
-. Start the local canister execution environment, if necessary.
+. 打开一个终端并进入项目目录。
+. 如有必要，启动Internet Computer网络。
 +
-In most cases, this step is only necessary if you are running the canisters locally.
+多数情况下，仅当您在本机运行Internet Computer网络，才需要执行该步骤。
+
 +
-If you were registering canisters to run on a remote execution environment, e.g. the {IC} blockchain, you would include the `+--network+` command-line option to perform tasks on the environment specified under this parameter.
-. Verify you have canister identifiers for all of the canisters you want to re-deploy.
-. Re-deploy all of the canisters by running the following command:
+如果Canister重新安装在远程网络上，则应包括--network命令行选项，以在该网络上执行任务。
+. 验证您具有要重新部署的所有Canister的标识符。
+. 运行以下命令以重新部署所有Canister
 +
 [source,bash]
 ----
 dfx canister install --all --mode reinstall
 ----
 
-Note that you can use the `+reinstall+` mode to replace any canister, regardless of whether the canister has code or state associated with it.
+请注意，无论Canister是否具有与之关联的代码或状态，都可以使用重新安装模式来替换。
 
 [[set-owner]]
-== Set an identity to own a canister smart contract
+== 为拥有一个Canister设置身份
 
-In most cases, a `+default+` user identity is created for you automatically the first time you run the `+dfx canister create+` command.
-This default identity consists of the public and private key pair generated for your local user account. 
-Typically, this `+default+` identity is also the default owner of all of the projects you create and all of the canisters you deploy.
-You can, however, proactively create and use identities of your choice to circumvent the `+default+` user identity from being used.
+在大多数情况下，第一次运行dfx canister create命令时会自动为您创建一个默认用户身份。此默认身份包括为您的本地用户帐户生成的公钥和私钥对。通常，此默认标识还是您创建的所有项目和您部署的所有Canister的默认所有者。但是您可以创建和使用您选择的用户来代换默认用户。
 
-As an example, the following scenario illustrates creating a `+registered_owner+` identity that is then used to register, build, deploy, and call the `+pubs+` project.
+例如，以下场景说明了创建一个registered_owner身份，该身份随后用于注册，构建，部署和调用pubs项目。
 
-To set an identity for a project:
+为项目设置身份：
 
-. Create a new project by running the following command:
+. 运行以下命令创建新项目
 +
 [source,bash]
 ----
 dfx new pubs
 ----
-. Change to the project directory by running the following command:
+. 运行以下命令进入项目目录：
 +
 [source,bash]
 ----
 cd pubs
 ----
-. Start the local canister execution environment in the background by running the following command:
+. 运行以下命令在后台启用Internet Computer网络：
 +
 [source,bash]
 ----
 dfx start --background
 ----
-. Create a new `+registered_owner+` identity by running the following command:
+. 运行以下命令创建一个新的身份:
 +
 [source,bash]
 ----
 dfx identity new registered_owner
 ----
-. Set the active user context to use the `+registered_owner+` identity by running the following command:
+. 运行以下命令，将当前用户设置为registered_owner
 +
 [source,bash]
 ----
 dfx identity use registered_owner
 ----
-. Register, build, and deploy canisters for the project by running the following commands:
+. 运行以下命令为项目注册，构建和部署Canister：
 +
 [source,bash]
 ----
@@ -239,8 +233,8 @@ dfx build --all
 dfx canister install --all
 ----
 +
-These commands run using the `+registered_owner+` identity, making that user the owner of the canisters deployed.
-. Call the `+greet+` function to verify a successful deployment by running the following command:
+这些命令使用registered_owner身份运行，从而使该用户成为已部署Canister的所有者。
+. 运行以下命令，通过调用greet函数以验证部署是否成功：
 +
 [source,bash]
 ---- 
@@ -248,7 +242,7 @@ dfx canister call pubs greet '("Sam")'
 ----
 
 [[running-state]]
-== Managing the running state of a canister smart contract
+== 管理Canister运行状态
 
 After you deploy a canister, it can begin receiving and processing requests from users and from other canisters.
 Canisters that are available to send requests and receive replies are considered in be in a **Running** state.
