@@ -5,49 +5,48 @@ ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 :IC: Internet Computer
 :company-id: DFINITY
 
-This section provides information to help you troubleshoot and resolve or work around common issues that are related to the following tasks:
+本部分提供的信息可帮助您定位和解决与以下任务相关的常见问题：
 
-* downloading and installing the {sdk-short-name}
-* creating, building, or deploying canisters
-* using the `+dfx+` command-line interface
-* running the local canister execution environment
+* 下载并安装DFINITY Canister SDK
+* 创建，构建或部署Canister
+* 使用dfx命令行接口
+* 在本地开发环境中运行Internet Computer网络
 
 include::developers-guide:page$webpack-config.adoc[leveloffset=-1,tag=node]
 
-== Migrating an existing project
+== 迁移现有项目
 
-Currently, there is no automatic migration or backward compatibility for any projects that you might have created using previous versions of the `+dfx+` command-line interface.
-After upgrading to the latest version, you might see error or failure messages if you attempt to build or install a project created with a previous version of the `+dfx+` command-line interface.
+当前，对于使用早期版本的dfx命令行接口创建的任何项目，都没有自动迁移或向后兼容性。 升级到最新版本后，如果尝试构建或安装使用dfx命令行接口的早期版本创建的项目，则可能会看到错误或失败消息。
 
-In many cases, however, you can continue to work with projects from a previous release by manually changing the dfx setting in the dfx.json configuration file, then rebuilding the project to be compatible with the version of the `+dfx+` command-line interface you have currently installed.
+但是，在许多情况下，您可以通过手动更改dfx.json配置文件中的dfx设置，然后重建项目以使其与您拥有的dfx命令行界面版本兼容。
 
-For example, if you have a project that was created with `+dfx+` version `+0.8.0+`, open the `+dfx.json+` file in a text editor and change the `+dfx+` setting to the latest version or remove the section entirely.
+例如，如果您有一个使用dfx版本0.4.9创建的项目，请在文本编辑器中打开dfx.json文件，并将dfx设置更改为最新版本或完全删除该部分。
 
-== Restarting the local canister execution environment
+== 重启本地Internet Computer网络
 
-In some cases, starting the local canister execution environment fails due to stale state. 
-If you encounter issues when running `+dfx start+` to start the local canister execution environment:
+在某些情况下，由于复制状态错误，在本地启动Internet Computer网络失败。
 
-. In the terminal that displays the IC emulation the execution environment uses, press Control-C to interrupt the local canister execution environment process.
+如果在运行dfx start时遇到问题：
 
-. Stop the local canister execution environment by running the following command:
+. 在显示网络操作的终端中，按Control-C中断本地网络进程。
+. 运行以下命令停止本地Internet Computer网络：
 +
 [source,bash]
 ----
 dfx stop
 ----
-. Restart the local canister execution environment in a clean state by running the following command:
+. 运行以下命令，以纯净状态重新启动Internet Computer：
 +
 [source,bash]
 ----
 dfx start --clean
 ----
 +
-The `+--clean+` option removes checkpoints and stale state information from your project's cache so that you can restart the local canister execution environment and web server processes in a clean state.
-
-Keep in mind, however, that if you reset the state information by running `+dfx start --clean+`, your existing canisters are also removed. 
-
-After running `+dfx start --clean+`, recreate your canisters by running the following commands:
+--clean选项从项目的缓存中删除检查点和过时的状态信息，以便您可以在纯净状态下重新启动Internet Computer副本和Web服务器进程。
++
+但是请记住，如果通过运行dfx start --clean重置状态信息，那么现有Canister也将被删除。
++
+运行dfx start --clean之后，运行以下命令来重新创建Canister：
 
 [source,bash]
 ----
@@ -56,48 +55,46 @@ dfx build
 dfx canister install --all
 ----
 
-== Removing the canisters directory
+== 删除Canister目录
 
-If you run into problems building or deploying canisters after successfully connecting to the {IC} and registering canister identifiers, you should remove the `+canisters+` directory before attempting to rebuild or redeploy the canisters. 
+如果在成功连接到Internet Computer并注册Canister标识符后遇到构建或部署的问题，则应在尝试重建或重新部署之前删除Canister目录。
 
-You can remove the `+canisters+` directory for a project by running the following command in the project's root directory:
+通过在项目的根目录中运行以下命令来删除项目的Canister目录：
 
 [source,bash]
 ----
 rm -rf ./.dfx/* canisters/*
 ----
 
-== Reinstalling dfx
+== 重新安装dfx
 
-Many of the bugs you might encounter can be addressed by uninstalling and reinstalling the `+dfx+` command-line interface.
-Here are a few ways to reinstall `+dfx+`.
+您可能会遇到的许多错误都可以通过卸载并重新安装dfx命令行界面来解决。
 
-If you only have one version of `+dfx+` installed in your development environment, you can usually run the following command to uninstall and reinstall the latest version of `+dfx+`:
+这是重新安装dfx的几种方法。
+
+如果在开发环境中仅安装了一个版本的dfx，通常可以运行以下命令来卸载并重新安装最新版本的dfx：
 
 [source,bash]
 ----
 ~/.cache/dfinity/uninstall.sh && sh -ci "$(curl -sSL https://sdk.dfinity.org/install.sh)"
 ----
 
-If you have modified the location of the `+dfx+` binary, you might want run the following command to uninstall the version of `+dfx+` that is in your PATH, then reinstall the latest version of `+dfx+`:
+如果您已经修改了dfx二进制文件的位置，则可能需要运行以下命令来卸载PATH中的dfx版本，然后重新安装最新版本的dfx：
 
 [source,bash]
 ----
 rm -rf ~/.cache/dfinity && rm $(which dfx) && sh -ci "$(curl -sSL https://sdk.dfinity.org/install.sh)"
 ----
 
-== Xcode prerequisite
+== Xcode先决条件
 
-Some versions of the {sdk-short-name} prompted you to install Xcode when creating a new project on a macOS computer.
-The prompt has been removed and the `+dfx new+` command does not require you to install any macOS developer tools.
-However, you should have Developer Command Line Tools installed if you want to create a Git repository for your project.
+在macOS计算机上创建新项目时，某些版本的DFINITY Canister SDK会提示您安装Xcode。 该提示已删除，并且dfx new命令不需要您安装任何macOS开发工具。 但是，如果要为项目创建Git存储库，则应安装Developer Command Line Tools。
 
-You can check whether you have the developer tools installed by running `+xcode-select -p+`.
-You can install the developer tools by running `+xcode-select --install+`.
+您可以通过运行xcode-select -p来检查是否安装了开发工具。 您可以通过运行xcode-select --install来安装开发工具。
 
-== Failed build when using VMs
+== 使用虚拟机时构建失败
 
-If you are running `+dfx+` using a virtual machine image on Ubuntu or CentOS, you might see an error message that looks like this when you attempt to run the `+dfx build+` command:
+如果您在Ubuntu或CentOS上使用虚拟机运行dfx，则当您尝试运行dfx build命令时，可能会看到一条错误消息，如下所示：
 
 [source,bash]
 -----
@@ -112,46 +109,48 @@ Io(
 )
 -----
 
-== Address in use error or orphan processes
+== 处理地址错误或孤立进程
 
-If you are developing projects locally, you often have the local canister execution environment running either in a separate terminal or in the background.
-If the local environment processes do not get properly terminated, you might see operating system errors indicating that an address is already in use or or be unable to stop processes normally using the `+dfx stop+` command.
+如果在本地开发项目，那么canister的执行环境通常在单独的终端或后台运行。
 
-There are several scenarios in which you might encounter this issue. For example, if you run `+dfx start+` in a local project directory then change to a different local project directory without first stopping the canister execution environment processes, you might see this issue.
+如果本地环境下进程没有正确终止，操作系统有可能报错，显示某个地址已在使用中，或者无法正常使用`+dfx stop+`命令停止进程。
 
-If you encounter an issue where you suspect or you receive a message that an address is already in use or that a process is already running in the background, perform the following steps:
+下列情况下可能会遇到该问题。例如，如果在本地目录中运行`+dfx start+`，然后在不停止canister执行环境进程的情况下切换到其他目录。
 
-. Run the following command to see which process is listening to the 8000 port if you are using the default binding to localhost:
+如果系统报错某个地址已在使用或某个进程已在后台运行，请执行以下步骤：
+
+.  如果你使用localhost的默认绑定，运行下列命令查看哪个进程正在监听8000端口
 +
 [source,bash]
 ----
 lsof -i tcp:8000
 ----
-. Run the following command to terminate any orphan processes:
+. 执行以下命令终止孤立进程
 +
 [source,bash]
 ----
 killall dfx replica
 ----
-. Close the current terminal and open a new terminal window.
-. In the new terminal, run the following command to run the local canister execution environment in a clean state:
+.  关闭当前命令窗口，打开新的命令窗口
+.  在新的命令窗口, 执行以下命令，使得canister运行在干净的本地环境下。
 +
 [source,bash]
 ----
 dfx start --clean --background
 ----
 
-== Memory leak
+== 内存泄露
 
-Fixing memory leaks is an ongoing process. If you encounter any error messages related to memory leaks, you should do the following:
+解决内存泄漏是一个持续的过程。 如果遇到与内存泄漏有关的任何错误消息，则应执行以下操作：
 
-. Run `+dfx stop+` to stop currently running processes.
-. Uninstall `+dfx+` to prevent further degradation.
-. Re-install `+dfx+`
-. Run `+dfx start+` to restart replica processes.
+. 运行dfx stop以停止当前正在运行的进程。
+. 卸载dfx以防止进一步恶化。
+. 重新安装dfx。
+. 运行dfx start重新启动副本进程。
 
-Alternatively, you can remove the `+.cache/dfinity+` directory and re-install the latest `+dfx+` binary.
-For example:
+或者，您可以删除.cache/dfinity目录，然后重新安装最新的dfx二进制文件。
+
+例如：
 [source,bash]
 ----
 rm -rf ~/.cache/dfinity && sh -ci "$(curl -sSL https://sdk.dfinity.org/install.sh)"
