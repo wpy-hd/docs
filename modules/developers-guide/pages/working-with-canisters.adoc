@@ -107,7 +107,6 @@ dfx build
 首次在Internet Computer网络上进行部署：
 
 . 打开一个终端并进入项目目录。
-
 . 如有必要，启动Internet Computer网络。
 +
 多数情况下，仅当您在本机运行Internet Computer网络，才需要执行该步骤。
