@@ -12,41 +12,43 @@ ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 
 根据您喜欢的开发工作流程，您可以在准备好编译程序之前或之后获取 canister 智能合约的唯一标识符。 例如，如果您想在编写任何代码之前为子网上的容器智能合约保留一个唯一标识符，您可以通过运行 dfx canister create 命令来实现。 此命令实质上创建了一个空的 canister 占位符，您可以稍后将代码安装到其中。 生成的 canister 将获得唯一标识符。
 
-为 canister 注册唯一标识符：‌
+为 canister 注册唯一标识符：
 
 . 在本地计算机打开终端
-. 通过运行与以下命令类似的命令，为计划创建的Canister创建一个新项目。‌
+. 通过运行与以下命令类似的命令，为计划创建的Canister创建一个新项目。
 +
 [source,bash]
 ----
 dfx new YOUR-PROJECT-NAME
 ----
 +
-Note that the name you use for the project is also used as the canister name by default. 
-. Change to your new project directory.
-. Open the `+dfx.json+` configuration file and set the host and port for the canister execution environment you want to use (e.g. the {IC} blockchain).
-+
-If you are using a local deployment, you can skip this step.
-+
-You can also optionally change the names of your canisters or add canister settings to the configuration file if you want to create identifiers for any additional canisters you think you will need before compiling code.
-. Start the local canister execution environment, if necessary, by running the following command:
+请注意，默认情况下，您用于项目的名称也用作Canister名称。
+. 进入新项目目录。
+. 打开dfx.json配置文件，并设置要使用的Internet Computer网络的主机和端口。
+
+如果您将本地主机用作Internet Computer网络提供者，则可以跳过此步骤。
+
+如果您想在编译代码前为其他Canister创建标识符，在配置文件中可以随意修改Canister名字或添加Canister设置。
+
+. 运行以下命令启动Internet Compter网络。
 +
 [source,bash]
 ----
 dfx start --background
 ----
 +
-In most cases, this step is only necessary if you are running the canisters locally.
+在大多数情况下，仅当您在本地运行Internet Computer网络时，才需要执行此步骤。‌
 +
-If you were registering canisters to run on a remote execution environment, e.g. the {IC} blockchain, you would include the `+--network+` command-line option to perform tasks on the environment specified under this parameter.
-. Register unique identifiers for the canisters defined in the `+dfx.json+` by running the following command:
+如果要注册要在远程网络上运行的Canister，则应包括--network命令行选项，以在该网络上执行任务。
+
+. 通过运行以下命令，为dfx.json中定义的Canister注册唯一标识符。
 +
 [source,bash]
 ----
 dfx canister create --all
 ----
 +
-The command creates the `+.dfx/local+` directory and adds the `+canister_ids.json+` file to that directory for the project.
+该命令创建.dfx/local目录，并将canister_ids.json文件添加到该目录。
 
 [[local-id]]
 == Build a canister smart contract with a local identifier
