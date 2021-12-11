@@ -1,36 +1,36 @@
-= Query using an actor
+= 使用actor查询
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 :proglang: Motoko
 :IC: Internet Computer
 :company-id: DFINITY
 
-In the link:../../quickstart/quickstart-intro{outfilesuffix}[Quick start], you had your first look at a simple canister for the {IC} involving an actor object and asynchronous messaging.
-As the next step in learning to write canisters that take advantage of actor-based messaging, this tutorial illustrates how to modify a traditional `+Hello, World!+` canister to define an actor, then deploy and test your canister on a local canister execution environment.
+在link:../../quickstart/quickstart-intro{outfilesuffix}[快速开始]章节中, 已经了解过一个使用了actor对象和异步消息的简单应用。
 
-== Before you begin
+接下来的教程中，会写一个使用基于actor的消息的应用。本篇教程会讲解如何修改Hello，World！应用来定义一个actor并在本地网络部署测试。
 
-Before starting the tutorial, verify the following:
+== 开始之前
 
-* You have downloaded and installed the {sdk-short-name} package as described in link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[Download and install].
-* You have stopped any local canister execution environment processes
+开始前，需要检查下面的问题：
 
-This tutorial takes approximately 20 minutes to complete.
+* 已经按照 link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[下载与安装]章节的步骤下载并安装了DFINITY Canister SDK。
+* 本地电脑上已经关闭了ICP网络进程。
 
-== Create a new project
+本篇教程需要大概20分钟。
 
-To create a new project for this tutorial:
+== 创建新项目
+
+创建项目步骤：
 
 [arabic]
-. Open a terminal shell on your local computer, if you don’t already
-have one open.
-. Change to the folder you are using for your {IC} projects, if you are using one.
-. Create a new project by running the following command:
+. 打开终端
+. 进入工作目录
+. 运行下面的命令来创建项目
 +
 [source,bash]
 ----
 dfx new actor_hello
 ----
-. Change to your project directory by running the following command:
+. 进入项目目录
 +
 [source,bash]
 ----
@@ -39,101 +39,108 @@ cd actor_hello
 
 == Modify the default configuration
 
-In the link:explore-templates{outfilesuffix}[Exploring the default project] tutorial, you saw that creating a new project adds a default `+dfx.json+` configuration file to your project directory.
-In this tutorial, you need to modify a few of the default settings to reflect your project.
+在 link:explore-templates{outfilesuffix}[探索默认项目]章节中, ，已经介绍了创建新项目会添加一个dfx.json配置文件到项目目录。
 
-To modify the `+dfx.json+` configuration file:
+在本章节中，需要修改一些默认配置。
 
-. Open the `+dfx.json+` configuration file in a text editor.
-. Check the default settings for the `+actor_hello+` project.
-. Notice that the names and paths to source and output files all use the `+actor_hello+` project name.
+dfx.json配置修改步骤：
+
+. 在编辑器中，打开 dfx.json 配置文件。
+. 查看actor_hello项目中的默认配置。
+. 注意源码的名称和路径以及输出文件都使用actor_hello项目名称。
+
 +
-For example, the default canister smart contract name is `+actor_hello+` and the default path to the main code file is `+src/actor_hello/main.mo+`.
+例如，默认的canister名称是actor_hello并且默认的主程序路径是 src/actor_hello/main.mo.
 +
-You can rename any of these files or directories.
-If you make any changes, however, be sure that the names you use for your files and directories on the file system match the names you specify in the `+dfx.json+` configuration file.
-If you plan to use the default directory and file names, no changes are necessary.
-. Remove all of the `+actor_hello_assets+` configuration settings from the file.
+这些文件和目录可以重命名，但是要确保这些文件和目录的名称和dfx.json配置文件中的一
+致。
+如果使用默认的目录和文件名称，则无需修改。
+. 删除所有的actor_hello_assets配置。
 +
-The sample canister for this tutorial doesn't use any front-end assets, so you can remove those settings from the configuration file.
+本章节的示例程序无需使用如何前端资源，因此可以删除这些配置。
 +
-For example, the configuration file looks like this after you remove the `+actor_hello_assets+` section:
+以下是删除actor_hello_assets配置后的示例配置。
 +
 ....
 include::example$define-actor-dfx.json[]
 ....
-. Save your changes and close the file to continue.
+. 保存并关闭配置文件继续。
 
-== Modify the default canister
+== 修改默认程序
 
-In the link:explore-templates{outfilesuffix}[Exploring the default project] tutorial, you saw that creating a new project creates a default `+src+` directory with a template `+main.mo+` file.
-In this tutorial, you modify the template code to create a simple "Hello, World!" canister. by defining an actor in {proglang}. In Motoko,  an {IC} canister is representeded as a Motoko actor.
+在link:explore-templates{outfilesuffix}[探索默认项目] 章节，已经介绍了创建新项目会创建一个默认的src目录，并包含一个main.mo程序模板文件。
 
-To modify the default template source code:
+在本章节中，可以修改模板代码创建一个简单的使用actor的"Hello, World!"程序
 
-. Change to the source code directory for your project by running the following command:
+源码修改步骤：
+
+. 进入项目目录：
 +
 [source,bash]
 ----
 cd src/actor_hello
 ----
-. Open the template `+main.mo+` file in a text editor and delete the existing content.
+. 编辑器中打开main.mo文件
+
 +
-The next step is to write a canister that prints a statement like the traditional "Hello, World!" sample canister.
-To compile the canister for the {IC}, however, your Motoko code must define an `+actor+`.  
-. Copy and paste the following sample code into the `+main.mo+` file:
+接下来会编写一个可以输出"Hello, World!"的示例程序。
++
+为了编译后的程序在ICP上运行，您的程序必须包含一个具有公共函数的 actor 对象。  
+
+. 复制粘贴以下示例代码到main.mo文件
 +
 [source.copy,motoko,no-repl]
 ----
 include::example$actor_hello.mo[]
 ----
 +
-Let's take a closer look at this Motoko actor defining our canister:
+代码解析
 +
 --
-* The code imports a `+Debug+` module to provide the `+print+` functionality.
-* The actor uses the `+public query func+` declaration to define an {IC} _query_ method.  Our method doesn't need to make any permanent changes to the state of the actor. Declaring it as a query means that  any changes it does make are transient and discarded after the query completes.
+* 程序导入Debug模块来提供print功能
+* 程序使用public query func来定义一个查询方法，在这个方法中，actor_hello程序不会对canister状态进行修改或执行更新数据的操作。
 --
 +
-For more information about using a query call, see link:../concepts/canisters-code{outfilesuffix}#query-update[query calls] in link:../concepts/canisters-code{outfilesuffix}#canister-state[Canisters include both program and state].
-. Save your changes and close the `+main.mo+` file.
+要获取有关查询调用的信息，请查看 link:../concepts/canisters-code{outfilesuffix}#query-update[query calls] in link:../concepts/canisters-code{outfilesuffix}#canister-state[Canisters include both program and state].
+. 保存并关闭main.mo文件。
 
-== Checking that the canister builds
+== 使用本地识别码构建应用
 
-Usually, in order to build a canister, it's necessary to first reserve a unique canister identifier
-on the {IC} blockchain mainnet.
+如果你只需要对这个简单程序做本地测试，那么，就不需要再ICP网络为这个程序的编译输出保留一个单独的Canister识别码。
 
-However, it's also possible to compile your program without connecting to the {IC} blockchain mainnet at all.
-The `+dfx build --check+` command uses a temporary, hard-coded canister identifier to accomplish this.
+在本节中，可以无需连接ICP网络来编译程序。dfx build命令可以创建一个本地硬编码的canister识别码。
 
-To check that the canister builds:
+测试程序时，在无需本地启动或连接ICP网络的情况下，你都可以使用这个本地识别码。
 
-. Navigate back to the root of your project directory.
-. Build the canister executable with a temporary, hard-coded identifier by running the following command:
+构建程序执行文件步骤：
+
+. 进入项目目录
+. 使用本地识别码构建程序命令
 +
 [source,bash]
 ----
 dfx build --check
 ----
 +
-The `+--check+` option enables you to build a project locally to verify that it compiles and to inspect the files produced.
-Because the `+dfx build --check+` command only uses a temporary identifier, you should see output similar to the following:
+--check 选项使您能够在本地构建项目以验证它是否编译并检查生成的文件。 
++
+因为dfx build --check命令仅生成一个临时标识符，所以您应该看到类似于以下内容的输出：
 +
 ....
 Building canisters to check they build ok. Canister IDs might be hard coded.
 Building canisters...
 ....
 +
-If the canister compiles successfully, you can inspect the output in the default `+.dfx/local/canisters+` directory and `+.dfx/local/canisters/actor_hello/+` subdirectory.
+如果程序成功编译，可以在.dfx/local/canisters 和 .dfx/local/canisters/actor_hello/ 查看输出的文件。
 +
-For example, you might use the `+tree+` command to review the files created:
+比如，使用tree命令查看创建的文件
 +
 [source,bash]
 ----
 tree .dfx/local/canisters
 ----
 +
-The command displays output similar to the following
+命令输出
 ....
 .dfx/local/canisters
 ├── actor_hello
@@ -147,40 +154,37 @@ The command displays output similar to the following
 2 directories, 5 files
 ....
 
-== Deploy the project
+== 部署项目
 
-You cannot deploy the output from the `+dfx build --check+` command to  a local canister execution environment or the {IC} mainnet.
-If you wanted to deploy this project, you would need to do the following:
+dfx build --check 命令不会部署到任何ICP网络。
 
-* Connect to the either the local canister execution environment or {IC} mainnet.
-* Register a connection-specific canister identifier.
-* Deploy the canister.
+如果要部署本项目，需要做以下步骤：
 
-Let's consider these steps in a bit more detail.
-Before you can deploy this project, you must connect to either your local canister execution environment, provided by `dfx`, or to the Internet Computer blockchain mainnet.
-After you connect to a local canister execution environment or {IC} mainnet, you must also generate a unique, *connection-specific* canister identifier to replace your locally-defined identifier.
-To see the steps involved for yourself, let's deploy the project locally.
+* 连接ICP网络
+* 注册网络Canister识别码
+* 部署Canister
 
-To deploy this project locally:
+在部署项目前，必须连接到本地运行或远程的ICP网络。连接到ICP网络后，必须生成一个独一无二，网络绑定的Canister识别码来替换本地定义的识别码。
 
-. Open a terminal and navigate to your project directory, if needed.
-. Start the local canister execution environment on your local computer by running the following command:
+本地部署步骤：
+
+. 打开命令行，进入项目目录
+. 启动本地ICP网络
 +
 [source,bash]
 ----
 dfx start --background
 ----
 +
-For this tutorial, you can use the `+--background+` option to start the local canister execution environment as background processes.
-With this option, you can continue to the next step without opening another terminal shell on your local computer.
-. Generate a new canister identifier for your project on the local canister execution environment by running the following command:
+本教程中，使用--background 选项启动在后台启动ICP网络。使用这个选项后，你可以继续输入命令无需打开另一个命令行窗口。
+. 使用下面的命令为项目在本地ICP网络生成一个新的Canister识别码
 +
 [source,bash]
 ----
 dfx canister create actor_hello
 ----
 +
-You should see output similar to the following:
+输出下面的内容:
 +
 ....
 Creating a wallet canister on the local network.
@@ -189,9 +193,7 @@ Creating canister "actor_hello"...
 "actor_hello" canister created with canister id: "rrkah-fqaaa-aaaaa-aaaaq-cai"
 ....
 +
-The `+dfx canister create+` command also stores the connection-specific canister identifier in a `+canister_ids.json+` file in the `+.dfx/local+` directory.
-+
-For example:
+dfx canister create 命令会存储网络绑定的canister识别码到.dfx/local目录下的canister_ids.json文件。
 +
 ....
 {
@@ -200,63 +202,60 @@ For example:
   }
 }
 ....
-. Build the canister by running the following command:
+. 运行下列命令：
 +
 [source,bash]
 ----
 dfx build
 ----
-The command displays output similar to the following:
 +
 ....
 Building canisters...
 ....
-. Deploy your `+actor_hello+` project on the local canister execution environment by running the following command:
+. 使用下面的命令在本地ICP网络部署actor_hello 项目。
 +
 [source,bash]
 ----
 dfx canister install actor_hello
 ----
 +
-The command displays output similar to the following:
+命令输出:
 +
 ....
 Installing code for canister actor_hello, with canister_id rrkah-fqaaa-aaaaa-aaaaq-cai
 ....
 
-== Query the canister
+== 查询Canister
 
-You now have a canister deployed on your local canister execution environment and can test your canister by using the `+dfx canister call+` command.
+现在，项目已经部署到本地ICP网络，并且可以使用dfx canister call命令进行测试。
 
-To test the canister you have deployed on the local canister execution environment:
+测试部署的程序步骤如下：
 
-. Use `+dfx canister call+` to call the `+hello+` function by running the following command:
+. 使用dfx canister call命令调用hello函数:
 +
 [source,bash]
 ----
 dfx canister call actor_hello hello
 ----
-. Verify that the command returns the text specified for the `+hello+` function along with a checkpoint message in the terminal running the local canister execution environment.
+. 验证hello函数在本地网络进程中输出了相应的检查消息。
 +
-For example, the canister displays "Hello, World from DFINITY" in output similar to the following:
+例如，程序会输出类似以下内容
 +
 ....
 [Canister rrkah-fqaaa-aaaaa-aaaaq-cai] Hello, World from DFINITY 
 ....
 +
-Note that if you are running the Internet Computer mainnet in a separate terminal instead of in the background, the "Hello, World from DFINITY" message is displayed in the terminal that displays mainnet activity.
+注意"Hello, World from DFINITY" 只会出现在显示本地ICP网络活动的命令行中。
 
-== Stop the local canister execution environment
+== 关闭本地网络
 
-After you finish experimenting with your canister, you can stop the local canister execution environment so that it doesn’t continue running in the background.
+完成程序的测试后，可以关闭ICP网络。
 
-To stop the local canister execution environment, you can:
+关闭步骤：
 
-. In the terminal used to interact with your canister, issue the command `dfx stop`; or
-. In the terminal that displays operations from the local canister execution environment, press Control-C to interrupt that process; or
-. Kill the `replica` process using commands or tools of your operating system.
-
-. Stop the local canister execution environment by running the following command:
+. 打开显示网络活动的命令行，摁下Control-C命令终止本地网络进程。
+. 或通过命令行或操作系统来终止replica进程
+. 运行下面的命令终止网络。
 +
 [source,bash]
 ----
