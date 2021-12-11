@@ -1,47 +1,47 @@
-= Increment a natural number
+= 自然数自增
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 :proglang: Motoko
 :IC: Internet Computer
 :company-id: DFINITY
 
-In this tutorial, you are going to write a program that creates a single actor and provides a few basic functions to increment a counter and illustrate persistence of a value.
+在本章节中，将编写一个创建actor并提供几个函数来增加一个计数器的程序，同时会讲解如何维护一个值。
 
-For this tutorial, the actor is named `+Counter+`.
-The program uses the `+currentValue+` variable to contain a natural number that represents the current value of the counter.
-This program supports the following function calls:
+本章节中，actor被命名为Counter。程序使用 currentValue值来包含一个代表counter当前值的自然数。
 
-* The `+increment+` function call updates the current value, incrementing it by 1 (no return value).
-* The `+get+` function call queries and returns the current value of the counter.
-* The `+set+` function call updates the current value to an arbitrary numeric value you specify as an argument.
+这个程序会支持下面的函数调用：
 
-This tutorial provides a simple example of how you can increment a counter by calling functions on a deployed canister smart contract.
-By calling the functions to increment and query the counter value multiple times, you can verify that the variable state—that is, the value of the variable between calls—persists.
+* increment函数调用会将当前的值加1（无返回值）
+* get函数会调用查询并返回当前的值
+* set函数会将当前的值更新为用户输入的值
 
-== Before you begin
+本章节提供一个简单的示例，展示如何在部署的Canister中调用函数来增加一个计数器。通过多次调用函数来增加值，可以验证变量状态和变量在调用之间的持续性。
 
-Before starting the tutorial, verify the following:
+== 开始之前
 
-* You have downloaded and installed the {sdk-short-name} package as described in link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[Download and install].
-* You have stopped any local canister execution environments running on the computer.
+开始前，需要检查下面的问题：
 
-This tutorial takes approximately 20 minutes to complete.
+* 已经按照[link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[下载与安装章节]的步骤下载并安装了DFINITY Canister SDK
+* 本地电脑上已经关闭了ICP网络进程
 
-== Create a new project
+本篇教程需要大概20分钟。
 
-To create a new project directory for this tutorial:
+
+== 创建新项目
+
+创建项目步骤：
 
 [arabic]
-. Open a terminal shell on your local computer, if you don’t already have one open.
-. Change to the folder you are using for your {IC} projects, if you are using one.
-. Create a new project by running the following command:
+. 打开终端
+. 进入工作目录
+. 运行下面的命令来创建项目
 +
 [source,bash]
 ----
 dfx new my_counter
 ----
-+
-The command creates a new `+my_counter+` project for your project.
-. Change to your project directory by running the following command:
+该命令会创建新的my_counter项目
+
+. 进入项目目录
 +
 [source,bash]
 ----
