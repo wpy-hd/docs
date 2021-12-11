@@ -1,67 +1,62 @@
-= Use multiple actors
+= 使用多个actor
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 :proglang: Motoko
 :IC: Internet Computer
 :company-id: DFINITY
 
-In this tutorial, you are going to create a project with multiple actors. 
-Currently, you can only define one actor in a {proglang} file and a single actor is always compiled to a single canister smart contract.
-You can, however, create **projects** that have multiple actors and can build multiple canisters from the same `+dfx.json+` configuration file.
+在本章节中，将会创建一个由多个actor的项目。到目前为止，我们只在一个Motoko文件中定义一个actor，并且一个actor会编译到一个canister。我们也可以创建一个由多个actor的项目并且从一个dfx.json构建多个canister。
 
-For this tutorial, you are going to create separate program files for three actors in the same project. 
-This project defines the following unrelated actors:
+在本章节中，你将在同一个项目中创建单独的程序文件，并包含3个actor。这个项目定义了以下不相关的actor
 
-* The `+assistant+` actor provides functions to add and show tasks in a to-do list.
+* assistant actor提供to-do list的添加和查看任务的函数
 +
-For simplicity, the code sample for this tutorial only includes the functions to add to-do items and to show the current list of to-do items that have been added. A more complete version of this canister—with additional functions for marking items as complete and removing items from the list—is available in the link:https://github.com/dfinity/examples/[examples] repository as link:https://github.com/dfinity/examples/tree/master/motoko/simple-to-do[Simple to-do checklist].
+为了简单，本教程的示例代码只包含添加to-do list任务和查看已添加任务的功能。本程序更完整的版本-有更多功能比如标记任务完成和从to-do list删除任务-可以在link:https://github.com/dfinity/examples/[examples] 代码库的 link:https://github.com/dfinity/examples/tree/master/motoko/simple-to-do[Simple to-do checklist]查看。
 
-* The `+rock_paper_scissors+` actor provides a function for determining a winner in a hard-coded rock-paper-scissors contest.
+* rock_paper_scissors actor 提供硬编码的"石头剪刀布"比赛中决定赢家的函数。
 +
-This code sample illustrates the basic use of `+switch+` and `+case+` in a {proglang} program with hard-coded players and choices.
+这个示例代码描述了在Motoko中switch和case的用法
 
-* The `+daemon+` actor provides mock functions for starting and stopping a daemon.
+* daemon actor提供了启动和结束守护进程的模拟函数。
 +
-This code sample simply assigns a variable and prints messages for demonstration purposes.
+这个示例代码会简单地赋值一个变量并打印演示信息。
 
-== Before you begin
+== 开始之前
 
-Before starting the tutorial, verify the following:
+开始前，需要检查下面的问题
 
-* You have downloaded and installed the {sdk-short-name} package as described in link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[Download and install].
-* You have stopped any local canister execution environment running on your computer.
+* 已经按照link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[下载与安装]章节的步骤下载并安装了DFINITY Canister SDK
+* 本地电脑上已经关闭了ICP网络进程
+本篇教程需要大概20分钟。
 
-This tutorial takes approximately 20 minutes to complete.
+== 创建新项目
 
-== Create a new project
-
-To create a new project for this tutorial:
+创建项目步骤：
 
 [arabic]
-. Open a terminal shell on your local computer, if you don’t already have one open.
-. Change to the folder you are using for your {IC} projects, if you are using one.
-. Create a new project by running the following command:
+. 打开终端
+. 进入工作目录
+. 行下面的命令来创建项目
 +
 [source,bash]
 ----
 dfx new multiple_actors
 ----
-. Change to your project directory by running the following command:
+. 进入项目目录
 +
 [source,bash]
 ----
 cd multiple_actors
 ----
 
-== Modify the default configuration
+== 修改默认配置
 
-You have already seen that creating a new project adds a default `+dfx.json+` configuration file to your project directory.
-For this tutorial, you need to add sections to this file to specify the location of each canister that defines an actor you want to build.
+在探索默认项目章节，已经介绍了创建新项目会添加一个dfx.json配置文件到项目目录。在本章节中，需要修改一些默认配置指定定义actor的程序位置。
 
-To modify the default `+dfx.json+` configuration file:
+dfx.json配置修改步骤
 
-. Open the `+dfx.json+` configuration file in a text editor, then change the default `+multiple_actors+` canister name and source directory to `+assistant+`.
+. 在编辑器中，打开 dfx.json 配置文件，然后修改默认的multiple_actors canister名称和源码目录为assistant。
 +
-For example, under the `canisters` key:
+例如，在canisters键：
 +
 [source,json]
 ----
@@ -71,116 +66,119 @@ For example, under the `canisters` key:
     },
 ----
 +
-Because you are going to add settings to this `+canisters+` section of the configuration file, you must also add a **comma** after the curly brace that encloses the location of the `+assistant+` main source code file and the canister type.
-. Remove the `+multiple_actors_assets+` section from the file.
-. Add a new canister name, source code location, and canister type for the `+rock_paper_scissors+` canister and a new canister name, source code location, and canister type for the `+daemon+` program files below the `+assistant+` canister definition.
+由于你已经在配置文件中添加了这个canisters的设置，你必须要在大括号后面添加一个逗号来包裹assistant的配置。
+
+. 删除文件中的multiple_actors_assets部分
+. 为rock_paper_scissors和daemon程序添加新的canister名称，源码位置和类型
 +
-After making the changes, the `+canisters+` section of the `+dfx.json+` file should look similar to this:
+修改后的配置文件如下
 +
 [source,json]
 ----
 include::example$multiple-actors/dfx.json[]
 ----
 +
-You can leave the other sections as-is.
-. Save your changes and close the `+dfx.json+` file to continue.
-. Change the name of the default source file directory to match the name specified in the `+dfx.json+` configuration file by running the following command:
+
+. 保存并关闭配置文件继续
+. 运行下面的命令修改默认源码文件名称匹配dfx.json文件中的配置
 +
 [source,bash]
 ----
 cp -r src/multiple_actors/ src/assistant/
 ----
-. Copy the `+assistant+` source file directory to create the main canister file for the `+rock_paper_scissors+` actor by running the following command:
+. 运行下面的命令复制assistant源码文件目录为rock_paper_scissors acotr创建主程序文件
 +
 [source,bash]
 ----
 cp -r src/assistant/ src/rock_paper_scissors/
 ----
-. Copy the `+assistant+` source file directory to create the main canister file for the `+daemon+` actor by running the following command:
+. 运行下面的命令复制assistant源码文件目录为daemon创建主程序文件
 +
 [source,bash]
 ----
 cp -r src/assistant/ src/daemon/
 ----
 
-== Modify the default canisters
+== 修改默认程序
 
-You now have three separate directories in the `+src+` directory, each with a template `+main.mo+` file.
-For this tutorial, you will replace the content in each template `+main.mo+` file with a different actor.
+现在src目录有三个独立的目录，每个都包含main.mo模板文件。本章节中，你需要用不同的actor替换每个main.mo文件。‌
 
-To modify the default source code:
+修改源码步骤如下:
 
-. Open the `+src/assistant/main.mo+` file in a text editor and delete the existing content.
-. Copy and paste the following sample code into the file:
+. 打开src/assistant/main.mo文件并删除已有内容
+. 复制粘贴下面的代码
+
 +
 [source.copy,motoko,no-repl]
 ----
 include::example$multiple-actors/assistant/main.mo[]
 ----
-. Save your changes and close the `+main.mo+` file to continue.
-. Open the `+src/rock_paper_scissors/main.mo+` file in a text editor and delete the existing content.
-. Copy and paste the following sample code into the file:
+
+. 保存并关闭main.mo文件
+. 打开src/rock_paper_scissors/main.mo文件并删除已有内容
+. 复制粘贴下面的代码
+
 +
 [source.copy,motoko,no-repl]
 ----
 include::example$multiple-actors/rock_paper_scissors/main.mo[]
 ----
-. Save your changes and close the `+main.mo+` file to continue.
-. Open the `+src/daemon/main.mo+` file in a text editor and delete the existing content.
-. Copy and paste the following sample code into the file:
+
+. 保存并关闭main.mo文件
+. 打开src/daemon/main.mo文件并删除已有内容
+. 复制粘贴下面的代码
+
 +
 [source.copy,motoko,no-repl]
 ----
 include::example$multiple-actors/daemon/main.mo[]
 ----
-. Save your changes and close the `+main.mo+` file to continue.
 
-== Start the local canister execution environment
+. 保存并关闭main.mo文件
 
-Before you can install the `+multiple_actors+` project locally, you need to start your local canister execution environment. If you intend to deploy it to the {IC} blockchain mainnet, then you can skip this section.
+== 保存并关闭main.mo文件
 
-To start the local canister execution environment:
+开始构建项目前，需要连接到本地或远程 ICP 网络。
+
+启动本地网络需要 dfx.json 文件，需要确认在项目根目录操作。在这篇教程中，建议开启 2 个终端，一个启动网络，另一个管理项目。
+
+启动网络步骤:
 
 [arabic]
-. Open a new terminal window or tab on your local computer.
-. Navigate to the root directory for your project, if necessary.
-. Start the local canister execution environment by running the following command:
+. 打开新的终端
+. 进入项目根目录
+. 使用下面的命令启动 ICP 本地网络 
 +
 [source,bash]
 ----
 dfx start
 ----
-. Leave the terminal that displays canister execution operations open and switch your focus to your original terminal where you created your new project.
+. 切换到项目终端
 
-== Deploy your multi-canister dapp
+== 注册构建并部署应用
 
-To deploy the multi-canister dapp you need to register, build, and install the canisters either to the local canister execution environment or to the {IC} blockchain mainnet.
+在开发环境中连接到本地ICP网络后，就可以在本地注册构建部署应用了。
 
-To deploy the dapp locally:
+部署本地应用步骤:
 
-. Check that you are still in the root directory for your project, if needed.
-. Register, build, and deploy the application by running the following command:
+. 检查是否在项目根目录
+. 注册构建并部署应用命令
+
 +
 [source,bash]
 ----
 dfx deploy
 ----
 
+如果你可以访问远程ICP网络，你可以使用--netowrk选项和dfx.json文件中定义的网络配置指定要部署的网络。
 
+例如，如果你连接到了ic指定的网络，可以运行下面的命令：
 
-To deploy the dapp to the {IC} blockchain mainnet:
-
-. Check that you are still in the root directory for your project, if needed.
-. Run `dfx deploy` command specifying the `+--network+` option and the network alias configured in the `+dfx.json+` file. For example, if you are connecting to the {IC} mainnet using to the URL specified by the network alias `+ic+` you would run a command similar the following:
-+
 [source,bash]
 ----
 dfx deploy --network ic
 ----
-
-The `+dfx deploy+` command output displays information about the operations it performs.
-For example, the command displays the specific canister identifiers for the three canisters defined in the `+dfx.json+` configuration file.
-
+dfx deploy命令会输出执行的操作信息，例如
 ....
 Deploying all canisters.
 Creating canisters...
@@ -192,67 +190,62 @@ Creating canister "rock_paper_scissors"...
 "rock_paper_scissors" canister created with canister id: "7kncf-oidaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q"
 ....
 
-== Verify deployment by calling the canisters
+== 调用函数验证部署
 
-You now have three *canisters* smart contracts deployed, either on your local canister execution environment or on the {IC} blockchain mainnet, and can test them by using `+dfx canister call+` commands.
+现在你已经在本地网络部署了三个canister并且可以通过dfx canister call命令分别测试
 
-To test the canisters you have deployed locally:
+测试步骤:
 
-. Use the `+dfx canister call+` command to call the canister `+assistant+` using the `+addTodo+` function and pass it the task you want to add by running the following command:
+. 使用dfx canister call命令调用assistant canister，使用addTodo函数并传递要添加的任务
 +
 [source,bash]
 ----
 dfx canister call assistant addTodo '("Schedule monthly demos")'
 ----
-. Verify that the command returns the to-do list item using the `+showTodos+` function by running the following command:
+. 使用showTodos函数验证命令返回的to-do list
 +
 [source,bash]
 ----
 dfx canister call assistant showTodos
 ----
 +
-The command returns output similar to the following:
+命令输出
 +
 ....
-("
-___TO-DOs___
-(1) Schedule monthly demos")
+("___TO-DOs___(1) Schedule monthly demos")
 ....
-. Use the `+dfx canister call+` command to call the canister `+rock_paper_scissors+` using the `+contest+` function by running the following command:
+. 使用dfx canister call命令调用rock_paper_scissors canister，使用contest函数
 +
 [source,bash]
 ----
 dfx canister call rock_paper_scissors contest
 ----
 +
-The command returns the result of the hard-coded contest similar to the following:
+命令输出
 +
 ....
 ("Bob won")
 ....
-. Use the `+dfx canister call+` command to call the canister `+daemon+` using the `+launch+` function by running the following command:
+. 使用dfx canister call命令调用daemon canister，使用launch函数
 +
 [source,bash]
 ----
 dfx canister call daemon launch
 ----
-. Verify the mock `+launch+` function returns "The daemon process is running" message":
+. 验证launch模拟函数返回“The daemon process is running”信息
 +
 ....
 (""The daemon process is running"")
 ....
 
-To test your canisters running on the {IC} blockchain mainnet use the same command as above, specifying the `+--network+` option and the network alias configured in the `+dfx.json+` file.
+== 关闭本地网络
 
-== Stop the local network
+完成程序的测试后，可以关闭ICP网络
 
-After you finish experimenting with your dapp, you can stop the local canister execution environment so that it doesn’t continue running in the background.
+关闭步骤：
 
-To stop the local canister execution environment:
-
-. In the terminal that displays network operations, press Control-C to interrupt the local network process.
-
-. Stop the local canister execution environment by running the following command:
+. 打开显示网络活动的命令行，摁下Control-C命令终止本地网络进程
+. 运行下面的命令终止网络
 +
 [source,bash]
 ----
