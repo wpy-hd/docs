@@ -1,204 +1,198 @@
-= Increment a natural number
+= 自然数自增
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 :proglang: Motoko
 :IC: Internet Computer
 :company-id: DFINITY
 
-In this tutorial, you are going to write a program that creates a single actor and provides a few basic functions to increment a counter and illustrate persistence of a value.
+在本章节中，将编写一个创建actor并提供几个函数来增加一个计数器的程序，同时会讲解如何维护一个值。
 
-For this tutorial, the actor is named `+Counter+`.
-The program uses the `+currentValue+` variable to contain a natural number that represents the current value of the counter.
-This program supports the following function calls:
+本章节中，actor被命名为Counter。程序使用 currentValue值来包含一个代表counter当前值的自然数。
 
-* The `+increment+` function call updates the current value, incrementing it by 1 (no return value).
-* The `+get+` function call queries and returns the current value of the counter.
-* The `+set+` function call updates the current value to an arbitrary numeric value you specify as an argument.
+这个程序会支持下面的函数调用：
 
-This tutorial provides a simple example of how you can increment a counter by calling functions on a deployed canister smart contract.
-By calling the functions to increment and query the counter value multiple times, you can verify that the variable state—that is, the value of the variable between calls—persists.
+* increment函数调用会将当前的值加1（无返回值）
+* get函数会调用查询并返回当前的值
+* set函数会将当前的值更新为用户输入的值
 
-== Before you begin
+本章节提供一个简单的示例，展示如何在部署的Canister中调用函数来增加一个计数器。通过多次调用函数来增加值，可以验证变量状态和变量在调用之间的持续性。
 
-Before starting the tutorial, verify the following:
+== 开始之前
 
-* You have downloaded and installed the {sdk-short-name} package as described in link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[Download and install].
-* You have stopped any local canister execution environments running on the computer.
+开始前，需要检查下面的问题：
 
-This tutorial takes approximately 20 minutes to complete.
+* 已经按照[link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[下载与安装章节]的步骤下载并安装了DFINITY Canister SDK
+* 本地电脑上已经关闭了ICP网络进程
 
-== Create a new project
+本篇教程需要大概20分钟。
 
-To create a new project directory for this tutorial:
+
+== 创建新项目
+
+创建项目步骤：
 
 [arabic]
-. Open a terminal shell on your local computer, if you don’t already have one open.
-. Change to the folder you are using for your {IC} projects, if you are using one.
-. Create a new project by running the following command:
+. 打开终端
+. 进入工作目录
+. 运行下面的命令来创建项目
 +
 [source,bash]
 ----
 dfx new my_counter
 ----
-+
-The command creates a new `+my_counter+` project for your project.
-. Change to your project directory by running the following command:
+该命令会创建新的my_counter项目
+
+. 进入项目目录
 +
 [source,bash]
 ----
 cd my_counter
 ----
 
-== Modify the default configuration
+== 修改默认配置
 
-You have already seen that creating a new project adds a default `+dfx.json+` configuration file to your project directory.
-In this tutorial, you will modify the default settings to use a different name for the main program in your project.
+在探索默认项目章节，已经介绍了创建新项目会添加一个dfx.json配置文件到项目目录。
 
-To modify the `+dfx.json+` configuration file:
+在本章节中，需要修改一些默认配置。
 
-. Open the `+dfx.json+` configuration file in a text editor and change the default `+main+` setting from `+main.mo+` to `+increment_counter.mo+`.
-+
-For example:
+dfx.json配置修改步骤
+
+. 在编辑器中，打开 dfx.json 配置文件，将默认的main设置从main.mo更改为increment_counter.mo。.
 +
 [source,json]
 ----
 "main": "src/my_counter/increment_counter.mo",
 ----
 +
-For this tutorial, changing the name of the source file from `+main.mo+` to `+increment_counter.mo+` simply illustrates how the setting in the `+dfx.json+` configuration file determines the source file to be compiled.
+对于本教程，将源文件的名称从main.mo更改为increment_counter.mo仅说明了dfx.json配置文件中的设置如何确定要编译的源文件。
 +
-In a more complex dapp, you might have multiple source files with dependencies that you need to manage using settings in the `+dfx.json+` configuration file.
-In a scenario like that—with multiple canister smart contracts and programs defined in your `dfx.json` file—having multiple files all named `main.mo` might be confusing.
+在更复杂的应用中，dfx.json配置文件中可能会有多个你要包含依赖的源文件需要管理。这种情况下-dfx.json文件中定义了多个canister和程序-有多个被命名为main.mo的文件可能会导致混乱。
 +
-You can leave the rest of the default settings as they are.
-. Save your change and close the `+dfx.json+` file to continue.
-. Change the name of the main program file in the source code directory `+src+` to match the name specified in the `+dfx.json+` configuration file by running the following command
+文件的其他部分无需修改。
+. 保存并关闭dfx.json继续。
+. 修改源代码目录中主程序的文件名来匹配dfx.json中的配置。
 +
 [source,bash]
 ----
 mv src/my_counter/main.mo src/my_counter/increment_counter.mo
 ----
 
-== Modify the default program
+== 修改默认程序
 
-So far, you have only changed the name of the main program for your project.
-The next step is to modify the code in the `+src/my_counter/increment_counter.mo+` file to define an actor named `+Counter+` and implement the `+increment+`, `+get+`, and `+set+` functions.
+到目前为止，只修改了项目主程序的名称。接下来需要修改src/my_counter/increment_counter.mo文件来定义一个名为Counter的actor并实现increment ，get 和set函数。
 
-To modify the default template source code:
+源码修改步骤:
 
-. Check that you are still in your project directory, if needed.
-. Open the `+src/my_counter/increment_counter.mo+` file in a text editor and delete the existing content.
-. Copy and paste the following sample code into the `+increment_counter.mo+` file:
+. 检查是否当前目录为项目根目录
+. 编辑器中打开src/my_counter/increment_counter.mo 源码文件，并删除已有内容
+. 复制粘贴下面的示例代码到increment_counter.mo文件
 +
 [source.copy,motoko,no-repl]
 ----
 include::example$counter.mo[]
 ----
 +
-Let's take a closer look at this sample program:
+示例代码解析:
 +
 --
 
-* You can see that the `+currentValue+` variable declaration in this example includes the `+stable+` keyword to indicate the state—the value that can be set, incremented, and retrieved—persists.
-+
-This keyword ensures that the value for the variable is unchanged when the program is upgraded. 
-* The declaration for the `+currentValue+` variable also specifies that its type is a natural number (`+Nat+`).
-* The program includes two public update methods—the `+increment+` and `+set+` functions—and one a query method-the `+get+` function.
+* 实例中定义的currentValue变量包含stable关键字代表状态-这个值可以被修改增加并获取-也就是可维护
+* 这个关键字保证了变量值在程序升级后不可改变
+* currentValue定义也指定其类型为自然数（Nat）
+* 程序包含2个公共update方法-increment和set函数-以及一个query方法，在这里是get函数
 --
 +
-For more information about stable and flexible variables, see link:../../language-guide/upgrades{outfilesuffix}[Stable variables and upgrade methods] in the link:../../language-guide/motoko{outfilesuffix}[_{proglang} Programming Language Guide_].
-+
-For more information about the differences between a query and an update, see link:../concepts/canisters-code{outfilesuffix}#query-update[Query and update methods] in link:../concepts/canisters-code{outfilesuffix}#canister-state[Canisters include both program and state].
-. Save your changes and close the file to continue.
+ 需要更多关于stable和flexible变量的信息，请在 link:../../language-guide/upgrades{outfilesuffix}[Stable variables and upgrade methods] in the link:../../language-guide/motoko{outfilesuffix}[_{proglang} Programming Language Guide_].
 
-== Start the local canister execution environment
+. 保存更改，关闭文件
 
-Before you can build the `+my_counter+` project, you need to either connect to a local canister execution environment simulating the {IC} blockchain or to the {IC} blockchain mainnet. 
+== 启动本地网络
 
-Starting the local canister execution environment requires a `+dfx.json+` file, so you should be sure you are in your project's root directory.
-For this tutorial, you should have two separate terminal shells, so that you can start and see network operations in one terminal and manage your project in another.
+开始构建项目前，需要连接到本地或远程 ICP 网络。
 
-To start the local canister execution environment:
+启动本地网络需要 dfx.json 文件，需要确认在项目根目录操作。
 
-[arabic]
-. Open a new terminal window or tab on your local computer.
-. Navigate to the root directory for your project, if necessary.
-+
---
-* You should now have **two terminals** open.
-* You should have the **project directory** as your **current working directory**.
---
-. Start the local canister execution environment on your computer by running the following command:
+在这篇教程中，建议开启 2 个终端，一个启动网络，另一个管理项目。
+
+启动网络步骤：
+
+. 打开新的终端
+. 进入项目根目录
+. 使用下面的命令启动 ICP 本地网络
 +
 [source,bash]
 ----
 dfx start
 ----
 +
-After you start the local canister execution environment, the terminal displays messages about network operations.
-. Leave the terminal that displays network operations open and switch your focus to your original terminal where you created your new project.
+这是可能会有警告信息显示，这取决于使用的平台安全策略配置。这时请选择允许。
++
+启动本地网络后，终端会显示网络操作信息。
 
-== Register, build, and deploy the dapp
+. 切换到项目终端。
 
-After you connect to the local canister execution environment running in your development environment, you can register, build, and deploy your dapp locally.
+== 注册构建并部署应用
 
-To deploy the dapp locally:
+在开发环境中连接到本地ICP网络后，就可以在本地注册构建部署应用了。
 
-. Check that you are still in the root directory for your project, if needed.
-. Register, build, and deploy your dapp by running the following command:
+部署应用步骤:
+
+. 检查是否在项目根目录
+. 注册构建并部署应用命令
 +
 [source,bash]
 ----
 dfx deploy
 ----
 +
-The `+dfx deploy+` command output displays information about the operations it performs.
+dfx deploy命令会输出执行的操作信息。
 
-== Invoke methods on the deployed canister smart contract
+== 在部署的Canister中调用方法
 
-After successfully deploying the canister smart contract, you can simulate an end-user invoking the methods provided by the canister.
-For this tutorial, you invoke the `+get+` method to query the value of a counter, the `+increment+` method that increments the counter each time it is called, and the `+set+` method to pass an argument to update the counter to an arbitrary value you specify.
+部署完canister后，可以模拟一个终端用户调用canister提供的方法了。
 
-To test invoking methods on the deployed canister smart contract:
+本章节中，调用get方法查询counter值，increment方法增加couter值，set方法传一个参数更新counter到任意输入的值。
+
+测试部署的程序步骤如下：
 
 [arabic]
-. Run the following command to invoke the `+get+` function, which reads the current value of the `+currentValue+` variable on the deployed canister:
+. 运行下面的命令调用get函数，该函数会读取在部署的canister当前的currentValue值
 +
 [source,bash]
 ----
 dfx canister call my_counter get
 ----
 +
-The command returns the current value of the `+currentValue+` variable as zero:
+命令输出currentValue值为0
 +
 ....
 (0 : nat)
 ....
 [arabic]
-. Run the following command to invoke the `+increment+` function to increment the value of the `+currentValue+` variable on the deployed canister by one:
+. 运行下面的命令调用increment函数，该函数会将部署的canister当前的currentValue值加1
 +
 [source,bash]
 ----
 dfx canister call my_counter increment
 ----
 +
-This command increments the value of the variable—changing its state—but does not return the result.
+这个命令会将变量加一-改变状态-但不会有返回值
 [arabic]
-. Rerun the following command to get the current value of the `+currentValue+` variable on the deployed canister:
+. 再次运行下面的命令获取currentValue当前的值
 +
 [source,bash]
 ----
 dfx canister call my_counter get
 ----
 +
-The command returns the updated value of the `+currentValue+` variable as one:
+命令返回currentValue值为1
 +
 ....
 (1 : nat)
 ....
 [arabic]
-. Run additional commands to experiment with invoking other methods and using different values.
+. 运行额外的命令并使用不同的参数来测试其他方法
 +
-For example, try commands similar to the following to set and return the counter value:
+例如，运行类似下面的命令设置并返回counter值
 +
 [source,bash]
 ----
@@ -206,8 +200,9 @@ dfx canister call my_counter set '(987)'
 dfx canister call my_counter get
 ----
 +
-This returns the updated value of the `+currentValue+` to be 987.
-Running the additional commands
+返回值为987
++
+继续执行命令
 +
 [source,bash]
 ----
@@ -215,21 +210,21 @@ dfx canister call my_counter increment
 dfx canister call my_counter get
 ----
 +
-returns the incremented `+currentValue+` of 988.
+返回值为987
 
 include::example$candid-ui.adoc[]
 +
 image:candid-counter.png[Counter functions]
 
-== Stop the local canister execution environment
+== 关闭本地网络
 
-After you finish experimenting with your dapp, you can stop the local canister execution environment so that it doesn’t continue running in the background.
+完成程序的测试后，可以关闭ICP网络
 
-To stop the local canister execution environment:
+关闭步骤
 
-. In the terminal that displays network operations, press Control-C to interrupt the local canister execution environment.
+. 打开显示网络活动的命令行，摁下Control-C命令终止本地网络进程
+. 运行下面的命令终止网络
 
-. Stop the local canister execution environment by running the following command:
 +
 [source,bash]
 ----
