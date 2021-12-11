@@ -1,236 +1,220 @@
-= Use integers in calculator functions
+= 计算函数中使用整数
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 :proglang: Motoko
 :IC: Internet Computer
 :company-id: DFINITY
 
-In this tutorial, you are going to write a simple calculator program that creates a single actor with several public entry-point functions to perform basic arithmetic operations.
+本章节中会编写一个简单的计算器程序，程序会创建一个actor，actor有几个执行计算操作的公共函数。
 
-For this tutorial, the actor is named `+Calc+`.
-The program uses the `+cell+` variable to contain an integer number that represents the current result of a calculator operation.
+actor命名为Calc。程序使用cell变量来代表计算操作结果。
 
-This program supports the following function calls:
+程序支持下面的函数调用
 
-* The `+add+` function call accepts input and performs addition.
-* The `+sub+` function call accepts input and performs subtraction.
-* The `+mul+` function call accepts input and performs multiplication.
-* The `+div+` function call accepts input and performs division.
-* The `+clearall+` function clears the `+cell+` value stored as the result of previous operations, resetting the `+cell+` value to zero.
+* add函数接受输入并执行加法
+* sub函数接受输入并执行减法
+* mul函数接受输入并执行乘法
+* div函数接受输入并执行除法
+* clearall函数清空存储前一个操作结果的变量cell，重置cell值到0
 
-The `+div+` function also includes code to prevent the program from attempting to divide by zero.
+div函数也包含阻止程序除零的代码。
 
-== Before you begin
 
-Before starting the tutorial, verify the following:
+== 开始之前
 
-* You have downloaded and installed the {sdk-short-name} package as described in link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[Download and install].
-* You have stopped any canister execution environment running on the local
-computer.
+开始前，需要检查下面的问题
 
-This tutorial takes approximately 20 minutes to complete.
+* 已经按照 link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[下载与安装]章节的步骤下载并安装了DFINITY Canister SDK 。
+* 本地电脑上已经关闭了ICP网络进程。
 
-== Create a new project
+本篇教程需要大概20分钟。
 
-To create a new project for this tutorial:
+== 创建新项目
+
+创建项目步骤
 
 [arabic]
-. Open a terminal shell on your local computer, if you don’t already
-have one open.
-. Change to the folder you are using for your {IC} projects, if you are using one.
-. Create a new project by running the following command:
+. 打开终端
+. 进入工作目录
+. 运行下面的命令来创建项目
 +
 [source,bash]
 ----
 dfx new calc
 ----
-. Change to your project directory by running the following command:
+. 切换到项目终端
 +
 [source,bash]
 ----
 cd calc
 ----
 
-== Modify the default configuration
+== 修改默认配置
 
-For this tutorial, let's modify the default `dfx.json` configuration file to use a more specific name for its main program.
+在探索默认项目章节，已经介绍了创建新项目会添加一个dfx.json配置文件到项目目录。在本章节中，需要修改一些默认配置。
 
-To modify the default `+dfx.json+` configuration file:
+dfx.json配置修改步骤
 
-. Open the `+dfx.json+` configuration file in a text editor.
-. Change the `+main+` key setting from the default `+main.mo+` program name to `+calc_main.mo+`.
+. 在编辑器中，打开 dfx.json 配置文件。
+. 修改默认的main设置。
 +
-For example:
+例如
 +
 [source,bash]
 ----
 "main": "src/calc/calc_main.mo",
 ----
 +
-For this tutorial, changing the name of the source file from `+main.mo+` to `+calc_main.mo+` simply illustrates how the setting in the `+dfx.json+` configuration file determines the source file to be compiled.
+这里，修改源文件名名称可以让dfx.json配置文件找到合适的文件进行编译。
 +
-In a more complex dapp, you might have multiple source files instead of a single `+main+` program file.
-More complex applications might also have specific dependencies between multiple source files that you need to manage using settings in the `+dfx.json+` configuration file.
-In a scenario like that—with multiple canisters and programs defined in your `dfx.json` file—having multiple files all named `main.mo` might make navigating your workspace more difficult.
-The name you choose for each program isn't significant, but it is important that the name you set in the `+dfx.json+` file matches the name of your program in the file system.
-. Save your changes and close the file to continue.
+在更复杂的应用中，dfx.json配置文件中可能会有多个你要包含依赖的源文件需要管理。
+这种情况下-dfx.json文件中定义了多个canister和程序-有多个被命名为main.mo的文件可能会导致混乱。
+文件的其他部分无需修改
++
+. 保存并关闭dfx.json继续。
 
-== Modify the default program
+== 修改默认程序
 
-For this tutorial, you need to replace the default program with a program that performs basic arithmetic operations.
+在本章节中，需要用执行基本算数操作的程序替换默认程序。
 
-To replace the default program:
+源码修改步骤
 
-. Check that you are still in your project directory, if needed.
-. Copy the template `+main.mo+` file to create a new file named `+calc_main.mo+` by running the following command:
+. 检查是否当前目录为项目根目录
+. 运行下面的命令从模板mai n.mo文件创建calc_main.mo新文件
 +
 [source,bash]
 ----
 cp src/calc/main.mo src/calc/calc_main.mo
 ----
-. Open the `+src/calc/calc_main.mo+` file in a text editor and delete the existing content.
-. Copy and paste the following sample code into the `+calc_main.mo+` file:
+. 编辑器中打开src/calc/calc_main.mo文件并删除已有内容
+. 复制粘贴下面的代码到calc_main.mo文件
 +
 [source.copy,motoko,no-repl]
 ----
 include::example$calc_main.mo[]
 ----
 +
-You might notice that this sample code uses integer (`+Int+`) data types, enabling you to use positive or negative numbers.
-If you wanted to restrict the functions in this calculator code to only use positive numbers, you could change the data type to only allow natural (`+Nat+`) data.
-. Save your changes and close the file to continue.
+示例代码中使用了整数类型，允许使用正数或负数。如果想要使代码只处理正数，可以将数据类型改为自然数（Nat）。
+. 保存修改并关闭文件继续。
 
 
-== Start the local canister execution environment
+== 启动本地网络
 
+开始构建项目前，需要连接到本地或远程 ICP 网络。
 
-Before you can build the `+calc+` project, you need to connect to the canister execution environment running locally in your development environment, or you need to connect toa subnet that you can access.
+启动本地网络需要 dfx.json 文件，需要确认在项目根目录操作。在这篇教程中，建议开启 2 个终端，一个启动网络，另一个管理项目。
 
-
-Starting the network locally requires a `+dfx.json+` file, so you should be sure you are in your project's root directory.
-For this tutorial, you should have two separate terminal shells, so that you can start and see network operations in one terminal and manage your project in another.
-
-To start the local canister execution environment:
+启动网络步骤
 
 [arabic]
-. Open a new terminal window or tab on your local computer.
-. Navigate to the root directory for your project, if necessary.
-+
---
-* You should now have **two terminals** open.
-* You should have the **project directory** as your **current working directory**.
---
-. Start the local canister execution environment on your machine by running the following command:
+. 打开新的终端
+.进入项目根目录
+. 使用下面的命令启动 ICP 本地网络
 +
 [source,bash]
 ----
 dfx start
 ----
 +
-After you start the local network, the terminal displays messages about network operations.
-. Leave the terminal that displays network operations open and switch your focus to your original terminal where you created your new project.
+这是可能会有警告信息显示，这取决于使用的平台安全策略配置。这时请选择允许。
++
+启动本地网络后，终端会显示网络操作信息
+. 切换到项目终端
 
-== Register, build, and deploy the dapp
+== 注册构建并部署应用
 
-After you connect to the local canister execution environment, you can register, build, and deploy your dapp locally.
+在开发环境中连接到本地ICP网络后，就可以在本地注册构建部署应用了。
 
-To deploy the dapp locally:
+部署应用步骤
 
-. Check that you are still in the root directory for your project, if needed.
-. Register, build, and deploy your dapp by running the following command:
+. 检查是否在项目根目录
+. 注册构建并部署应用命令
 +
 [source,bash]
 ----
 dfx deploy
 ----
 +
-The `+dfx deploy+` command output displays information about the operations it performs.
+dfx deploy命令会输出执行的操作信息
 
-== Verify calculator functions on the canister
+== 在Canister中验证计算函数
 
-You now have a program deployed as a *canister smart contract* on your local canister execution environment.
-You can test the program by using `+dfx canister call+` commands.
+现在，项目已经部署到本地ICP网络，并且可以使用dfx canister call命令进行测试。
 
-To test the program you have deployed:
+测试部署的程序步骤如下
 
-. Use the `+dfx canister call+` command to call the `+calc+` canister `+add+` function and pass it the input argument `+10+` by running the following command:
+. 使用dfx canister call命令调用calc Canister中的add函数并传递参数10
 +
 [source,bash]
 ----
 dfx canister call calc add '(10)'
 ----
 +
-When you pass an argument enclosed by the single quotation marks and parentheses,the interface description language (IDL) parses the argument type, so you don't need to specify the argument type manually.
+当传递单引号包含的参数，接口描述语言（IDL）会解析参数类型，因此无需指定参数类型
 +
-Verify that the command returns the value expected for the `+add+` function.
-For example, the program displays output similar to the following:
+验证命令返回值是否符合add函数执行结果的期望。例如，程序输出为:
 +
 ....
 (10)
 ....
-. Call the `+mul+` function and pass it the input argument `+3+` by running the following command:
+. 运行下面的命令调用mul函数并传递参数3
 +
 [source,bash]
 ----
 dfx canister call calc mul '(3)'
 ----
 +
-Verify that the command returns the value expected for the `+mul+` function.
-For example, the program displays output similar to the following:
+验证命令返回值是否符合mul函数执行结果的期望。例如，程序输出为
 +
 ....
 (30)
 ....
-. Call the `+sub+` function and pass it the input argument `+5+` of type `+number+` by running the following command:
+. 运行下面的命令调用sub函数并传递参数5
 +
 [source,bash]
 ----
 dfx canister call calc sub '(5)'
 ----
 +
-Verify that the command returns the value expected for the `+sub+` function.
-For example, the program displays output similar to the following:
+验证命令返回值是否符合sub函数执行结果的期望。例如，程序输出为
 +
 ....
 (25)
 ....
-. Call the `+div+` function and pass it the input argument `+5+` by running the following command:
+. 运行下面的命令调用div函数并传递参数5
 +
 [source,bash]
 ----
 dfx canister call calc div '(5)'
 ----
 +
-Verify that the command returns the value expected for the `+div+` function.
-For example, the program displays output similar to the following:
+验证命令返回值是否符合div函数执行结果的期望。例如，程序输出为
 +
 ....
 (opt 5)
 ....
 +
-You might notice that the `+div+` function returns an optional result.
-The program makes the result optional to enable the `+div+` function to return `+null+` in the case of a division-by-zero error.
+注意到div函数返回了一个Option的结果。程序会输出可选值可以使div函数在出现除零错误时返回null
 +
-Because the cell variable in this program is an integer, you can also call its functions and specify negative input values.
-For example, you might run the following command:
+因为cell变量是一个整数，可以调用函数并输入负数。例如，运行下面的命令
 +
 [source,bash]
 ----
 dfx canister call calc mul '(-4)'
 ----
 +
-which returns:
+返回
 +
 ....
 (-20)
 ....
-. Call the `+clearall+` function and verify it resets the `+cell+` value to zero:
+. 运行下面的命令调用clearall函数并验证cell变量重置为0
 +
 [source,bash]
 ----
 dfx canister call calc clearall
 ----
 +
-For example, the program displays output similar to the following:
+程序输出为
 +
 ....
 (0)
@@ -240,18 +224,15 @@ include::example$candid-ui.adoc[]
 +
 image:candid-calc.png[Calculator functions]
 
-== Stop the local canister execution environment
+== 关闭本地网络
 
+完成程序的测试后，可以关闭ICP网络
 
+关闭步骤
 
-After you finish experimenting with the dapp, you can stop the local canister execution environment  so that it does not continue running in the background.
+. 打开显示网络活动的命令行，摁下Control-C命令终止本地网络进程
 
-
-To stop the local canister execution environment:
-
-. In the terminal that displays the operations, press Control-C to interrupt the process.
-
-. Stop the local canister execution environment by running the following command:
+. 运行下面的命令终止网络
 +
 [source,bash]
 ----
