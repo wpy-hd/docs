@@ -1,66 +1,60 @@
-= Explore the default project
+= 探索默认项目
+
 :proglang: Motoko
 :IC: Internet Computer
 :company-id: DFINITY
 
-If you started your tour of the {sdk-long-name} with the link:../../quickstart/quickstart-intro{outfilesuffix}[Quick start], you have already seen the basic work flow for creating dapps that run on the {IC}.
-Now, let's take a closer look at that work flow by exploring the default files and folders that are added to your workspace when you create a new project.
+如果你在link:../../quickstart/quickstart-intro{outfilesuffix}[快速开始]章节体验过 DFINITY 容器 SDK，那你已经熟悉了 ICP 创建应用的基本工作流程。
 
-As a preview, the following diagram illustrates the development work flow when running the {IC} locally on you computer.
+现在，让我们通过探索新项目中默认创建的文件来深入了解工作流程。
+
+下面的图片描述了在本地运行 ICP 进行开发的工作流程。
 
 image:dev-workflow-explore.svg[Development work flow]
 
-== Before you begin
+== 开始前的准备
 
-Before you start this tutorial, verify the following:
+开始本教程前，请检查下面的步骤是否完成了：
 
-* You have an internet connection and access to a shell terminal on your local macOS or Linux computer.
+* 有一台有网络连接的 macOS 或 Linux 电脑
 
-* You have `+node.js+` installed if you want to include the default template files for front-end development in your project.
+* 安装了 node.js（如果需要包含前端开发的默认模板文件）
 
-* You have downloaded and installed the {sdk-short-name} package as described in link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[Download and install].
+* 下载并安装了 DFINITY 容器 SDK  link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[参考下载和安装章节].
 
-* You have installed the Visual Studio Code plugin for {proglang} as described in link:../../quickstart/local-quickstart{outfilesuffix}#install-vscode[Install the language editor plug-in] if you are using Visual Studio Code as your IDE.
+* 如果你使用的是 VsCode 作为 IDE，请确认安装了 Motoko 的 VSCode 插件 link:../../quickstart/local-quickstart{outfilesuffix}#install-vscode[参考安装语言编辑器插件] .
 
-* You have stopped any local canister execution environment processes running on the local computer.
+* 本地电脑上没有运行 ICP 网络进程
 
-This tutorial takes approximately 20 minutes to complete.
+该教程大约耗时20分钟。
 
 [[create-a-new-project]]
-== Create a new project
+== 创建新项目
+创建新项目需要用到 dfx 命令
 
-As discussed in the link:../../quickstart/quickstart-intro{outfilesuffix}[Quick start], dapps for the {IC} start as **projects** that you create. You can create projects using the `+dfx+` executable command-line interface (CLI).
-
-To take a closer look at the files and folders that are included in a  project by default, let's create a new project to work with.
-
-To create a new project:
-
-. Open a terminal shell on your local computer, if you don’t already have one open.
-. Navigate to the folder you are using for your {IC} projects, if you are using a separate working folder.
-. Create a new project by running the following command:
+. 打开终端
+. 进入工作目录
+. 运行下面的命令来创建项目:
 +
 [source,bash]
 ----
 dfx new explore_hello
 ----
 +
-The `+dfx new explore_hello+` command creates a new `+explore_hello+`
-project, including a default project directory structure under the new
-project name and a new Git repository for your project.
-If you have `+node.js+` installed locally, creating a new project also adds some template front-end code and dependencies.
+这条命令会创建一个新的 explore_hello 项目，包含一个默认的项目目录结构，同时会初始化为一个 git 仓库。如果安装了 node.js，还会包含前端代码和相关依赖。
 +
-To ensure that project names are valid when used in JavaScript, Motoko, and other contexts, you should only use alphanumeric characters and underscores.
-You cannot include dashes or any special characters.
-. View the default directory structure by running the following command:
+为了保证兼容性，项目名称只能使用字母和下划线。
+
+. 运行下面的命令查看默认目录结构
 +
 [source,bash]
 ----
 ls -l explore_hello
 ----
 +
-By default, the project directory structure includes at least one source subdirectory, a template `+README.md+` file, and a default `+dfx.json+` configuration file.
+项目目录结构中默认包含至少一个 src 子目录，一个模板 README.md 文件和一个默认的 dfx.json 配置文件
 +
-Depending on whether you have `+node.js+` installed, your project directory might include some or all of the following files:
+如果安装了 node.js，项目目录下会包含以下文件
 +
 ....
 explore_hello/
@@ -83,73 +77,68 @@ explore_hello/
 └── webpack.config.js
 ....
 +
-At a minimum, the default project directory includes the following folders and files:
+默认项目目录至少包含以下文件:
 +
 --
-* A default `README` file for documenting your project in the repository.
-* A default `+dfx.json+` configuration file to set configurable options for your project.
-* A default `+src+` directory for all of the source files required by your dapp.
+* 默认的 README 文件，用于项目说明
+* 默认的 dfx.json 配置文件，用于项目配置
+* 默认的 src 目录，存放应用源码文件
+* 默认的 src 目录包含模版文件 main.mo，你可以修改来包含核心程序逻辑。
+
 --
 +
-The default `+src+` directory includes a template `+main.mo+` file that you can modify or replace to include your core programming logic.
+这个教程内容很基础，只需要用到 main.mo 文件。
 +
-Because this tutorial focuses on the basics of getting started, you are only going to use the `+main.mo+` file.
-If you have `+node.js+` installed, your project directory includes additional files and directories that you can use to define the front-end interface for your dapp.
-Front-end development and the template files in the `+assets+` folder are discussed a little later.
+如果安装了 node.js，项目目录会包含应用前端相关的文件和目录。前端开发和 public 目录下的模板文件会在后续教程中解释。
 
-== Review the default configuration
 
-By default, creating a new project adds some template files to your project directory.
-You can edit these template files to customize the configuration settings for your project and to include your own code to speed up the development cycle.
+== 默认配置
 
-To review the default configuration file for your project:
+检查默认配置步骤如下:
 
-. Open a terminal shell on your local computer, if you don’t already have one open.
-. Change to your project directory by running the following command:
+. 打开命令行
+. 进入项目目录  
 +
 [source,bash]
 ----
 cd explore_hello
 ----
-. Open the `+dfx.json+` configuration file in a text editor to review the default settings.
-+
-For example:
+. 在编辑器中，打开 dfx.json 配置文件  
 +
 ....
 include::example$sample-explore-dfx.json[]
 ....
 +
-Let's take a look at a few of the default settings.
+默认配置
 +
 --
-* The `+settings+` section specifies the name of the WebAssembly module for your `+explore_hello+` project is `+explore_hello+`.
-* The `+canisters.explore_hello+` key specifies that the main program to be compiled is located in the path specified by the `+main+` setting, in this case, `+src/explore_hello/main.mo+` and the `+type+` setting indicates that this is a `+motoko+` program.
-* The `+canisters.explore_hello_assets+` key specifies configuration details about front-end assets for this project. Let's skip those for now.
-* The `+dfx+` setting is used to identify the version of the software used to create the project.
-* The `+networks+` section specifies information about the networks to which you connect. The default settings bind the local canister execution environment to the local host address `+127.0.0.1+` and port `+8000+`.
+* canisters 字段指定项目的 WebAssembly 模块名称为 explore_hello
+* canisters.explore_hello 中的 main 字段指定被编译的 main 程序文件路径，这里是 src/explore_hello/main.mo，type 字段指定语言类型，这里是 motoko
+* canisters.explore_hello_assets 字段指定项目的前端资源信息
+* dfx 配置被用来指定创建项目的软件版本
+* netowrks 字段指定连接的网络信息。默认配置会将 ICP 网络绑定到本地地址 127.0.0.1，端口 8000。
 +
-If you have access to other {IC} network providers, the `+networks+` section can include network aliases and URLs for connecting to those providers.
+如果可以访问其他 ICP 网络提供商，可以在 networks 字段中包含相关的 URL 来连接。
 --
 +
-You can leave the default settings as they are.
-. Close the `+dfx.json+` file to continue.
+你也可以保留默认设置
+. 关闭dfx.json文件继续。
 
-== Review the default program code
+== 默认程序代码
 
-New projects always include a template `main.mo` source code file.
-You can edit this file to include your own code to speed up the development cycle.
+新项目会包含一个 main.mo 模板源码文件。
 
-Let's take a look at the sample program in the default `main.mo` template file as a starting point for creating simple dapp using the {proglang} programming language.
+通过编辑这个文件包含你的代码来加速开发。
 
-To review the default sample program for your project:
+接下来以 main.mo 模版文件为例来学习使用 Motoko 编程语言。
 
-. Check that you are still in your project directory by running the following command:
+. 在项目目录下运行命令
 +
 [source,bash]
 ----
 pwd
 ----
-. Open the `+src/explore_hello/main.mo+` file in a text editor and review the code in the template:
+. 编辑器中打开 src/explore_hello/main.mo 文件查看模板代码  
 +
 ....
 actor {
@@ -159,71 +148,66 @@ actor {
 };
 ....
 +
-Let's take a look at a few key elements of this program:
+这段程序有几个元素：
 +
 --
-* You might notice that this sample code defines an `+actor+` instead of a `+main+` function, which some programming languages require.
-For {proglang}, the `+main+` function is implicit in the file itself.
-
-* Although the traditional "Hello, World!" program illustrates how you can print a string using a `+print+` or `+println+` function, that traditional program would not represent a typical use case for {proglang} dapps that run on the {IC}.
-
-* Instead of a print function, this sample program defines an `+actor+` with a public `+greet+` function that takes a `+name+` argument with a type of `+Text+`.
-
-* The program then uses the `+async+` keyword to indicate that the program returns an asynchronous message consisting of a concatenated text string constructed using `+"Hello, "+`, the `+#+` operator, the `+name+` argument, and `+"!"+`.
+* 示例代码定义了 actor 而不是常见的 main 函数，对于 Motoko，main 函数已经隐式地包含在文件里了。
+* 虽然常见的“Hello，World！”程序描述了如何使用 print 或 println 函数打印字符串，但是一般的程序无法展示 Motoko 在 ICP 上如何使用。
+* 这段示例代码定义了一个 actor，包含一个公共的 greet 函数，greet 函数接收一个 Text 类型的 name 参数。
+* 程序使用 async 关键字指定程序返回一个异步文本消息，该消息通过#操作符拼接，由 “Hello，”，name 参数和“！”组成。
 --
-We’ll explore code that uses `+actor+` objects and asynchronous message handling more a little later.
-For now, you can continue to the next section.
-. Close the `+main.mo+` file to continue.
+之后会深入介绍如何使用 actor 对象和异步消息处理。
+. 关闭 main.mo 继续。
 
 [[start-the-local-network]]
-== Start the local canister execution environment
+== 启动本地网络
 
-Before you can deploy the default project, you need to connect to either the local canister execution environment, or to the {IC} blockchain mainnet.
+开始构建项目前，需要连接到本地或远程 ICP 网络。
 
-Starting the local canister execution environment requires a `+dfx.json+` file, so you should be sure you are in your project's root directory.
-For this tutorial, you should have two separate terminal shells, so that you can start and see network operations in one terminal and manage your project in another.
+启动本地网络需要 dfx.json 文件，需要确认在项目根目录操作。在这篇教程中，建议开启 2 个终端，一个启动网络，另一个管理项目。
 
-To start the local canister execution environment:
+启动网络步骤：
 
 [arabic]
-. Open a new terminal window or a new terminal tab on your local computer.
-. Navigate to the root directory for your project, if necessary.
+. 打开新的终端。
+. 进入项目根目录。
 +
 --
-* You should now have **two terminals** open.
-* You should have the **project directory** as your **current working directory**.
+* 你现在应该已经打开了两个终端
+* 项目目录应该是你的现在的工作目录
 --
-. Start the local canister execution environment by running the following command:
+. 进入项目根目录。
 +
 [source,bash]
 ----
 dfx start
 ----
 +
-Depending on your platform and local security settings, you might see a warning displayed.
-If you are prompted to allow or deny incoming network connections, click *Allow*.
+这是可能会有警告信息显示，这取决于使用的平台安全策略配置。这时请选择允许。
 +
-After you start the local canister execution environment, you have one terminal that displays messages about network operations and another for performing project-related tasks.
-. Leave the terminal that displays network operations open and switch your focus to the terminal where you created your new project.
+启动本地网络后，终端会显示网络操作信息。
 
-== Register canister identifiers
+. 切换到项目终端。
 
-After you connect to the local canister execution environment, you can register with the network to generate unique, network-specific *canister identifiers* for your project.
+== 注册 Canister 识别码
 
-In the link:../../quickstart/quickstart-intro{outfilesuffix}[Quick start] tutorial, this step was performed as part of the `+dfx deploy+` command work flow.
-This tutorial demonstrates how to perform each of the operations independently.
+连接到本地开发 ICP 网络后，可以为项目注册一个网络中唯一的 Canister 识别码。
 
-To register canister identifiers for the local network:
+在 link:../../quickstart/quickstart-intro{outfilesuffix}[快速开始] 章节中, 这一步会在 dfx deploy 命令中执行。
 
-. Check that you are still in your project directory, if needed.
-. Register unique canister identifiers for the canisters in the project by running the following command:
+这片教程演示如何独立执行这些命令。
+
+在本地网络注册 Canister 识别码步骤：
+
+. 进入项目根目录
+. 运行下面的命令注册 Canister 识别码
 +
 [source,bash]
 ----
 dfx canister create --all
 ----
 +
-The command displays the network-specific canister identifiers for the canisters defined in the `+dfx.json+` configuration file.
+命令会显示定义在 dfx.json 配置文件里的 Canster 在本地网络唯一的 Canister 识别码。
 +
 ....
 Creating a wallet canister on the local network.
@@ -234,9 +218,9 @@ Creating canister "explore_hello_assets"...
 "explore_hello_assets" canister created with canister id: "ryjl3-tyaaa-aaaaa-aaaba-cai"
 ....
 +
-Because you are connected to the local canister execution environment, these canister identifiers are only valid locally and are stored for the project in the `+.dfx/local/canister_ids.json+` file.
+如果你连接的是本地开发 ICP 网络，这些 Canister 识别码只在本地有效，并存储在项目的.dfx/local/canister_ids.json 文件
 +
-For example:
+文件内容示例：
 +
 ....
 {
@@ -249,39 +233,37 @@ For example:
 }
 ....
 
-== Build the dapp
+== 项目构建
+在了解了默认配置和代码并启动好本地 ICP 网络后，接下来学习如何把示例程序编译为可执行的 WebAssembly 模块
 
-Now that you have explored the default configuration settings and program code and have started the local canister execution environment, let's compile the default program into an executable WebAssembly module.
-
-To build the program executable:
+构建步骤：
 
 [arabic]
-. In the terminal shell on your local computer, navigate to your `+explore_hello+` project directory.
+. 在命令行中进入 explore_hello 项目目录。
 +
-You must run the `+dfx build+` command from within the project directory structure.
-. Build the executable canister by running the following command:
+. 运行下面的命令
 +
 [source,bash]
 ----
 dfx build
 ----
 +
-You should see output similar to the following:
+输出信息如下:
 +
 ....
 Building canisters...
 Building frontend...
 ....
 +
-Because you are connected to the local canister execution environment, the `+dfx build+` command adds the `+canisters+` directory under the `+.dfx/local/+` directory for the project.
-. Verify that the `+.dfx/local/canisters/explore_hello+` directory created by the `+dfx build+` command contains the WebAssembly and related application files by running the following command.
+命令会在项目的.dfx/local/目录下添加 canisters 目录。
+. 运行下面的命令检查 dfx build 命令创建的 .dfx/local/canisters/explore_hello 目录包含 WebAssembly 和相关应用文件。
 +
 [source,bash]
 ----
 ls -l .dfx/local/canisters/explore_hello/
 ----
 +
-For example, the command returns output similar to the following:
+命令输出
 +
 ....
 -rw-r--r--  1 pubs  staff     178 Apr  6 14:25 explore_hello.d.ts
@@ -292,25 +274,23 @@ For example, the command returns output similar to the following:
 
 ....
 +
-The `canisters/explore_hello` directory contains the following key files:
+canisters/explore_hello 目录包含如下关键文件：
 +
 --
-* The `+explore_hello.did+` file contains an interface description for your main dapp.
-
-* The `+explore_hello.did.js+` file contains a JavaScript representation of the canister interface for the functions in your dapp.
-
-* The `+explore_hello.js+` file contains a JavaScript representation of the canister interface for your dapp.
-
-* The `+explore_hello.wasm+` file contains the compiled WebAssembly for the assets used in your project.
-
+* explore_hello.did 文件包含 main 程序的接口描述
+* The explore_hello.did.js 文件包含用 JavaScript 描述的程序 Canister 函数接口
+* The explore_hello.js 文件包含用 JavaScript 描述的程序 Canister 接口
+* The explore_hello.wasm 包含编译后的 WebAssembly
 --
 +
-The `+canisters/explore_hello_assets+` directory contains similar files to describe the front-end assets associated with your project.
+canisters/explore_hello_assets 目录包含相似的文件，用于描述项目的前端资源。
 +
-In addition to the files in the `+canisters/explore_hello+` and the `+canisters/explore_hello_assets+` directories, the `+dfx build+` command creates an `+idl+` directory.
-. Verify that a new folder has been created, `src/declarations`.
+除了这些目录，dfx build 命令还会创建 idl 目录。
+. 检验是否生成`src/declarations`.
+
 +
-This folder will include copies of the folders from `.dfx/local`, except for the wasm. They do not contain any secrets, and we recommend committing these files along with the rest of your source code.
+文件夹会包括.dfx/local的复件，除了wasm。它们不含任何秘密，我们推荐和余下的源代码一起提交这些文件。
+
 
 == Deploy the project locally
 
