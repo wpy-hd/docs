@@ -1,47 +1,45 @@
-= Add a stylesheet
+= 添加前端样式
 :source-highlighter: coderay
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 :proglang: Motoko
 :IC: Internet Computer
 :company-id: DFINITY
 
-Cascading stylesheets are an important part of any front-end user interface. The default starter is configured to import a `main.css` file that you can edit, but you may prefer to import your stylesheet into a JavaScript file, or to use an alternate format such as Syntactically Awesome Style Sheets, aka SCSS.
-This tutorial illustrates how to configure webpack to import a stylesheet by walking through building a contact dapp.
-If you already know how to add cascading stylesheets (CSS) to a webpack-based project, you can skip this tutorial.
+CSS是一种常用的定制用户体验的方法。
 
-NOTE: This tutorial illustrates using the React framework to manage the Document Object Model (DOM) for your front-end.
-Because React has its own custom DOM syntax, you need to modify the webpack configuration to compile the front-end code, which is written in JSX. For more information about learning to use React and JSX, see link:https://reactjs.org/docs/getting-started.html[Getting started] on the https://reactjs.org/[React website].
+本教程讲解了如何给React创建的项目添加样式表。
 
-== Before you begin
+如果你已经了解了如何给React项目添加样式表，可以跳过本教程。
 
-Before starting the tutorial, verify the following:
+注意： 本教程说明了如何使用 React 框架来管理Canister的文档对象模型 (DOM)。 因为 React 有自己自定义的 DOM 语法，所以需要修改 webpack 配置来编译前端代码，前端代码是用 JSX 编写的。 有关学习使用 React 和 JSX 的更多信息, 请参考link:https://reactjs.org/docs/getting-started.html[Getting started] 通过 https://reactjs.org/[React网站].
 
-* You have `+node.js+` installed for front-end development and can install packages using `+npm install+` in your project.
-For information about installing node for your local operating system and package manager, see the link:https://nodejs.org/en/[Node] website.
+== 开始之前
 
-* You have downloaded and installed the {sdk-short-name} package as described in link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[Download and install].
+开始之前，需要检查以下内容：
 
-* You have installed the Visual Studio Code plugin for {proglang} as described in link:../../quickstart/local-quickstart{outfilesuffix}#install-vscode[Install the language editor plug-in] if you are using Visual Studio Code as your IDE.
+* 为前端开发安装了node.js并且可以使用npm install在项目中安装包。需要更多关于安装node和包管理器的信息，请查看link:https://nodejs.org/en/[Node网站]
+* 已经下载并安装了DFINITY Canister SDK
+* 安装了Motoko 的VSCode 插件
+* 终止了所有ICP网络进程
 
-* You have stopped any local canister execution environment processes running on the local
-computer.
+注意： 本教程要求使用0.8.0版本或更高版本的sdk
 
-NOTE: This tutorial requires you to use the {sdk-short-name} version `+0.8.0+` or later.
+== 创建新项目
 
-== Create a new project
+创建项目步骤
 
-To create a new project directory for your custom front-end dapp:
+. 打开终端
+. 进入工作目录
+. 验证你已经安装了nodejs
+. 运行下面的命令来创建项目 
 
-. Open a terminal shell on your local computer, if you don’t already have one open.
-. Change to the folder you are using for your {IC} projects, if you are using one.
-. Verify that you have `+node.js+` installed locally, if necessary.
-. Create a new project by running the following command:
 +
 [source,bash]
 ----
 dfx new contacts
 ----
-. Change to your project directory by running the following command:
+
+. 进入项目目录
 +
 [source,bash]
 ----
