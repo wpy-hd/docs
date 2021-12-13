@@ -1,4 +1,4 @@
-= Add access control with identities
+= 添加访问控制
 ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 //:!page-repl:
 :proglang: Motoko
@@ -6,108 +6,105 @@ ifdef::env-github,env-browser[:outfilesuffix:.adoc]
 :IC: Internet Computer blockchain
 :company-id: DFINITY
 
-Dapps often require role-based permissions to control the operations different users can perform.
+应用程序通常需要基于角色权限来控制不同用户可以执行的操作。为说明如何创建和切换用户身份，本教程创建一个简单的程序，对不同角色用户显示不同的问候语。
 
-To illustrate how to create and switch between user identities, this tutorial creates a simple dapp that displays a different greeting for users who are assigned to different roles.
+此例子中，有三个命名角色-owner, admin 和 authorized。
 
-In this example, there are three named roles—`+owner+`, `+admin+`, and `+authorized+`. 
+. 具有admin角色的用户显示You have a role with administrative privileges
+. 具有authorized角色的用户显示Would you like to play a game?
+. 没有分配这些角色的用户显示Nice to meet you!
 
-* Users who are assigned an `+admin+` role see a greeting that displays `+You have a role with administrative privileges+`.
-* Users who are assigned an `+authorized+` role see a greeting that displays `+Would you like to play a game?+`.
-* Users who are not assigned one of these roles see a greeting that displays `+Nice to meet you!+`.
+此外，只有安装Canister的用户才授予owner角色，只有owner和admin角色才能分配角色给其他用户。
 
-In addition, only the user identity that initialized the canister smart contract is assigned the `+owner+` role and only the `+owner+` and `+admin+` roles can assign roles to other users.
+在较高级别上，每个用户都有一个公用/专用密钥对。 用户访问的公用密钥与容器标识符结合在一起，形成一个安全主体，然后可以用作消息调用方来验证对在Internet Computer上运行的容器进行的功能调用。 
 
-At a high-level, each user has a public/private key pair. The public key combined with the canister smart contract identifier the user accesses forms a security principal that can then be used as a message caller to authenticate function calls made to the canister smart contract running on the {IC}.
-The following diagram provides a simplified view of how user identities authenticate message callers.
+下图提供了有关用户身份如何认证消息调用者的简化视图。
 
 image::principal-identities.svg[]
 
-== Before you begin
+== 开始之前
 
-Before starting the tutorial, verify the following:
+在开始本教程之前，验证以下内容：
 
-* You have downloaded and installed the {sdk-short-name} package as described in link:../../quickstart/local-quickstart{outfilesuffix}#download-and-install[Download and install].
+* 您已按照下载和安装中的说明下载并安装了DFINITY Canister SDK软件包。
+* 您已运行了至少一个可以创建默认用户身份的命令。您的默认用户身份信息存储在$HOME/.config/dfx/identity/目录。
+* 如果您使用Visual Studio Code作为你的IDE，并已按安装语言编辑插件所述安装好了Motoko语言插件。
+* 您已停止本地计算机上所有的Internet Computer进程。
 
-* You have run at least one command that resulted in your `+default+` user identity being created. 
-Your default user identity is stored globally for all projects in the `+$HOME/.config/dfx/identity/+` directory.
+== 创建新项目
 
-* You have installed the Visual Studio Code plugin for {proglang} as described in link:../../quickstart/local-quickstart{outfilesuffix}#install-vscode[Install the language editor plug-in] if you are using Visual Studio Code as your IDE.
+为测试访问控制和切换用户身份创建新项目：
 
-* You have stopped any {LEE} processes running on your computer.
-
-== Create a new project
-
-To create a new project directory for testing access control and switching user identities:
-
-. Open a terminal shell on your local computer, if you don’t already have one open.
-. Change to the folder you are using for your {IC} projects, if you are using one.
-. Create a new project by running the following command:
+. 打开终端。
+. 切换到Internet Computer目录。
+. 运行以下命令创建新项目
 +
 [source,bash]
 ----
 dfx new access_hello
 ----
-. Change to your project directory by running the following command:
+. 运行下列命令进入项目目录。
 +
 [source,bash]
 ----
 cd access_hello
 ----
 
-== Modify the default dapp
+== 修改默认程序
 
-For this tutorial, you are going to replace the template source code file with a dapp that has functions for assigning and retrieving roles.
+对于本教程，您将使用具有分配和检索角色功能的程序替换模板源代码文件。
 
-To modify the default dapp:
+修改默认程序：
 
-. Open the `+src/access_hello/main.mo+` file in a text editor and delete the existing content.
-. Copy and paste the following sample code into the file:
+. 在文本编辑器中打开src/access_hello/main.mo文件，然后删除现有内容。
+. 将以下示例代码复制并粘贴到文件中：
 +
 [source.copy,motoko,no-repl]
 ----
 include::example$access-hello/main.mo[]
 ----
 +
-Let's take a look at a few key elements of this dapp:
+让我们看一下该程序的一些关键要素：
 +
 --
 * You might notice that the `+greet+` function is a variation on the `+greet+` function you have seen in previous tutorials. 
 +
-In this dapp, however, the `+greet+` function uses a message caller to determine the permissions that should be applied and, based on the permissions associated with the caller, which greeting to display.
-* The dapp defines two custom types—one for `+Roles+` and one for `+Permissions+`.
-* The `+assign_roles+` function enables the message caller to assign a role to the principal associated with an identity.
-* The `+callerPrincipal+` function enables you to return the principal associated with an identity.
-* The `+my_role+` function enables you to return the role that is associated with an identity.
+您可能会注意到greet函数是您在先前教程中看到的greet函数的变体。但是，在此程序中，greet函数使用消息调用方来确定应用的权限，并基于与调用方相关联的权限来确定要显示的问候。
+* 该程序定义了两种自定义类型-一种用于Role，一种用于Permissions。
+* Assign_roles函数使消息调用者可以将角色分配给与身份关联的主体。
+* 使用callerPrincipal函数，您可以返回与身份关联的主体。
+* 使用my_role函数可以返回与身份关联的角色。
 --
-. Save your changes and close the `+main.mo+` file to continue.
+. 保存并关闭main.mo文件。
 
-== Start the {LEE}
+== 启动本地网络
 
-Before you can build the `+access_hello+` project, you need to connect to the {LEE} running in your development environment or to the {IC} mainnet.
+开始构建项目前，需要连接到本地或远程 ICP 网络。
 
-To start the {LEE}:
+启动本地网络需要 dfx.json 文件，需要确认在项目根目录进行操作。在这篇教程中，建议开启 2 个终端，一个启动网络，另一个管理项目。
 
-. Open a new terminal window or tab on your local computer.
-. Navigate to the root directory for your project, if necessary.
-. Start the {LEE} on your computer by running the following command:
+启动网络步骤：
+
+. 打开新的终端。
+. 进入项目根目录。
+. 使用下面的命令启动 ICP 本地网络。
 +
 [source,bash]
 ----
 dfx start --background
 ----
 +
-After the {LEE} completes its startup operations, you can continue to the next step.
+打开新的终端这时可能会显示警告信息，这取决于使用的平台的安全策略配置。这时请选择允许。启动本地网络后，终端会显示网络操信息。
+. 切换到项目终端。
 
-== Register, build, and deploy the dapp
+== 注册构建并部署应用
 
-After you connect to the {LEE} running in your development environment, you can register, build, and deploy your dapp in a single step by running the link:../cli-reference/dfx-deploy{outfilesuffix}[`dfx deploy`] command.
-You can also perform each of these steps independently using separate link:../cli-reference/dfx-canister{outfilesuffix}#dfx_canister_create[`+dfx canister create+`], link:../cli-reference/dfx-build{outfilesuffix}[`+dfx build+`], and link:../cli-reference/dfx-canister{outfilesuffix}#dfx_canister_install[`+dfx canister install+`] commands.
+连接到本地开发环境的Internet Computer网络后，可以通过运行dfx deploy命令在一个步骤中注册，构建和部署应用程序。 您还可以使用单独的dfx canister create，dfx build和dfx canister install命令独立执行每个步骤。
 
-To deploy the dapp locally:
+本地部署：
 
-. Check that you are still in the root directory for your project, if needed.
-. Register, build, and deploy the `+access_hello+` back-end dapp by running the following command:
+. 检查是否在项目根目录。
+. 通过运行以下命令来注册，构建和部署access_hello后端程序。
 +
 [source,bash]
 ----
@@ -127,154 +124,152 @@ Installing code for canister access_hello, with canister_id rrkah-fqaaa-aaaaa-aa
 Deployed canisters.
 ....
 
-== Check the current identity context
+== 检查当前的认证内容
 
-Before we create any additional identities, let's review the principal identifiers associated with your `+default+` identity and the cycles wallet for your `+default+` identity.
-On the {IC}, a principal is the internal representative for a user, canister smart contract, node, or subnet. The textual representation for a principal is the external identifier you see displayed with working with the principal data type.
+在创建任何其他身份之前，让我们查看与您的默认身份相关联的账户标识符以及该默认身份的cycles钱包。 
 
-To review your current identity and principle:
+在Internet Computer上，账户是用户，Canister，节点或子网的内部代表。 账户的文本表示形式是使用账户数据类型显示的外部标识符。
 
-. Verify the currently-active identity by running the following command:
+要查看您当前的身份和账户:
+
+. 通过运行以下命令来验证当前活动身份：
 +
 [source,bash]
 ----
 dfx identity whoami
 ----
 +
-The command displays output similar to the following:
+该命令显示的输出类似于以下内容：
 +
 ....
 default
 ....
-. Check the principal for the `+default+` user identity by running the following command:
+. 通过运行以下命令，检查账户以获取默认用户身份：
 +
 [source,bash]
 ----
 dfx identity get-principal
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容：
 +
 ....
 zen7w-sjxmx-jcslx-ey4hf-rfxdq-l4soz-7ie3o-hti3o-nyoma-nrkwa-cqe
 ....
-. Check the role associated with the `+default+` user identity by running the following command:
+. 通过运行以下命令来检查与默认用户关联的角色：
 +
 [source,bash]
 ----
 dfx canister --wallet=$(dfx identity get-wallet) call access_hello my_role
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容：
+
 +
 ....
 (opt variant { owner })
 ....
 
-== Create a new user identity
+== 创建新用户
 
-To begin testing the access controls in our dapp, let's create some new user identities and assign those users to different roles.
+要开始测试我们程序中的访问控制，让我们创建一些新的用户身份并将这些用户分配给不同的角色。
 
-To create a new user identity:
-
-. Check that you are still in your project directory, if needed.
-. Create a new administrative user identity by running the following command:
+. 进入项目目录。
+. 通过运行以下命令来创建新的管理用户身份。
 +
 [source,bash]
 ----
 dfx identity new ic_admin
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容：
 +
 ....
 Creating identity: "ic_admin".
 Created identity: "ic_admin".
 ....
-. Call the `+my_role+` function to see that your new user identity has not been assigned to any role.
+. 调用my_role函数以查看您的新用户身份尚未分配的任何角色。
 +
 [source,bash]
 ----
 dfx --identity ic_admin canister call access_hello my_role
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容
 +
 ....
 Creating a wallet canister on the local network.
 The wallet canister on the "local" network for user "ic_admin" is "ryjl3-tyaaa-aaaaa-aaaba-cai"
 (null)
 ....
-. Switch your currently-active identity context to use the new `+ic_admin+` user identity and display the principal associated with the `+ic_admin+` user by running the following command:
+. 通过运行以下命令，将当前活动用户切换为使用新的ic_admin用户身份，并显示与ic_admin用户关联的账户。
 +
 [source,bash]
 ----
 dfx identity use ic_admin && dfx identity get-principal
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容：
 +
 ....
 Using identity: "ic_admin".
 c5wa6-3irl7-tuxuo-4vtyw-xsnhw-rv2a6-vcmdz-bzkca-vejmd-327zo-wae
 ....
-. Check the principal used to call the `+access_hello+` canister smart contract by running the following command:
+. 通过运行以下命令，检查用于调用access_hello Canister的账户。
 +
 [source,bash]
 ----
 dfx canister call access_hello callerPrincipal
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容
 +
 ....
 (principal "ryjl3-tyaaa-aaaaa-aaaba-cai")
 ....
 +
-By default, the cycles wallet identifier is the principal used to call the methods in the `+access_hello+` canister smart contract.
-To illustrate access control, however, we want to use the principal associated with the user context, not the cycles wallet.
-Before we get to that step, though, let's assign a role to the `+ic_admin+` user. To do that, we need to switch to the `+default+` user identity that has the `+owner+` role.
+默认情况下，Cycles钱包标识符是用于调用access_hello canister中的方法的账户。 但是，为了说明访问控制，我们要使用与用户关联的账户，而不是Cycles钱包。 不过，在进行此步骤之前，让我们为ic_admin用户分配一个角色。 为此，我们需要切换到具有所有者角色的默认用户身份。
 
-== Assign a role to an identity
+== 为身份分配角色
 
-To assign the admin role to the ic_admin identity:
+要将管理员角色分配给ic_admin身份，请执行以下操作
 
-. Switch your currently-active identity context to use the `+default+` user identity by running the following command:
+. 通过运行以下命令，将默认用户设置为当前活动用户。
 +
 [source,bash]
 ----
 dfx identity use default
 ----
-. Assign the `+ic_admin+` principal the `+admin+` role by running a command similar to the following using Candid syntax:
+. 通过使用Candid语法运行类似于以下内容的命令，将admin角色 分配给ic_admin身份。
 +
 [source,bash]
 ----
 dfx canister --wallet=$(dfx identity get-wallet) call access_hello assign_role '((principal "c5wa6-3irl7-tuxuo-4vtyw-xsnhw-rv2a6-vcmdz-bzkca-vejmd-327zo-wae"),opt variant{admin})'
 ----
-
-NOTE: Be sure to replace the `+principal+` hash with the one returned by the `+dfx identity get-principal+` command for the `+ic_admin+` identity.
-
 +
-Optionally, you can rerun the command to call the `+my_role+` function to verify the role assignment.
+注意：确保将身份哈希替换为ic_admin身份的dfx identity get-principal命令返回的哈希。
++
+（可选项）您可以重新运行命令以调用my_role函数以验证角色分配。
 +
 [source,bash]
 ----
 dfx --identity ic_admin canister call access_hello my_role
 ----
 +
-The command displays output similar to the following:
+必须使用--no-wallet选项才能查看分配给ic_admin身份的角色，而不是Cycles钱包。 该命令显示的输出类似于以下内容。
 +
 ....
 (opt variant { admin })
 ....
-. Call the `+greet+` function using the `+ic_admin+` user identity that you just assigned the `+admin+` role by running the following command:
+
+. 通过运行以下命令，使用刚刚分配了admin角色的ic_admin用户身份调用greet函数。
 +
 [source,bash]
 ----
 dfx --identity ic_admin canister call access_hello greet "Internet Computer Admin"
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容：
 +
 ....
 (
@@ -282,79 +277,79 @@ The command displays output similar to the following:
 )
 ....
 
-== Add an authorized user identity
+== 添加授权用户身份
 
-At this point, you have a `+default+` user identity with the `+owner+` role and an `+ic_admin+` user identity with the `+admin+` role. 
-Let's add another user identity and assign it to the `+authorized+` role. 
-For this example, however, we'll use an environment variable to store the user's principal.
+此时，您具有owner角色的默认用户身份和具有admin角色的ic_admin用户身份。 让我们添加另一个用户身份，并将其分配给authorized角色。 
 
-To add a new authorized user identity:
+但是，在此示例中，我们将使用环境变量来存储用户的账户。
 
-. Check that you are still in your project directory, if needed.
-. Create a new authorized user identity by running the following command:
+要添加新的authorized用户身份：
+
+. 进入项目目录。
+. 通过运行以下命令来创建新的authorized用户身份。
 +
 [source,bash]
 ----
 dfx identity new alice_auth
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容：
 +
 ....
 Creating identity: "alice_auth".
 Created identity: "alice_auth".
 ....
-. Switch your currently-active identity context to use the new `+alice_auth+` user identity by running the following command:
+. 通过运行以下命令，将当前活动的身份切换为新的alice_auth用户身份。
 +
 [source,bash]
 ----
 dfx identity use alice_auth
 ----
-. Store the principal for the `+alice_auth+` user in an environment variable by running the following command:
+. 通过运行以下命令，将alice_auth用户的账户存储在环境变量中。
 +
 [source,bash]
 ----
 ALICE_ID=$(dfx identity get-principal)
 ----
 +
-You can verify the principal stored by running the following command:
+您可以通过运行以下命令来验证存储的账户：
 +
 [source,bash]
 ----
 echo $ALICE_ID
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容：
 +
 ....
 b5quc-npdph-l6qp4-kur4u-oxljq-7uddl-vfdo6-x2uo5-6y4a6-4pt6v-7qe
 ....
 +
-. Use the `+ic_admin+` identity to assign the `+authorized+` role to `+alice_auth+` by running the following command:
+. 通过运行以下命令，使用ic_admin身份将授权角色分配给alice_auth。
 +
 [source,bash]
 ----
 dfx --identity ic_admin canister call access_hello assign_role "(principal \"$ALICE_ID\", opt variant{authorized})"
 ----
-. Call the `+my_role+` function to verify the role assignment.
+. 调用my_role函数以验证角色分配。
 +
 [source,bash]
 ----
 dfx --identity alice_auth canister call access_hello my_role
 ----
-The command displays output similar to the following:
+输出类似以下内容：
 +
 ....
 (opt variant { authorized })
 ....
-. Call the `+greet+` function using the `+alice_auth+` user identity that you just assigned the `+authorized+` role by running the following command:
+. 通过运行以下命令，使用刚刚分配了authorized角色的alice_auth用户身份调用greet函数。
 +
 [source,bash]
 ----
 dfx canister call access_hello greet "Alice"
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容：
 +
 ....
 (
@@ -362,84 +357,82 @@ The command displays output similar to the following:
 )
 ....
 
-== Add an unauthorized user identity
+== 添加未授权的用户身份
 
-You have now seen a simple example of creating users with specific roles and permissions.
-The next step is to create a user identity that is not assigned to a role or given any special permissions.
+现在，您已经看到了一个简单的示例，该示例创建具有特定角色和权限的用户。 
 
-To add an unauthorized user identity:
+下一步是创建未分配给角色或未授予任何特殊权限的用户身份。
 
-. Check that you are still in your project directory, if needed.
-. Check your currently-active identity, if needed, by running the following command:
+. 进入项目目录。
+. 查看当前活动用户。
 +
 [source,bash]
 ----
 dfx identity whoami
 ----
-. Create a new user identity by running the following command:
+. 通过运行以下命令来创建新的用户身份。
 +
 [source,bash]
 ----
 dfx identity new bob_standard
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容：
 +
 ....
 Creating identity: "bob_standard".
 Created identity: "bob_standard".
 ....
-. Store the principal for the `+bob_standard+` user in an environment variable by running the following command:
+. 通过运行以下命令，将bob_standard用户的账户存储在环境变量中。
 +
 [source,bash]
 ----
 BOB_ID=$(dfx --identity bob_standard identity get-principal)
 ----
-. Attempt to use the `+bob_standard+` identity to assign a role.
+. 尝试使用bob_standard身份分配角色。
 +
 [source,bash]
 ----
 dfx --identity bob_standard canister call access_hello assign_role "(principal \"$BOB_ID\", opt variant{authorized})"
 ----
 +
-This command returns an `+unauthorized+` error.
-. Attempt to use the `+default+` user identity to assign `+bob_standard+` the `+owner+` role by running the following command:
+此命令返回unauthorized的错误。
+. 尝试通过运行以下命令使用默认用户身份为bob_standard分配owner角色。
 +
 [source,bash]
 ----
 dfx --identity default canister --wallet=$(dfx --identity default identity get-wallet) call access_hello assign_role "(principal \"$BOB_ID\", opt variant{owner})"
 ----
 +
-This command fails because users cannot be assigned the `+owner+` role.
-. Call the `+greet+` function using the `+bob_standard+` user identity by running the following command:
+该命令失败，因为无法为用户分配owner角色。
+. 通过运行以下命令，使用bob_standard用户身份调用greet函数。
 +
 [source,bash]
 ----
 dfx --identity bob_standard canister --no-wallet call access_hello greet "Bob"
 ----
 +
-The command displays output similar to the following:
+输出类似以下内容：
 +
 ....
 ("Greetings, Bob. Nice to meet you!")
 ....
 
-== Set the user identity for multiple commands
+== 为多个命令设置用户识别码
 
-So far, you have seen how to create and switch between user identities for individual commands. 
-You can also specify a user identity you want to use, then run multiple commands in the context of that user identity.
+到目前为止，您已经了解了如何为单个命令创建用户身份并在用户身份之间切换。 您还可以指定要使用的用户身份，然后在该用户身份的上下文中运行多个命令。
 
-To run multiple commands under one user identity:
+以一个用户身份运行多个命令：
 
-. Check that you are still in your project directory, if needed.
-. List the user identities currently available by running the following command:
+. 进入项目目录。
+. 通过运行以下命令列出当前可用的用户身份。
 +
 [source,bash]
 ----
 dfx identity list
 ----
 +
-The command displays output similar to the following with an asterisk indicating the currently-active user identity.
+该命令显示的输出类似于以下内容，带有星号的为当前活动用户。
 +
 ....
 alice_auth
@@ -448,41 +441,41 @@ default *
 ic_admin
 ....
 +
-In this example, the `+default+` user identity is used unless you explicitly select a different identity.
-. Select a new user identity from the list and make it the active user context by running a command similar to the following:
+在此示例中，除非您明确选择其他身份，否则将使用默认用户身份。
+
+. 从列表中选择一个新的用户身份，并通过运行类似于以下命令的命令将其设置为活动用户。
 +
 [source,bash]
 ----
 dfx identity use ic_admin
 ----
-+ The command displays output similar to the following:
++ 输出类似以下内容：
 +
 ....
 Using identity: "ic_admin".
 ....
 +
-If you rerun the `+dfx identity list+` command, the `+ic_admin+` user identity displays an asterisk to indicate it is the currently active user context.
+如果重新运行dfx identity list命令，则ic_admin用户身份将显示一个星号，以指示它是当前活动的用户。
 +
-You can now run commands using the selected user identity without specifying `+--identity+` on the command-line. 
+现在，您可以使用选定的用户身份运行命令，而无需在命令行上指定--identity。
 
-== Stop the {LEE}
+== 关闭本地网络
 
-After you finish experimenting with the dapp and using identities, you can stop the {LEE} so that it doesn’t continue running in the background.
+完成程序的测试后，可以关闭ICP网络。
 
-To stop the {LEE}:
+关闭步骤：
 
-. In the terminal that displays network operations, press Control-C to interrupt the local network process.
-
-. Stop the {LEE} by running the following command:
+. 打开显示网络活动的命令行，摁下Control-C命令终止本地网络进程。
+. 运行下面的命令终止网络
 +
 [source,bash]
 ----
 dfx stop
 ----
 
-== Want to learn more?
+== 更多内容
 
-If you are looking for more information about identity and authentication, check out the following related resources:
+如果您正在寻找有关身份和身份验证的更多信息，请查看以下相关资源：:
 
 * link:../cli-reference/dfx-identity{outfilesuffix}[dfx identity (command reference)]
 * link:../working-with-canisters{outfilesuffix}#set-owner[Set an identity to own a canister smart contract (how-to)]
